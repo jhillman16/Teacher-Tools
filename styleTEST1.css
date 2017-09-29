@@ -1,0 +1,42 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+header {
+	-moz-border-radius-bottom-left: 20px;
+	border-bottom-left-radius: 20px;
+	position: fixed;
+	margin-top: -100px;
+	background: #000;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+}
+section {
+	margin-top: 100px;
+}
+
+main {
+  display: -webkit-flex;
+  display: flex;
+}
+
+nav {
+  width: 200px;
+}
+nav > p {
+	padding: 10px;
+	position: fixed;
+}
+nav p ~ p {padding: 20px;}
+nav ul {
+	margin: 200px 10px 0px 10px;
+	position: fixed;
+}
+
+section, header {
+  -webkit-flex: 1;
+          flex: 1;
+}
