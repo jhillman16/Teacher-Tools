@@ -2,7 +2,10 @@
 	margin: 0px auto 0px auto;
 	padding: 0px;
 	border: 0px;
-	
+}
+
+body {
+	background-image: url(images/mi.jpg);
 }
 
 header {
@@ -24,8 +27,6 @@ section {
 main {
   display: -webkit-flex;
   display: flex;
-background-image: url(images/mi.jpg);
-padding: 5px;
 
 }
 
@@ -42,6 +43,7 @@ nav ul {
 	margin: 200px 10px 0px 10px;
 	position: fixed;
 }
+nav ul li { margin-left: 20px; }
 
 section, header {
   -webkit-flex: 1;
