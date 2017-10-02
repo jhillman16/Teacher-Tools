@@ -1,33 +1,40 @@
 * {
-	margin: 0px;
+	margin: 0px auto 0px auto;
 	padding: 0px;
 	border: 0px;
+	
 }
 
 header {
 	-moz-border-radius-bottom-left: 20px;
-	border-bottom-left-radius: 20px;
+	border-bottom-left-radius: 30px;
 	position: fixed;
 	margin-top: -100px;
-	background: #000;
-	color: #fff;
-	width: 100%;
+	background-image: url(images/tr.jpg);
+	color: rgb(0, 0, 0);
+	width: 98%;
 	text-align: center;
+	
 }
 section {
 	margin-top: 100px;
+	
 }
 
 main {
   display: -webkit-flex;
   display: flex;
+background-image: url(images/mi.jpg);
+padding: 5px;
+
 }
 
+
 nav {
-  width: 200px;
+  width: 220px;
 }
 nav > p {
-	padding: 10px;
+	padding: 5px;
 	position: fixed;
 }
 nav p ~ p {padding: 20px;}
