@@ -11,8 +11,8 @@ $password = 'malcmalc3';
 
 $conn = mysql_connect($hostname, $username, $password);
 
-if(!$conn){
-    echo 'Failed connection'
+if(! $conn){
+    echo 'Failed connection';
     die('Could not connect: ' . mysql_error());
 }
 
