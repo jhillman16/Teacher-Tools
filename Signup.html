@@ -9,15 +9,14 @@ $username = 'mmilton1';
 /*** mysql password ***/
 $password = 'malcmalc3';
 
-try {
-    $dbh = new PDO("mysql:host=$hostname;dbname=mmilton1DB", $username, $password);
-    /*** echo a message saying we have connected ***/
-    echo 'Connected to database';
-    }
-catch(PDOException $e)
-    {
-    echo $e->getMessage();
-    }
+$conn = mysql_connect($hostname, $username, $password);
+
+if(!$conn){
+    die('Could not connect: ' . mysql_error());
+}
+
+echo 'Connected successfully';
+mysql_close($conn);
 ?>
 
 
