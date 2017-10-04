@@ -1,3 +1,26 @@
+<?php
+
+/*** mysql hostname ***/
+$hostname = 'acadweb1.salisbury.edu';
+
+/*** mysql username ***/
+$username = 'mmilton1';
+
+/*** mysql password ***/
+$password = 'malcmalc3';
+
+try {
+    $dbh = new PDO("mysql:host=$hostname;dbname=mmilton1DB", $username, $password);
+    /*** echo a message saying we have connected ***/
+    echo 'Connected to database';
+    }
+catch(PDOException $e)
+    {
+    echo $e->getMessage();
+    }
+?>
+
+
 <!DOCTYPE html>
 <html>
 
