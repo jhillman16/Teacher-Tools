@@ -1,5 +1,7 @@
 <?php
 
+echo 'hi';
+
 /*** mysql hostname ***/
 $hostname = 'acadweb1.salisbury.edu';
 
@@ -10,6 +12,7 @@ $username = 'mmilton1';
 $password = 'malcmalc3';
 
 $conn = mysql_connect($hostname, $username, $password);
+
 
 if(! $conn){
     echo 'Failed connection';
