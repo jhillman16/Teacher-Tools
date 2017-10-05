@@ -3,28 +3,22 @@
 
 <?php
 
-echo 'hi';
+ini_set('display_errors', 1);
+error_reporting(E_ALL & E_NOTICE);
 
-/*** mysql hostname ***/
-$hostname = 'http://acadweb1.salisbury.edu/~mmilton1/connect.php';
-
-/*** mysql username ***/
-$username = 'mmilton1';
-
-/*** mysql password ***/
-$password = 'malcmalc3';
-
-$conn = mysql_connect($hostname, $username, $password);
-
-
-if(! $conn){
-    echo 'Failed connection';
-    die('Could not connect: ' . mysql_error());
+if($connection=@mysql_connect('localhost', 'mmilton1', 'malcmalc3')){
+    print '<p>Successfully connected to MYSQL.</p>';
+}else{
+    die('<p>Could not connect to MYSQL because:<b>'.mysql_error().'</b></p>');
 }
 
-echo 'Connected successfully';
-mysql_close($conn);
+if(@mysql_select_db("mmilton1DB", $connection)){
+    print '<p>The mmilton1DB has been selected</p>';
+}
+
 ?>
+
+
 
 <head> 
 
@@ -34,8 +28,8 @@ mysql_close($conn);
 </head>
 
 <p><img alt="Un.jpg" src="images/Un.jpg" style="display: block; border: 1px solid #000; width: 200px; height: 200px;" /></p>
-<h2> Welcome </h2>
-<h1> Sign Up </h1>
+<h1> Welcome </h1>
+<h2> Sign Up </h2>
 
 
 <body background="images/mi.jpg";
@@ -65,9 +59,5 @@ mysql_close($conn);
     <button type="submit" class="pure-button pure-button-primary">Confirm</button>
     
 </form>
-
-
-
-
 
 </html>
