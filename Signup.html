@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 
+<body>
 <?php
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL & E_NOTICE);
 
-if($connection=@mysql_connect('localhost', 'mmilton1', 'malcmalc3')){
+$localhost = 'http://acadweb1.salisbury.edu/~mmilton1/connect.php';
+
+if($connection=@mysql_connect($localhost, 'mmilton1', 'malcmalc3')){
     print '<p>Successfully connected to MYSQL.</p>';
 }else{
     die('<p>Could not connect to MYSQL because:<b>'.mysql_error().'</b></p>');
@@ -18,7 +21,7 @@ if(@mysql_select_db("mmilton1DB", $connection)){
 
 ?>
 
-
+</body>
 
 <head> 
 
