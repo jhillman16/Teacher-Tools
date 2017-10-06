@@ -30,13 +30,13 @@
 	<h1>Welcome Page</h1>
 </header>
 
-	<p><h1>Welcome to Teacher Tools!</h1></p>
-    <p><h3>If you are an Educator and want to create and teach a course on any subject and any difficulty,
-	this tool can help you! <li><a href="Signup.html">LogIn</a></li></h3></p>
+	<h2>Welcome to Teacher Tools!</h2>
+    <p>If you are an Educator and want to create and teach a course on any subject and any difficulty,
+	this tool can help you! <a href="Signup.php">LogIn</a></p>
 	<br>
-	<p><h1>OR</h1></p>
+	<p>OR</p>
 	<br>
-	<p><h3>If you are a Student taking a course, this tool will help you succseed! <li><a href="Signup.html">LogIn</a></li></h3></p>
+	<p>If you are a Student taking a course, this tool will help you succeed! <a href="Signup.php">LogIn</a></p>
 	
 
 	
