@@ -4,7 +4,7 @@
 <head> 
 
 <title> "Signup Page" </title>
-<meta charset = "UTF-8">
+<meta charset="UTF-8">
 
 <?php
 
@@ -64,6 +64,30 @@ if($r=mysql_query($query)){
     
 </form>
 
+<<<<<<< HEAD
+=======
+
+
+<?php
+$servername = "http://acadweb1.salisbury.edu/~mmilton1/connect.php";
+$username = "mmilton1";  //your user name for php my admin if in local most probaly it will be "root"
+$password = "malcmalc3";  //password probably it will be empty
+$databasename = "mmilton1DB"; //Your db nane
+// Create connection
+$conn = new mysqli($servername, $username, $password,$databasename);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
+
+$query="SELECT * FROM StudentsUser";
+if($r=mysql_query($query)){
+    echo "dummy1\n";
+    echo "<p> {$row['FirstName']} </p>\n";
+?>
+
+>>>>>>> 5519a8d08e10bb4006cb95f248733ec6222ccd5c
 </body>
 
 </html>
