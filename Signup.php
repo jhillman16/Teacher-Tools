@@ -42,7 +42,7 @@
 </form>
 
 <?php
- $db = mysqli_connect('http://acadweb1.salisbury.edu/~mmilton1/connect.php','mmilton1','mmilton1','mmilton1DB')
+ $db = mysqli_connect('http://acadweb1.salisbury.edu/~mmilton1/connect.php','mmilton1','malcmalc3','mmilton1DB')
  or die('Error connecting to MySQL server.');
 ?>
 
