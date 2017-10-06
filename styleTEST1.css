@@ -6,6 +6,8 @@
 
 body {
 	background-image: url(images/mi.jpg);
+	font: 12px Verdana, Tahoma, sans-serif;
+	color: #000000;
 }
 
 header {
