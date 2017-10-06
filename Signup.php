@@ -13,7 +13,7 @@
 <h2> Sign Up </h2>
 
 
-<body background="images/mi.jpg";
+<body>
 
 <form class="pure-form">
     
