@@ -2,28 +2,33 @@
 <html>
 
 <body>
+
+
 <?php
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL & E_NOTICE);
+echo 'hi';
 
-$localhost = 'http://acadweb1.salisbury.edu/~mmilton1/connect.php';
+/*** mysql hostname ***/
+$hostname = 'http://acadweb1.salisbury.edu/~mmilton1/connect.php';
 
-if($connection=@mysql_connect($localhost, 'mmilton1', 'malcmalc3')){
-    print '<p>Successfully connected to MYSQL.</p>';
+/*** mysql username ***/
+$username = 'mmilton1';
+
+/*** mysql password ***/
+$password = 'malcmalc3';
+
+$conn = mysql_connect($hostname, $username, $password);
+
+
+if(! $conn){
+    echo 'Failed connection';
+    die('Could not connect: ' . mysql_error());
 }
 
-if(@mysql_select_db("mmilton1DB", $connection)){
-    print '<p>The mmilton1DB has been selected</p>';
-}
-
-$query="SELECT * FROM StudentsUser";
-if($r=mysql_query($query)){
-    echo "dummy1\n";
-    print "<p> {$row[FirstName']} </p>\n";
-}
-
+echo 'Connected successfully';
+mysql_close($conn);
 ?>
+
 
 </body>
 
