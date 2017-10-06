@@ -6,6 +6,29 @@
 <title> "Signup Page" </title>
 <meta charset = "UTF-8">
 
+<?php
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL & E_NOTICE);
+
+if($connection=@mysql_connect("http://acadweb1.salisbury.edu/~mmilton1/connect.php", "mmilton1", "malcmalc3")){
+    <p>Successfully connected to MYSQL.</p>
+}else{
+    die('<p>Could not connect to MYSQL because:<b>'.mysql_error().'</b></p>');
+}
+
+if(@mysql_select_db("mmilton1DB", $connection)){
+    print'<p>The mmilton1DB has been selected</p>';
+}
+
+$query="SELECT * FROM StudentsUser";
+if($r=mysql_query($query)){
+    echo "dummy1\n";
+    print "<p> {$row['FirstName']} </p>\n";
+}
+
+?>
+
 </head>
 
 <p><img alt="Un.jpg" src="images/Un.jpg" style="display: block; border: 1px solid #000; width: 200px; height: 200px;" /></p>
@@ -40,27 +63,6 @@
     <button type="submit" class="pure-button pure-button-primary">Confirm</button>
     
 </form>
-
-
-
-<?php
-$servername = "http://acadweb1.salisbury.edu/~mmilton1/connect.php";
-$username = "mmilton1";  //your user name for php my admin if in local most probaly it will be "root"
-$password = "malcmalc3";  //password probably it will be empty
-$databasename = "mmilton1DB"; //Your db nane
-// Create connection
-$conn = new mysqli($servername, $username, $password,$databasename);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
-
-$query="SELECT * FROM StudentsUser";
-if($r=mysql_query($query)){
-    echo "dummy1\n";
-    print "<p> {$row[FirstName']} </p>\n";
-?>
 
 </body>
 
