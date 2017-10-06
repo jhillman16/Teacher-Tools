@@ -4,7 +4,7 @@
 <head> 
 
 <title> "Signup Page" </title>
-<meta charset = "UTF-8">
+<meta charset="UTF-8">
 
 </head>
 
@@ -59,7 +59,7 @@ echo "Connected successfully";
 $query="SELECT * FROM StudentsUser";
 if($r=mysql_query($query)){
     echo "dummy1\n";
-    print "<p> {$row[FirstName']} </p>\n";
+    echo "<p> {$row['FirstName']} </p>\n";
 ?>
 
 </body>
