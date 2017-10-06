@@ -48,7 +48,7 @@ error_reporting(E_ALL & E_NOTICE);
 
 $localhost = 'http://acadweb1.salisbury.edu/~mmilton1/connect.php';
 
-if($connection=@mysql_connect($localhost, 'mmilton1', 'malcmalc3')){
+if($connection=@mysql_connect('$localhost', 'mmilton1', 'malcmalc3')){
     print '<p>Successfully connected to MYSQL.</p>';
 }else{
     die('<p>Could not connect to MYSQL because:<b>'.mysql_error().'</b></p>');
