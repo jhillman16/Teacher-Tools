@@ -6,7 +6,7 @@
 
 <?php
 
-echo 'hi';
+print 'hi';
 
 /*** mysql hostname ***/
 $hostname = 'http://acadweb1.salisbury.edu/~mmilton1/connect.php';
@@ -21,11 +21,11 @@ $conn = mysql_connect($hostname, $username, $password);
 
 
 if(! $conn){
-    echo 'Failed connection';
+    print 'Failed connection';
     die('Could not connect: ' . mysql_error());
 }
 
-echo 'Connected successfully';
+print 'Connected successfully';
 mysql_close($conn);
 ?>
 
