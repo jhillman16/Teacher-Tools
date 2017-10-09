@@ -34,8 +34,8 @@
     <input type="email" placeholder="Email" id="email" required>
     <input type="email" placeholder="Confirm Email" id="confirm_email" required> <br><br>
     
-    <input type="radio" name="gender" value="male"> Student
-    <input type="radio" name="gender" value="female"> Educator<br><br>
+    <input type="radio" name="student" value="student"> Student
+    <input type="radio" name="gender" value="teacher"> Educator<br><br>
     
     <button type="submit" class="pure-button pure-button-primary">Confirm</button>
 
@@ -45,16 +45,9 @@
 </form>
 
 <?php
- $db = mysqli("http://acadweb1.salisbury.edu/phpmyadmin","mmilton1","mmilton1","mmilton1DB")
- or die("Error connecting to MySQL server.");
+ $db = mysqli('http://acadweb1.salisbury.edu/phpmyadmin','mmilton1','mmilton1','mmilton1DB')
+ or die('Error connecting to MySQL server.');
  echo "Error: " . $db->connect_error . "\n";
-
- $query="SELECT * FROM StudentsUser";
-if($r=mysql_query($query)){
-    echo "dummy1\n";
-    print "<p> {$row['FirstName']} </p>\n";
-}
-
  mysql_close();
 ?>
 
