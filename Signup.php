@@ -41,7 +41,7 @@
 </form>
 
 <?php
-$link = mysqli_connect("localhost", "mmilton1", "mmilton1", "mmilton1DB");
+$link = mysqli_connect("acadweb1.salisbury.edu", "mmilton1", "mmilton1", "mmilton1DB");
 
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
