@@ -38,12 +38,23 @@
     <input type="radio" name="gender" value="female"> Educator<br><br>
     
     <button type="submit" class="pure-button pure-button-primary">Confirm</button>
+
+
+    
     
 </form>
 
 <?php
- $db = mysqli_connect('http://acadweb1.salisbury.edu/phpmyadmin','mmilton1','mmilton1','mmilton1DB')
- or die('Error connecting to MySQL server.');
+ $db = mysqli("http://acadweb1.salisbury.edu/phpmyadmin","mmilton1","mmilton1","mmilton1DB")
+ or die("Error connecting to MySQL server.");
+ echo "Error: " . $db->connect_error . "\n";
+
+ $query="SELECT * FROM StudentsUser";
+if($r=mysql_query($query)){
+    echo "dummy1\n";
+    print "<p> {$row['FirstName']} </p>\n";
+}
+
  mysql_close();
 ?>
 
