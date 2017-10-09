@@ -42,26 +42,19 @@
 </form>
 
 <?php
+$link = mysqli_connect("localhost", "mmilton1", "mmilton1", "mmilton1DB");
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL & E_NOTICE);
-
-if($connection=@mysql_connect("http://acadweb1.salisbury.edu/~mmilton1/connect.php", "mmilton1", "mmilton1")){
-    <p>Successfully connected to MYSQL.</p>
-}else{
-    die('<p>Could not connect to MYSQL because:<b>'.mysql_error().'</b></p>');
+if (!$link) {
+    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+    exit;
 }
 
-if(@mysql_select_db("mmilton1DB", $connection)){
-    print '<p>The mmilton1DB has been selected</p>';
-}
+echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
+echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
 
-$query="SELECT * FROM StudentsUser";
-if($r=mysql_query($query)){
-    echo "dummy1\n";
-    print "<p> {$row['FirstName']} </p>\n";
-}
-
+mysqli_close($link);
 ?>
 
 </body>
