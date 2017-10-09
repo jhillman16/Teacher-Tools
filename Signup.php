@@ -43,8 +43,11 @@
 
 <?php
  $username="mmilton1";$password="mmilton1";$database="http://acadweb1.salisbury.edu/~mmilton1";
- mysql_connect(localhost,$username,$password);
+ $connection=mysql_connect(localhost,$username,$password);
  @mysql_select_db($database) or die( "Unable to select database");
+ if(@mysql_select_db("mmilton1DB", $connection)){
+    print'<p>The mmilton1DB has been selected</p>';
+}
  mysql_close();
 ?>
 
