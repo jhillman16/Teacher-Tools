@@ -44,6 +44,7 @@
 <?php
  $db = mysqli_connect('http://acadweb1.salisbury.edu/phpmyadmin','mmilton1','mmilton1','mmilton1DB')
  or die('Error connecting to MySQL server.');
+ echo "Error: " . $db->connect_error . "\n";
  mysql_close();
 ?>
 
