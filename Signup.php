@@ -42,12 +42,8 @@
 </form>
 
 <?php
- $username="mmilton1";$password="mmilton1";$database="http://acadweb1.salisbury.edu/~mmilton1";
- $connection=mysql_connect(localhost,$username,$password);
- @mysql_select_db($database) or die( "Unable to select database");
- if(@mysql_select_db("mmilton1DB", $connection)){
-    print'<p>The mmilton1DB has been selected</p>';
-}
+ $db = mysqli_connect('http://acadweb1.salisbury.edu/~mmilton1','mmilton1','mmilton1','mmilton1DB')
+ or die('Error connecting to MySQL server.');
  mysql_close();
 ?>
 
