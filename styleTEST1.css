@@ -31,8 +31,8 @@ section {
 	margin-top: 100px;
 }
 
-div#content {
-	padding: 0px 200px;
+#content {
+	margin-left: 200px;
 }
 
 
