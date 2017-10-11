@@ -39,7 +39,7 @@
 	<p>If you are a Student taking a course, this tool will help you succeed! <a href="Signup.php">LogIn</a></p>
 	
 
-	
+</section>
 
 <!--
 <footer>
