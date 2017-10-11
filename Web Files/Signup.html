@@ -12,7 +12,8 @@
 <h1> Welcome </h1>
 <h2> Sign Up </h2>
 
-<body background="images/mi.jpg">
+
+<body background="images/mi.jpg";
 
 <form class="pure-form">
     
@@ -33,27 +34,32 @@
     <input type="email" placeholder="Email" id="email" required>
     <input type="email" placeholder="Confirm Email" id="confirm_email" required> <br><br>
     
-    <input type="radio" name="student" value="student"> Student
-    <input type="radio" name="gender" value="teacher"> Educator<br><br>
+    <input type="radio" name="gender" value="male"> Student
+    <input type="radio" name="gender" value="female"> Educator<br><br>
     
     <button type="submit" class="pure-button pure-button-primary">Confirm</button>
     
 </form>
 
+
+
 <?php
-$link = mysqli_connect("localhost", "mmilton1", "mmilton1", "mmilton1DB");
+$servername = "http://acadweb1.salisbury.edu/~mmilton1/connect.php";
+$username = "mmilton1";  //your user name for php my admin if in local most probaly it will be "root"
+$password = "malcmalc3";  //password probably it will be empty
+$databasename = "mmilton1DB"; //Your db nane
+// Create connection
+$conn = new mysqli($servername, $username, $password,$databasename);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
 
-if (!$link) {
-    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-    exit;
-}
-
-echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
-echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
-
-mysqli_close($link);
+$query="SELECT * FROM StudentsUser";
+if($r=mysql_query($query)){
+    echo "dummy1\n";
+    print "<p> {$row[FirstName']} </p>\n";
 ?>
 
 </body>
