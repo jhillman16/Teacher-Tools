@@ -24,11 +24,6 @@
 			<li><a href="#">About</a></li>
 			<br>
 			<li><a href="#">Help</a></li>
-			
-			<br><br>
-			
-			
-			<p>© Teacher Tools 2017</p>
 		
 		</ul>
 </nav>
