@@ -53,6 +53,20 @@ if (!$link) {
 echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
 echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
 
+if(isset($_POST['submit']))
+{
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $email = $_POST['email'];
+
+    $sql = "INSERT INTO StudentsUser VALUES($username,$password,$firstname,$lastname,$email,now());
+    $result = $link->query($sql);
+}
+
+
+
 mysqli_close($link);
 ?>
 
