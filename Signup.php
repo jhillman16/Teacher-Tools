@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 
+<center>
+
 <head> 
-
-<title> "Signup Page" </title>
+<title> Signup Page </title>
 <meta charset = "UTF-8">
-
 </head>
 
 <p><img alt="Un.jpg" src="images/Un.jpg" style="display: block; border: 1px solid #000; width: 200px; height: 200px;" /></p>
@@ -14,61 +14,38 @@
 
 <body background="images/mi.jpg">
 
-<form class="pure-form">
+<form action="InsertNewUser.php" method="post">
     
     Fist Name:<br>
-    <input type="firstname" placeholder="First Name" id="firstname" required><br><br>
+    <input type="text" placeholder="First Name" name="firstname" required><br><br>
     
     Last Name:<br>
-    <input type="lastname" placeholder="Last Name" id="lastname" required><br><br>
+    <input type="text" placeholder="Last Name" name="lastname" required><br><br>
     
     User Name:<br>
-    <input type="username" placeholder="User Name" id="username" required><br><br>
+    <input type="text" placeholder="User Name" name="username" required><br><br>
     
     Password:<br>
-    <input type="password" placeholder="Password" id="password" required>
-    <input type="password" placeholder="Confirm Password" id="confirm_password" required> <br><br>
+    <input type="password" placeholder="Password" name="password" required>
+    <input type="password" placeholder="Confirm Password" name="confirm_password" required> <br><br>
         
     Email:<br>
-    <input type="email" placeholder="Email" id="email" required>
-    <input type="email" placeholder="Confirm Email" id="confirm_email" required> <br><br>
+    <input type="text" placeholder="Email" name="email" required>
+    <input type="text" placeholder="Confirm Email" name="confirm_email" required> <br><br>
     
-    <input type="radio" name="student" value="student"> Student
-    <input type="radio" name="gender" value="teacher"> Educator<br><br>
+    <input type="radio" name="ans" value="student"> Student
+    <input type="radio" name="ans" value="teacher"> Educator<br><br>
     
     <button type="submit" class="pure-button pure-button-primary">Confirm</button>
-    
+   
+
+ 
 </form>
 
-<?php
-$link = mysqli_connect("localhost", "mmilton1", "mmilton1", "mmilton1DB");
-
-if (!$link) {
-    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-    exit;
-}
-
-echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
-echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
-
-if(isset($_POST['submit']))
-{
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
-
-    $sql = "INSERT INTO StudentsUser VALUES($username,$password,$firstname,$lastname,$email,now());
-    $result = $link->query($sql);
-}
 
 
 
-mysqli_close($link);
-?>
+<center>
 
 </body>
 
