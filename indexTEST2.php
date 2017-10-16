@@ -15,13 +15,4 @@
 
 </section>
 
-<!--
-<footer>
-	<p>footer</p>
-</footer>
--->
-
-</main>
-
-</body>
-</html>
+<?php include 'footerTEST2.php';?>
