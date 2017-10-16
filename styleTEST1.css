@@ -19,17 +19,25 @@ header {
 	color: rgb(0, 0, 0);
 	width: 98%;
 	text-align: center;
-	
 }
-section {
-	margin-top: 100px;
-	
+
+footer {
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
 }
 
 main {
   display: -webkit-flex;
   display: flex;
+}
 
+section {
+	margin-top: 100px;
+}
+
+section div#content {
+	padding-left: 20px;
 }
 
 
@@ -50,4 +58,9 @@ nav ul li { margin-left: 20px; }
 section, header {
   -webkit-flex: 1;
           flex: 1;
+}
+
+
+section p {
+	margin: 10px;
 }
