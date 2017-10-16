@@ -31,8 +31,8 @@ section {
 	margin-top: 100px;
 }
 
-#content {
-	margin-left: 200px;
+section div#content {
+	background-color: #ff0000;
 }
 
 
