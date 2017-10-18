@@ -53,13 +53,16 @@ nav ul {
 	margin: 200px 10px 0px 10px;
 	position: fixed;
 }
-nav ul li { margin-left: 20px; }
+nav ul li:first-child { margin-top: 0px; }
+nav ul li {
+	margin: 20px 0 0 20px;
+	list-style-type: none;
+}
 
 section, header {
   -webkit-flex: 1;
           flex: 1;
 }
-
 
 section p {
 	margin: 10px;
