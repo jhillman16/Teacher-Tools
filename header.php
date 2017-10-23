@@ -11,10 +11,10 @@
 <main>
 
 <nav>
-	<p><img alt="Un.jpg" src="images/Un.jpg" style="display: block; width: 200px;" /></p>
+	<p><img alt="Un.jpg" src="images/leaf.jpg" style="display: block; width: 200px;" /></p>
 
 	<ul>
-		<li><a href="indexTEST1.html">Home</a></li>
+		<li><a href="default.php">Home</a></li>
 		<li><a href="Signup.html">LogIn</a></li>
 		<li><a href="#">About</a></li>
 		<li><a href="#">Help</a></li>
