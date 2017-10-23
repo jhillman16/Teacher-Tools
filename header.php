@@ -11,7 +11,7 @@
 <main>
 
 <nav>
-	<p><img alt="Un.jpg" src="images/leaf.png" style="display: block; width: 200px;" /></p>
+	<p id="logo" alt="Teacher Tools logo"></p>
 
 	<ul>
 		<li><a href="default.php">Home</a></li>

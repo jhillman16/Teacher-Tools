@@ -78,3 +78,10 @@ section, header {
 section p {
 	margin: 10px;
 }
+
+#logo {
+	background-image: url(images/leaf.png);
+	display: block;
+	height: 200px;
+	width: 200px;
+}
