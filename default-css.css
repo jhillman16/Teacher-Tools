@@ -80,7 +80,7 @@ section p {
 }
 
 #logo {
-	background: url(images/leaf.png) 50% 50%/200px 200px no-repeat fixed center;
+	background: url(images/leaf.png) 0px 0px/200px 200px no-repeat fixed center;
 	display: block;
 	height: 200px;
 	width: 200px;
