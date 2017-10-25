@@ -50,7 +50,7 @@ nav > p {
 }
 nav p ~ p {padding: 20px;}
 nav ul {
-	margin: 200px 10px 0px 10px;
+	margin: 220px 10px 0px 10px;
 	position: fixed;
 	list-style-type: none;
 	width: 200px;
