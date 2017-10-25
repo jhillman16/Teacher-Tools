@@ -1,49 +1,116 @@
 <?php
+
+// Escape user inputs for security
+$FirstName		= $_POST['firstname'];
+$LastName		= $_POST['lastname'];
+$UserName		= $_POST['username'];
+$Password		= $_POST['password'];
+$ConfirmPassword	= $_POST['confirm_password'];
+$Email			= $_POST['email'];
+$ConfirmEmail		= $_POST['confirm_email'];
+$TeacherStudent 	= $_POST['ans'];
+
+session_start();
+
+if($_POST['password'] != $_POST['confirm_password'])
+{
+	$_SESSION['errorPassword'] = 'Passwords do not match!';
+	header('Location: Signup.php');
+        exit();
+}
+if( strlen($_POST['password']) < 8 ) {
+	$_SESSION['errorPassword'] = 'Passwords needs atleast: 8 characters, 1 uppercase letter, and 1 lowercase letter.';
+	header('Location: Signup.php');
+        exit();
+}
+if(strcspn($_POST['password'], '0123456789') == strlen($_POST['password'])) {
+	$_SESSION['errorPassword'] = 'Passwords needs atleast: 8 characters, 1 uppercase letter, and 1 lowercase letter.';
+	header('Location: Signup.php');
+        exit();
+}
+if($_POST['password'] == strtoupper($_POST['password']) || $_POST['password'] == strtolower($_POST['password'])){
+	$_SESSION['errorPassword'] = 'Passwords needs atleast: 8 characters, 1 uppercase letter, and 1 lowercase letter.';
+	header('Location: Signup.php');
+        exit();
+}
+if($_POST['email'] != $_POST['confirm_email'])
+{
+	$_SESSION['errorEmail'] = 'Email Addresses do not match!';
+	header('Location: Signup.php');
+        exit();
+}
+if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+	$_SESSION['errorEmail'] = 'Invalid email format!';
+	header('Location: Signup.php');
+        exit();
+}
+
+//Connect to database
 $link = mysqli_connect("localhost", "mmilton1", "mmilton1", "mmilton1DB");
  
 // Check connection
 if (!$link) {
-    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-    exit;
+	echo "Error: Unable to connect to MySQL." . PHP_EOL;
+	echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+	echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+	exit;
 }
-echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
-echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
 
-// Escape user inputs for security
-$FirstName  = mysqli_real_escape_string($link, $_REQUEST['firstname']);
-$LastName   = mysqli_real_escape_string($link, $_REQUEST['lastname']);
-$UserName   = mysqli_real_escape_string($link, $_REQUEST['username']);
-$Password   = mysqli_real_escape_string($link, $_REQUEST['password']);
-$ConfirmPassword    = mysqli_real_escape_string($link, $_REQUEST['confirm_password']);
-$Email      = mysqli_real_escape_string($link, $_REQUEST['email']);
-$ConfirmEmail       = mysqli_real_escape_string($link, $_REQUEST['confirm_email']);
-$TeacherStudent = mysqli_real_escape_string($link, $_REQUEST['ans']);
+$username = $_POST['username'];
+$query = "SELECT UserName FROM StudentsUser WHERE '$username'= UserName";
+$result = mysqli_query($link, $query);
+if(mysqli_num_rows($result)>0)
+{
+	$_SESSION['errorUser'] = 'User name already exists!';
+	header('Location: Signup.php');
+        exit();
+}
+$query = "SELECT UserName FROM TeacherUser WHERE '$username'= UserName";
+$result = mysqli_query($link, $query);
+if(mysqli_num_rows($result)>0)
+{
+	$_SESSION['errorUser'] = 'User name already exists!';
+	header('Location: Signup.php');
+        exit();
+}
 
-if($Password != $ConfirmPassword){
-    header('Location: Signup.php');
-    mysqli_close($link);
+$email = $_POST['email'];
+$query = "SELECT Email FROM StudentsUser WHERE '$email'= Email";
+$result = mysqli_query($link, $query);
+if(mysqli_num_rows($result)>0)
+{
+	$_SESSION['errorEmail'] = 'Email already exists!';
+	header('Location: Signup.php');
+        exit();
+}
+$query = "SELECT UserName FROM TeacherUser WHERE '$email'= Email";
+$result = mysqli_query($link, $query);
+if(mysqli_num_rows($result)>0)
+{
+	$_SESSION['errorEmail'] = 'Email already exists!';
+	header('Location: Signup.php');
+        exit();
 }
 
 // attempt insert query execution
 if($TeacherStudent == "student")
 {
-    $query = "INSERT INTO StudentsUser (Username, Password, FirstName, LastName, Email, JoinedDate) 
-            VALUES ('$UserName', '$Password', '$FirstName', '$LastName', '$Email', '2017-10-05')";
+echo "Hello";
+	$query1 = "INSERT INTO StudentsUser (Username, Password, FirstName, LastName, Email, JoinedDate) 
+            VALUES ('$UserName', '$Password', '$FirstName', '$LastName', '$Email', now())";
 }
 elseif ($TeacherStudent == "teacher") {
-    $query = "INSERT INTO TeacherUser (Username, Password, FirstName, LastName, Email, JoinedDate) 
-            VALUES ('$UserName', '$Password', '$FirstName', '$LastName', '$Email', '2017-10-05')";
+	$query1 = "INSERT INTO TeacherUser (Username, Password, FirstName, LastName, Email, JoinedDate) 
+            VALUES ('$UserName', '$Password', '$FirstName', '$LastName', '$Email', now())";
 }
 
-if(mysqli_query($link, $query)){
-    echo "Records added successfully.";
+if(mysqli_query($link, $query1)){
+	echo "Records added successfully.";
 } else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+	echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
 }
  
-header('Location: Creat.html');
+//header('Location: Creat.html');
 
 // close connection
 mysqli_close($link);
