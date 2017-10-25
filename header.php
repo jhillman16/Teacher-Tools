@@ -11,10 +11,10 @@
 <main>
 
 <nav>
-	<p><img alt="Un.jpg" src="/images/Un.jpg" style="display: block; border: 1px solid #000; width: 200px; height: 200px;" /></p>
+	<p id="logo" alt="Teacher Tools logo"></p>
 
 	<ul>
-		<li><a href="indexTEST1.html">Home</a></li>
+		<li><a href="default.php">Home</a></li>
 		<li><a href="Signup.html">LogIn</a></li>
 		<li><a href="#">About</a></li>
 		<li><a href="#">Help</a></li>

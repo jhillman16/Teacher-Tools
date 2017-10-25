@@ -28,8 +28,8 @@ footer {
 }
 
 main {
-  display: -webkit-flex;
-  display: flex;
+	display: -webkit-flex;
+	display: flex;
 }
 
 section {
@@ -42,7 +42,7 @@ section div#content {
 
 
 nav {
-  width: 220px;
+	width: 220px;
 }
 nav > p {
 	padding: 5px;
@@ -52,18 +52,37 @@ nav p ~ p {padding: 20px;}
 nav ul {
 	margin: 200px 10px 0px 10px;
 	position: fixed;
+	list-style-type: none;
+	width: 200px;
 }
 nav ul li:first-child { margin-top: 0px; }
-nav ul li {
-	margin: 20px 0 0 20px;
-	list-style-type: none;
+nav ul li { margin: 0 0 0 20px; }
+nav ul li a {
+	display: block;
+	width: 100%;
+	font-size: 120%;
+	line-height: 150%;
+	color: #3333ff;
+	text-decoration: none;
+}
+nav ul li a:hover {
+	display: block;
+	text-decoration: underline;
 }
 
 section, header {
-  -webkit-flex: 1;
-          flex: 1;
+  	-webkit-flex: 1;
+	        flex: 1;
 }
 
 section p {
 	margin: 10px;
+}
+
+#logo {
+	background: url(images/leaf.png) 0px 0px/200px 200px no-repeat fixed;
+	border: 1px dashed #000;
+	display: block;
+	height: 200px;
+	width: 200px;
 }
