@@ -50,7 +50,7 @@ nav > p {
 }
 nav p ~ p {padding: 20px;}
 nav ul {
-	margin: 200px 10px 0px 10px;
+	margin: 220px 10px 0px 10px;
 	position: fixed;
 	list-style-type: none;
 	width: 200px;
@@ -61,12 +61,14 @@ nav ul li a {
 	display: block;
 	width: 100%;
 	font-size: 120%;
-	line-height: 150%;
+	line-height: 200%;
 	color: #3333ff;
 	text-decoration: none;
 }
 nav ul li a:hover {
 	display: block;
+	background-color: #3333ff;
+	color: #ffffff;
 	text-decoration: underline;
 }
 
