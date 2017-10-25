@@ -95,22 +95,26 @@ if(mysqli_num_rows($result)>0)
 // attempt insert query execution
 if($TeacherStudent == "student")
 {
-echo "Hello";
-	$query1 = "INSERT INTO StudentsUser (Username, Password, FirstName, LastName, Email, JoinedDate) 
+	$query = "INSERT INTO StudentsUser (Username, Password, FirstName, LastName, Email, JoinedDate) 
             VALUES ('$UserName', '$Password', '$FirstName', '$LastName', '$Email', now())";
 }
 elseif ($TeacherStudent == "teacher") {
-	$query1 = "INSERT INTO TeacherUser (Username, Password, FirstName, LastName, Email, JoinedDate) 
+	$query = "INSERT INTO TeacherUser (Username, Password, FirstName, LastName, Email, JoinedDate) 
             VALUES ('$UserName', '$Password', '$FirstName', '$LastName', '$Email', now())";
 }
 
-if(mysqli_query($link, $query1)){
+if(mysqli_query($link, $query)){
 	echo "Records added successfully.";
 } else{
 	echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
 }
- 
-//header('Location: Creat.html');
+
+if($TeacherStudent == "student")
+{
+	header('Location: StuCreate.html');
+}else{
+	header('Location: Creat.html');
+}
 
 // close connection
 mysqli_close($link);
