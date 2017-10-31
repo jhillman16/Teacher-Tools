@@ -13,6 +13,7 @@
 <nav>
 	<p id="logo" alt="Teacher Tools logo"></p>
 
+	<p>Menu</p>
 	<ul>
 		<li><a href="default.php">Home</a></li>
 		<li><a href="Signup.html">LogIn</a></li>
