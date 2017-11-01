@@ -12,34 +12,37 @@ $TeacherStudent 	= $_POST['ans'];
 
 session_start();
 
-if($_POST['password'] != $_POST['confirm_password'])
+if($Password != $ConfirmPassword)
 {
 	$_SESSION['errorPassword'] = 'Passwords do not match!';
 	header('Location: Signup.php');
         exit();
 }
-if( strlen($_POST['password']) < 8 ) {
+if(strlen($Password) < 8)
+{
 	$_SESSION['errorPassword'] = 'Passwords needs atleast: 8 characters, 1 uppercase letter, and 1 lowercase letter.';
 	header('Location: Signup.php');
         exit();
 }
-if(strcspn($_POST['password'], '0123456789') == strlen($_POST['password'])) {
+if(strcspn($Password, '0123456789') == strlen($Password))
+{
 	$_SESSION['errorPassword'] = 'Passwords needs atleast: 8 characters, 1 uppercase letter, and 1 lowercase letter.';
 	header('Location: Signup.php');
         exit();
 }
-if($_POST['password'] == strtoupper($_POST['password']) || $_POST['password'] == strtolower($_POST['password'])){
+if($Password == strtoupper($Password) || $Password == strtolower($Password))
+{
 	$_SESSION['errorPassword'] = 'Passwords needs atleast: 8 characters, 1 uppercase letter, and 1 lowercase letter.';
 	header('Location: Signup.php');
         exit();
 }
-if($_POST['email'] != $_POST['confirm_email'])
+if($Email != $ConfirmEmail)
 {
 	$_SESSION['errorEmail'] = 'Email Addresses do not match!';
 	header('Location: Signup.php');
         exit();
 }
-if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
 	$_SESSION['errorEmail'] = 'Invalid email format!';
 	header('Location: Signup.php');
         exit();
@@ -56,8 +59,7 @@ if (!$link) {
 	exit;
 }
 
-$username = $_POST['username'];
-$query = "SELECT UserName FROM StudentsUser WHERE '$username'= UserName";
+$query = "SELECT UserName FROM StudentsUser WHERE '$UserName'= UserName";
 $result = mysqli_query($link, $query);
 if(mysqli_num_rows($result)>0)
 {
@@ -65,7 +67,7 @@ if(mysqli_num_rows($result)>0)
 	header('Location: Signup.php');
         exit();
 }
-$query = "SELECT UserName FROM TeacherUser WHERE '$username'= UserName";
+$query = "SELECT UserName FROM TeacherUser WHERE '$UserName'= UserName";
 $result = mysqli_query($link, $query);
 if(mysqli_num_rows($result)>0)
 {
@@ -97,26 +99,42 @@ if($TeacherStudent == "student")
 {
 	$query = "INSERT INTO StudentsUser (Username, Password, FirstName, LastName, Email, JoinedDate) 
             VALUES ('$UserName', '$Password', '$FirstName', '$LastName', '$Email', now())";
+	if(mysqli_query($link, $query))
+	{
+		$_SESSION['StudentID'] = mysqli_insert_id($link);
+		echo "Records added successfully " . $_SESSION['StudentID'] . ".";
+	}
+	else
+	{
+		echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
+	}
 }
-elseif ($TeacherStudent == "teacher") {
+elseif ($TeacherStudent == "teacher")
+{
 	$query = "INSERT INTO TeacherUser (Username, Password, FirstName, LastName, Email, JoinedDate) 
             VALUES ('$UserName', '$Password', '$FirstName', '$LastName', '$Email', now())";
-}
-
-if(mysqli_query($link, $query)){
-	echo "Records added successfully.";
-} else{
-	echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
-}
-
-if($TeacherStudent == "student")
-{
-	header('Location: StuCreate.html');
-}else{
-	header('Location: Creat.html');
+	if(mysqli_query($link, $query))
+	{
+		$_SESSION['TeacherID'] = mysqli_insert_id($link);
+		echo "Records added successfully " . $_SESSION['TeacherID'] . ".";
+	}
+	else
+	{
+		echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
+	}
 }
 
 // close connection
 mysqli_close($link);
+
+//Selects which welcome page to redirect to
+if($TeacherStudent == "student")
+{
+	header('Location: StuCreate.html');
+}
+else
+{
+	header('Location: Creat.html');
+}
 
 ?>
