@@ -1,29 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create a new quiz</title>
-    <link rel="stylesheet" type="text/css" href="normalize.css" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-	<meta charset="utf-8" />
-</head>
-<body>
-
-<header>
-	<h1>Create a new quiz</h1>
-
-	<h2>How many questions do you want?</h2>
+<?php 
 
 
-</header>
 
-<form action="qcreat.php" method="post">
-   
-    Number:<input type="number" name="numOfq"><br><br>
-    <input type="submit">
+$QuizName = $_POST['quizname'];
+$QuizDesc = $_POST['quizdescription'];
+$QuizNum = $_POST['quiznum'];
 
-    
+session_start();
 
-</form>
+$link = mysqli_connect("localhost", "mmilton1", "mmilton1", "mmilton1DB");
 
-</body>
-</html>
+if (!$link) 
+{
+    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+    exit;
+}
+
+
+$query = "INSERT INTO Quiz (AssignmentID, Description, Name) 
+            VALUES ('1', '$QuizDesc', '$QuizName')";
+
+if(mysqli_query($link, $query))
+{
+    $_SESSION['QuizID'] = mysqli_insert_id($link);
+        echo "Records added successfully " . $_SESSION['QuizID'] . ".";
+        header('Location: CreateQuestion.htm');
+}
+else
+{
+        echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
+}
+
+?>
