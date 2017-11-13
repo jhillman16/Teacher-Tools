@@ -37,16 +37,14 @@ nav ul {
 	list-style-type: none;
 }
 nav ul li:first-child {
-	background-color: #083B66;
-	color: #fff;
+	background-color: #4C96D7;
+	border-top: 1px solid #083B66;
+	border-bottom: 1px solid #083B66;
+	font-weight: bold;
+	color: #ffffff;
 	text-align: center;
 	padding: 5px 0px;
-	margin: 0px 60px 20px 60px;
-	border-radius: 5px;
-	/*box-shadow: 2px 0px 2px #083B66,
-		    -2px 0px 2px #083B66,
-		    0px 2px 2px #083B66,
-		    0px -2px 2px #083B66;*/
+	margin: 0px 0px 20px 0px;
 }
 nav ul li {
 	color: #fff;
@@ -61,6 +59,7 @@ nav ul li a {
 }
 nav ul li a:hover {
 	background-color: #4C96D7;
+	outline: 1px solid #083B66;
 	color: #fff;
 }
 
@@ -128,6 +127,10 @@ section #content a:hover {
 	color: #4C96D7;
 }
 
+section #content ul {
+	margin-left: 30px;
+}
+
 footer {
 	/*background-color: #4C96D7;*/
 	color: #fff;
@@ -144,4 +147,80 @@ footer {
 	width: 200px;
 }
 
-input[type=text] /* for forms */
+/* for forms */
+form {
+	text-align: center;
+	margin: 0 auto;
+}
+
+label {
+	text-align: right;
+	margin: 5px 0px;
+	padding: 4px 2px 2px 2px;
+	width: 150px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+input[type=text], input[type=password] {
+	background-color: #ffffff;
+	padding: 4px;
+	margin: 5px 0px;
+	width: 200px;
+	box-shadow: 1px 0px 2px #4C96D7,
+		    -1px 0px 2px #4C96D7,
+		    0px 1px 2px #4C96D7,
+		    0px -1px 2px #4C96D7;
+}
+input[type=text]:focus, input[type=password]:focus {
+	box-shadow: 1px 0px 2px #083B66,
+		    -1px 0px 2px #083B66,
+		    0px 1px 2px #083B66,
+		    0px -1px 2px #083B66;
+}
+
+input[type=submit] {
+	background-color: #083B66;
+	border: 0px;
+	color: #ffffff;
+	padding: 5px;
+	width: 100px;
+	margin: 10px 0px;
+	border-radius: 5px;
+	box-shadow: 1px 0px 2px #4C96D7,
+		    -1px 0px 2px #4C96D7,
+		    0px 1px 2px #4C96D7,
+		    0px -1px 2px #4C96D7;
+}
+input[type=submit]:hover {
+	cursor: pointer;
+}
+input[type=submit]:active, input[type=submit]:focus {
+	border: 0px;
+	box-shadow: 1px 0px 2px #4C96D7,
+		    -1px 0px 2px #4C96D7,
+		    0px 1px 2px #4C96D7,
+		    0px -1px 2px #4C96D7,
+		    2px 0px 2px #083B66,
+		    -2px 0px 2px #083B66,
+		    0px 2px 2px #083B66,
+		    0px -2px 2px #083B66;
+}
+
+textarea {
+	font: 12px Verdana, Tahoma, sans-serif;
+	padding: 4px;
+	margin: 5px 0px;
+	width: 400px;
+	height: 100px;
+	box-shadow: 1px 0px 2px #4C96D7,
+		    -1px 0px 2px #4C96D7,
+		    0px 1px 2px #4C96D7,
+		    0px -1px 2px #4C96D7;
+}
+textarea:active, textarea:focus {
+	box-shadow: 1px 0px 2px #083B66,
+		    -1px 0px 2px #083B66,
+		    0px 1px 2px #083B66,
+		    0px -1px 2px #083B66;
+}

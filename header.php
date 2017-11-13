@@ -16,8 +16,9 @@
 	<ul>
 		<li>Menu</li>
 		<li><a href="default.php">Home</a></li>
-		<li><a href="Signup.html">LogIn</a></li>
-		<li><a href="#">About</a></li>
-		<li><a href="#">Help</a></li>
+		<li><a href="About.php">About</a></li>
+		<li><a href="StudentLogin.php">Student Login</a></li>
+		<li><a href="EducatorLogin.php">Educator Login</a></li>
+		<li><a href="CreateCourse.php">Create Course</a></li>
 	</ul>
 </nav>
