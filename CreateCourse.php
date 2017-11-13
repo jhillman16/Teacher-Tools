@@ -5,6 +5,7 @@ session_start();
 
 if(!isset($_SESSION['FirstName']))
 {
+    $_SESSION['URL'] = basename($_SERVER['PHP_SELF']);
     header('Location: EducatorLogin.htm');
 }
 ?>
