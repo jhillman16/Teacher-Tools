@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html>
+<?php include 'header.php';?>
 
-<center>
+<section>
+<header>
+	<h1>Sign Up</h1>
+</header>
 
-<head> 
-<title> Signup Page </title>
-<meta charset = "UTF-8">
-</head>
-
-<p><img alt="Un.jpg" src="images/Un.jpg" style="display: block; border: 1px solid #000; width: 200px; height: 200px;" /></p>
-<h1> Welcome </h1>
-<h2> Sign Up </h2>
-
-<body background="images/mi.jpg">
+<div id="content">
 
 <?php
 session_start();
@@ -20,14 +13,14 @@ session_start();
 
 <form action="InsertNewUser.php" method="post">
     
-    Fist Name:<br>
-    <input type="text" placeholder="First Name" name="firstname" required><br><br>
+    <label for="firstname">First Name:</label>
+    <input type="text" placeholder="First Name" id="firstname" name="firstname" required><br><br>
     
-    Last Name:<br>
-    <input type="text" placeholder="Last Name" name="lastname" required><br><br>
+    <label for="lastname">Last Name:</label>
+    <input type="text" placeholder="Last Name" id="lastname" name="lastname" required><br><br>
     
-    User Name:<br>
-    <input type="text" placeholder="User Name" name="username" required>
+    <label for="username">User Name:</label>
+    <input type="text" placeholder="User Name" id="username" name="username" required>
     
     <?php
     if(isset($_SESSION["errorUser"]))
@@ -40,9 +33,10 @@ session_start();
     else{ echo '<br><br>'; }
     ?>
     
-    Password:<br>
-    <input type="password" placeholder="Password" name="password" required>
-    <input type="password" placeholder="Confirm Password" name="confirm_password" oninput="check(this)" required>
+    <label for="password">Password:</label>
+    <input type="password" placeholder="Password" id="password" name="password" required><br />
+	<label for="confirm_password">Confirm Password:</label>
+    <input type="password" placeholder="Confirm Password" id="confirm_password" name="confirm_password" oninput="check(this)" required>
 
     <?php
     if(isset($_SESSION["errorPassword"]))
@@ -50,14 +44,15 @@ session_start();
         $error = $_SESSION["errorPassword"];
         session_unset($_SESSION["errorPassword"]);
         $color = "red";
-        echo '<div style="Color:'.$color.'">'.$error.'</div>';
+        echo '<div style="color:'.$color.'">'.$error.'</div>';
     }
     else{ echo '<br><br>'; }
     ?>
 
-    Email Address:<br>
-    <input type="text" placeholder="Email" name="email" required>
-    <input type="text" placeholder="Confirm Email" name="confirm_email" required>
+    <label for="email">Email Address:</label>
+    <input type="text" placeholder="Email" id="email" name="email" required><br />
+    <label for="confirm_email">Confirm Email:</label>
+    <input type="text" placeholder="Confirm Email" id="confirm_email" name="confirm_email" required>
 
     <?php
     if(isset($_SESSION["errorEmail"]))
@@ -65,20 +60,20 @@ session_start();
         $error = $_SESSION["errorEmail"];
         session_unset($_SESSION["errorEmail"]);
         $color = "red";
-        echo '<div style="Color:'.$color.'">'.$error.'</div>';
+        echo '<div style="color:'.$color.'">'.$error.'</div>';
     }
     else{ echo '<br><br>'; }
     ?>
     
-    <input type="radio" name="ans" value="student"> Student
-    <input type="radio" name="ans" value="teacher"> Educator<br><br>
+    <input type="radio" name="ans" id="student" value="student"> <label class="radiob" for="student">Student</label>
+    <input type="radio" name="ans" id="teacher" value="teacher"> <label class="radiob" for="teacher">Educator</label><br><br>
     
     <input type="submit" value="Submit">
    
 </form>
 
-<center>
+</div>
 
-</body>
+</section>
 
-</html>
+<?php include 'footer.php';?>
