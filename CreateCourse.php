@@ -1,4 +1,4 @@
-<?php include 'header.php';?>
+<?php $title = "Create a Course"; include 'header.php';?>
 
 <?php
 session_start();
@@ -9,13 +9,6 @@ if(!isset($_SESSION['FirstName']))
     header('Location: EducatorLogin.php');
 }
 ?>
-
-<section>
-<header>
-	<h1>Create a Course</h1>
-</header>
-
-<div id="content">
 
 <form action="ClassCreate.php" method="post">
     
@@ -31,9 +24,5 @@ if(!isset($_SESSION['FirstName']))
 	<input type="submit" value="Submit">
 
 </form>
-
-</div>
-
-</section>
 
 <?php include 'footer.php';?>

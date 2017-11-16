@@ -1,11 +1,4 @@
-<?php include 'header.php';?>
-
-<section>
-<header>
-	<h1>About Teacher Tools</h1>
-</header>
-
-<div id="content">
+<?php $title = "About Teacher Tools"; include 'header.php';?>
 
 	<p>This tool is our project for a Computer Science class.<br>We created a LCMS that will allow any educators to create courses of any subject.</p>
 	<p>If you want to teach a cooking class, you can do it here.<br>If you want to teach a chemistry class, that would be easy too!</p>
@@ -19,9 +12,5 @@
 		<li>Jack</li>
 		<li>Tatiana</li>
 	</ul>
-
-</div>
-
-</section>
 
 <?php include 'footer.php';?>

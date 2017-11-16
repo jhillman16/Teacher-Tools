@@ -7,7 +7,8 @@
 html, body {height: 100%;}
 
 body {
-	background-color: #083B66;
+	/*background-color: #083B66;*/
+	background-color: #ffffff;
 	font: 12px Verdana, Tahoma, sans-serif;
 	color: #000000;
 	margin-top: -16px;
@@ -15,28 +16,32 @@ body {
 
 main {
 	display: block;
-	width: 90%;
+	width: 100%;
 	margin: 0 auto;
 	height: 100%;
 	margin-top: 16px;
 }
 
 nav {
-	background-color: #fff;
+	background-color: #ffffff;
 	float: left;
 	width: 200px;
 	height: 100%;
 	position: fixed;
-	border-left: 1px solid #083B66;
+	padding-bottom: 20px;
+	/*border-left: 1px solid #083B66;
 	border-right: 1px solid #083B66;
 	box-shadow: 2px 0px 2px #4C96D7,
-		    -2px 0px 2px #4C96D7;
+		    -2px 0px 2px #4C96D7,
+		    0px 2px 2px #4C96D7;*/
 }
+nav ul:first-of-type { margin-top: 0px; padding-top: 0px; }
 nav ul {
+	margin-top: 10px;
 	width: 100%;
 	list-style-type: none;
 }
-nav ul li:first-child {
+/*nav ul li:first-child {
 	background-color: #4C96D7;
 	border-top: 1px solid #083B66;
 	border-bottom: 1px solid #083B66;
@@ -45,7 +50,9 @@ nav ul li:first-child {
 	text-align: center;
 	padding: 5px 0px;
 	margin: 0px 0px 20px 0px;
-}
+}*/
+nav ul li:first-child a { border-radius: 0px 10px 0px 0px; }
+nav ul li:last-child a { border-radius: 0px 0px 10px 0px; }
 nav ul li {
 	color: #fff;
 }
@@ -59,20 +66,20 @@ nav ul li a {
 }
 nav ul li a:hover {
 	background-color: #4C96D7;
-	outline: 1px solid #083B66;
+	/*outline: 1px solid #083B66;*/
 	color: #fff;
 }
 
 section {
-	background-color: #fff;
+	/*background-color: #ffffff;*/
 	margin-left: 210px;
 	padding: 5px 10px 10px 10px;
+	/*border-top: 0px;
 	border: 1px solid #083B66;
-	border-top: 0px;
-	border-radius: 0px 0px 20px 20px;
+	border-radius: 0px 0px 0px 20px;
 	box-shadow: 2px 0px 2px #4C96D7,
 		    -2px 0px 2px #4C96D7,
-		    0px 2px 2px #4C96D7;
+		    0px 2px 2px #4C96D7;*/
 }
 
 section header {
@@ -133,7 +140,8 @@ section #content ul {
 
 footer {
 	/*background-color: #4C96D7;*/
-	color: #fff;
+	font-size: 10px;
+	color: #000000;
 	text-align: center;
 	margin-left: 210px;
 	padding: 10px 0px;
@@ -149,23 +157,32 @@ footer {
 
 /* for forms */
 form {
-	text-align: center;
-	margin: 0 auto;
+	/*text-align: center;
+	margin: 0 auto;*/
+	width: 363px;
 }
 
 label {
-	text-align: right;
 	margin: 5px 0px;
-	padding: 4px 2px 2px 2px;
-	width: 150px;
-	display: inline-block;
+	/*padding: 4px 2px 2px 2px;*/
+	display: block;
+	width: auto;
 	vertical-align: top;
+}
+label:hover { cursor: pointer; }
+label span {
+	display: inline-block;
+	width: 150px;
+}
+
+label.radiob {
+	display: inline;
+	float: left;
 }
 
 input[type=text], input[type=password] {
 	background-color: #ffffff;
 	padding: 4px;
-	margin: 5px 0px;
 	width: 200px;
 	box-shadow: 1px 0px 2px #4C96D7,
 		    -1px 0px 2px #4C96D7,
@@ -223,4 +240,36 @@ textarea:active, textarea:focus {
 		    -1px 0px 2px #083B66,
 		    0px 1px 2px #083B66,
 		    0px -1px 2px #083B66;
+}
+
+/* "tables" */
+div.table {
+	display: table;
+}
+ 
+div.table > div.thead {
+	display: table-header-group;
+}
+ 
+div.table > div.tbody {
+	display: table-row-group;
+}
+ 
+div.table > div.thead > div.tr,
+div.table > div.tbody > div.tr {
+	display: table-row;
+}
+ 
+div.table > div.thead > div.tr > div.th {
+	display: table-cell;
+	font-weight: bold;
+}
+ 
+div.table > div.tbody > div.tr > div.td {
+	display: table-cell;
+}
+
+div.table > div.thead > div.tr > div.th,
+div.table > div.tbody > div.tr > div.td {
+	padding: 4px 20px 4px 4px;
 }
