@@ -23,25 +23,6 @@
 		<li><a href="Signup.php">Signup</a></li>
 		<li><a href="myClass.php">My Class</a></li>
 	</ul>
-
-	<ul>
-		<li><a href="#">Other</a></li>
-		<li><a href="#">Links</a></li>
-		<li><a href="#">For</a></li>
-		<li><a href="#">No</a></li>
-		<li><a href="#">Reason</a></li>
-	</ul>
-	<ul>
-		<li><a href="#">I'm</a></li>
-		<li><a href="#">Goin'</a></li>
-		<li><a href="#">Off</a></li>
-		<li><a href="#">The</a></li>
-		<li><a href="#">Rails</a></li>
-		<li><a href="#">On</a></li>
-		<li><a href="#">A</a></li>
-		<li><a href="#">Crazy</a></li>
-		<li><a href="#">Train</a></li>
-	</ul>
 </nav>
 
 <section>
