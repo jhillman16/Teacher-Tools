@@ -1,22 +1,40 @@
 <html>
 
+<?php include 'header.php'; ?>
+
 <script>
-function myFunction()
+
+//Parameter course is the course ID associated with the "Register" button that is clicked on.
+//Sends to php scriptto enter user for that class if user confirms
+function myFunction(course)
 {
     var txt;
-    if (confirm("Are you sure you want to register for this class?") == true) {
+    if (confirm("Are you sure you want to register for this class?" + course) == true)
+    {
         txt = "You pressed OK!";
-	window.location = 'Register_For_Class.php';
-    } else {
+	document.cookie = "CourseID=" + course;
+	window.location = 'Register_For_Class3.php';
+    }
+    else
+    {
         txt = "You pressed Cancel!";
     }
     document.getElementById("demo").innerHTML = txt;
 }
-</script>
+
+</script> 
+
+<section>
+<header> 
+    <h1> Register For a Course</h1>
+</header>
+
+<div id="content">
 
 <?php
 
 session_start();
+
 if(!isset($_SESSION['FirstName']))
 {
 	$_SESSION['URL'] = basename($_SERVER['PHP_SELF']);
@@ -25,10 +43,10 @@ if(!isset($_SESSION['FirstName']))
 
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
-// Escape user inputs for security
+//Get the string from the search box
 $SearchText = $_POST['SearchText'];
 
-// attempt get teacher info
+//Attempt to get information about the course
 $query = "SELECT t.FirstName, t.LastName, t.TeacherID, c.Name, c.CourseID, c.Description
 	 FROM TeacherUser t
 	 INNER JOIN Courses c ON t.TeacherID = c.TeacherID
@@ -44,21 +62,16 @@ if($r=mysqli_query($link, $query))
 		echo "<td>" . $row['Name'] . "</td>";
 		echo "<td>" . $row['FirstName'] . " " . $row['LastName'] . "</td>";
 		echo "<td><details><summary>Description</summary><p>" . $row['Description'] . "</p></details></td>";
-		echo "<td><button onclick='myFunction()'>Register</button></td>";
-		//echo "<td> <input type= 'button' name= 'submit' onClick='RegisterClick(" . $row['CourseID'] . ") value='Register'> </td>";
+		echo "<td><button onclick='myFunction(" . $row['CourseID'] . ")'>Register</button></td>";
 		echo "</tr>";
 	}
 	echo "</table>";
 }
 
-function RegisterClick($id)
-{
-header('Location: Register_For_Class.php');
-	$StudentID = $_SESSION['StudentID'];
-	$query2 = "INSERT INTO Enrollment (CourseID, StudentID) VALUES ('$id','$StudentID')";
-	mysqli_query($link,$query2);
-}
-
 ?>
+
+</div>
+
+</section>
 
 </html>

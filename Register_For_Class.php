@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
 <?php
+include 'header.php';
+
 session_start();
 
 if(!isset($_SESSION['FirstName']))
@@ -12,14 +14,13 @@ if(!isset($_SESSION['FirstName']))
 
 <html>
 
-<head> 
-<title> Register For a Course</title>
-<link rel="stylesheet" type="text/css" href="styleTEST1.css" />
-<meta charset = "UTF-8">
-</head>
+<section>
+<header> 
+    <h1> Search For a Course</h1>
+</header>
 
-<p><img alt="Un.jpg" src="images/Un.jpg" style="display: block; border: 1px solid #000; width: 200px; height: 200px;" /></p>
-<h1> Search For a Course </h1>
+<div id="content">
+
 <body>
 
 <form action="Register_For_Class2.php" method="post">
@@ -31,6 +32,12 @@ if(!isset($_SESSION['FirstName']))
 
 </form>
 
+</div>
+
+</section>
+
 </body>
 
 </html>
+
+<?php include 'footer.php';?>
