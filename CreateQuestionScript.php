@@ -114,7 +114,7 @@ if($canContinue == 1)
 }
 else
 {
-    session_unset();
+    unset($_SESSION['QuestionNum']);
     header('Location: default.php');
 }
 
