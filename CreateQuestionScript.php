@@ -114,7 +114,7 @@ if($canContinue == 1)
 }
 else
 {
-    header('Location: index.php');
+    header('Location: default.php');
 }
 
 ?>
