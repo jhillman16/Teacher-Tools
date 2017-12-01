@@ -26,14 +26,14 @@ if(mysqli_num_rows($result)>0)
 	}
 	else
 	{
-		header('Location: StuCreate.html');
+		header('Location: StudentHome.php');
 	}
 }
 else
 {
 	echo "ERROR: Incorrect username/password" . mysqli_error($link);
 	mysqli_close($link); // close connection
-	header('Location: StudentLogin.htm');
+	header('Location: StudentLogin.php');
 }
 
 ?>

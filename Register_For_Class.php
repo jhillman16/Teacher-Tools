@@ -1,43 +1,25 @@
-<!DOCTYPE html>
+<?php $title = "Search for a Course"; include 'header.php';?>
 
 <?php
-include 'header.php';
-
-session_start();
-
 if(!isset($_SESSION['FirstName']))
 {
     $_SESSION['URL'] = basename($_SERVER['PHP_SELF']);
-    header('Location: StudentLogin.htm');
+    header('Location: StudentLogin.php');
 }
 ?>
 
-<html>
-
-<section>
-<header> 
-    <h1> Search For a Course</h1>
-</header>
-
-<div id="content">
-
-<body>
-
 <form action="Register_For_Class2.php" method="post">
-    
-    Search by Professor First Name, Last Name, or Class Name:<br>
-    <input type="text" placeholder="Search" name="SearchText" required><br><br>
-    
-    <input type = "submit" value = "Submit">
 
-</form>
-
+<div>
+<label><span style="white-space: nowrap; width: 400px;">Search by Professor First Name, Last Name, or Class Name:</span>
+<input type="text" placeholder="Search" name="SearchText" required />
+</label>
+</div>
+    
+<div>
+<input type="submit" value="Submit" />
 </div>
 
-</section>
-
-</body>
-
-</html>
+</form>
 
 <?php include 'footer.php';?>

@@ -26,14 +26,14 @@ if(mysqli_num_rows($result)>0)
 	}
 	else
 	{
-		header('Location: Creat.html');
+		header('Location: EducatorHome.php');
 	}
 }
 else
 {
 	echo "ERROR: Incorrect username/password" . mysqli_error($link);
 	mysqli_close($link); // close connection
-	header('Location: EducatorLogin.htm');
+	header('Location: EducatorLogin.php');
 }
 
 ?>
