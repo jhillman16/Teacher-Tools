@@ -11,17 +11,28 @@ if(!isset($_SESSION['FirstName']))
 ?>
 
 <form action="ClassCreate.php" method="post">
-    
-	<label for="courseName">Course Name:</label>
-	<input type="text" placeholder="Course Name" name="courseName" required><br />
 
-	<label for="numSeats">Number of Open Seats:</label>
-	<input type="text" placeholder="Number of Seats" name="numSeats" required><br />
+<div>
+<label><span>Course Name:</span>
+<input type="text" placeholder="Course Name" name="courseName" required />
+</label>
+</div>
 
-	<label for="description">Description:</label>
-	<textarea placeholder="Description" name="description" required></textarea>
-	<br />
-	<input type="submit" value="Submit">
+<div>
+<label><span>Number of Open Seats:</span>
+<input type="text" placeholder="Number of Seats" name="numSeats" required />
+</label>
+</div>
+
+<div>
+<label><span>Description:</span>
+<textarea placeholder="Description" name="description" required></textarea>
+</label>
+</div>
+
+<div>
+<input type="submit" value="Submit" />
+</div>
 
 </form>
 
