@@ -56,7 +56,13 @@ else
 
 	}
 	?>
-	<li><a href="Logout.php">Logout</a></li>
+
+	<?php
+	if(isset($_SESSION['FirstName']))
+	{
+		echo'<li><a href="Logout.php">Logout</a></li>';
+	}
+	?>
 
 	</ul>
 </nav>
