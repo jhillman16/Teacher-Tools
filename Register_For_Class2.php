@@ -1,6 +1,4 @@
-<html>
-
-<?php include 'header.php'; ?>
+<?php $title = "Register for a Class"; include 'header.php'; ?>
 
 <script>
 
@@ -70,8 +68,4 @@ if($r=mysqli_query($link, $query))
 
 ?>
 
-</div>
-
-</section>
-
-</html>
+<?php include 'footer.php';?>
