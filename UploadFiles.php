@@ -1,34 +1,57 @@
+<?php $title = "File Upload"; include 'header.php';?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Tools!!</title>
+    <link rel="stylesheet" type="text/css" href="normalize.css" />
+    
+	<meta charset="utf-8" />
+</head>
+<body>
 <?php
 
-$uploaddir = 'images';
-$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
-
-$uploadOk = 1;
-
-if(isset($_POST["submit"])){
-	
-	$check=getimagesize($_FILES['userfile']['tmp_name']) 
-
-if($check!=false){
-	$uploadOk=1;
+if(ini_get('file_uploads') == 1)
+{
+  echo 'HTTP Upload Enabled<br />';
 }
-		else{
-			
-				$uploadOk=0l
-		}
-
-			if($uploadOk==1){
-				if (move_uploaded_file($_FILES["userfile"]["tmp_name"], $uploadfile)) {
-        echo "The file ". basename( $_FILES["userfile"]["name"]). " has been uploaded.";
-    } else {
-        echo "Sorry, there was an error uploading your file.";
-    }
-				
-				
-			}
-				else{
-					echo"Sorry, faild";
-				}
-
+else
+{
+  echo 'HTTP Upload Disabled<br />';
+}
+echo 'post_max_size = ' . ini_get('post_max_size') . "\n";
 
 ?>
+
+
+<main>
+
+
+
+<section>
+<header>
+	<h1>Home Page</h1>
+	
+</header>
+
+	
+	 <body>
+<h3>File upload </h3>
+Select a File <BR />
+<Form action ="upload.php" method = "post" enctype="multipart/form-data">
+<input type="file" name ="file" size = "500" >
+<input type ="submit" value = "Upload File">
+
+
+</form>
+<body>
+
+  
+
+
+
+</main>
+
+</body>
+</html>
+<?php include 'footer.php';?>

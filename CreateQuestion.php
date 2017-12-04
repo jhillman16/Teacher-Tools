@@ -46,6 +46,7 @@
 </div>
 
 <div>
+</br>
 <label><input type="hidden" name="cont" value="0" />
 <input class="checkbox" type="checkbox" name="cont" value="1" /> <span>Finish</span>
 </label>

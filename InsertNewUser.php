@@ -20,19 +20,19 @@ if($Password != $ConfirmPassword) //If the passwords do not match
 }
 if(strlen($Password) < 8) //If the password is less than 8 characters
 {
-	$_SESSION['errorPassword'] = 'Passwords needs atleast: 8 characters, 1 uppercase letter, and 1 lowercase letter.'; //Error message to display
+	$_SESSION['errorPassword'] = 'Passwords needs atleast: 8 characters, 1 uppercase letter, 1 number, and 1 lowercase letter.'; //Error message to display
 	header('Location: Signup.php');
         exit();
 }
 if(strcspn($Password, '0123456789') == strlen($Password)) //If the length of the password is the same after taking out numbers
 {
-	$_SESSION['errorPassword'] = 'Passwords needs atleast: 8 characters, 1 uppercase letter, and 1 lowercase letter.'; //Error message to display
+	$_SESSION['errorPassword'] = 'Passwords needs atleast: 8 characters, 1 uppercase letter, 1 number, and 1 lowercase letter.'; //Error message to display
 	header('Location: Signup.php');
         exit();
 }
 if($Password == strtoupper($Password) || $Password == strtolower($Password)) //If the password is all uppercase or all lowercase
 {
-	$_SESSION['errorPassword'] = 'Passwords needs atleast: 8 characters, 1 uppercase letter, and 1 lowercase letter.'; //Error message to display
+	$_SESSION['errorPassword'] = 'Passwords needs atleast: 8 characters, 1 uppercase letter, 1 number, and 1 lowercase letter.'; //Error message to display
 	header('Location: Signup.php');
         exit();
 }
@@ -125,11 +125,11 @@ mysqli_close($link);
 //Selects which welcome page to redirect to
 if($TeacherStudent == "student")
 {
-	header('Location: StuCreate.html');
+	header('Location: StudentHome.php');
 }
 else
 {
-	header('Location: Creat.html');
+	header('Location: EducatorHome.php');
 }
 
 ?>

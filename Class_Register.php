@@ -16,6 +16,6 @@ $result = mysqli_query($link, $query);
 // close connection
 mysqli_close($link);
 
-header('Location: myClass.html');
+header('Location: myClass.php');
 
 ?>

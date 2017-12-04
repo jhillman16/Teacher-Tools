@@ -9,7 +9,7 @@
 function myFunction(course)
 {
     var txt;
-    if (confirm("Are you sure you want to register for this class?" + course) == true)
+    if (confirm("Are you sure you want to register for this class?") == true)
     {
         txt = "You pressed OK!";
 	document.cookie = "CourseID=" + course;

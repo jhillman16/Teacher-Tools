@@ -108,14 +108,14 @@ $QuestionIDNum++;
 
 $_SESSION['QuestionNum'] = $QuestionIDNum;
 
-if($canContinue == 1)
+if($canContinue == 0)
 {
     header('Location: CreateQuestion.php');
 }
 else
 {
     unset($_SESSION['QuestionNum']);
-    header('Location: default.php');
+    header('Location: EducatorHome.php');
 }
 
 ?>

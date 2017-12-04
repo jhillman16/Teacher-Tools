@@ -5,6 +5,8 @@
 $QuizName = $_POST['quizname'];
 $QuizDesc = $_POST['quizdescription'];
 $QuizNum = $_POST['quiznum'];
+$TeacherID = $_SESSION['TeacherID'];
+$CourseID = 0;
 
 session_start();
 
@@ -18,6 +20,14 @@ if (!$link)
     exit;
 }
 
+$query1 = "SELECT CourseID FROM `Courses` WHERE TeacherID = '$TeacherID'";
+$result = mysqli_query($link, $query1);
+if(mysqli_num_rows($result) > 0)
+{
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $CourseID = $row['CourseID'];
+    echo $CourseID;
+}
 
 $query = "INSERT INTO Quiz (AssignmentID, Description, Name) 
             VALUES ('1', '$QuizDesc', '$QuizName')";
