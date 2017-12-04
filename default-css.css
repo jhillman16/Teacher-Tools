@@ -154,17 +154,17 @@ footer {
 	width: 200px;
 }
 
-/* for forms */
+/* forms */
 form {
 	/*text-align: center;
-	margin: 0 auto;*/
-	width: 363px;
+	margin: 0 auto;
+	width: 363px;*/
 }
 
 label {
 	margin: 5px 0px;
 	/*padding: 4px 2px 2px 2px;*/
-	display: block;
+	display: inline-block;
 	width: auto;
 	vertical-align: top;
 }
@@ -172,12 +172,6 @@ label:hover { cursor: pointer; }
 label span {
 	display: inline-block;
 	width: 150px;
-}
-
-label.radiob {
-	display: inline;
-	float: left;
-	margin-left: 5px;
 }
 
 input[type=text], input[type=password] {
@@ -196,12 +190,19 @@ input[type=text]:focus, input[type=password]:focus {
 		    0px -1px 2px #083B66;
 }
 
+input[type=checkbox], input[type=radio] {
+	float: left;
+	margin: 4px 4px 0px 10px;
+}
+input ~ span {
+	margin-top: 4px;
+}
+
 input[type=submit] {
 	background-color: #083B66;
 	border: 0px;
 	color: #ffffff;
-	padding: 5px;
-	width: 100px;
+	padding: 5px 10px 5px 10px;
 	margin: 10px 0px;
 	border-radius: 5px;
 	box-shadow: 1px 0px 2px #4C96D7,
@@ -222,6 +223,10 @@ input[type=submit]:active, input[type=submit]:focus {
 		    -2px 0px 2px #083B66,
 		    0px 2px 2px #083B66,
 		    0px -2px 2px #083B66;
+}
+
+input#question {
+	width: 500px;
 }
 
 textarea {

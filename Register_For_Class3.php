@@ -4,7 +4,7 @@ session_start();
 if(!isset($_SESSION['FirstName']))
 {
 	$_SESSION['URL'] = basename($_SERVER['PHP_SELF']);
-	header('Location: StudentLogin.htm');
+	header('Location: StudentLogin.php');
 }
 
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
