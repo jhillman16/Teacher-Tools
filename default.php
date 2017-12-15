@@ -1,18 +1,27 @@
-<?php include 'header.php';?>
+<?php $title = "Teacher Tools"; include 'header.php';?>
 
-<section>
-<header>
-	<h1>Welcome Page</h1>
-</header>
+<div style="display: none;">
+<p>What to display on a home page?</p>
 
-<div id="content">
-	<h2>Welcome to Teacher Tools!</h2>
-	<p>If you are an Educator and want to create and teach a course on any subject and any difficulty,
-	this tool can help you! <a href="Signup.php">LogIn</a></p>
-	<p>OR</p>
-	<p>If you are a Student taking a course, this tool will help you succeed! <a href="Signup.php">LogIn</a></p>
+<p>Logged in:</p>
+<ul>
+	<li>list of classes
+	<ul>
+		<li>teaching if account flagged educator</li>
+		<li>taking if account flagged student</li>
+	</ul>
+	</li>
+</ul>
+
+<p>Logged out:</p>
+<ul>
+	<li>description of website</li>
+	<li>registration/login link</li>
+</ul>
 </div>
 
-</section>
+<p style="text-align: center;"><img alt="logo" src="images/logo.png" /></p>
+
+<p style="text-align: center;"><a href="Signup.php" class="button">Register for your account</a></p>
 
 <?php include 'footer.php';?>

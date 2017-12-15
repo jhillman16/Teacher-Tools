@@ -1,29 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create a new quiz</title>
-    <link rel="stylesheet" type="text/css" href="normalize.css" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-	<meta charset="utf-8" />
-</head>
-<body>
+<?php $title = "Create Quiz"; include 'header.php';?>
 
-<header>
-	<h1>Create a new quiz</h1>
+<form method="post" action="CreateQuizScript.php">
 
-	<h2>How many questions do you want?</h2>
+<div>
+<label><span>Quiz Name:</span>
+<input type="text" placeholder="Quiz 1" name="quizname" required />
+</label>
+</div>
 
+<div>
+<label><span>Quiz Description:</span>
+<input type="text" placeholder="This is the first quiz" name="quizdescription" />
+</label>
+</div>
 
-</header>
-
-<form action="qcreat.php" method="post">
+<div>
+<input type="submit" value="Submit" />
+</div>
    
-    Number:<input type="number" name="numOfq"><br><br>
-    <input type="submit">
-
-    
-
 </form>
 
-</body>
-</html>
+<?php include 'footer.php';?>

@@ -12,20 +12,28 @@ $Password	= mysqli_real_escape_string($link, $_REQUEST['StudentPassword']);
 $query = "SELECT FirstName, LastName, StudentID FROM StudentsUser WHERE '$UserName'= UserName and '$Password'= Password";
 $result = mysqli_query($link, $query);
 
-if(mysqli_num_rows($result)>0){
-    $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
-    $_SESSION['StudentID'] = $row['StudentID'];
-    $_SESSION['FirstName'] = $row['FirstName'];
-    $_SESSION['LastName'] = $row['LastName'];
-    echo "Login successful.";
-    mysqli_close($link); // close connection
-    header('Location: StuCreate.html');
+if(mysqli_num_rows($result)>0)
+{
+	$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
+	$_SESSION['StudentID'] = $row['StudentID'];
+	$_SESSION['FirstName'] = $row['FirstName'];
+	$_SESSION['LastName'] = $row['LastName'];
+	echo "Login successful.";
+	mysqli_close($link); // close connection
+	if(isset($_SESSION['URL']))
+	{
+		header('Location:' . $_SESSION['URL']);
+	}
+	else
+	{
+		header('Location: StudentHome.php');
+	}
 }
 else
 {
-    echo "ERROR: Incorrect username/password" . mysqli_error($link);
-    mysqli_close($link); // close connection
-    header('Location: StudentLogin.htm');
+	echo "ERROR: Incorrect username/password" . mysqli_error($link);
+	mysqli_close($link); // close connection
+	header('Location: StudentLogin.php');
 }
 
 ?>
