@@ -1,0 +1,135 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Tools!!</title>
+    <link rel="stylesheet" type="text/css" href="normalize.css" />
+    <link rel="stylesheet" type="text/css" href="styleTEST1.css" />
+	<meta charset="utf-8" />
+</head>
+<body>
+
+<main>
+
+<nav>
+	<p><img alt="Un.jpg" src="/images/Un.jpg" style="display: block; border: 1px solid #000; width: 200px; height: 200px;" /></p>
+
+	<ul>
+			
+			<br>
+			<li><a href="Creat.html">Home</a></li>
+			<br>
+			<li><a href="#">My Classes</a></li>
+			<br>
+			<li><a href="#">Creat Class</a></li>
+			<br>
+			<li><a href="#">My Students</a></li>
+			<br>
+			<li><a href="UploadFiles.html">My files</a></li>
+			<br>
+			<li><a href="indexTEST1.html">LogOut</a></li>
+			<br>
+			<li><a href="#">Help</a></li>
+			
+			<br><br>
+			
+			
+			<p>© Teacher Tools 2017</p>
+		
+		</ul>
+</nav>
+
+<section>
+<header>
+	<h1>Home Page</h1>
+	
+</header>
+
+	
+	
+	<center>
+	
+	<p><h1>Welcome to File Upload Page</h1></p>
+    <p class="p1">
+	<li>Upload files like Word Documents and PowerPoints. </li>
+	<br />
+	<li>Retrieve your uploaded files</li>
+	<br>
+	<li>Modify and change files. </li>
+	</p>
+	
+	
+	
+	
+        <h1>Upload your files:</h1><br>
+		<h2>(file types supported are .doc .jpg .png .ppt)</h2><br>
+		
+		
+<form enctype="multipart/form-data" action="UploadFiles.php" method="POST">
+
+    <input type="hidden" name="MAX_FILE_SIZE" value="512000" />
+	
+    Send this file: <input name="userfile" type="file" id="userfile" />
+	
+    <input type="submit" value="Send File" />
+</form>
+		
+		
+		
+		
+		
+        <form method="post" action="uploadServlet" enctype="multipart/form-data">
+            <table border="0">
+                <tr>
+                    <td>Name of the File: </td>
+                    <td><input type="text" name="fileName" size="50"/></td>
+                </tr>
+				<br>
+                <tr>
+                    <td>Date created: </td>
+                    <td><input type="text" name="date" size="50"/></td>
+                </tr>
+				<br>
+                <tr>
+                    <td>Upload File: </td>
+                    <td><input type="file" name="photo" size="50"/></td>
+                </tr>
+				<br>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Save">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+	
+	
+	<br>
+	<br>
+	
+    
+	
+	<br>
+	
+	<p><h3></h3></p>
+	<br>
+	<p><h3></h3></p>
+	<br><br>
+	<p><h3></h3></p>
+	
+<img src="images/Upload.jpg" alt="Image" id="class" />
+	
+
+<!--
+<footer>
+	<p>footer</p>
+</footer>
+-->
+
+</main>
+
+</body>
+</html>
