@@ -13,13 +13,13 @@
 
 if(ini_get('file_uploads') == 1)
 {
-  echo 'HTTP Upload Enabled<br />';
+  
 }
 else
 {
   echo 'HTTP Upload Disabled<br />';
 }
-echo 'post_max_size = ' . ini_get('post_max_size') . "\n";
+
 
 ?>
 

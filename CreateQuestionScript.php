@@ -15,10 +15,23 @@ $response3isCorrect = $_POST['is3'];
 
 $canContinue = $_POST['cont'];
 
-echo $canContinue;
-
-
-
+if($Question == '')
+{
+	if($canContinue != 0)
+	{
+		unset($_SESSION['QuestionNum']);
+		header('Location: EducatorHome.php');
+	}
+	else
+	{
+		$_SESSION['Error'] = 'Need to enter a question';
+		header('Location: CreateQuestion.php');
+	}
+}
+if( ($response0isCorrect==0 && $response1isCorrect==0) && ($response2isCorrect==0 && $response3isCorrect==0) )
+{
+	$_SESSION['Error'] = 'Need to select a correct answer';
+}
 
 if(!isset($_SESSION['QuestionNum']))
 {
@@ -96,8 +109,7 @@ else
 
 if(mysqli_query($link, $questionQuery))
 {
-        echo "Records added successfully " . $_SESSION['QuestionNum'] . ".";
-	
+        echo "Records added successfully " . $_SESSION['QuestionNum'] . ".";	
 }
 else
 {
