@@ -1,5 +1,6 @@
-<?php 
+<?php
 
+include("ConnectDatabase.php"); //Goes through steps of connecting to database
 session_start();
 
 $Question = $_POST['question'];
@@ -40,16 +41,6 @@ if(!isset($_SESSION['QuestionNum']))
 
 $QuestionIDNum = $_SESSION['QuestionNum'];
 
-$link = mysqli_connect("localhost", "mmilton1", "mmilton1", "mmilton1DB");
-
-if (!$link) 
-{
-    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-    exit;
-}
-
 $CurrentQuizID = $_SESSION['QuizID'];
 
 $questionQuery = "INSERT INTO Question (Question, QuizID, QuestionID) 
@@ -76,7 +67,7 @@ if(mysqli_query($link, $responseQuery0))
 }
 else
 {
-        echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
+        echo "$CurrentQuizID ERROR: Not able to execute $sql. " . mysqli_error($link);
 }
 
 if(mysqli_query($link, $responseQuery1))

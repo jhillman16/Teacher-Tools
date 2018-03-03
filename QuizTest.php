@@ -1,4 +1,15 @@
 <?php $title = "Quiz"; include 'header.php';?>
+
+<?php
+    session_start();
+    if(!isset($_COOKIE['AssignmentID']))
+    {
+        header('Location: myAssignments.php');
+    }
+
+include("ConnectDatabase.php"); //Goes through steps of connecting to database
+?>
+
 <head>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="quiz-1.js"></script>
@@ -56,33 +67,45 @@ font-style: italic;
 
 <body>
 
+<form action='QuizTestGrade.php' method='post'>
+<?php
 
-<p class="question">1. What is the engine code of the third and fourth generation Subaru Impreza WRX STI?</p>
-<ul class="answers">
-<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">EJ257</label><br/>
-<input type="radio" name="q1" value="b" id="q1b"><label for="q1b">4A-GE</label><br/>
-<input type="radio" name="q1" value="c" id="q1c"><label for="q1c">J35Z2</label><br/>
-<input type="radio" name="q1" value="d" id="q1d"><label for="q1d">1UZ-FE</label><br/>
-</ul>
+	$query = "SELECT QuizID FROM Quiz WHERE AssignmentID = " . $_COOKIE['AssignmentID'];
+	unset($_COOKIE['AssignmentID']);
+	$r = mysqli_query($link, $query);
+	$queryRow = mysqli_fetch_array($r);
+	$QuizID = $queryRow['QuizID'];
+	$_SESSION['QuizID'] = $QuizID;
 
-<p class="question">2. What is the chasis code of the fourth generation Toyota Supra?</p>        
+	$QuestionQuery = "SELECT Question, QuestionID FROM Question WHERE QuizID = $QuizID";
+	
+	$r1=mysqli_query($link, $QuestionQuery);
 
-<ul class="answers">            
-<input type="radio" name="q2" value="a" id="q2a"><label for="q2a">AE86</label><br/>           
-<input type="radio" name="q2" value="b" id="q2b"><label for="q2b">A40</label><br/>            
-<input type="radio" name="q2" value="c" id="q2c"><label for="q2c">S13</label><br/>           
-<input type="radio" name="q2" value="d" id="q2d"><label for="q2d">A80</label><br/>       
-</ul>        
+	while($QuestionRow=mysqli_fetch_array($r1))
+	{
+			echo "<p class='question'>" . ($QuestionRow['QuestionID'] +1) . ". " . $QuestionRow['Question'] . "</p>";
+			echo "<ul class='answers'>";
 
+			$QuestionID = $QuestionRow['QuestionID'];
+			$GroupName = 'q' . $QuestionRow['QuestionID']; //These radio buttons for the answers will be grouped by the question number.
+			$Letter = 'a';
 
-<p class="question">3. Which of these engines have the highest redline?</p>        
+			$ResponseQuery = "SELECT ResponseID, IsCorrect, Response FROM Response WHERE QuizID = $QuizID AND QuestionID = $QuestionID";
+			$r2=mysqli_query($link, $ResponseQuery);
+			
+			while($ResponseRow=mysqli_fetch_array($r2))
+			{
+				$AnsID = $GroupName . $Letter;
+				echo '<input type="radio" name=' . $GroupName . ' value=' . $Letter . ' id=' . $AnsID . ' ><label for=' . $AnsID . '>' . $ResponseRow["Response"] . '</label><br/>';
+				$Letter++;
+			}
 
-<ul class="answers">            
-<input type="radio" name="q3" value="a" id="q3a"><label for="q3a">RB26DETT</label><br/>            
-<input type="radio" name="q3" value="b" id="q3b"><label for="q3b">4G63</label><br/>            
-<input type="radio" name="q3" value="c" id="q3c"><label for="q3c">F20C</label><br/>           
-<input type="radio" name="q3" value="d" id="q3d"><label for="q3d">LS1</label><br/>       
-</ul>
+			echo "</ul>";
+	}
+
+?>
+<input type="submit">
+</form>
 
 <br/>
 <div id="results">            
