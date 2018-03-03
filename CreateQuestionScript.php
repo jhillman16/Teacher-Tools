@@ -1,5 +1,6 @@
-<?php 
+<?php
 
+include("ConnectDatabase.php"); //Goes through steps of connecting to database
 session_start();
 
 $Question = $_POST['question'];
@@ -15,10 +16,23 @@ $response3isCorrect = $_POST['is3'];
 
 $canContinue = $_POST['cont'];
 
-echo $canContinue;
-
-
-
+if($Question == '')
+{
+	if($canContinue != 0)
+	{
+		unset($_SESSION['QuestionNum']);
+		header('Location: EducatorHome.php');
+	}
+	else
+	{
+		$_SESSION['Error'] = 'Need to enter a question';
+		header('Location: CreateQuestion.php');
+	}
+}
+if( ($response0isCorrect==0 && $response1isCorrect==0) && ($response2isCorrect==0 && $response3isCorrect==0) )
+{
+	$_SESSION['Error'] = 'Need to select a correct answer';
+}
 
 if(!isset($_SESSION['QuestionNum']))
 {
@@ -26,16 +40,6 @@ if(!isset($_SESSION['QuestionNum']))
 }
 
 $QuestionIDNum = $_SESSION['QuestionNum'];
-
-$link = mysqli_connect("localhost", "mmilton1", "mmilton1", "mmilton1DB");
-
-if (!$link) 
-{
-    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-    exit;
-}
 
 $CurrentQuizID = $_SESSION['QuizID'];
 
@@ -63,7 +67,7 @@ if(mysqli_query($link, $responseQuery0))
 }
 else
 {
-        echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
+        echo "$CurrentQuizID ERROR: Not able to execute $sql. " . mysqli_error($link);
 }
 
 if(mysqli_query($link, $responseQuery1))
@@ -96,8 +100,7 @@ else
 
 if(mysqli_query($link, $questionQuery))
 {
-        echo "Records added successfully " . $_SESSION['QuestionNum'] . ".";
-	
+        echo "Records added successfully " . $_SESSION['QuestionNum'] . ".";	
 }
 else
 {

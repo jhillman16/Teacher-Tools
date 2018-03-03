@@ -154,7 +154,11 @@ footer {
 	width: 200px;
 }
 
+<<<<<<< HEAD
+.button {
+=======
 a.button {
+>>>>>>> c9d0c128aa5ebf91d81590e4281aeff8b339bb38
 	background-color: #083B66;
 	color: #ffffff!important;
 	border-bottom: 1px solid #4C96D7!important;
@@ -167,12 +171,23 @@ a.button {
 	margin: 4px 2px;
 	cursor: pointer;
 }
+<<<<<<< HEAD
+.button:hover {
+=======
 a.button:hover {
+>>>>>>> c9d0c128aa5ebf91d81590e4281aeff8b339bb38
 	background-color: #4C96D7;
 	color: #083B66!important;
 	border-bottom: 1px solid #083B66!important;
 }
 
+<<<<<<< HEAD
+.button {
+	padding: 4px!important;
+}
+
+=======
+>>>>>>> c9d0c128aa5ebf91d81590e4281aeff8b339bb38
 /* forms */
 form {
 	/*text-align: center;
