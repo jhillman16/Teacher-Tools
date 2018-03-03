@@ -13,4 +13,10 @@
 		<li>Tatiana</li>
 	</ul>
 
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTGB38wcRO3rg19fd9YFDEZj1D53pUJue0Rfzq3-DaVa8dcpp877WVCtsQ-PG7T9GBZXKaDvZ0GVUrq/embed?start=false&loop=false&delayms=3000" frameborder="0" width="200" height="200" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<?php 
+
+?>
+
 <?php include 'footer.php';?>
