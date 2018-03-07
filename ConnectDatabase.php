@@ -1,5 +1,13 @@
 <?php
-    $link = mysqli_connect("yhrz9vns005e0734.cbetxkdyhwsb.us-east-1.rds.amazonaws.com[3306]", "as2ahduvdja0icyb", "r85sc1pxkna3vfeu","adzripqa87ps498t");
+
+$url = getenv('JAWSDB_URL');
+$dbparts = parse_url($url);
+
+$hostname = $dbparts['host'];
+$username = $dbparts['user'];
+$password = $dbparts['pass'];
+$database = ltrim($dbparts['path'],'/');
+    $link = mysqli_connect($hostname, $username, $password, $database);
  
 // Check connection
 if (!$link) {
