@@ -5,7 +5,7 @@ include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
 
 // attempt get teacher info
-$query = "INSERT INTO Test(Message) VALUES('Hello World')";
+$query = "INSERT INTO Test(Message) VALUES('ELi is bailing')";
 
 $result = mysqli_query($link, $query); 
 
