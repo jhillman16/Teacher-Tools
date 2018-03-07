@@ -1,5 +1,5 @@
 <?php
-    $link = mysqli_connect("localhost", "mmilton1", "mmilton1", "mmilton1DB");
+    $link = mysqli_connect("yhrz9vns005e0734.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "as2ahduvdja0icyb", "mmilton1", "r85sc1pxkna3vfeu");
  
 // Check connection
 if (!$link) {
