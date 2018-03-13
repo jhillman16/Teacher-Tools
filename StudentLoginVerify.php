@@ -33,7 +33,7 @@ else
 {
 	echo "ERROR: Incorrect username/password" . mysqli_error($link);
 	mysqli_close($link); // close connection
-	//header('Location: StudentLogin.php');
+	header('Location: StudentLogin.php');
 }
 
 ?>
