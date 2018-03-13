@@ -14,7 +14,7 @@ $result2 = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
-    while($row = $result->fetch_assoc()) {
+    while($row = $result2->fetch_assoc()) {
         echo "id: " . $row["Message"];
 
 // close connection
