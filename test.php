@@ -12,7 +12,7 @@ $result = mysqli_query($link, $query);
 $sql = "SELECT Message FROM Test";
 $result2 = $conn->query($sql);
 
-if ($result->num_rows > 0) {
+if ($result2->num_rows > 0) {
     // output data of each row
     while($row = $result2->fetch_assoc()) {
         echo "id: " . $row["Message"];
