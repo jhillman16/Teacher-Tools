@@ -167,14 +167,11 @@ footer {
 	margin: 4px 2px;
 	cursor: pointer;
 }
+
 .button:hover {
 	background-color: #4C96D7;
 	color: #083B66!important;
 	border-bottom: 1px solid #083B66!important;
-}
-
-.button {
-	padding: 4px!important;
 }
 
 /* forms */
