@@ -10,7 +10,7 @@ $query = "INSERT INTO Test(Message) VALUES('What a day')";
 $result = mysqli_query($link, $query); 
 
 $sql = "SELECT Message FROM Test";
-$result2 = $conn->query($sql);
+$result2 = $link->query($sql);
 
 if ($result2->num_rows > 0) {
     // output data of each row
