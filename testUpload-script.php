@@ -9,7 +9,7 @@ if ((($_FILES["file"]["type"] == "text/plain")
 || ($_FILES["file"]["type"] == "image/png")
 || ($_FILES["file"]["type"] == "image/jpeg"))
 
-&& ($_FILES["file"]["size"] < 20000)
+&& ($_FILES["file"]["size"] < 80000)
 && in_array($extension, $allowedExts))
 
   {
@@ -30,8 +30,7 @@ if ((($_FILES["file"]["type"] == "text/plain")
       }
     else
       {
-      move_uploaded_file($_FILES["file"]["tmp_name"],
-      "temp/" . $_FILES["file"]["name"]);
+      move_uploaded_file($_FILES["file"]["tmp_name"], "temp/" . $_FILES["file"]["name"]);
       echo "Stored in: " . "temp/" . $_FILES["file"]["name"];
       }
     }
