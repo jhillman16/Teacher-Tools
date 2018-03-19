@@ -11,23 +11,29 @@
 	$correctNum = 1;
 
 	$query = "SELECT Response FROM Response WHERE QuizID = $QuizID AND IsCorrect = '1'";
-	$r = mysqli_query($link, $query);
-
-	while($ansRow=mysqli_fetch_array($r))
+	
+	if($r = mysqli_query($link, $query))
 	{
-			$questionID = 'q' . $questionNum;
+		while($ansRow=mysqli_fetch_array($r))
+		{
+				$questionID = 'q' . $questionNum;
 
-			echo "questionID: ";
-			echo $questionID;
-			echo "selected: ";
-			echo $_POST["$questionID"];
-			echo "answer: ";
-			echo $ansRow['Response'];
-			echo "<br>";
+				echo "questionID: ";
+				echo $questionID;
+				echo "selected: ";
+				echo $_POST["$questionID"];
+				echo "answer: ";
+				echo $ansRow['Response'];
+				echo "<br>";
 
-			$questionNum++;
+				$questionNum++;
+		}	
 	}
-echo mysqli_error($link);
+	else
+	{
+		echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
+	}
+
 	echo 'hey';
 
 ?>
