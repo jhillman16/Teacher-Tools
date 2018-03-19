@@ -20,7 +20,7 @@
 			echo "questionID: "
 			echo $questionID;
 			echo "selected: ";
-			echo $_POST[$questionID];
+			echo $_POST["$questionID"];
 			echo "answer: ";
 			echo $ansRow['Response'];
 			echo "<br>";
