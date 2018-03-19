@@ -9,7 +9,7 @@
 
 	$integerOne = 2; //Do not know how to make query with integer in php
 
-	$query = "SELECT Response FROM Response WHERE QuizID = $QuizID AND IsCorrect = $integerOne";
+	$query = "SELECT Response FROM Response WHERE QuizID = $QuizID AND IsCorrect = $QuizID";
 	
 	if($r = mysqli_query($link, $query))
 	{
