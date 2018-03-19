@@ -60,7 +60,7 @@ $query = "INSERT INTO Quiz (AssignmentID, Description, QuizName)
 if(mysqli_query($link, $query))
 {
     $_SESSION['QuizID'] = mysqli_insert_id($link);
-    //header('Location: CreateQuestion.php');
+    header('Location: CreateQuestion.php');
 }
 else
 {
