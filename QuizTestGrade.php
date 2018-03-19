@@ -10,7 +10,7 @@
 	$questionNum = 0;
 	$correctNum = 1;
 
-	$query = "SELECT Response FROM Response WHERE QuizID = $QuizID AND IsCorrect = '1'";
+	$query = "SELECT Response FROM Response WHERE QuizID = $QuizID AND IsCorrect = 1";
 	
 	if($r = mysqli_query($link, $query))
 	{
