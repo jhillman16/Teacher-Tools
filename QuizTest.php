@@ -79,8 +79,7 @@ font-style: italic;
 	$QuestionQuery = "SELECT Question, QuestionID FROM Question WHERE QuizID = $QuizID";
 	
 	if($r1=mysqli_query($link, $QuestionQuery))
-	{
-		
+	{	
 		while($QuestionRow=mysqli_fetch_array($r1))
 		{
 			echo "<p class='question'>" . ($QuestionRow['QuestionID'] +1) . ". " . $QuestionRow['Question'] . "</p>";

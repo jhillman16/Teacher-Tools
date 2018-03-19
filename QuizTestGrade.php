@@ -13,10 +13,17 @@
 	$query = "SELECT Response FROM Response WHERE QuizID = $QuizID AND IsCorrect = '1'";
 	$r = mysqli_query($link, $query);
 
-	while($row=mysqli_fetch_array($r))
+	while($ansRow=mysqli_fetch_array($r))
 	{
 			$questionID = 'q' . $questionNum;
+
+			echo "questionID: "
 			echo $questionID;
+			echo "selected: ";
+			echo $_POST[$questionID];
+			echo "answer: ";
+			echo $ansRow['Response'];
+			echo "<br>";
 
 			$questionNum++;
 	}
@@ -40,8 +47,8 @@ $TeacherStudent 	= $_POST['ans'];
 
 session_start();
 
-echo $_POST['q0'];
-echo 'hello';
+//echo $_POST['q0'];
+//echo 'hello';
 
 /*
 if($Password != $ConfirmPassword) //If the passwords do not match
