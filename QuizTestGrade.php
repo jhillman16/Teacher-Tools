@@ -17,7 +17,7 @@
 	{
 			$questionID = 'q' . $questionNum;
 
-			echo "questionID: "
+			echo "questionID: ";
 			echo $questionID;
 			echo "selected: ";
 			echo $_POST["$questionID"];
