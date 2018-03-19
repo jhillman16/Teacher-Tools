@@ -83,7 +83,7 @@ font-style: italic;
 		
 		while($QuestionRow=mysqli_fetch_array($r1))
 		{
-			echo "hello";
+			echo $QuestionRow['QuestionID'];//echo "hello";
 			echo "<p class='question'>" . ($QuestionRow['QuestionID'] +1) . ". " . $QuestionRow['Question'] . "</p>";
 			echo "<ul class='answers'>";
 
