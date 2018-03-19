@@ -69,7 +69,7 @@ font-style: italic;
 
 <form action='QuizTestGrade.php' method='post'>
 <?php
-
+echo $_COOKIE['AssignmentID'];
 	$query = "SELECT QuizID FROM Quiz WHERE AssignmentID = " . $_COOKIE['AssignmentID'];
 	unset($_COOKIE['AssignmentID']);
 	$r = mysqli_query($link, $query);
@@ -102,8 +102,6 @@ font-style: italic;
 
 			echo "</ul>";
 	}
-
-echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
 
 
 ?>
