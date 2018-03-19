@@ -69,13 +69,14 @@ font-style: italic;
 
 <form action='QuizTestGrade.php' method='post'>
 <?php
-echo $_COOKIE['AssignmentID'];
 	$query = "SELECT QuizID FROM Quiz WHERE AssignmentID = " . $_COOKIE['AssignmentID'];
 	unset($_COOKIE['AssignmentID']);
 	$r = mysqli_query($link, $query);
 	$queryRow = mysqli_fetch_array($r);
 	$QuizID = $queryRow['QuizID'];
 	$_SESSION['QuizID'] = $QuizID;
+
+	echo $_SESSION['QuizID'] = $QuizID;
 
 	$QuestionQuery = "SELECT Question, QuestionID FROM Question WHERE QuizID = $QuizID";
 	
