@@ -7,13 +7,15 @@
 
 	include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
-	$questionNum = 0;
-	$correctNum = 1;
+	$integerOne = 1; //Do not know how to make query with integer in php
 
-	$query = "SELECT Response FROM Response WHERE QuizID = $QuizID AND IsCorrect=1";
+	$query = "SELECT Response FROM Response WHERE QuizID = $QuizID AND IsCorrect = $integerOne";
 	
 	if($r = mysqli_query($link, $query))
 	{
+		$questionNum = 0;
+		$correctNum = 1;
+
 		while($ansRow=mysqli_fetch_array($r))
 		{
 				$questionID = 'q' . $questionNum;
