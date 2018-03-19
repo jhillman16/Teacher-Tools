@@ -102,6 +102,11 @@ font-style: italic;
 
 			echo "</ul>";
 	}
+	else
+	{
+    	echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
+	}
+
 
 ?>
 <input type="submit">
