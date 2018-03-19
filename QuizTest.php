@@ -80,6 +80,7 @@ font-style: italic;
 	
 	if($r1=mysqli_query($link, $QuestionQuery))
 	{
+		echo "hello";
 		while($QuestionRow=mysqli_fetch_array($r1))
 		{
 				echo "<p class='question'>" . ($QuestionRow['QuestionID'] +1) . ". " . $QuestionRow['Question'] . "</p>";
