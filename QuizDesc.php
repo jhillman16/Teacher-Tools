@@ -1,6 +1,8 @@
 <?php
 	//unset quizid and assignmentid if no rtake
 
+	$title = "Quiz Description"; include 'header.php';
+
 	include("ConnectDatabase.php"); //Goes through steps of connecting to database
 	session_start();
     if(!isset($_SESSION['AssignmentID']))
@@ -54,4 +56,6 @@
 	{
 		echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
 	}
+
+	include 'footer.php';
 ?>

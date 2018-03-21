@@ -8,6 +8,8 @@
 	//QuizTestGrade.php: 
 	//if can retake, query for the score, and insert the larger of the two scores
 
+	$title = "Quiz Grade"; include 'header.php';
+
 	include("ConnectDatabase.php"); //Goes through steps of connecting to database
 	session_start();
     if(!isset($_SESSION['QuizID']))
@@ -75,4 +77,6 @@
 
 	unset($_SESSION['QuizID']);
 	unset($_SESSION['AssignmentID']);
+
+	include 'footer.php';
 ?>
