@@ -40,6 +40,7 @@ echo "allow retake: " . $allowRetake . "<br>";
 	$query = "SELECT Score FROM Performance WHERE AssignmentID = $assignmentID AND StudentID = $studentID";
 	if($r = mysqli_query($link, $query))
 	{
+echo "hello";
 		$row = mysqli_fetch_array($r);
 		if(mysql_num_rows($r) > 0 && $allowRetake == 0)
 		{
@@ -57,6 +58,7 @@ echo "hello2";
 	}
 	else
 	{
+echo "hello3";
 		echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
 	}
 
