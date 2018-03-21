@@ -52,7 +52,7 @@ echo "totalPoints: " . $totalPoints . " totalCorrect: " . $totalCorrect . "<br>"
 				$realAnswer = $ansRow['Response'];
 				$questionPoints = $ansRow['Points'];
 
-				$totalCorrect = $totalCorrect + $questionPoints;
+				$totalPoints = $totalPoints + $questionPoints;
 				if($userAnswer == $realAnswer)
 				{
 					$totalCorrect = $totalCorrect + $questionPoints;
