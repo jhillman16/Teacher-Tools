@@ -41,12 +41,12 @@ echo "allow retake: " . $allowRetake . "<br>";
 	if($r = mysqli_query($link, $query))
 	{
 echo "hello";
-		$row = mysqli_fetch_array($r);
-		if(mysql_num_rows($r) > 0 && $allowRetake == 0)
+		if(mysqli_num_rows($r) > 0 && $allowRetake == 0)
 		{
 echo "hello1";
 			unset($_SESSION['QuizID']);
 			unset($_SESSION['AssignmentID']);
+			$row = mysqli_fetch_array($r);
 			echo "<h1>You have already taken this quiz. Retakes for this quiz are not allowed.</h1>";
 			echo "You have recieved the score of " . $row['Score'] . " for this quiz";
 		}
