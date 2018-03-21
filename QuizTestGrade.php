@@ -52,7 +52,7 @@
 				$questionPoints = $ansRow['Points'];
 
 				$totalCorrect = $totalCorrect + $questionPoints;
-				if($userAnswer = $realAnswer)
+				if($userAnswer == $realAnswer)
 				{
 					$totalCorrect = $totalCorrect + $questionPoints;
 				}

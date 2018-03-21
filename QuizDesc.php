@@ -40,10 +40,8 @@ echo "allow retake: " . $allowRetake . "<br>";
 	$query = "SELECT Score FROM Performance WHERE AssignmentID = $assignmentID AND StudentID = $studentID";
 	if($r = mysqli_query($link, $query))
 	{
-echo "hello";
 		if(mysqli_num_rows($r) > 0 && $allowRetake == 0)
 		{
-echo "hello1";
 			unset($_SESSION['QuizID']);
 			unset($_SESSION['AssignmentID']);
 			$row = mysqli_fetch_array($r);
@@ -52,13 +50,11 @@ echo "hello1";
 		}
 		else
 		{
-echo "hello2";
 			echo "<button onclick=\"location.href='QuizTest.php'\">Take Quiz</button>";
 		}
 	}
 	else
 	{
-echo "hello3";
 		echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
 	}
 
