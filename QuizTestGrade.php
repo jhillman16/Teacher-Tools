@@ -25,9 +25,9 @@
 	$query = "SELECT Score FROM Performance WHERE AssignmentID = $assignmentID AND StudentID = $studentID";
 	if($r = mysqli_query($link, $query) )
 	{
-		$row = mysqli_fetch_array($r);
-		if(mysql_num_rows($r) > 0)
+		if(mysqli_num_rows($r) > 0)
 		{
+			$row = mysqli_fetch_array($r);
 			$dbScore = $row['Score'];
 		}
 	}
@@ -67,7 +67,7 @@
 		$query = "INSERT INTO Performance (StudentID, Score, AssignmentID) VALUES ('$studentID', '$score', '$assignmentID')";
 		if(mysqli_query($link, $query))
 		{
-		    echo "<h1>Grading complete. You have recieved a score of " . $score " on this quiz.<h1>";
+		    echo "<h1>Grading complete. You have recieved a score of " . $score . " on this quiz.<h1>";
 		}
 		else
 		{
