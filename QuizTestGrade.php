@@ -66,9 +66,9 @@
 			$score = $dbScore;
 
 		if($dbScore == -1)
-			$query = "UPDATE Performance SET Score = $score WHERE StudentID = $studentID AND AssignmentID = $assignmentID";
-		else
 			$query = "INSERT INTO Performance (StudentID, Score, AssignmentID) VALUES ('$studentID', '$score', '$assignmentID')";
+		else
+			$query = "UPDATE Performance SET Score = $score WHERE StudentID = $studentID AND AssignmentID = $assignmentID";
 
 		if(mysqli_query($link, $query))
 		{
