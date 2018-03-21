@@ -5,7 +5,7 @@
 
 	include("ConnectDatabase.php"); //Goes through steps of connecting to database
 	session_start();
-    if(!isset($_SESSION['AssignmentID']))
+    if(!isset($_COOKIE['AssignmentID']))
     {
         header('Location: myAssignments.php');
     }
