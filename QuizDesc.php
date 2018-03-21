@@ -27,9 +27,10 @@
 	if($r = mysqli_query($link, $query))
 	{
 		$row = mysqli_fetch_array($r);
-		echo "<h1>" . $row['QuizName'] . "</h1><br>";
+		echo "<h2>" . $row['QuizName'] . "</h2><br>";
 		echo "<p>" . $row['Description'] . "</p><br>";
 		$allowRetake = $row['AllowRetake'];
+echo "allow retake: " . $allowRetake . "<br>";
 	}
 	else
 	{
@@ -42,6 +43,7 @@
 		$row = mysqli_fetch_array($r);
 		if(mysql_num_rows($r) > 0 && $allowRetake == 0)
 		{
+echo "hello1";
 			unset($_SESSION['QuizID']);
 			unset($_SESSION['AssignmentID']);
 			echo "<h1>You have already taken this quiz. Retakes for this quiz are not allowed.</h1>";
@@ -49,6 +51,7 @@
 		}
 		else
 		{
+echo "hello2";
 			echo "<button onclick=\"location.href='QuizTest.php'\">Take Quiz</button>";
 		}
 	}
