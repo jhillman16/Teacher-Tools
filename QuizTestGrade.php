@@ -43,10 +43,9 @@
 		$totalPoints = 0;
 		$totalCorrect = 0;
 
-echo "totalPoints: " . $totalPoints . " totalCorrect: " . $totalCorrect . "<br>";
-
 		while($ansRow=mysqli_fetch_array($r))
 		{
+echo "totalPoints: " . $totalPoints . " totalCorrect: " . $totalCorrect . "<br>";
 				$questionID = 'q' . $questionNum;
 
 				$userAnswer = $_POST["$questionID"];
@@ -63,6 +62,7 @@ echo "totalPoints: " . $totalPoints . " totalCorrect: " . $totalCorrect . "<br>"
 echo "user: " . $userAnswer . " real: " . $realAnswer . "points: " . $questionPoints . "<br>";
 		}
 
+		ini_set("precision", 2);
 		$score = $totalCorrect / $totalPoints;
 		if($dbScore > $score)
 			$score = $dbScore;
