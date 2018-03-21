@@ -2,7 +2,7 @@
 
 <?php
     session_start();
-    if(!isset($_COOKIE['AssignmentID']))
+    if(!isset($_SESSION['AssignmentID']))
     {
         header('Location: myAssignments.php');
     }
@@ -69,12 +69,7 @@ font-style: italic;
 
 <form action='QuizTestGrade.php' method='post'>
 <?php
-	$query = "SELECT QuizID FROM Quiz WHERE AssignmentID = " . $_COOKIE['AssignmentID'];
-	unset($_COOKIE['AssignmentID']);
-	$r = mysqli_query($link, $query);
-	$queryRow = mysqli_fetch_array($r);
-	$QuizID = $queryRow['QuizID'];
-	$_SESSION['QuizID'] = $QuizID;
+	$QuizID = $_SESSION['QuizID'];
 
 	$QuestionQuery = "SELECT Question, QuestionID FROM Question WHERE QuizID = $QuizID";
 	
@@ -106,13 +101,14 @@ font-style: italic;
 	{
 		echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
 	}
-
-	
-
-
 ?>
 <input type="submit">
 </form>
+
+
+
+
+
 
 
 
