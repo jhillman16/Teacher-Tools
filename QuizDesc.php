@@ -30,7 +30,6 @@
 		echo "<h2>" . $row['QuizName'] . "</h2><br>";
 		echo "<p>" . $row['Description'] . "</p><br>";
 		$allowRetake = $row['AllowRetake'];
-echo "allow retake: " . $allowRetake . "<br>";
 	}
 	else
 	{
