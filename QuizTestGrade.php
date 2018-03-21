@@ -67,7 +67,7 @@
 		$query = "INSERT INTO Performance (StudentID, Score, AssignmentID) VALUES ('$studentID', '$score', '$assignmentID')";
 		if(mysqli_query($link, $query))
 		{
-		    echo "<h1>Grading complete. You have recieved a score of " . $score . " on this quiz.<h1>";
+		    echo "<p>Grading complete. You have recieved a score of " . $score . " on this quiz.<p>";
 		}
 		else
 		{
