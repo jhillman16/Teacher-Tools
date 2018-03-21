@@ -44,8 +44,8 @@
 			unset($_SESSION['QuizID']);
 			unset($_SESSION['AssignmentID']);
 			$row = mysqli_fetch_array($r);
-			echo "<h1>You have already taken this quiz. Retakes for this quiz are not allowed.</h1>";
-			echo "You have recieved the score of " . $row['Score'] * 100 . "% for this quiz";
+			echo "<p>You have already taken this quiz. Retakes for this quiz are not allowed.</p><br>";
+			echo "<p>You have recieved the score of " . $row['Score'] * 100 . "% for this quiz</p>";
 		}
 		else
 		{
