@@ -20,7 +20,7 @@
 	$quizID = $_SESSION['QuizID'];
 	$assignmentID = $_SESSION['AssignmentID'];
 	$studentID = $_SESSION['StudentID'];
-	$dbScore = 0.0; //Student's score from the database
+	$dbScore = -1; //Student's score from the database
 
 	$query = "SELECT Score FROM Performance WHERE AssignmentID = $assignmentID AND StudentID = $studentID";
 	if($r = mysqli_query($link, $query) )
@@ -45,7 +45,6 @@
 
 		while($ansRow=mysqli_fetch_array($r))
 		{
-echo "totalPoints: " . $totalPoints . " totalCorrect: " . $totalCorrect . "<br>";
 				$questionID = 'q' . $questionNum;
 
 				$userAnswer = $_POST["$questionID"];
@@ -59,7 +58,6 @@ echo "totalPoints: " . $totalPoints . " totalCorrect: " . $totalCorrect . "<br>"
 				}
 				
 				$questionNum++;
-echo "user: " . $userAnswer . " real: " . $realAnswer . "points: " . $questionPoints . "<br>";
 		}
 
 		ini_set("precision", 2);
@@ -67,10 +65,14 @@ echo "user: " . $userAnswer . " real: " . $realAnswer . "points: " . $questionPo
 		if($dbScore > $score)
 			$score = $dbScore;
 
-		$query = "INSERT INTO Performance (StudentID, Score, AssignmentID) VALUES ('$studentID', '$score', '$assignmentID')";
+		if($dbScore == -1)
+			$query = "UPDATE Performance SET Score = $score WHERE StudentID = $studentID AND AssignmentID = $assignmentID";
+		else
+			$query = "INSERT INTO Performance (StudentID, Score, AssignmentID) VALUES ('$studentID', '$score', '$assignmentID')";
+
 		if(mysqli_query($link, $query))
 		{
-		    echo "<p>Grading complete. You have recieved a score of " . $score . " on this quiz.<p>";
+		    echo "<p>Grading complete. You have recieved a score of " . $score * 100 . "% on this quiz.<p>";
 		}
 		else
 		{
