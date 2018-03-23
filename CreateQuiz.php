@@ -47,8 +47,8 @@ if(!isset($_SESSION['CourseID']))
 
     <div>
         <label>
+            Allow retakes?
             <span>
-                Allow retakes?
                 <input type="radio" name="retake" id="yes" value="yes" /> Yes
                 <input type="radio" name="retake" id="no" value="no" /> No
             </span>
