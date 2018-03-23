@@ -1,3 +1,12 @@
+<script>
+//Parameter course is the course ID associated with the class button that is clicked on.
+//Sends to php script to set the course ID cookie for the user
+function myFunction(studentID)
+{
+	document.cookie = "ViewStudent=" + studentID;
+	window.location = 'ViewGrades.php';
+}
+</script> 
 
 <?php
 session_start();
