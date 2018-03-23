@@ -48,15 +48,15 @@ if(!isset($_SESSION['CourseID']))
     <div>
         <label>
             <span>Allow retakes?</span>
-            <input type="radio" name="retake" id="yes" value="yes" /><span>Yes</span>
-            <input type="radio" name="retake" id="no" value="no" /><span>No</span>
+            <input type="radio" name="retake" id="yes" value="yes" /> Yes
+            <input type="radio" name="retake" id="no" value="no" /> No
         </label>
     </div>
 
     <div>
         <input type="submit" value="Submit" />
     </div>
-    
+
 </form>
 
 <?php include 'footer.php';?>
