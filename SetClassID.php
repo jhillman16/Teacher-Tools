@@ -13,6 +13,9 @@ $_SESSION['CourseName'] = $_COOKIE['CourseName'];
 unset($_COOKIE['CourseID']);
 unset($_COOKIE['CourseName']);
 
-header('Location: myClass.php');
+$_SESSION['CourseID'] = $_COOKIE['CourseID'];
+$_SESSION['CourseName'] = $_COOKIE['CourseName'];
+
+//header('Location: myClass.php');
 
 ?>
