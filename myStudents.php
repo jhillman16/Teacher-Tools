@@ -21,6 +21,7 @@ if(!isset($_SESSION['CourseID']) || !isset($_SESSION['TeacherID']))
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
 echo "<h2>Select a student to view performance in course.<h2><br>";
+echo $_SESSION['$CourseName'];
 
 $query = "SELECT UserName, FirstName, LastName, StudentID FROM StudentsUser WHERE StudentID IN (SELECT StudentID FROM Enrollment WHERE CourseID = $CourseID)";
 
@@ -33,7 +34,10 @@ if($r=mysqli_query($link, $query))
 		echo "<button class='button' onclick='myFunction(" . $row['StudentID'] . ")'>"
 			 . $row['FirstName'] . " " . $row['LastName'] . " (" . $row['UserName'] . ")</button><br><br>";    		
 	}
-
+}
+else
+{
+	echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
 }
 
 include 'footer.php';
