@@ -10,12 +10,9 @@ if(!isset($_SESSION['FirstName']))
 $_SESSION['CourseID'] = $_COOKIE['CourseID'];
 $_SESSION['CourseName'] = $_COOKIE['CourseName'];
 
-echo $_SESSION['CourseID'];
-echo $_SESSION['CourseName'];
-
 unset($_COOKIE['CourseID']);
 unset($_COOKIE['CourseName']);
 
-//header('Location: myClass.php');
+header('Location: myClass.php');
 
 ?>

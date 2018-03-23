@@ -9,7 +9,7 @@ function myFunction(studentID)
 </script> 
 
 <?php
-$title = "My Students - " . $_SESSION['$CourseName']; 
+$title = $_SESSION['$CourseName'] . " - My Students"; 
 include 'header.php';
 session_start();
 
