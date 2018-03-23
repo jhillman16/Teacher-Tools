@@ -1,13 +1,4 @@
 <?php
-	//Add to database: allow retake boolean, num question points
-	
-	//go back to quiz creation and add place to add number of points for question, and ask if can retake at beginning
-	//say the better score of the two will be taken
-	//unset assignmentid and quizid session variables when done
-
-	//QuizTestGrade.php: 
-	//if can retake, query for the score, and insert the larger of the two scores
-
 	$title = "Quiz Grade"; include 'header.php';
 
 	include("ConnectDatabase.php"); //Goes through steps of connecting to database
