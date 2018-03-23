@@ -36,7 +36,9 @@
 		echo "ERROR1: Not able to execute $sql. " . mysqli_error($link);
 	}
 
-	$query = "SELECT Response, Points FROM Response WHERE quizID = $quizID AND IsCorrect = 1";
+	$query = "SELECT DISTINCT r.Response, q.Points FROM Response r JOIN Question q ON r.QuizID = q.QuizID WHERE r.QuizID = $quizID AND r.IsCorrect = 1";
+
+	//$query = "SELECT Response, Points FROM Response WHERE quizID = $quizID AND IsCorrect = 1";
 	if($r = mysqli_query($link, $query))
 	{
 		$questionNum = 0;
