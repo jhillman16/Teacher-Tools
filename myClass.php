@@ -29,7 +29,7 @@ if( isset($_SESSION['TeacherID']) )
 	{
 		while($row=mysqli_fetch_array($r))
 		{
-			echo "<button class='button' onclick='myFunction(" . $row['CourseID'] . " , " . $row['Name'] . ")'>"
+			echo "<button class='button' onclick='myFunction(" . $row['CourseID'] . "," . $row['Name'] . ")'>"
 			 . $row['Name'] . ", " . $row['NumSeats'] . " seats </button><br><br>";
 		}
 	}
