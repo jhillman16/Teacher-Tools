@@ -14,7 +14,6 @@ function myFunction(courseID, courseName)
 <p>Your Classes</p>
 
 <?php
-session_start();
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
 $query = "";
