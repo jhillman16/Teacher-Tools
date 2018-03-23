@@ -9,7 +9,7 @@ function myFunction(studentID)
 </script> 
 
 <?php
-$title = $_SESSION['$CourseName'] . " - My Students"; 
+$title = "My Students - \"" . $_SESSION['$CourseName']; 
 include 'header.php';
 session_start();
 
@@ -21,7 +21,7 @@ if(!isset($_SESSION['CourseID']) || !isset($_SESSION['TeacherID']))
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
 echo "<h2>Select a student to view performance in course.</h2><br>";
-echo $_SESSION['$CourseName'];
+echo $_SESSION['$CourseID'];
 
 $query = "SELECT UserName, FirstName, LastName, StudentID FROM StudentsUser WHERE StudentID IN (SELECT StudentID FROM Enrollment WHERE CourseID = '$CourseID')";
 
