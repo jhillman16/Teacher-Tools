@@ -1,6 +1,6 @@
 <?php
 session_start();
-$title = "Performance - " . $_SESSION['CourseName']; 
+$title = "Performance - " . $_SESSION['studentID']; 
 include 'header.php';
 
 
