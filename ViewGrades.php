@@ -1,7 +1,8 @@
 <?php
+session_start();
 $title = "Performance - " . $_SESSION['CourseName']; 
 include 'header.php';
-session_start();
+
 
 if(!isset($_SESSION['CourseID']))
 {
