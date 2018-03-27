@@ -22,6 +22,7 @@ include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
 echo $_SESSION['$CourseID'];
 echo $_SESSION['$CourseName'];
+window.alert("HELLO");
 echo "hello";
 echo "<h2>Select a student to view performance in course.</h2><br>";
 
