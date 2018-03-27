@@ -1,19 +1,19 @@
 <?php $title = "My Classes"; include 'header.php';?>
 
 <script>
-//Parameter course is the course ID associated with the class button that is clicked on.
-//Sends to php script to set the course ID cookie for the user
-function myFunction(course)
+//Parameter courseID is the course ID associated with the class button that is clicked on, same for courseName.
+//Sends to php script to set the CourseID and CourseName cookies for the user
+function myFunction(courseID, courseName)
 {
-    document.cookie = "CourseID=" + course;
+    document.cookie = "CourseID=" + courseID;
+    document.cookie = "CourseName=" + courseName;
     window.location = 'SetClassID.php';
 }
 </script> 
 
-<p>Welcome to Your Class</p>
+<p>Your Classes</p>
 
 <?php
-
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
 $query = "";
@@ -28,7 +28,7 @@ if( isset($_SESSION['TeacherID']) )
 	{
 		while($row=mysqli_fetch_array($r))
 		{
-			echo "<button class='button' onclick='myFunction(" . $row['CourseID'] . ")'>"
+			echo "<button class='button' onclick='myFunction(" . $row['CourseID'] . ",\"" . $row['Name'] . "\")'>"
 			 . $row['Name'] . ", " . $row['NumSeats'] . " seats </button><br><br>";
 		}
 	}
@@ -44,7 +44,7 @@ if( isset($_SESSION['StudentID']) )
 	{
 		while($row=mysqli_fetch_array($r))
 		{
-			echo "<button class='button' onclick='myFunction(" . $row['CourseID'] . ")'>"
+			echo "<button class='button' onclick='myFunction(" . $row['CourseID'] . ",\"" . $row['Name'] . "\")'>"
 			 . $row['Name'] . ", " . $row['FirstName'] . " " . $row['LastName'] . ", "
 			 . $row['NumSeats'] . " seats </button><br><br>";
 		}

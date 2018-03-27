@@ -3,6 +3,7 @@
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 session_start();
 
+$points = $_POST['points'];
 $Question = $_POST['question'];
 $response0 = $_POST['ans0'];
 $response1 = $_POST['ans1'];
@@ -43,8 +44,8 @@ $QuestionIDNum = $_SESSION['QuestionNum'];
 
 $CurrentQuizID = $_SESSION['QuizID'];
 
-$questionQuery = "INSERT INTO Question (Question, QuizID, QuestionID) 
-            VALUES ('$Question', '$CurrentQuizID', '$QuestionIDNum')";
+$questionQuery = "INSERT INTO Question (Question, QuizID, QuestionID, Points) 
+            VALUES ('$Question', '$CurrentQuizID', '$QuestionIDNum', '$points')";
 
 
 $responseQuery0 = "INSERT INTO Response (QuizID, QuestionID, ResponseID, IsCorrect, Response)

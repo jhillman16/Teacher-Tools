@@ -2,7 +2,7 @@
 
 <?php
     session_start();
-    if(!isset($_COOKIE['AssignmentID']))
+    if(!isset($_SESSION['AssignmentID']))
     {
         header('Location: myAssignments.php');
     }
@@ -69,20 +69,14 @@ font-style: italic;
 
 <form action='QuizTestGrade.php' method='post'>
 <?php
-
-	$query = "SELECT QuizID FROM Quiz WHERE AssignmentID = " . $_COOKIE['AssignmentID'];
-	unset($_COOKIE['AssignmentID']);
-	$r = mysqli_query($link, $query);
-	$queryRow = mysqli_fetch_array($r);
-	$QuizID = $queryRow['QuizID'];
-	$_SESSION['QuizID'] = $QuizID;
+	$QuizID = $_SESSION['QuizID'];
 
 	$QuestionQuery = "SELECT Question, QuestionID FROM Question WHERE QuizID = $QuizID";
 	
-	$r1=mysqli_query($link, $QuestionQuery);
-
-	while($QuestionRow=mysqli_fetch_array($r1))
-	{
+	if($r1=mysqli_query($link, $QuestionQuery))
+	{	
+		while($QuestionRow=mysqli_fetch_array($r1))
+		{
 			echo "<p class='question'>" . ($QuestionRow['QuestionID'] +1) . ". " . $QuestionRow['Question'] . "</p>";
 			echo "<ul class='answers'>";
 
@@ -96,16 +90,27 @@ font-style: italic;
 			while($ResponseRow=mysqli_fetch_array($r2))
 			{
 				$AnsID = $GroupName . $Letter;
-				echo '<input type="radio" name=' . $GroupName . ' value=' . $Letter . ' id=' . $AnsID . ' ><label for=' . $AnsID . '>' . $ResponseRow["Response"] . '</label><br/>';
+				echo '<input type="radio" name=' . $GroupName . ' value=' . $ResponseRow["Response"] . ' id=' . $AnsID . ' ><label for=' . $AnsID . '>' . $ResponseRow["Response"] . '</label><br/>';
 				$Letter++;
 			}
 
-			echo "</ul>";
+				echo "</ul>";
+		}
 	}
-
+	else
+	{
+		echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
+	}
 ?>
 <input type="submit">
 </form>
+
+
+
+
+
+
+
 
 <br/>
 <div id="results">            

@@ -1,8 +1,13 @@
 <?php $title = "Create Question"; include 'header.php';?>
 <form method="post" action="CreateQuestionScript.php">
    <div>
+      <label><span>Points:</span>
+      <input id="points" type="number" step="1" placeholder="Enter a whole number" name="points" required />
+      </label>
+   </div>
+   <div>
       <label><span>Question:</span>
-      <input id="question" type="text" placeholder="Enter your question here" name="question">
+      <input id="question" type="text" placeholder="Enter your question here" name="question" required/>
       </label>
    </div>
    <div>
@@ -41,17 +46,19 @@
       <label><input type="hidden" name="cont" value="0" />
       <input class="checkbox" type="checkbox" name="cont" value="1" /> <span>Finish</span>
       </label>
-<?php
-session_start();
-if(isset($_SESSION['Error']))
-{
-    $error = $_SESSION['Error'];
-    session_unset($_SESSION['Error']);
-    $color = "red";
-    echo '<div style="color:'.$color.'">'.$error.'</div>';
-}
-?>
    </div>
+
+   <?php
+   session_start();
+   if(isset($_SESSION['Error']))
+   {
+     $error = $_SESSION['Error'];
+     session_unset($_SESSION['Error']);
+     $color = "red";
+     echo '<div style="color:'.$color.'">'.$error.'</div>';
+  }
+  ?>
+
    <div>
       <input type="submit" name="submit" value="Submit Question" />
    </div>

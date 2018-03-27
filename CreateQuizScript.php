@@ -7,11 +7,21 @@ $QuizName = $_POST['quizName'];
 $QuizDesc = $_POST['quizDescription'];
 $CategoryName = $_POST['categoryName'];
 $DueDate = $_POST['dueDate'];
+$Retake;
 $TeacherID = $_SESSION['TeacherID'];
 $CourseID = $_SESSION['CourseID'];
 $CategoryID;
 $AssignmentID;
 $DueDate=date("Y-m-d H:i:s",strtotime($DueDate));
+
+if($_POST['retake'] == "yes")
+{
+    $Retake = 1;
+}
+else
+{
+    $Retake = 0;
+}
 
 //This chunk of code checks the Category table to get CategoryID, if it exists
 $query = "SELECT CategoryID FROM Category WHERE CourseID = $CourseID AND CategoryName = '$CategoryName'";
@@ -55,8 +65,8 @@ else
 }
 
 //This chunk of code inserts the quiz into the Quiz table and redirects user to the create question page
-$query = "INSERT INTO Quiz (AssignmentID, Description, QuizName) 
-            VALUES ('$AssignmentID', '$QuizDesc', '$QuizName')";
+$query = "INSERT INTO Quiz (AssignmentID, Description, QuizName, AllowRetake) 
+            VALUES ('$AssignmentID', '$QuizDesc', '$QuizName', '$Retake')";
 if(mysqli_query($link, $query))
 {
     $_SESSION['QuizID'] = mysqli_insert_id($link);
