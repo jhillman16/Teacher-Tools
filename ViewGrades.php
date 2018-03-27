@@ -1,17 +1,12 @@
 <?php
 session_start();
-$title = "Performance - " . $_SESSION['ViewStudent']; 
+$title = "Performance - " . $_COOKIE['ViewStudent']; 
 include 'header.php';
 
 
 if(!isset($_SESSION['CourseID']))
 {
 	header('Location: myClass.php');
-}
-
-if(!isset($_SESSION['ViewStudnet']))
-{
-	header('Location: default.php');
 }
 
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
