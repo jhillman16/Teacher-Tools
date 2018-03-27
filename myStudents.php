@@ -11,7 +11,7 @@ function myFunction(studentID)
 <?php
 include 'header.php';
 
-$title2 = 'My Students - ' . $_SESSION['CourseName'];  
+$title2 = "My Students - ' . $_SESSION['CourseName']";  
 $title = $title2;
 
 
