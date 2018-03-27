@@ -44,6 +44,31 @@ Select a File <BR />
 
 
 </form>
+<a href="https://www.visualstudio.com/downloads/?id2=546" title="Download Memory Game"target="_blank"onClick="javascript:document.location.reload(true)">Download</a>
+<a href="Signup.php?id=546" title="Download Memory Game"target="_blank"onClick="javascript:document.location.reload(true)">Test Download</a>
+
+
+<a href="http://www.google.com" target="blank" onClick="javascript:document.location.reload(true)">Click here</a> 
+
+<?php
+
+$lin=$_GET['id2'];
+
+
+  
+  if ($lin==546)
+    {
+    echo "Return Code:";
+    }
+  else
+    {
+    echo "Upload: ";
+    }
+
+    
+
+?>
+
 <body>
 
   

@@ -34,9 +34,14 @@ if($r=mysqli_query($link, $query))
 {
 	while($row=mysqli_fetch_array($r))
 	{
+<<<<<<< HEAD
 		echo "hi";
 
 		//echo "<button class='button' onclick='myFunction(" . $row['StudentID'] . ")'>" . $row['FirstName'] . " " . $row['LastName'] . " " . $row['UserName'] . "</button><br><br>";    		
+=======
+		echo "<button class='button' onclick='myFunction( . $row['StudentID'] . )'>"
+		. $row['FirstName'] . " " . $row['LastName'] . " " . $row['UserName'] . "</button><br><br>";    		
+>>>>>>> 43fa57533861b3dc501bcc01a8bda5eee2084636
 	}
 }
 else
