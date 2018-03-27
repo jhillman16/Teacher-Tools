@@ -9,10 +9,12 @@ function myFunction(studentID)
 </script> 
 
 <?php
-include 'header.php';
 
-$title2 = 'My Students - ';   
-$title = $title2;
+session_start();
+
+$title = 'My Students - ' . $_SESSION['CourseName'];  
+
+include 'header.php';
 
 
 if(!isset($_SESSION['CourseID']) || !isset($_SESSION['TeacherID']))
