@@ -1,5 +1,5 @@
 <?php
-$title = "Performance - " . $_SESSION['$CourseName']; 
+$title = "Performance - " . $_SESSION['CourseName']; 
 include 'header.php';
 session_start();
 
