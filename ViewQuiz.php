@@ -12,7 +12,7 @@ if( isset( $_SESSION['n'] ) ) {
       $_SESSION['n'] = 0;
    }*/
 
-$QuestionQuery = "SELECT UserName FROM StudentsUser WHERE StudentID IN(SELECT StudentID FROM `Enrollment` WHERE CourseID = 7)";
+$QuestionQuery = "SELECT UserName FROM StudentsUser WHERE StudentID IN(SELECT StudentID FROM `Enrollment` WHERE CourseID = 1)";
 
 
 $r1=mysqli_query($link, $QuestionQuery);
