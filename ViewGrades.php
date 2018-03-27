@@ -9,6 +9,11 @@ if(!isset($_SESSION['CourseID']))
 	header('Location: myClass.php');
 }
 
+if(!isset($_SESSION['ViewStudnet']))
+{
+	header('Location: default.php');
+}
+
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
 echo "<h2>Select a student to view performance in course.<h2><br>";
