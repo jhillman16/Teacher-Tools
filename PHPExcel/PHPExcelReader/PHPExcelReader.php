@@ -89,8 +89,6 @@ class PHPExcelReader implements SeekableIterator, Countable {
                     break;
                 case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
                 case 'application/vnd.openxmlformats-officedocument.spreadsheetml.template':
-                case 'application/zip':
-                case 'application/x-zip':
                 case 'application/xlsx':
                 case 'application/xltx':
                     $this->type = self::TYPE_XLSX;
@@ -121,12 +119,6 @@ class PHPExcelReader implements SeekableIterator, Countable {
             $this->handle = new PHPExcel_Reader_XLS($filePath);
             if ($this->handle->error) {
                 $this->handle->__destruct();
-
-                if (is_resource($Ziphandle = zip_open($filePath))) {
-                    $this->type = self::TYPE_XLSX;
-                    zip_close($Ziphandle);
-                } else {
-                    $this->type = self::TYPE_CSV;
                 }
             }
         }
