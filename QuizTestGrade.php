@@ -50,9 +50,6 @@
 				{
 					$totalCorrect = $totalCorrect + $questionPoints;
 				}
-
-
-				echo $userAnswer . " " . $realAnswer . " " . $totalCorrect . "/" . $totalPoints . "<br>";
 				
 				$questionNum++;
 		}
