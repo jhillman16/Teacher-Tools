@@ -8,6 +8,7 @@
         header('Location: myAssignments.php');
     }
 
+    $courseID = $_SESSION['CourseID'];
 	$quizID = $_SESSION['QuizID'];
 	$assignmentID = $_SESSION['AssignmentID'];
 	$studentID = $_SESSION['StudentID'];
@@ -59,7 +60,7 @@
 			$score = $dbScore;
 
 		if($dbScore == -1)
-			$query = "INSERT INTO Performance (StudentID, Score, AssignmentID) VALUES ('$studentID', '$score', '$assignmentID')";
+			$query = "INSERT INTO Performance (StudentID, Score, AssignmentID, CourseID) VALUES ('$studentID', '$score', '$assignmentID', '$courseID')";
 		else
 			$query = "UPDATE Performance SET Score = $score WHERE StudentID = $studentID AND AssignmentID = $assignmentID";
 
