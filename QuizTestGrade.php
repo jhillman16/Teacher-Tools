@@ -50,11 +50,14 @@
 				{
 					$totalCorrect = $totalCorrect + $questionPoints;
 				}
+
+
+				echo $userAnswer . " " . $realAnswer . " " . $totalCorrect . "/" . $totalPoints . "<br>";
 				
 				$questionNum++;
 		}
 
-		ini_set("precision", 2);
+		ini_set("precision", 2); //Sets the precision of a float to two decimals
 		$score = $totalCorrect / $totalPoints;
 		if($dbScore > $score)
 			$score = $dbScore;
