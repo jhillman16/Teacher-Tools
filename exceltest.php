@@ -20,7 +20,7 @@ while($data->val($row, $col) != ';')
 		echo $data->val($row, $column);
 		$column++;
 	}
-	row++;	
+	$row++;	
 }
 
 
