@@ -6,11 +6,10 @@ session_start();
 
 $data = new Spreadsheet_Excel_Reader("test1.xls", false);
 
-$row;
-$column;
+$row = 1;
+$column = 1;
 
-
-echo $data->val(1, 1);
+echo $data->val($row, $column);
 
 /*
 while($data->val($row, $col) != ';')
@@ -24,5 +23,6 @@ while($data->val($row, $col) != ';')
 	}
 }
 */
+
 
 ?>
