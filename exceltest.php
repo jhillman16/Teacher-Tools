@@ -5,19 +5,21 @@ include("ConnectDatabase.php"); //Goes through steps of connecting to database
 session_start();
 
 $data = new Spreadsheet_Excel_Reader("test1.xls", false);
-echo "help";
+
+
 $row = 1;
 $column = 1;
 
 while($data->val($row, $column) != ';')
 {	
+	$column = 1;
 	while($data->val($row, $column) != ',')
 	{
 		echo $data->val($row, $column);
 		$column++;
 	}
 	$row++;	
-	$column = 1;
+	
 }
 
 
