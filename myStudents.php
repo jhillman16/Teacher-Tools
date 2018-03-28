@@ -1,9 +1,10 @@
 <script>
 //Parameter course is the course ID associated with the class button that is clicked on.
 //Sends to php script to set the course ID cookie for the user
-function myFunction(studentID)
+function myFunction(studentID,lastName)
 {
 	document.cookie = "ViewStudent=" + studentID;
+	document.cookie = "StudentName=" + lastName;
 	window.location = 'ViewGrades.php';
 }
 </script> 
@@ -40,7 +41,7 @@ if($r=mysqli_query($link, $query))
 {
 	while($row=mysqli_fetch_array($r))
 	{
-		echo "<button class='button' onclick='myFunction(" . $row['StudentID'] . ")'>" . $row['FirstName'] . " " . $row['LastName'] . " " . $row['UserName'] . "</button><br><br>";    		
+		echo "<button class='button' onclick='myFunction(" . $row['StudentID'] .  $row['LastName'] . ")'>" . $row['FirstName'] . " " . $row['LastName'] . " " . $row['UserName'] . "</button><br><br>";    		
 	}
 }
 else

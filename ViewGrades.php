@@ -1,6 +1,6 @@
 <?php
 session_start();
-$title = "Performance - " . $_COOKIE['ViewStudent']; 
+$title = "Performance - " . $_COOKIE['StudentName']; 
 include 'header.php';
 
 
