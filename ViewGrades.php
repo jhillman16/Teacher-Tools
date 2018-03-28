@@ -17,10 +17,8 @@ $query = "SELECT LetterGrade FROM Performance WHERE StudentID = '$id'')";
 
 if($r=mysqli_query($link, $query))
 {
-	while($row=mysqli_fetch_array($r))
-	{
-		echo "HELLO";
-	}
+	$row=mysqli_fetch_array($r);
+	echo ".row['LetterGrade']";
 }
 
 include 'footer.php';
