@@ -9,9 +9,6 @@ $data = new Spreadsheet_Excel_Reader("test1.xls", false);
 $row = 1;
 $column = 1;
 
-echo $data->val($row, $column);
-
-
 while($data->val($row, $column) != ';')
 {	
 	while($data->val($row, $column) != ',')
