@@ -1,3 +1,4 @@
+
 <?php $title = "File Upload"; include 'header.php';?>
 
 <!DOCTYPE html>
@@ -13,12 +14,14 @@
 
 if(ini_get('file_uploads') == 1)
 {
-  
+  echo 'HTTP Upload Enabled<br />';
 }
 else
 {
   echo 'HTTP Upload Disabled<br />';
 }
+echo 'post_max_size = ' . ini_get('post_max_size') . "\n";
+
 
 
 ?>
@@ -38,40 +41,38 @@ else
 	 <body>
 <h3>File upload </h3>
 Select a File <BR />
-<Form action ="upload.php" method = "post" enctype="multipart/form-data">
+<form action ="upload.php" method = "post" enctype="multipart/form-data">
 <input type="file" name ="file" size = "500" >
-<input type ="submit" value = "Upload File">
+<input type ="submit" name="T1" value = "Upload File">
 
+<h3>OR</h3>
 
+<form action="upload.php" method="post">
+    Name:  <input type="text" name="username" />
+    Email: <input type="text" name="email" />
+    <input type="submit" name="submit" value="Submit me!" />
 </form>
-<a href="https://www.visualstudio.com/downloads/?id2=546" title="Download Memory Game"target="_blank"onClick="javascript:document.location.reload(true)">Download</a>
-<a href="Signup.php?id=546" title="Download Memory Game"target="_blank"onClick="javascript:document.location.reload(true)">Test Download</a>
 
 
-<a href="http://www.google.com" target="blank" onClick="javascript:document.location.reload(true)">Click here</a> 
-
-<?php
-
-$lin=$_GET['id2'];
 
 
-  
-  if ($lin==546)
-    {
-    echo "Return Code:";
-    }
-  else
-    {
-    echo "Upload: ";
-    }
+<form>
+<br><br>
+<h5>To view your files</h5>
+<a href="list.php">Click here</a>
+</form>
 
-    
-
-?>
+<br>
+<form>
+<br><br>
+<h5>To view your links</h5>
+<a href="upload2.php">Click here</a>
+</form>
 
 <body>
 
   
+
 
 
 
