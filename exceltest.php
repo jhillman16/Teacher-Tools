@@ -14,12 +14,12 @@ echo $data->val($row, $column);
 
 while($data->val($row, $col) != ';')
 {
+	$col = 1;
 	while($data->val($row, $col) != ',')
 	{
 		echo $data->val($row, $column);
 		$col++;
 	}
-	$col = 1;
 	row++;	
 }
 
