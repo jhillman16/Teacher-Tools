@@ -10,7 +10,7 @@ $row;
 $column;
 
 
-echo $data->val(0, 0);
+echo $data->val(1, 1);
 
 /*
 while($data->val($row, $col) != ';')
