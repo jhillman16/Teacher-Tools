@@ -2,7 +2,7 @@
 session_start();
 $title = "Performance - " . $_COOKIE['StudentName']; 
 include 'header.php';
-
+$id = $_COOKIE['ViewStudent']; 
 
 if(!isset($_SESSION['CourseID']))
 {
@@ -13,21 +13,15 @@ include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
 echo "<h2>Select a student to view performance in course.<h2><br>";
 
-/*
-$query = "SELECT UserName, FirstName, LastName, StudentID FROM StudentsUser WHERE StudentID IN (SELECT StudentID FROM Enrollment WHERE CourseID = $CourseID)";
-
-//Attempt to get students's information taking the course
+$query = "SELECT LetterGrade FROM Performance WHERE StudentID = '$id'')";
 
 if($r=mysqli_query($link, $query))
 {
 	while($row=mysqli_fetch_array($r))
 	{
-		echo "<button class='button' onclick='myFunction(" . $row['StudentID'] . ")'>"
-			 . $row['FirstName'] . " " . $row['LastName'] . " (" . $row['UserName'] . ")</button><br><br>";    		
+		echo ".row['LetterGrade']";
 	}
-
 }
-*/
 
 include 'footer.php';
 ?>
