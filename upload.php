@@ -2,11 +2,11 @@
 <?php $title = "File Upload"; include 'header.php';?>
 <?php
 
-$allowedExts = array("jpg", "jpeg", "gif", "png", "txt", "doc", "docx");
+
+$allowedExts = array("jpg", "jpeg", "gif", "png", "txt");
 $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
 
 if ((($_FILES["file"]["type"] == "text/plain")
-|| ($_FILES["file"]["type"] == "application/msword")
 || ($_FILES["file"]["type"] == "image/jpg")
 || ($_FILES["file"]["type"] == "image/gif")
 || ($_FILES["file"]["type"] == "image/png")
@@ -27,12 +27,11 @@ if ((($_FILES["file"]["type"] == "text/plain")
     echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
     echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
 
-
+	
 
     if (file_exists("temp/" . $_FILES["file"]["name"]))
       {
       echo $_FILES["file"]["name"] . " already exists. ";
-	
       }
     else
       {
@@ -45,8 +44,22 @@ else
   {
   echo "Invalid file";
   }
-echo " <p>To view your files: ";
-echo '<a href="list.html">Click here</a></p>';
+
+
 
 ?>
+<?php
+
+$linkName=$_POST['email'];
+$nm=$_POST['username'];
+
+?>
+<br>
+<a href="<?=$linkName?>" target="_blank">$nm</a>
+
+
+<br>
+<a href="UploadFiles.php">Return to "Upload Pade"</a>
+
+
 <?php include 'footer.php';?>
