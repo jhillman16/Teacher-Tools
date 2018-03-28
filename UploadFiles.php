@@ -49,7 +49,7 @@ Select a File <BR />
 
 <form action="upload.php" method="post">
     Name:  <input type="text" name="username" />
-    Email: <input type="text" name="email" />
+    Link: <input type="text" name="email" />
     <input type="submit" name="submit" value="Submit me!" />
 </form>
 
