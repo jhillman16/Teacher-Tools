@@ -9,13 +9,18 @@ $data = new Spreadsheet_Excel_Reader("test1.xls", false);
 
 $row = 1;
 $column = 1;
+$end = FALSE;
 
-while($data->val($row, $column) != ';')
+while(!'$end')
 {	
 	while($data->val($row, $column) != ',')
 	{
 		echo $data->val($row, $column);
 		$column++;
+		if($data->val($row, $column == ';')
+		{
+			   $end = TRUE;
+		}
 	}
 	$row++;	
 	$column = 1;
