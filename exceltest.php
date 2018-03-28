@@ -11,18 +11,18 @@ $column = 1;
 
 echo $data->val($row, $column);
 
-/*
+
 while($data->val($row, $col) != ';')
 {
 	while($data->val($row, $col) != ',')
 	{
-		
-
-
-
+		echo $data->val($row, $column);
+		$col++;
 	}
+	$col = 1;
+	row++;	
 }
-*/
+
 
 
 ?>
