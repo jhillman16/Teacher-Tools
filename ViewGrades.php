@@ -19,7 +19,7 @@ if($r=mysqli_query($link, $query))
 {
 	while($row=mysqli_fetch_array($r))
 	{
-		echo ".row['LetterGrade']";
+		echo "HELLO";
 	}
 }
 
