@@ -1,5 +1,1 @@
-{
-  "require": {
-    "cloudinary/cloudinary_php": "dev-master"
-  }
-}
+{}
