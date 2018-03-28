@@ -1,7 +1,8 @@
 <?php
-$title = "Performance - " . $_SESSION['$CourseName']; 
-include 'header.php';
 session_start();
+$title = "Performance - " . $_COOKIE['ViewStudent']; 
+include 'header.php';
+
 
 if(!isset($_SESSION['CourseID']))
 {

@@ -90,7 +90,7 @@ font-style: italic;
 			while($ResponseRow=mysqli_fetch_array($r2))
 			{
 				$AnsID = $GroupName . $Letter;
-				echo '<input type="radio" name=' . $GroupName . ' value=' . $ResponseRow["Response"] . ' id=' . $AnsID . ' ><label for=' . $AnsID . '>' . $ResponseRow["Response"] . '</label><br/>';
+				echo '<input type="radio" name="' . $GroupName . '" value="' . $ResponseRow["Response"] . '" id="' . $AnsID . '" ><label for="' . $AnsID . '">' . $ResponseRow["Response"] . '</label><br/>';
 				$Letter++;
 			}
 
