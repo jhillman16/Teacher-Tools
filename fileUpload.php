@@ -3,9 +3,9 @@ require 'Cloudinary.php';
 require 'Uploader.php';
 
 \Cloudinary::config(array(
-    "cloud_name" => "xxxxx",
-    "api_key" => "xxxxxxxxxx",
-    "api_secret" => "_xxxxxxxxxxxxxx"
+    "cloud_name" => "hzpnyxrng",
+    "api_key" => "663542711141867",
+    "api_secret" => "_3umXJKOqo-t332Cn3njsa-c7Fkc"
 ));
 
 if (isset($_POST["submit"])) {
