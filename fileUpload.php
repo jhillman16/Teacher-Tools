@@ -15,19 +15,5 @@ if (isset($_POST["submit"])) {
 }
 
 ?>
-<!DOCTYPE HTML>
-  <html>
-    <head>
-  </head>
 
-  <body>
-
-<form method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
-</form>
-
-  </body>
-</html>
 
