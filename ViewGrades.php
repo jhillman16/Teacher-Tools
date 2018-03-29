@@ -13,7 +13,7 @@ include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
 echo "<h2>Select a student to view performance in course.<h2><br>";
 
-$query = "SELECT LetterGrade FROM Performance WHERE StudentID = '$id'')";
+$query = "SELECT LetterGrade FROM Performance WHERE StudentID = '$id'";
 
 if($r=mysqli_query($link, $query))
 {
@@ -24,7 +24,7 @@ if($r=mysqli_query($link, $query))
 	else
 	{
 		$row=mysqli_fetch_array($r);
-		echo "<h2>.row['LetterGrade']<h2><br>";
+		echo "<h2>'$row['LetterGrade']'<h2><br>";
 	}
 
 	
