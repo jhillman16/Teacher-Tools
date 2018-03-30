@@ -94,6 +94,7 @@ section header h1 {
 }
 
 section #content h1 {display: none;}
+section #content h1::after {content: "The h1 tag is reserved for the page header.";}
 section #content h2 {
 	color: #083B66;
 	font-size: 22px;
