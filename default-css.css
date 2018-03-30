@@ -53,7 +53,7 @@ nav ul {
 }*/
 nav ul li:first-child a { border-radius: 0px 10px 0px 0px; }
 nav ul li:last-child a { border-radius: 0px 0px 10px 0px; }
-nav ul li:only-child a { border-radius: 0px 10px 10px 0px; }
+nav ul li:only-child a { border-radius: 0px 10px 10px 10px; }
 nav ul li {
 	color: #fff;
 }

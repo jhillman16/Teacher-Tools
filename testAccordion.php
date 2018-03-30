@@ -29,7 +29,7 @@
 		<li><a href="#">a link</a></li>
 		<li><a href="#">a link</a></li>
 		<li><a href="#">a link</a></li>
-		<li class="accordion-link" data-toggle="collapse" data-target="#subLink" aria-expanded="false" aria-controls="subLink"><a href="#">link</a>
+		<li class="accordion-link" data-toggle="collapse" data-target="#subLink" aria-expanded="false" aria-controls="subLink">description
 			<ul class="collapse" id="subLink">
 				<li class="accordion-sub-link"><a href="#">sub-link</a></li>
 			</ul>
