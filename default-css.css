@@ -51,8 +51,12 @@ nav ul {
 	padding: 5px 0px;
 	margin: 0px 0px 20px 0px;
 }*/
-nav ul li:first-child a { border-radius: 0px 10px 0px 0px; }
-nav ul li:last-child a { border-radius: 0px 0px 10px 0px; }
+nav ul li:first-child a,
+nav ul li:first-child.accordion-link
+	{ border-radius: 0px 10px 0px 0px; }
+nav ul li:last-child a,
+nav ul li:last-child.accordion-link
+	{ border-radius: 0px 0px 10px 0px; }
 nav ul li:only-child a { border-radius: 0px 10px 10px 10px; }
 nav ul li {
 	color: #fff;
@@ -299,7 +303,7 @@ table .last-post {
 
 }
 .accordion-sub-link {
-
+	margin-left: -35px;
 }
 #subLink {
 
