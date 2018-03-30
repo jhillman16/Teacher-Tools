@@ -24,9 +24,22 @@
 	</div>
 </div>
 
+<p>First child</p>
 <nav>
 	<ul>
+		<li class="accordion-link" data-toggle="collapse" data-target="#subLink" aria-expanded="false" aria-controls="subLink">description
+			<ul class="collapse" id="subLink">
+				<li class="accordion-sub-link"><a href="#">sub-link</a></li>
+			</ul>
+		</li>
 		<li><a href="#">a link</a></li>
+		<li><a href="#">a link</a></li>
+	</ul>
+</nav>
+
+<p>Last child</p>
+<nav>
+	<ul>
 		<li><a href="#">a link</a></li>
 		<li><a href="#">a link</a></li>
 		<li class="accordion-link" data-toggle="collapse" data-target="#subLink" aria-expanded="false" aria-controls="subLink">description
@@ -34,6 +47,30 @@
 				<li class="accordion-sub-link"><a href="#">sub-link</a></li>
 			</ul>
 		</li>
+	</ul>
+</nav>
+
+<p>Only child</p>
+<nav>
+	<ul>
+		<li class="accordion-link" data-toggle="collapse" data-target="#subLink" aria-expanded="false" aria-controls="subLink">description
+			<ul class="collapse" id="subLink">
+				<li class="accordion-sub-link"><a href="#">sub-link</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+<p>Middle child</p>
+<nav>
+	<ul>
+		<li><a href="#">a link</a></li>
+		<li class="accordion-link" data-toggle="collapse" data-target="#subLink" aria-expanded="false" aria-controls="subLink">description
+			<ul class="collapse" id="subLink">
+				<li class="accordion-sub-link"><a href="#">sub-link</a></li>
+			</ul>
+		</li>
+		<li><a href="#">a link</a></li>
 	</ul>
 </nav>
 
