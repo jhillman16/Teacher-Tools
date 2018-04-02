@@ -10,8 +10,9 @@ $data = new Spreadsheet_Excel_Reader("test1.xls", false);
 $row = 1;
 $column = 1;
 $end = FALSE;
+$count = 0;
 
-while(!$end)
+while($count < 13)
 {	
 	while($data->val($row, $column) != ',')
 	{
@@ -24,6 +25,7 @@ while(!$end)
 	}
 	$row++;	
 	$column = 1;
+	$count++;
 	
 }
 
