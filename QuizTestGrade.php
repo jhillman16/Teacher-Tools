@@ -67,7 +67,7 @@
 
 		if(mysqli_query($link, $query))
 		{
-		    echo "<p>Grading complete. You have recieved a score of " . $score * 100 . "% on this quiz.<p>";
+		    echo "<p>Grading complete. You have recieved a score of " . $score . "% on this quiz.<p>";
 		}
 		else
 		{
