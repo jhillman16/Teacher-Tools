@@ -25,9 +25,6 @@ if (array_key_exists('REQUEST_SCHEME', $_SERVER)) {
   <?php echo cl_image_upload_tag('image_id', array("callback" => $cors_location)); ?>
 </form>
 
-<?php echo cl_image_tag($photo["public_id"], 
-          array("format" => "jpg", "crop" => "fill", "width" => 120, "height" => 80)); ?>
-
 
 
 
