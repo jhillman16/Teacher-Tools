@@ -7,20 +7,10 @@
 
 $cloudName = "hzpnyxrng";
 $apiKey = "663542711141867";
-$time = time();
+$time = "1315060510";
 $apiSecret = "3umXJKOqo-t332Cn3njsa-c7Fkc";
 $fileName = "file_name";
 
-/*\Cloudinary::config(array(
-    "cloud_name" => "hzpnyxrng",
-    "api_key" => "663542711141867",
-    "api_secret" => "_3umXJKOqo-t332Cn3njsa-c7Fkc"
-));
-if (isset($_POST["submit"])) {
-    print_r($_FILES["fileToUpload"]);
-    $cloudUpload = \Cloudinary\Uploader::upload($_FILES["fileToUpload"]['tmp_name']);
-    print_r($cloudUpload);
-}*/
 ?>
 
 <form action="https://api.cloudinary.com/v1_1/<?php echo $cloudName;?>/image/upload" method="post" enctype="multipart/form-data">
