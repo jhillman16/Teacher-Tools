@@ -12,7 +12,12 @@ require 'Api.php';
 ));
 \Cloudinary\Uploader::upload("/Tatiana/peonies.png");
 
-print("Hello its not working");
+if (isset($_POST["submit"])) {
+    print_r($_FILES["fileToUpload"]);
+    $cloudUpload = \Cloudinary\Uploader::upload($_FILES["fileToUpload"]['tmp_name']);
+    print_r($cloudUpload);
+}
+else print("Hello its not working");
 
 ?>
 
