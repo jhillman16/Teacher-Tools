@@ -50,8 +50,8 @@ if($r=mysqli_query($link, $queryQuiz))
 		if($r2=mysqli_query($link, $queryName))
 		{
 			$row2=mysqli_fetch_array($r2);
-			echo "<h2>$grade<h2><br>";
 			echo "<h2>$row2[0]<h2><br>";
+			echo "<h2>$grade<h2><br>";
 		}
 
 	}
