@@ -11,7 +11,7 @@ $row = 1;
 $column = 1;
 $end = FALSE;
 
-while(!'$end')
+while(!$end)
 {	
 	while($data->val($row, $column) != ',')
 	{
