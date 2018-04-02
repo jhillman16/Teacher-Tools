@@ -1,27 +1,35 @@
-<html>
-<head><title> Form Uploading </title></head>
-<body>
+<?php $title = "Teacher Tools"; include 'header.php';?>
 
-<?php
 
-if(ini_get('file_uploads') == 1)
-{
-  echo 'HTTP Upload Enabled<br />';
+
+
+<?php echo cloudinary_js_config(); ?>
+
+<script>
+$(function() {
+  if($.fn.cloudinary_fileupload !== undefined) {
+    $("input.cloudinary-fileupload[type=file]").cloudinary_fileupload();
+  }
+});
+
+if (array_key_exists('REQUEST_SCHEME', $_SERVER)) {   
+  $cors_location = $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] .
+    dirname($_SERVER["SCRIPT_NAME"]) . "/cloudinary_cors.html";
+} else {
+  $cors_location = "https://" . $_SERVER["HTTP_HOST"] . "/cloudinary_cors.html";
 }
-else
-{
-  echo 'HTTP Upload Disabled<br />';
-}
-echo 'post_max_size = ' . ini_get('post_max_size') . "\n";
 
-?>
+</script>
 
-<h3>File upload</h3>
-<p>Select a File </p>
-	<form action="testUpload-script.php" method="post" enctype="multipart/form-data">
-		<input type="file" name="file" id="file" size="50000" />
-		<input type="submit" name="submit" value="Upload File" />
-	</form>
+<form action="uploaded.php" method="post">
+  <?php echo cl_image_upload_tag('image_id', array("callback" => $cors_location)); ?>
+</form>
 
-</body>
-</html>
+<?php echo cl_image_tag($photo["public_id"], 
+          array("format" => "jpg", "crop" => "fill", "width" => 120, "height" => 80)); ?>
+
+
+
+
+
+<?php include 'footer.php';?>
