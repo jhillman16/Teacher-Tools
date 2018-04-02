@@ -4,14 +4,12 @@
 
 
 <?php
-require 'src/Cloudinary.php';
-require 'src/Uploader.php';
 
-$cloudName = hzpnyxrng;
-$apiKey = 663542711141867;
+$cloudName = "hzpnyxrng";
+$apiKey = "663542711141867";
 $time = time();
-$apiSecret = 3umXJKOqo-t332Cn3njsa-c7Fkc;
-$fileName = file_name;
+$apiSecret = "3umXJKOqo-t332Cn3njsa-c7Fkc";
+$fileName = "file_name";
 
 /*\Cloudinary::config(array(
     "cloud_name" => "hzpnyxrng",
