@@ -12,7 +12,7 @@ $column = 1;
 $end = FALSE;
 $count = 0;
 
-while($count < 2)
+while(!$end)
 {	
 	while($data->val($row, $column) != ',')
 	{
