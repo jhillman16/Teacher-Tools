@@ -52,12 +52,13 @@ nav ul {
 	margin: 0px 0px 20px 0px;
 }*/
 nav ul li:first-child a,
-nav ul li:first-child.accordion-link
+nav ul li:first-child .accordion-link
 	{ border-radius: 0px 10px 0px 0px; }
 nav ul li:last-child a,
-nav ul li:last-child.accordion-link
+nav ul li:last-child .accordion-link
 	{ border-radius: 0px 0px 10px 0px; }
 nav ul li:only-child a { border-radius: 0px 10px 10px 10px; }
+	nav ul li #accordion a { border-radius: 0px; }
 nav ul li {
 	color: #fff;
 }
@@ -72,7 +73,7 @@ nav ul li #accordion .accordion-link {
 	padding: 5px 0px 5px 5px;
 	cursor: pointer;
 }
-nav ul li #accordion .accordion-link::after { font-size: 90%; content: '\25BC'; }
+nav ul li #accordion .accordion-link:after { font-size: 90%; content: '\25BC'; }
 nav ul li #accordion .accordion-active { padding-left: 100px; }
 nav ul li a:before {content: '\000BB  ';}
 nav ul li #accordion a {
