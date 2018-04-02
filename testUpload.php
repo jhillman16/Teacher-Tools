@@ -4,8 +4,8 @@
 
 
 <?php
-require 'Cloudinary.php';
-require 'Uploader.php';
+require 'src/Cloudinary.php';
+require 'src/Uploader.php';
 
 $cloudName = hzpnyxrng;
 $apiKey = 663542711141867;
