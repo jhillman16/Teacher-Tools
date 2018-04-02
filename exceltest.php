@@ -25,6 +25,7 @@ while($count < 13)
 	}
 	$row++;	
 	$column = 1;
+	$count++;
 	
 }
 
