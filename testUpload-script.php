@@ -1,5 +1,5 @@
 <?php
-/*
+
 $allowedExts = array("jpg", "jpeg", "gif", "png", "txt");
 $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
 
@@ -39,7 +39,7 @@ else
   {
   echo "Invalid file";
   }
-*/
+
 
 
 ?>
