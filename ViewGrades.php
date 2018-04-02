@@ -24,7 +24,7 @@ if($r=mysqli_query($link, $query))
 	else
 	{
 		$row=mysqli_fetch_array($r);
-		//echo "<h2>'.$row['LetterGrade']'<h2><br>";
+		echo "<h2>'.$row[0]'<h2><br>";
 	}
 
 	
