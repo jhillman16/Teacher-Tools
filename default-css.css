@@ -51,20 +51,35 @@ nav ul {
 	padding: 5px 0px;
 	margin: 0px 0px 20px 0px;
 }*/
-nav ul li:first-child a { border-radius: 0px 10px 0px 0px; }
-nav ul li:last-child a { border-radius: 0px 0px 10px 0px; }
+nav ul li:first-child a,
+nav ul li:first-child.accordion-link
+	{ border-radius: 0px 10px 0px 0px; }
+nav ul li:last-child a,
+nav ul li:last-child.accordion-link
+	{ border-radius: 0px 0px 10px 0px; }
+nav ul li:only-child a { border-radius: 0px 10px 10px 10px; }
 nav ul li {
 	color: #fff;
 }
-nav ul li a {
+nav ul li a,
+nav ul li #accordion a,
+nav ul li #accordion .accordion-link {
 	background-color: #083B66;
 	color: #fff;
 	display: block;
 	width: 195px;
 	text-decoration: none;
 	padding: 5px 0px 5px 5px;
+	cursor: pointer;
 }
-nav ul li a:hover {
+nav ul li #accordion .accordion-link::after { font-size: 90%; content: '\25BC'; }
+nav ul li #accordion .accordion-active { padding-left: 100px; }
+nav ul li a:before {content: '\000BB  ';}
+nav ul li #accordion a {
+	padding-left: 20px;
+}
+nav ul li a:hover,
+nav ul li #accordion a:hover {
 	background-color: #4C96D7;
 	/*outline: 1px solid #083B66;*/
 	color: #fff;
@@ -94,6 +109,7 @@ section header h1 {
 }
 
 section #content h1 {display: none;}
+section #content h1::after {content: "The h1 tag is reserved for the page header.";}
 section #content h2 {
 	color: #083B66;
 	font-size: 22px;
@@ -287,4 +303,18 @@ table .replies {
 }
 table .last-post {
 	width: 150px;
+}
+
+
+
+
+
+.accordion-link {
+
+}
+.accordion-sub-link {
+	margin-left: -35px;
+}
+#subLink {
+
 }
