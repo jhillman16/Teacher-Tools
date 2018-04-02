@@ -33,7 +33,7 @@ else
 	<ul>
 		<li>
 			<span id="accordion">
-				<div id="accordionOne" class="accordion-link accordion-plus" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+				<div id="accordionOne" class="accordion-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 					Site Related Links
 				</div>
 				<div id="collapseOne" class="collapse" aria-labelledby="accordionOne" data-parent="#accordion">
