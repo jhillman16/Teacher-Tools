@@ -43,7 +43,6 @@ if($r=mysqli_query($link, $queryQuiz))
 	{
 		$row=mysqli_fetch_array($r);
 		$assignid = $row[0];
-		echo "<h2>$row[0]<h2><br>";
 
 		$queryName = "SELECT AssignmentName FROM Assignments WHERE AssignmentID = '$assignid'";
 
