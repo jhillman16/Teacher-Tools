@@ -18,7 +18,7 @@ while($count < 13)
 	{
 		echo $data->val($row, $column);
 		$column++;
-		if($data->val($row, $column == ';'))
+		if($data->val($row, $column) == ';')
 		{
 			   $end = TRUE;
 		}
