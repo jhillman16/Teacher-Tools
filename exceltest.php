@@ -4,6 +4,10 @@ require_once 'excel_reader2.php';
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 session_start();
 
+
+
+
+
 $data = new Spreadsheet_Excel_Reader("test1.xls", false);
 
 
@@ -15,7 +19,7 @@ $count = 0;
 while(!$end)
 {	
 	while($data->val($row, $column) != ',')
-	{
+	{		
 		echo $data->val($row, $column);
 		$column++;
 		if($data->val($row, $column) == ';')
