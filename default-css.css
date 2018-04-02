@@ -61,15 +61,25 @@ nav ul li:only-child a { border-radius: 0px 10px 10px 10px; }
 nav ul li {
 	color: #fff;
 }
-nav ul li a {
+nav ul li a,
+nav ul li #accordion a,
+nav ul li #accordion .accordion-link {
 	background-color: #083B66;
 	color: #fff;
 	display: block;
 	width: 195px;
 	text-decoration: none;
 	padding: 5px 0px 5px 5px;
+	cursor: pointer;
 }
-nav ul li a:hover {
+nav ul li #accordion .accordion-link::after { font-size: 90%; content: '\25BC'; }
+nav ul li #accordion .accordion-active { padding-left: 100px; }
+nav ul li a:before {content: '\000BB  ';}
+nav ul li #accordion a {
+	padding-left: 20px;
+}
+nav ul li a:hover,
+nav ul li #accordion a:hover {
 	background-color: #4C96D7;
 	/*outline: 1px solid #083B66;*/
 	color: #fff;
