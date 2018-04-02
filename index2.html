@@ -1,31 +1,19 @@
-<script src="//widget.cloudinary.com/global/all.js" type="text/javascript">  
-</script>
 
-<!DOCTYPE HTML>
-  <html>
-    <head>
-  </head>
 
-  <body>
 
-<form action="fileUpload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
-</form>
 
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload with PHP</title>
+</head>
+<body>
+    <form action="fileUpload.php" method="post" enctype="multipart/form-data">
+        Upload a File:
+        <input type="file" name="file" id="fileToUpload">
+        <input type="submit" name="submit" value="Upload File Now" >
+    </form>
+</body>
 </html>
-
-
-<a href="#" id="upload_widget_opener">Upload multiple images</a>
-
-<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
-
-<script type="text/javascript">  
-  document.getElementById("upload_widget_opener").addEventListener("click", function() {
-    cloudinary.openUploadWidget({ cloud_name: 'demo', upload_preset: 'a5vxnzbp'}, 
-      function(error, result) { console.log(error, result) });
-  }, false);
-</script>
 
