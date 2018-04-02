@@ -30,5 +30,33 @@ if($r=mysqli_query($link, $query))
 	
 }
 
+$queryQuiz = "SELECT AssignmentID FROM Performance WHERE StudentID = '$id'";
+
+
+if($r=mysqli_query($link, $queryQuiz))
+{
+	if(mysqli_num_rows($r)==0)
+    {
+		header('Location: CreateQuiz.php');
+	}
+	else
+	{
+		$row=mysqli_fetch_array($r);
+		$assignid = $row[0];
+		echo "<h2>$row[0]<h2><br>";
+
+		$queryName = "SELECT AssignmentName FROM Assignments WHERE AssignmentID = '$assignid'";
+
+		if($r2=mysqli_query($link, $queryName))
+		{
+			$row2=mysqli_fetch_array($r2);
+			echo "<h2>$row2[0]<h2><br>";
+		}
+
+	}
+
+	
+}
+
 include 'footer.php';
 ?>
