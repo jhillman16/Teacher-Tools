@@ -1,18 +1,13 @@
 <?php
 
-require 'Cloudinary.php';
-require 'Uploader.php';
-require 'Helpers.php';
-require 'Api.php';
-
-\Cloudinary::config(array(
-    "cloud_name" => "hzpnyxrng",
-    "api_key" => "663542711141867",
-    "api_secret" => "3umXJKOqo-t332Cn3njsa-c7Fkc"
-));
-\Cloudinary\Uploader::upload("/Users/Tatiana/peonies.png");
+require 'src/Cloudinary.php';
+require 'src/Uploader.php';
+require 'src/Helpers.php';
+require 'src/Api.php';
 
 
+
+print("Hello!");
 
 ?>
 

@@ -12,7 +12,7 @@ $column = 1;
 $end = FALSE;
 $count = 0;
 
-while($count < 13)
+while(!$end)
 {	
 	while($data->val($row, $column) != ',')
 	{
@@ -21,6 +21,7 @@ while($count < 13)
 		if($data->val($row, $column) == ';')
 		{
 			   $end = TRUE;
+			   break;
 		}
 	}
 	$row++;	
