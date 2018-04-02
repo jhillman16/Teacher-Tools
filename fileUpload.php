@@ -16,6 +16,7 @@ if (isset($_POST["submit"])) {
     $cloudUpload = \Cloudinary\Uploader::upload($_FILES["fileToUpload"]['tmp_name']);
     print_r($cloudUpload);
 }
+else'print("Hello its not working");
 
 ?>
 
