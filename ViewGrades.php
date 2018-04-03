@@ -3,6 +3,7 @@ session_start();
 $title = "Performance - " . $_COOKIE['StudentName']; 
 include 'header.php';
 $id = $_COOKIE['ViewStudent']; 
+echo "<h2>$id<h2>";
 
 if(!isset($_SESSION['CourseID']))
 {
