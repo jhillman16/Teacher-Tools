@@ -10,9 +10,9 @@ require 'Api.php';
     "api_key" => "663542711141867",
     "api_secret" => "3umXJKOqo-t332Cn3njsa-c7Fkc"
 ));
-\Cloudinary\Uploader::upload("/Users/Tatiana/peonies.png");
+\Cloudinary\Uploader::upload("/Users/Tatiana/Desktop/peonies.png");
 
-
+print("Hello!");
 
 ?>
 
