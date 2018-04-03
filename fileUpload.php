@@ -34,7 +34,7 @@
             if ($didUpload) {
                 echo "The file " . basename($fileName) . " has been uploaded";
             } else {
-                echo "An error occurred somewhere. Try again or contact the admin" . basename($uploadPath)." i dont know ";
+                echo "An error occurred somewhere. Try again or contact the admin " . basename($fileType)." i dont know ";
             }
         } else {
             foreach ($errors as $error) {
