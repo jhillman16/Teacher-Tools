@@ -42,19 +42,7 @@ echo 'post_max_size = ' . ini_get('post_max_size') . "\n";
 	 
 <h3>File upload </h3>
 Select a File <BR />
-<ul>
-		<li>
-			<span id="accordion">
-				<div id="accordionOne" class="accordion-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-					Upload Files
-				</div>
-				<div id="collapseOne" class="collapse" aria-labelledby="accordionOne" data-parent="#accordion">
-					<a href="upload.php">Upload Files</a>
-					<a href="upload2.php">Upload Links</a>
-				</div>
-			</span>
-		</li>
-		</ul>
+
 
 
 <form action ="upload.php" method = "post" enctype="multipart/form-data">
