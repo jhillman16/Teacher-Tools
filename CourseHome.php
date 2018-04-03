@@ -1,29 +1,23 @@
 <?php
 
 session_start();
-$title = $_SESSION['CourseName'];
+$title = "Course Home" . $_SESSION['CourseName'];
 include 'header.php';
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
 $CourseID = $_SESSION['CourseID'];
 $query = "SELECT * FROM Courses c LEFT JOIN TeacherUser t ON t.TeacherID = c.TeacherID WHERE CourseID = $CourseID";
 
-echo "<h2>" . $_SESSION['CourseName'] . "</h2>";
-
-
 if($r=mysqli_query($link, $query))
 {
 	$row=mysqli_fetch_array($r);
-
 	echo "<h2>" . $_SESSION['CourseName'] . "</h2><br>";
 	echo "<p>";
 	echo $row['Description'] . "<br>";
-	echo "Teacher: " . $row['FirstName'] . " " . $row['LastName'] . "(" . $row['Email'] . ")<br>";
+	echo "Teacher: " . $row['FirstName'] . " " . $row['LastName'] . " (" . $row['Email'] . ")<br>";
 	echo "Total Students: " . $row['EnrollmentNumber'] . "<br>";
 	echo "</p>";
-
 }
-
 
 
 
