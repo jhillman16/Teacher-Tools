@@ -42,7 +42,7 @@ while($row=mysqli_fetch_array($r))
 			{
 				$row3=mysqli_fetch_array($r3);
 				echo "<h2>$row3[0] $grade<h2>";
-				echo "<input type='text' placeholder='Quiz 1' name='quizName'>";
+				echo "<input type='text' placeholder='$grade' name='quizName'>";
 			}
 
 		}
