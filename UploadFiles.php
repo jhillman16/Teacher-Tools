@@ -59,7 +59,7 @@ Select a File <BR />
 <form>
 <br><br>
 <h5>To view your files</h5>
-<a href="index2.html">Click here</a>
+<a href="fileUpload.php">Click here</a>
 </form>
 
 <br>
