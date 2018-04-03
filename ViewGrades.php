@@ -26,29 +26,29 @@ while($row=mysqli_fetch_array($r))
 	$grade = $row[0];
 	$queryQuiz = "SELECT AssignmentID FROM Performance WHERE StudentID = '$id'";
 
-	if($r2=mysqli_query($link, $queryQuiz))
-	{
-		if(mysqli_num_rows($r2)==0)
-    	{
-			header('Location: CreateQuiz.php');
-		}
-		else
-		{
-			// $row2=mysqli_fetch_array($r2);
-			// $assignid = $row2[0];
+	// if($r2=mysqli_query($link, $queryQuiz))
+	// {
+	// 	if(mysqli_num_rows($r2)==0)
+    // 	{
+	// 		header('Location: CreateQuiz.php');
+	// 	}
+	// 	else
+	// 	{
+	// 		// $row2=mysqli_fetch_array($r2);
+	// 		// $assignid = $row2[0];
 
-			// $queryName = "SELECT AssignmentName FROM Assignments WHERE AssignmentID = '$assignid'";
+	// 		// $queryName = "SELECT AssignmentName FROM Assignments WHERE AssignmentID = '$assignid'";
 
-			// if($r3=mysqli_query($link, $queryName))
-			// {
-			// 	$row3=mysqli_fetch_array($r3);
-			// 	echo "<h2>$row3[0] $grade<h2>";
-			// }
+	// 		// if($r3=mysqli_query($link, $queryName))
+	// 		// {
+	// 		// 	$row3=mysqli_fetch_array($r3);
+	// 		// 	echo "<h2>$row3[0] $grade<h2>";
+	// 		// }
 
-		}
+	// 	}
 
 	
-	}	
+	// }	
 }
 
 // if($r=mysqli_query($link, $queryQuiz))
