@@ -48,16 +48,7 @@ else
 
 
 ?>
-<?php
-
-$linkName=$_POST['email'];
-$nm=$_POST['username'];
-
-?>
 <br>
-<a href="<?=$linkName?>" target="_blank">$nm</a>
-
-
 <br>
 <a href="UploadFiles.php">Return to "Upload Pade"</a>
 
