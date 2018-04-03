@@ -26,10 +26,10 @@ while(!$end)
 			$questionQuery = "INSERT INTO Question (Question, QuizID, QuestionID, Points) 
            	 VALUES ('$question', '1000', '$QuestionIDNum', '$points')";
 			
-			//if(mysqli_query($link, $questionQuery))
-        		//	echo "Records added successfully " . $_SESSION['ResponseID'] . ".";
-			//else
-      			//	echo "$CurrentQuizID ERROR: Not able to execute $sql. " . mysqli_error($link);
+			if(mysqli_query($link, $questionQuery))
+        			echo "Records added successfully " . $_SESSION['ResponseID'] . ".";
+			else
+      				echo "$CurrentQuizID ERROR: Not able to execute $sql. " . mysqli_error($link);
 
 		}
 		else if ($column > 2)
@@ -46,6 +46,10 @@ while(!$end)
 			VALUES ('1000', '$QuestionIDNum', '$ResponseIDNum', '0', '$response')";
 			  
 			 }
+			if(mysqli_query($link, $responseQuery))
+        			echo "Records added successfully " . $_SESSION['ResponseID'] . ".";
+			else
+      				echo "$CurrentQuizID ERROR: Not able to execute $sql. " . mysqli_error($link);
 		}
 			
 		
