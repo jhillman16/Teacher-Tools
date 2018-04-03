@@ -24,11 +24,16 @@ $fileName = "file_name";
 -->
 
 <?php
+include 'src/Cloudinary.php';
+include 'src/Uploader.php';
 /*\Cloudinary\Uploader::unsigned_upload("sample.jpg", "toofghxs",
     array("public_id" => "sample_id"));*/
 
 \Cloudinary\Uploader::unsigned_upload("sample.jpg", "toofghxs", 
-    array("cloud_name" => "hzpnyxrng"));
+    array(
+    	"cloud_name" => "hzpnyxrng",
+    	"public_id" => "sample_id"
+    ));
 ?>
 
 
