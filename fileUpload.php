@@ -4,7 +4,7 @@
 
 <?php
     $currentDir = getcwd();
-    $uploadDirectory = "/images/";
+    $uploadDirectory = "/uploads/";
 
     $errors = []; // Store all foreseen and unforseen errors here
 
@@ -34,7 +34,7 @@
             if ($didUpload) {
                 echo "The file " . basename($fileName) . " has been uploaded";
             } else {
-                echo "An error occurred somewhere. Try again or contact the admin";
+                echo "An error occurred somewhere. Try again or contact the admin" $didUpload;
             }
         } else {
             foreach ($errors as $error) {
