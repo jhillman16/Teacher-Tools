@@ -8,9 +8,7 @@
     <link rel="stylesheet" type="text/css" href="normalize.css" />
     
 	<meta charset="utf-8" />
-<style>
-p.dotted{border-style:dotted;}
-</style>
+
 </head>
 <body>
 
@@ -29,12 +27,12 @@ p.dotted{border-style:dotted;}
 	
 	 <body>
 	 
-<p class="dotted">Choose your next step: </p>
+<h3>Choose your next step: </h3>
 
 
 <li>
 		<form>
-					<p class="dotted"><a href="UploadFiles3.php">Upload Files</a></p>
+					<a href="UploadFiles3.php"><button>Upload Files</button></a>
 					</form></li>
 <li>					
 		<form>
