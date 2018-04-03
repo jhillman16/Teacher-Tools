@@ -57,7 +57,12 @@ Select a File <BR />
     <input type="submit" name="submit" value="Submit me!" />
 </form>
 
-
+<li>
+		
+					<a href="upload.php">Upload Files</a>
+					<a href="upload2.php">Upload Links</a>
+				
+		</li>
 
 
 <form>

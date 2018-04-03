@@ -50,17 +50,6 @@ else
 			</span>
 		</li>
 		
-		<li>
-			<span id="accordion">
-				<div id="accordionOne" class="accordion-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-					Upload Files
-				</div>
-				<div id="collapseOne" class="collapse" aria-labelledby="accordionOne" data-parent="#accordion">
-					<a href="default.php">Upload Files</a>
-					<a href="About.php">Upload Links</a>
-				</div>
-			</span>
-		</li>
 
 	<?php
 	if(!isset($_SESSION['FirstName']))
