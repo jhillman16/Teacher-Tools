@@ -38,11 +38,11 @@ while($row=mysqli_fetch_array($r))
 
 			$queryName = "SELECT AssignmentName FROM Assignments WHERE AssignmentID = '$assignid'";
 
-			if($r3=mysqli_query($link, $queryName))
-			{
-				$row3=mysqli_fetch_array($r3);
-				echo "<h2>$row3[0] $grade<h2>";
-			}
+			// if($r3=mysqli_query($link, $queryName))
+			// {
+			// 	$row3=mysqli_fetch_array($r3);
+			// 	echo "<h2>$row3[0] $grade<h2>";
+			// }
 
 		}
 
