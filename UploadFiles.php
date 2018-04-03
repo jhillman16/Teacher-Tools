@@ -10,21 +10,7 @@
 	<meta charset="utf-8" />
 </head>
 <body>
-<?php
 
-if(ini_get('file_uploads') == 1)
-{
-  echo 'HTTP Upload Enabled<br />';
-}
-else
-{
-  echo 'HTTP Upload Disabled<br />';
-}
-echo 'post_max_size = ' . ini_get('post_max_size') . "\n";
-
-
-
-?>
 
 
 <main>
@@ -44,9 +30,12 @@ echo 'post_max_size = ' . ini_get('post_max_size') . "\n";
 
 
 <li>
-		
+		<form>
 					<a href="UploadFiles3.php">Upload Files</a>
+					</form>
+		<form>
 					<a href="UploadFiles2.php">Upload Links</a>
+					</form>
 				
 		</li>
 
