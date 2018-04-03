@@ -31,12 +31,12 @@ while(!$end)
       			//	echo "$CurrentQuizID ERROR: Not able to execute $sql. " . mysqli_error($link);
 
 		}
-		else if ($column < 2)
+		else if ($column > 2)
 		{
 			
 			if(strpos($data->val($row, $column), '~') !== FALSE)
 			 {
-				echo "~~~~~~~";   
+				echo "yiss";   
 			 }
 			 else
 			 {
