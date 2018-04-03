@@ -29,7 +29,7 @@ while($row=mysqli_fetch_array($r))
 	{
 		if(mysqli_num_rows($r2)==0)
     	{
-			
+
 		}
 		else
 		{
@@ -42,6 +42,7 @@ while($row=mysqli_fetch_array($r))
 			{
 				$row3=mysqli_fetch_array($r3);
 				echo "<h2>$row3[0] $grade<h2>";
+				echo "<input type="text" placeholder="Quiz 1" name="quizName" required />";
 			}
 
 		}
