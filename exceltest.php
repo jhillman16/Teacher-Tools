@@ -21,6 +21,7 @@ while(!$end)
 		if($data->val($row, $column) == ';')
 		{
 			   $end = TRUE;
+			   break;
 		}
 	}
 	$row++;	
