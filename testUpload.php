@@ -24,7 +24,7 @@ $fileName = "file_name";
 -->
 
 <?php
-\Cloudinary\Uploader::upload("sample.jpg", 
+\Cloudinary\Uploader::upload("sample.jpg", "toofghxs",
     array("public_id" => "sample_id"));
 ?>
 
