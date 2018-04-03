@@ -5,9 +5,6 @@ include("ConnectDatabase.php"); //Goes through steps of connecting to database
 session_start();
 
 
-
-
-
 $data = new Spreadsheet_Excel_Reader("test1.xls", false);
 
 
@@ -15,6 +12,7 @@ $row = 1;
 $column = 1;
 $end = FALSE;
 $count = 0;
+$QuestionIDNum = 0;
 
 while(!$end)
 {	
@@ -23,24 +21,18 @@ while(!$end)
 		if($column == 1)
 		{
 			$questionQuery = "INSERT INTO Question (Question, QuizID, QuestionID, Points) 
-            VALUES ('$Question', '$CurrentQuizID', '$QuestionIDNum', '$points')";
-			
-			if(mysqli_query($link, $questionQuery))
-			{
-   			     echo "Records added successfully " . $_SESSION['QuestionNum'] . ".";	
-			}
-			else
-			{
-			     echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
-			}
+            VALUES ('$data->val($row, $column)', '999', '$QuestionIDNum', '$data->val($row, $column + 1')";
+			mysqli_query($link, $questionQuery);
 
 		}
 		else
 		{
+			/*
 			if(strpos($data->val($row, $column), '~')
 			 {
 				   
 			 }
+			 */
 		}
 			
 		
@@ -54,7 +46,7 @@ while(!$end)
 	}
 	$row++;	
 	$column = 1;
-	$count++;
+	$QuestionIDNum++;
 	
 }
 
