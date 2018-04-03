@@ -20,8 +20,8 @@ while(!$end)
 	{
 		if($column == 1)
 		{
-			echo $data->val($row, $column);
 			$question = $data->val($row, $column);
+			echo '$quesion';
 			$questionQuery = "INSERT INTO Question (Question, QuizID, QuestionID, Points) 
             VALUES ('$question', '999', '$QuestionIDNum', '$data->val($row, $column + 1)')";
 			
