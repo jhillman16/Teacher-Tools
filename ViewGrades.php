@@ -29,11 +29,10 @@ while($row=mysqli_fetch_array($r))
 	{
 		if(mysqli_num_rows($r2)==0)
     	{
-			echo "<h2>No Quizzes Taken So Far<h2><br>";
+
 		}
 		else
 		{
-			echo "<h2>You Have Taken A Quiz<h2><br>";
 			$row2=mysqli_fetch_array($r2);
 			$assignid = $row2[0];
 
@@ -43,12 +42,18 @@ while($row=mysqli_fetch_array($r))
 			{
 				$row3=mysqli_fetch_array($r3);
 				echo "<h2>$row3[0] $grade<h2>";
+				echo "<input type='text' placeholder='$grade' name='quizName'>";
 			}
 
 		}
 
 	
 	}	
+}
+
+if(mysqli_num_rows($r)==0)
+{
+	echo "<h2>No Quizzes Taken So Far<h2><br>";
 }
 
 // if($r=mysqli_query($link, $queryQuiz))
