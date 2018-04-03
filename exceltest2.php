@@ -13,6 +13,7 @@ $column = 1;
 $end = FALSE;
 $count = 0;
 $QuestionIDNum = 0;
+$ResponseIDNum = 0;
 
 
 while(!$end)
