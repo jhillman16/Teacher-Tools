@@ -14,6 +14,7 @@ $end = FALSE;
 $count = 0;
 $QuestionIDNum = 0;
 
+
 while(!$end)
 {	
 	while($data->val($row, $column) != ',')
@@ -33,20 +34,23 @@ while(!$end)
 		}
 		else if ($column > 2)
 		{
-			
+			$response = $data->val($row, $column);
 			if(strpos($data->val($row, $column), '~') !== FALSE)
 			 {
-				echo "yiss";   
+				$responseQuery = "INSERT INTO Response (QuizID, QuestionID, ResponseID, IsCorrect, Response)
+			VALUES ('1000', '$QuestionIDNum', '$ResponseIDNum', '1', '$response')";   
 			 }
 			 else
 			 {
-				 echo "nah";
+				 $responseQuery = "INSERT INTO Response (QuizID, QuestionID, ResponseID, IsCorrect, Response)
+			VALUES ('1000', '$QuestionIDNum', '$ResponseIDNum', '0', '$response')";
 			  
 			 }
 		}
 			
 		
 		//echo $data->val($row, $column);
+		$ResponseIDNum++;
 		$column++;
 		if($data->val($row, $column) == ';')
 		{
@@ -54,6 +58,7 @@ while(!$end)
 			   break;
 		}
 	}
+	$ResponseIDNum = 0;
 	$row++;	
 	$column = 1;
 	$QuestionIDNum++;
