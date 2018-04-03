@@ -1,9 +1,9 @@
 <?php
 
-require 'Cloudinary.php';
-require 'Uploader.php';
-require 'Helpers.php';
-require 'Api.php';
+require 'src/Cloudinary.php';
+require 'src/Uploader.php';
+require 'src/Helpers.php';
+require 'src/Api.php';
 
 
 
