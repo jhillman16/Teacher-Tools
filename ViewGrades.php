@@ -3,7 +3,6 @@ session_start();
 $title = "Performance - " . $_COOKIE['StudentName']; 
 include 'header.php';
 $id = $_COOKIE['ViewStudent']; 
-echo "<h2>$id<h2>";
 
 if(!isset($_SESSION['CourseID']))
 {
@@ -12,7 +11,6 @@ if(!isset($_SESSION['CourseID']))
 
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
-echo "<h2>Select a student to view performance in course.<h2><br>";
 
 $query = "SELECT Score FROM Performance WHERE StudentID = '$id'";
 
@@ -35,6 +33,7 @@ while($row=mysqli_fetch_array($r))
 		}
 		else
 		{
+			echo "<h2>You Have Taken A Quiz<h2><br>";
 			$row2=mysqli_fetch_array($r2);
 			$assignid = $row2[0];
 
