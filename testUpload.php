@@ -19,8 +19,8 @@ $('#upload_form').append(
         - Update a progress bar upon "cloudinaryprogress" event
         - Add new thumbnail image to gallery when complete!
 */
-$('.upload_field').unsigned_cloudinary_upload('zcudy0uz', 
-  { cloud_name: 'demo', tags: 'browser_uploads' }, 
+$('.upload_field').unsigned_cloudinary_upload('toofghxs', 
+  { cloud_name: 'hzpnyxrng', tags: 'browser_uploads' }, 
   { multiple: true }
 )
 .bind('cloudinaryprogress', function(e, data) { 
