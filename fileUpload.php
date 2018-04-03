@@ -3,7 +3,7 @@
     $apiKey = "3umXJKOqo-t332Cn3njsa-c7Fkc";
     $time = time();
     $apiSecret = "663542711141867";
-    $fileName = "peonies.png";
+    $fileName = "file";
 ?>              
 <form action="https://api.cloudinary.com/v1_1/<?php echo $cloudName;?>/image/upload" method="post" enctype="multipart/form-data">
     <label for="file">Filename:</label>
