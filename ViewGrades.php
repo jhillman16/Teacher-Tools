@@ -30,7 +30,7 @@ while($row=mysqli_fetch_array($r))
 	{
 		if(mysqli_num_rows($r2)==0)
     	{
-			echo "<h2>No Quizzes Taken So Far<h2>";
+			echo "<h2>No Quizzes Taken So Far<h2><br>";
 		}
 		else
 		{
