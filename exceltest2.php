@@ -21,7 +21,7 @@ while(!$end)
 		if($column == 1)
 		{
 			$questionQuery = "INSERT INTO Question (Question, QuizID, QuestionID, Points) 
-            VALUES ($data->val($row, $column), '999', '$QuestionIDNum', $data->val($row, $column + 1)";
+            VALUES ($data->val($row, $column), '999', '$QuestionIDNum', $data->val($row, $column + 1))";
 			
 			if(mysqli_query($link, $questionQuery))
         			echo "Records added successfully " . $_SESSION['ResponseID'] . ".";
