@@ -10,7 +10,7 @@ require 'Api.php';
     "api_key" => "663542711141867",
     "api_secret" => "3umXJKOqo-t332Cn3njsa-c7Fkc"
 ));
-\Cloudinary\Uploader::upload("//peonies.png");
+\Cloudinary\Uploader::upload("/Tatiana/peonies.png");
 
 if (isset($_POST["submit"])) {
     print_r($_FILES["fileToUpload"]);
