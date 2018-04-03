@@ -54,10 +54,11 @@
 				$questionNum++;
 		}
 
-		ini_set("precision", 2); //Sets the precision of a float to two decimals
+		ini_set("precision", 4); //Sets the precision of a float to four decimals, will multiply by 100 later
 		$score = $totalCorrect / $totalPoints;
 		if($dbScore > $score)
 			$score = $dbScore;
+		$score = $score * 100;
 
 		if($dbScore == -1)
 			$query = "INSERT INTO Performance (StudentID, Score, AssignmentID, CourseID) VALUES ('$studentID', '$score', '$assignmentID', '$courseID')";
