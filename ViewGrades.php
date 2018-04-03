@@ -19,28 +19,29 @@ $grade = '';
 
 $queryQuiz = "SELECT AssignmentID FROM Performance WHERE StudentID = '$id'";
 
+$r=mysqli_query($link, $query)
+
 while($row=mysqli_fetch_array($r))
 {
-	$row=mysqli_fetch_array($r);
 	$grade = $row[0];
 
-	if($r=mysqli_query($link, $queryQuiz))
+	if($r2=mysqli_query($link, $queryQuiz))
 	{
-		if(mysqli_num_rows($r)==0)
+		if(mysqli_num_rows($r2)==0)
     	{
 			header('Location: CreateQuiz.php');
 		}
 		else
 		{
-			$row=mysqli_fetch_array($r);
-			$assignid = $row[0];
+			$row2=mysqli_fetch_array($r2);
+			$assignid = $row2[0];
 
 			$queryName = "SELECT AssignmentName FROM Assignments WHERE AssignmentID = '$assignid'";
 
-			if($r2=mysqli_query($link, $queryName))
+			if($r3=mysqli_query($link, $queryName))
 			{
-				$row2=mysqli_fetch_array($r2);
-				echo "<h2>$row2[0] $grade<h2>";
+				$row3=mysqli_fetch_array($r3);
+				echo "<h2>$row3[0] $grade<h2>";
 			}
 
 		}
