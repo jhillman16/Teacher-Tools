@@ -4,7 +4,7 @@
 
 <?php
     $currentDir = getcwd();
-    $uploadDirectory = "/uploads/";
+    $uploadDirectory = "/upload/";
 
     $errors = []; // Store all foreseen and unforseen errors here
 
