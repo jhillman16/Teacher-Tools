@@ -39,8 +39,20 @@ echo 'post_max_size = ' . ini_get('post_max_size') . "\n";
 
 	
 	 <body>
+	 
 <h3>File upload </h3>
 Select a File <BR />
+<li>
+			
+				
+				
+					<a href="default.php">Upload Link</a>
+					<a href="About.php">Upload Files</a>
+				
+			
+		</li>
+
+
 <form action ="upload.php" method = "post" enctype="multipart/form-data">
 <input type="file" name ="file" size = "500" >
 <input type ="submit" name="T1" value = "Upload File">
