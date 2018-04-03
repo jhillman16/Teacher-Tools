@@ -34,7 +34,7 @@ while(!$end)
 		else if ($column < 2)
 		{
 			
-			if(strpos($data->val($row, $column), '~') === true)
+			if(strpos($data->val($row, $column), '~') !== FALSE)
 			 {
 				echo "~~~~~~~";   
 			 }
