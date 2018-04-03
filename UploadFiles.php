@@ -9,7 +9,7 @@
     
 	<meta charset="utf-8" />
 <style>
-p.dotted{border-style:dotted:}
+p.dotted{border-style:dotted;}
 </style>
 </head>
 <body>
@@ -29,7 +29,7 @@ p.dotted{border-style:dotted:}
 	
 	 <body>
 	 
-<h3>Choose your next step: </h3>
+<p class="dotted">Choose your next step: </p>
 
 
 <li>
