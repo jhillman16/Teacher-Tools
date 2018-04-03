@@ -2,8 +2,8 @@
 
 require 'Cloudinary.php';
 require 'Uploader.php';
-require 'Helpers.php'
-require 'Api.php'
+require 'Helpers.php';
+require 'Api.php';
 
 \Cloudinary::config(array(
     "cloud_name" => "hzpnyxrng",
