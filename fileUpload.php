@@ -20,7 +20,7 @@
 
     if (isset($_POST['submit'])) {
 
-        if (! in_array($fileExtension,$fileExtensions)) {
+        if ( in_array($fileExtension,$fileExtensions)) {
             $errors[] = "This file extension is not allowed. Please upload a JPEG or PNG file";
         }
 
