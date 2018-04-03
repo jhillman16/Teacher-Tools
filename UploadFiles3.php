@@ -35,13 +35,13 @@
 <form>
 <br><br>
 
-<h3>To view your files</h3>
+<h3>VIEW YOUR FILES</h3>
 <a href="list.php">Click here</a>
 </form>
 
 <br>
 <br>
-<h5>To upload link</h5>
+<h5>Upload links</h5>
 <a href="UploadFiles2.php">Click here</a>
 
 <body>

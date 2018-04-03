@@ -37,15 +37,15 @@
 <br>
 <form>
 <br><br>
-<h3>To view your links</h3>
+<h3>VIEW YOUR LINKS:</h3>
 <a href="upload2.php">Click here</a>
 </form>
 
 
 <form>
 <br><br>
-<h5>Uplod Files</h5>
-<a href="UploadFiles.php">Click here</a>
+<h5>Upload Files</h5>
+<a href="UploadFiles3.php">Click here</a>
 </form>
 
 
