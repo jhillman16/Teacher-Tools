@@ -45,8 +45,8 @@ echo 'post_max_size = ' . ini_get('post_max_size') . "\n";
 
 <li>
 		
-					<a href="upload.php">Upload Files</a>
-					<a href="upload2.php">Upload Links</a>
+					<a href="UploadFile3.php">Upload Files</a>
+					<a href="UploadFiles2.php">Upload Links</a>
 				
 		</li>
 
@@ -54,7 +54,7 @@ echo 'post_max_size = ' . ini_get('post_max_size') . "\n";
 <form>
 <br><br>
 <h5>To view your files</h5>
-<a href="fileUpload.php">Click here</a>
+<a href="upload.php">Click here</a>
 </form>
 
 <br>
