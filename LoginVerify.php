@@ -29,17 +29,18 @@ if(mysqli_num_rows($result)>0)
 		header('Location: EducatorHome.php');
 	}
 }
-
-// attempt get student info
-$query = "SELECT FirstName, LastName, StudentID FROM StudentsUser WHERE ('$UserName'= UserName OR '$UserName' = Email) AND '$Password'= Password";
-$result = mysqli_query($link, $query);
-
-if(mysqli_num_rows($result)>0)
+else
 {
-	$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
-	$_SESSION['StudentID'] = $row['StudentID'];
-	$_SESSION['FirstName'] = $row['FirstName'];
-	$_SESSION['LastName'] = $row['LastName'];
+	// attempt get student info
+	$query = "SELECT FirstName, LastName, StudentID FROM StudentsUser WHERE ('$UserName'= UserName OR '$UserName' = Email) AND '$Password'= Password";
+	$result = mysqli_query($link, $query);
+
+	if(mysqli_num_rows($result)>0)
+	{
+		$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
+		$_SESSION['StudentID'] = $row['StudentID'];
+		$_SESSION['FirstName'] = $row['FirstName'];
+		$_SESSION['LastName'] = $row['LastName'];
 
 	mysqli_close($link); // close connection
 	if(isset($_SESSION['URL']))
@@ -50,13 +51,14 @@ if(mysqli_num_rows($result)>0)
 	{
 		header('Location: StudentHome.php');
 	}
-}
-else //Could not login as a student or teacher
-{
-	$_SESSION['error'] = "Incorrect username or password!";
-	echo "ERROR: Incorrect username/password" . mysqli_error($link);
-	mysqli_close($link); // close connection
-	header('Location: Login.php');
+	}
+	else //Could not login as a student or teacher
+	{
+		$_SESSION['error'] = "Incorrect username or password!";
+		echo "ERROR: Incorrect username/password" . mysqli_error($link);
+		mysqli_close($link); // close connection
+		header('Location: Login.php');
+	}
 }
 
 ?>
