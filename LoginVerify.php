@@ -51,11 +51,12 @@ if(mysqli_num_rows($result)>0)
 		header('Location: StudentHome.php');
 	}
 }
+else //Could not login as a student or teacher
+{
+	$_SESSION['error'] = "Incorrect username or password!";
+	echo "ERROR: Incorrect username/password" . mysqli_error($link);
+	mysqli_close($link); // close connection
+	header('Location: Login.php');
+}
 
-
-//Could not login as a student or teacher
-$_SESSION['error'] = "Incorrect username or password!";
-echo "ERROR: Incorrect username/password" . mysqli_error($link);
-mysqli_close($link); // close connection
-header('Location: Login.php');
 ?>
