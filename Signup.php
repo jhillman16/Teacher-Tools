@@ -21,6 +21,7 @@
 </div>
 
 <?php
+session_start();
 if(isset($_SESSION["errorUser"]))
 {
 	$error = $_SESSION["errorUser"];
@@ -44,6 +45,7 @@ else{ echo '<br /><br />'; }
 </div>
 
 <?php
+session_start();
 if(isset($_SESSION["errorPassword"]))
 {
 	$error = $_SESSION["errorPassword"];
@@ -67,6 +69,7 @@ else{ echo '<br /><br />'; }
 </div>
 
 <?php
+session_start();
 if(isset($_SESSION["errorEmail"]))
 {
 	$error = $_SESSION["errorEmail"];
