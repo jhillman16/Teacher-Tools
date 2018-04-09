@@ -36,7 +36,6 @@ while(!$end)
 		}
 		else if ($column > 2)
 		{
-			$ResponseIDNum = $ResponseIDNum - 2;
 			$response = $data->val($row, $column);
 			if(strpos($data->val($row, $column), '~') !== FALSE)
 			 {
@@ -58,7 +57,7 @@ while(!$end)
 			
 		
 		//echo $data->val($row, $column);
-		$ResponseIDNum++;
+		//$ResponseIDNum++;
 		$column++;
 		if($data->val($row, $column) == ';')
 		{
