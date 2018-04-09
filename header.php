@@ -66,6 +66,7 @@ else
 	{
 		echo'<li><a href="myClass.php">My Class</a></li>';
 		echo'<li><a href="myAssignments.php">My Assignments</a></li>';
+		echo'<li><a href="myQuizes.php">My Quiz</a></li>';
 		echo'<li><a href="Register_For_Class.php">Register For Class</a></li>';
 		echo'<li><a href="Discussion.php">Discussion</a></li>';
 

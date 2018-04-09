@@ -2,10 +2,10 @@
 
 
 <li>
-		<form>
-					<a href="UploadFiles3.php">Upload Files</a>
-					</form></li>
-<li>
+		
+					<a href="#">Submit Assignment</a>
+					</li>
+
 
 
 
