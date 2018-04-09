@@ -3,6 +3,11 @@
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 session_start();
 
+if(!isset($_SESSION['FirstName']))
+{
+    header('Location: Logout.php');
+}
+
 $QuizName = $_POST['quizName'];
 $QuizDesc = $_POST['quizDescription'];
 $CategoryName = $_POST['categoryName'];
