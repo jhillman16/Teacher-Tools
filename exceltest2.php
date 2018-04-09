@@ -67,7 +67,7 @@ while(!$end)
 			   break;
 		}
 	}
-	$ResponseIDNum = 0;
+	$ResponseIDNum = -1;
 	$row++;	
 	$column = 1;
 	$QuestionIDNum++;
