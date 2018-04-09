@@ -14,6 +14,9 @@ if (isset($_POST["submit"])) {
 }
 ?>
 
+<?php echo cl_unsigned_image_upload_tag('hzpnyxrng', 
+    $upload_preset, array("cloud_name" => "hzpnyxrng", "tags" => "test_upload")); ?>
+
 <form method="post" enctype="multipart/form-data">
     Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
