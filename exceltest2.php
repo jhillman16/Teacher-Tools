@@ -4,7 +4,7 @@ require_once 'excel_reader2.php';
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 session_start();
 
-
+$CurrentQuizID = $_SESSION['QuizID'];
 $data = new Spreadsheet_Excel_Reader("test1.xls", false);
 
 
@@ -25,7 +25,7 @@ while(!$end)
 			$question = $data->val($row, $column);
 			$points = $data->val($row, $column + 1);
 			$questionQuery = "INSERT INTO Question (Question, QuizID, QuestionID, Points) 
-           	 VALUES ('$question', '1000', '$QuestionIDNum', '$points')";
+           	 VALUES ('$question', '$CurrentQuizID', '$QuestionIDNum', '$points')";
 			
 			if(mysqli_query($link, $questionQuery))
         			echo "Records added successfully " . $_SESSION['ResponseID'] . ".";
@@ -40,12 +40,12 @@ while(!$end)
 			 {
 				$responseWithout = str_replace("~", "", "$response");
 				$responseQuery = "INSERT INTO Response (QuizID, QuestionID, ResponseID, IsCorrect, Response)
-			VALUES ('1000', '$QuestionIDNum', '$ResponseIDNum', '1', '$responseWithout')";   
+			VALUES ('$CurrentQuizID', '$QuestionIDNum', '$ResponseIDNum', '1', '$responseWithout')";   
 			 }
 			 else
 			 {
 				 $responseQuery = "INSERT INTO Response (QuizID, QuestionID, ResponseID, IsCorrect, Response)
-			VALUES ('1000', '$QuestionIDNum', '$ResponseIDNum', '0', '$response')";
+			VALUES ('$CurrentQuizID', '$QuestionIDNum', '$ResponseIDNum', '0', '$response')";
 			  
 			 }
 			if(mysqli_query($link, $responseQuery))
