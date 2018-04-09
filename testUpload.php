@@ -3,6 +3,9 @@
 
 
 <?php
+
+echo 'Current PHP version: ' . phpversion();
+
 if (isset($_POST["submit"])) {
     print_r($_FILES["fileToUpload"]);
     $cloudUpload = \Cloudinary\Uploader::upload($_FILES["fileToUpload"]['tmp_name']);
