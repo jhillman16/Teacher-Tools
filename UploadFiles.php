@@ -32,7 +32,7 @@
 
 <li>
 		<form>
-					<a href="UploadFiles3.php"><button>Upload Files</button></a>
+					<a href="UploadFiles3.php">Upload Files</a>
 					</form></li>
 <li>					
 		<form>
