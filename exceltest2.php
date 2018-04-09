@@ -5,6 +5,7 @@ include("ConnectDatabase.php"); //Goes through steps of connecting to database
 session_start();
 
 $CurrentQuizID = $_SESSION['QuizID'];
+$points = $_POST['points'];
 $data = new Spreadsheet_Excel_Reader("test1.xls", false);
 
 
@@ -35,6 +36,7 @@ while(!$end)
 		}
 		else if ($column > 2)
 		{
+			$ResponseIDNum = $ResponseIDNum - 2;
 			$response = $data->val($row, $column);
 			if(strpos($data->val($row, $column), '~') !== FALSE)
 			 {

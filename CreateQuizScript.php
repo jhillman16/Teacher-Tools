@@ -31,6 +31,7 @@ if($r = mysqli_query($link, $query))
     {
         $_SESSION['Error'] = 'That category does not exist.';
         header('Location: CreateQuiz.php');
+        exit();
     }
     else
     {
@@ -49,7 +50,7 @@ if(mysqli_num_rows($result)>0)
 {
 	$_SESSION['Error'] = 'This quiz name already exists'; //Error message to display
 	header('Location: CreateQuiz.php');
-        exit();
+    exit();
 }
 
 //This chunk of code inserts the quiz into the Assignments table and gets the AssignmentID

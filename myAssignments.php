@@ -7,7 +7,7 @@ function myFunction(AssignmentID)
 {
     document.cookie = "AssignmentID=" + AssignmentID;
     //window.location = 'QuizDesc.php';
-	window.location='myAssigment.php';
+	window.location= 'myAssigment1.php';
 }
 </script>
 
