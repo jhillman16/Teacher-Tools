@@ -38,8 +38,9 @@ while(!$end)
 			$response = $data->val($row, $column);
 			if(strpos($data->val($row, $column), '~') !== FALSE)
 			 {
+				$responseWithout = str_replace("~", "", $response);
 				$responseQuery = "INSERT INTO Response (QuizID, QuestionID, ResponseID, IsCorrect, Response)
-			VALUES ('1000', '$QuestionIDNum', '$ResponseIDNum', '1', '$response')";   
+			VALUES ('1000', '$QuestionIDNum', '$ResponseIDNum', '1', '$responseWithout')";   
 			 }
 			 else
 			 {
