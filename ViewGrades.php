@@ -41,7 +41,6 @@ while($row=mysqli_fetch_array($r))
 			if($r3=mysqli_query($link, $queryName))
 			{
 				$row3=mysqli_fetch_array($r3);
-				echo "<h2>$row3[0] $grade<h2>";
 				echo "<input type='text' placeholder='$grade' name='quizName'>";
 			}
 
