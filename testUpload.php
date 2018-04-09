@@ -3,14 +3,14 @@
 
 
 <?php
-include '/src/Cloudinary.php';
-include '/src/Uploader.php';
+include 'src/Cloudinary.php';
+include 'src/Uploader.php';
 if (file_exists('settings.php')) {
   include 'settings.php';
 }
 $sample_paths = array(
-  "pizza" => getcwd(). DIRECTORY_SEPARATOR . "/images/class.jpg",
-  "lake" => getcwd(). DIRECTORY_SEPARATOR . "/images/logo.png",
+  "pizza" => getcwd(). DIRECTORY_SEPARATOR . "images/class.jpg",
+  "lake" => getcwd(). DIRECTORY_SEPARATOR . "images/logo.png",
   "couple" => "http://res.cloudinary.com/demo/image/upload/couple.jpg",
 );
 $default_upload_options = array("tags" => "basic_sample");
@@ -36,20 +36,6 @@ function do_uploads() {
       "eager" => $eager_params,
     )
   ));
-  
-  # In the two following examples, the file is fetched from a remote URL and stored in Cloudinary.
-  # This allows you to apply the same transformations, and serve those using Cloudinary's CDN layer.
-  $files["remote"] = \Cloudinary\Uploader::upload($sample_paths["couple"],
-    $default_upload_options);
-	
-  $files["remote_trans"] = \Cloudinary\Uploader::upload($sample_paths["couple"],
-    array_merge($default_upload_options, array(
-      "width" => 500,
-      "height" => 500,
-      "crop" => "fit",
-      "effect" => "saturation:-70",
-    ))
-  );
 }
 # Output an image in HTML along with provided caption and public_id
 function show_image($img, $options = array(), $caption = "") {
