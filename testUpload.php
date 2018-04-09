@@ -3,70 +3,94 @@
 
 
 <?php
-
-// change
-echo 'Current PHP version: ' . phpversion();
-
-if (isset($_POST["submit"])) {
-    print_r($_FILES["fileToUpload"]);
-    $cloudUpload = \Cloudinary\Uploader::upload($_FILES["fileToUpload"]['tmp_name']);
-    print_r($cloudUpload);
+include '/src/Cloudinary.php';
+include '/src/Uploader.php';
+if (file_exists('settings.php')) {
+  include 'settings.php';
+}
+$sample_paths = array(
+  "pizza" => getcwd(). DIRECTORY_SEPARATOR . "/images/class.jpg",
+  "lake" => getcwd(). DIRECTORY_SEPARATOR . "/images/logo.png",
+  "couple" => "http://res.cloudinary.com/demo/image/upload/couple.jpg",
+);
+$default_upload_options = array("tags" => "basic_sample");
+$eager_params = array("width" => 200, "height" => 150, "crop" => "scale");
+$files = array();
+# This function, when called uploads all files into your Cloudinary storage and saves the
+# metadata to the $files array.
+function do_uploads() {
+  global $files, $sample_paths, $default_upload_options, $eager_params;
+  
+  # public_id will be generated on Cloudinary's backend.
+  $files["unnamed_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"],
+    $default_upload_options);
+  
+  # Same image, uploaded with a public_id
+  $files["named_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"],
+    array_merge($default_upload_options, array("public_id" => "custom_name")));
+  # Eager transformations are applied as soon as the file is uploaded, instead of waiting
+  # for a user to request them. 
+  $files["eager"] = \Cloudinary\Uploader::upload($sample_paths["lake"],
+    array_merge($default_upload_options, array(
+      "public_id" => "eager_custom_name",
+      "eager" => $eager_params,
+    )
+  ));
+  
+  # In the two following examples, the file is fetched from a remote URL and stored in Cloudinary.
+  # This allows you to apply the same transformations, and serve those using Cloudinary's CDN layer.
+  $files["remote"] = \Cloudinary\Uploader::upload($sample_paths["couple"],
+    $default_upload_options);
+	
+  $files["remote_trans"] = \Cloudinary\Uploader::upload($sample_paths["couple"],
+    array_merge($default_upload_options, array(
+      "width" => 500,
+      "height" => 500,
+      "crop" => "fit",
+      "effect" => "saturation:-70",
+    ))
+  );
+}
+# Output an image in HTML along with provided caption and public_id
+function show_image($img, $options = array(), $caption = "") {
+    $options["format"] = $img["format"];
+	$transformation_url = cloudinary_url($img["public_id"], $options);
+	
+	echo "<div class='item'>";
+    echo "<div class='caption'>" . $caption . "</div>";
+    echo "<a href='" . $img["url"] . "' target='_blank'>" . 
+      cl_image_tag($img["public_id"], $options) . "</a>";
+    echo "<div class='public_id'>" . $img["public_id"] . "</div>";
+	
+	echo "<div class='link'><a target='_blank' href='" . $transformation_url . "'>" . $transformation_url . "</a></div>";
+	echo "</div>";
 }
 ?>
 
-<?php echo cl_unsigned_image_upload_tag('hzpnyxrng', 
-    $upload_preset, array("cloud_name" => "hzpnyxrng", "tags" => "test_upload")); ?>
-
-<form method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
-</form>
-
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.12.5/js/vendor/jquery.ui.widget.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.12.5/js/jquery.iframe-transport.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.12.5/js/jquery.fileupload.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-jquery-file-upload/2.1.2/cloudinary-jquery-file-upload.js"></script>
-<?php echo cloudinary_js_config(); ?>
-
-
-
-
-
-<?php
-
-$cloudName = "hzpnyxrng";
-$apiKey = "663542711141867";
-$time = time();
-$apiSecret = "3umXJKOqo-t332Cn3njsa-c7Fkc";
-$fileName = "file_name";
-
-?>
-
-<form action="https://api.cloudinary.com/v1_1/<?php echo $cloudName;?>/image/upload" method="post" enctype="multipart/form-data">
-    <label for="file">Filename:</label>
-    <input type="file" name="file" id="file"><br>
-    <input type="hidden" name="signature" value="<?php echo sha1('public_id='.$fileName.'&timestamp='.$time.$apiSecret);?>" />
-    <input type="hidden" name="api_key" value="<?php echo $apiKey; ?>"/>
-    <input type="hidden" name="public_id" value="<?php echo $fileName; ?>" />
-    <input type="submit" name="submit" value="Submit">
-</form>
--->
-
-<?php /*
-include 'src/Cloudinary.php';
-include 'src/Uploader.php';
-\Cloudinary\Uploader::unsigned_upload("sample.jpg", "toofghxs",
-    array("public_id" => "sample_id"));
-
-\Cloudinary\Uploader::unsigned_upload("sample.jpg", "toofghxs", 
-    array(
-    	"cloud_name" => "hzpnyxrng",
-    	"public_id" => "sample_id"
-    ));
-*/?>
-
+    <?php
+      echo "<h1>Cloudinary - Basic PHP Sample";
+      echo "<h2>Uploading ... </h2>";
+      do_uploads();
+      echo "<h3>... Done uploading!</h3>";
+    ?>
+    
+    <?php
+      show_image($files["unnamed_local"], 
+        array("width" => 200, "height" => 150, "crop" => "fill"), "Local file, Fill 200x150");
+		
+      show_image($files["named_local"],  
+        array("width" => 200, "height" => 150, "crop" => "fit"), "Local file, custom public ID, Fit into 200x150");
+		
+      show_image($files["eager"], $eager_params, "Local file, Eager trasnformation of scaling to 200x150");
+	  
+      show_image($files["remote"],  
+        array("width" => 200, "height" => 150, "crop" => "thumb", "gravity" => "faces"), 
+        "Uploaded remote image, Face detection based 200x150 thumbnail");
+		
+      show_image($files["remote_trans"],  
+        array("width" => 200, "height" => 150, "crop" => "fill", "gravity" => "face", "radius" => 10, "effect" => "sepia"),
+        "Uploaded remote image, Fill 200x150, round corners, apply the sepia effect");
+    ?>
 
 
 
