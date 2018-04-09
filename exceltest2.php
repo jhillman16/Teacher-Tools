@@ -5,6 +5,7 @@ include("ConnectDatabase.php"); //Goes through steps of connecting to database
 session_start();
 
 $CurrentQuizID = $_SESSION['QuizID'];
+$points = $_POST['points'];
 $data = new Spreadsheet_Excel_Reader("test1.xls", false);
 
 
