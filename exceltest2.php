@@ -41,12 +41,12 @@ while(!$end)
 			 {
 				$responseWithout = str_replace("~", "", "$response");
 				$responseQuery = "INSERT INTO Response (QuizID, QuestionID, ResponseID, IsCorrect, Response)
-			VALUES ('$CurrentQuizID', '$QuestionIDNum', '$ResponseIDNum', '1', '$responseWithout')";   
+			VALUES ('$CurrentQuizID', '$QuestionIDNum', '$ResponseIDNum - 2', '1', '$responseWithout')";   
 			 }
 			 else
 			 {
 				 $responseQuery = "INSERT INTO Response (QuizID, QuestionID, ResponseID, IsCorrect, Response)
-			VALUES ('$CurrentQuizID', '$QuestionIDNum', '$ResponseIDNum', '0', '$response')";
+			VALUES ('$CurrentQuizID', '$QuestionIDNum', '$ResponseIDNum - 2', '0', '$response')";
 			  
 			 }
 			if(mysqli_query($link, $responseQuery))
