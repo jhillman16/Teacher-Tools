@@ -8,6 +8,7 @@ function myFunction(courseID, courseName)
     document.cookie = "CourseID=" + courseID;
     document.cookie = "CourseName=" + courseName;
     window.location = 'SetClassID.php';
+	
 }
 </script> 
 
