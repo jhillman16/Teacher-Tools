@@ -32,6 +32,7 @@ while(!$end)
         			echo "Records added successfully " . $_SESSION['ResponseID'] . ".";
 			else
       				echo "$CurrentQuizID ERROR: Not able to execute $sql. " . mysqli_error($link);
+			$ResponseIDNum++;
 
 		}
 		else if ($column > 2)
@@ -53,11 +54,12 @@ while(!$end)
         			echo "Records added successfully " . $_SESSION['ResponseID'] . ".";
 			else
       				echo "$CurrentQuizID ERROR: Not able to execute $sql. " . mysqli_error($link);
+			$ResponseIDNum++;
 		}
 			
 		
 		//echo $data->val($row, $column);
-		//$ResponseIDNum++;
+		
 		$column++;
 		if($data->val($row, $column) == ';')
 		{
