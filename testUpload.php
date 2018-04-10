@@ -11,9 +11,10 @@ else if(isset($_SESSION['TeacherID']))
 else
 	$tag_name = "";
 
+	echo "<p>Tag name is: " . $tag_name . ".</p>";
+
 if (!empty($tag_name))
 {
-	echo "<p>Tag name is: " . $tag_name . ".</p>";
 	include 'src/Cloudinary.php';
 	include 'src/Uploader.php';
 	if (file_exists('settings.php')) {
@@ -64,19 +65,15 @@ if (!empty($tag_name))
 		echo "<div class='link'><a target='_blank' href='" . $transformation_url . "'>" . $transformation_url . "</a></div>";
 		echo "</div>";
 	}
-}
-else
-	header('Location: /default.php');
-?>
 
-    <?php
+
       echo "<h1>Cloudinary - Basic PHP Sample";
       echo "<h2>Uploading ... </h2>";
       do_uploads();
       echo "<h3>... Done uploading!</h3>";
-    ?>
+
     
-    <?php
+
       show_image($files["unnamed_local"], 
         array("width" => 200, "height" => 150, "crop" => "fill"), "Local file, Fill 200x150");
 		
@@ -92,7 +89,11 @@ else
       show_image($files["remote_trans"],  
         array("width" => 200, "height" => 150, "crop" => "fill", "gravity" => "face", "radius" => 10, "effect" => "sepia"),
         "Uploaded remote image, Fill 200x150, round corners, apply the sepia effect");
-    ?>
+}
+else
+	header('Location: /default.php');
+
+?>
 
 
 
