@@ -20,7 +20,7 @@ $grade = '';
 
 $r=mysqli_query($link, $query);
 
-while($row=mysqli_fetch_array($r))
+if($row=mysqli_fetch_array($r))
 {
 	$grade = $row[0];
 	$queryQuiz = "SELECT AssignmentID FROM Performance WHERE StudentID = '$id'";
@@ -44,14 +44,15 @@ while($row=mysqli_fetch_array($r))
 					echo "$row3[0] &nbsp;";
 					echo "<input type='text' placeholder='$grade' name='quizName'> &nbsp;";
 					echo "<button onclick='myFunction($grade)' >Submit</button>";
+					echo "<br>";
+					echo "<br>";
 				}
 			}
 			
 
 		}
 
-		echo "<br>";
-		echo "<br>";
+	
 
 	
 	}	
