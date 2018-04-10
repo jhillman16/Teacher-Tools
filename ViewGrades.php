@@ -44,9 +44,11 @@ if($row=mysqli_fetch_array($r))
 	
 				if($r3=mysqli_query($link, $queryName))
 				{
+					$ident = "Quiz"+$count;
+
 					$row3=mysqli_fetch_array($r3);
 					echo "$row3[0] &nbsp;";
-					echo "<input type='text' id= 'Quiz1' placeholder='$grade' name='quizName'> &nbsp;";
+					echo "<input type='text' id= '$ident' placeholder='$grade' name='quizName'> &nbsp;";
 					echo "<button onclick='myFunction()' >Submit</button>";
 					echo "<br>";
 					echo "<br>";
@@ -74,6 +76,6 @@ include 'footer.php';
 <script>
 function myFunction()
 {
-	window.alert(document.getElementById('Quiz1').value);
+	window.alert(document.getElementById('Quiz2').value);
 }
 </script>

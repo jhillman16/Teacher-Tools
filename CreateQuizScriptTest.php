@@ -78,7 +78,7 @@ if(mysqli_query($link, $query))
 {
     $_SESSION['QuizID'] = mysqli_insert_id($link);
     
-    if(excel == 1)
+    if($Excel == 1)
     {
 	    header('Location: exceltest2.php');
     }
