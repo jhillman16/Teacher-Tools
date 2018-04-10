@@ -22,4 +22,14 @@ if(!isset($_SESSION['FirstName']))
 
 </form>
 
-<?php include 'footer.php';?>
+<?php
+if(isset($_SESSION["error"]))
+{
+	$error = $_SESSION["error"];
+	session_unset($_SESSION["error"]);
+	$color = "red";
+	echo '<div style="color:'.$color.'">'.$error.'</div>';
+}
+
+include 'footer.php';
+?>

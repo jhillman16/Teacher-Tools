@@ -42,15 +42,15 @@ else
 		$_SESSION['FirstName'] = $row['FirstName'];
 		$_SESSION['LastName'] = $row['LastName'];
 
-	mysqli_close($link); // close connection
-	if(isset($_SESSION['URL']))
-	{
-		header('Location:' . $_SESSION['URL']);
-	}
-	else
-	{
-		header('Location: StudentHome.php');
-	}
+		mysqli_close($link); // close connection
+		if(isset($_SESSION['URL']))
+		{
+			header('Location:' . $_SESSION['URL']);
+		}
+		else
+		{
+			header('Location: StudentHome.php');
+		}
 	}
 	else //Could not login as a student or teacher
 	{
