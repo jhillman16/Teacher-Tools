@@ -18,6 +18,8 @@ if(isset($_SESSION['StudentID']))
 	$tag_name = $_SESSION['StudentID']);
 else if(isset($_SESSION['TeacherID']))
 	$tag_name = $_SESSION['TeacherID']);
+else
+echo '<p style="text-align: center;"><a href="Signup.php" class="button">Register for your account</a></p>';
 
 echo "<p>Tag name is: " . $tag_name . ".</p>";
 
