@@ -3,10 +3,11 @@
 
 
 <form enctype="multipart/form-data" action="testUpload-script.php" method="POST">
-	
-    Send this file: <input name="userfile" type="file" id="userfile" />
-	
+
+    Send this file: <input type="file" id="userfile" />
+
     <input type="submit" value="Send File" />
+
 </form>
 
 

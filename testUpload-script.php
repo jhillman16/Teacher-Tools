@@ -38,6 +38,8 @@ if (!empty($tag_name))
     function do_uploads() {
         global $files, $sample_paths, $default_upload_options, $eager_params;
 
+        echo "<p>In do_uploads.</p>";
+
         # public_id will be generated on Cloudinary's backend.
         //$files["unnamed_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"], $default_upload_options);
 
@@ -49,6 +51,8 @@ if (!empty($tag_name))
             "resource_type" => "auto",
             ) // array
         )); // array_merge, upload
+
+        echo "<p>Passed named_local.</p>";
 
         # Eager transformations are applied as soon as the file is uploaded, instead of waiting
         # for a user to request them. 
@@ -67,21 +71,20 @@ if (!empty($tag_name))
         $transformation_url = cloudinary_url($img["public_id"], $options);
 
         echo "<div class='item'>";
-          echo "<div class='caption'>" . $caption . "</div>";
-          echo "<a href='" . $img["url"] . "' target='_blank'>" . 
-            cl_image_tag($img["public_id"], $options) . "</a>";
-          echo "<div class='public_id'>" . $img["public_id"] . "</div>";
+            echo "<div class='caption'>" . $caption . "</div>";
+            echo "<a href='" . $img["url"] . "' target='_blank'>" . 
+                cl_image_tag($img["public_id"], $options) . "</a>";
+            echo "<div class='public_id'>" . $img["public_id"] . "</div>";
 
         echo "<div class='link'><a target='_blank' href='" . $transformation_url . "'>" . $transformation_url . "</a></div>";
         echo "</div>";
     } // show_image
 
 
-      echo "<h2>Cloudinary - Basic PHP Sample</h2>";
-      do_uploads();
+    do_uploads();
 
 
-    
+
       show_image($files["named_local"],  
         array("width" => 200, "height" => 150, "crop" => "fit"), "Local file, custom public ID, Fit into 200x150");
     
