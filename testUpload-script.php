@@ -26,7 +26,7 @@ if (!empty($tag_name))
         "lake" => getcwd(). DIRECTORY_SEPARATOR . "images/logo.png",
     ); // array
 
-    $extension = $_FILES['userfile'];
+    $extension = pathinfo($_FILES['userfile']['name'], PATHINFO_EXTENSION);
 
 
     $default_upload_options = array("tags" => $tag_name);
@@ -56,13 +56,13 @@ if (!empty($tag_name))
 
         # Eager transformations are applied as soon as the file is uploaded, instead of waiting
         # for a user to request them. 
-        $files["eager"] = \Cloudinary\Uploader::upload($sample_paths["lake"],
+        /*$files["eager"] = \Cloudinary\Uploader::upload($sample_paths["lake"],
           array_merge($default_upload_options, array(
             //"public_id" => "eager_custom_name",
             "eager" => $eager_params,
             "use_filename" => TRUE,
           ) // array
-        )); // array_merge, upload
+        )); // array_merge, upload*/
     } // do_uploads
 
     # Output an image in HTML along with provided caption and public_id
@@ -88,7 +88,7 @@ if (!empty($tag_name))
       show_image($files["named_local"],  
         array("width" => 200, "height" => 150, "crop" => "fit"), "Local file, custom public ID, Fit into 200x150");
     
-      show_image($files["eager"], $eager_params, "Local file, Eager trasnformation of scaling to 200x150");
+      //show_image($files["eager"], $eager_params, "Local file, Eager trasnformation of scaling to 200x150");
 }
 else
     echo "<p>Something's not quite right.</p>"
