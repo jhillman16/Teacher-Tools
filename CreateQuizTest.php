@@ -8,7 +8,7 @@ if(!isset($_SESSION['CourseID']))
 }
 ?>
 
-<form method="post" action="CreateQuizScript.php">
+<form method="post" action="CreateQuizScriptTest.php">
 
     <div>
         <label><span>Quiz Name:</span>
