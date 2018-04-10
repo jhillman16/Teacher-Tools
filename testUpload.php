@@ -14,13 +14,12 @@ $sample_paths = array(
   "lake" => getcwd(). DIRECTORY_SEPARATOR . "images/logo.png",
 );
 
-$tag_name = "";
 if(isset($_SESSION['StudentID']))
 	$tag_name = $_SESSION['StudentID']);
 else if(isset($_SESSION['TeacherID']))
 	$tag_name = $_SESSION['TeacherID']);
 else
-echo '<p style="text-align: center;"><a href="Signup.php" class="button">Register for your account</a></p>';
+	$tag_name = "";
 
 
 if (!empty($tag_name))
@@ -66,6 +65,8 @@ if (!empty($tag_name))
 		echo "</div>";
 	}
 }
+else
+	header('Location: /default.php');
 ?>
 
     <?php
