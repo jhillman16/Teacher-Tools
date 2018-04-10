@@ -46,7 +46,7 @@ if($row=mysqli_fetch_array($r))
 				{
 					$ident = "Quiz"+$count;
 
-					window.alert($ident);
+					echo $ident;
 
 					$row3=mysqli_fetch_array($r3);
 					echo "$row3[0] &nbsp;";
@@ -60,9 +60,6 @@ if($row=mysqli_fetch_array($r))
 			
 
 		}
-
-	
-
 	
 	}	
 }
