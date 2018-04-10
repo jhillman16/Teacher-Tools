@@ -46,7 +46,7 @@ if($row=mysqli_fetch_array($r))
 				{
 					$row3=mysqli_fetch_array($r3);
 					echo "$row3[0] &nbsp;";
-					echo "<input type='text' id= 'Quiz+$count' placeholder='$grade' name='quizName'> &nbsp;";
+					echo "<input type='text' id= 'Quiz1' placeholder='$grade' name='quizName'> &nbsp;";
 					echo "<button onclick='myFunction()' >Submit</button>";
 					echo "<br>";
 					echo "<br>";
