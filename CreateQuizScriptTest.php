@@ -23,6 +23,15 @@ else
 {
     $Retake = 0;
 }
+
+if($_POST['excel'] == "yes")
+{
+    $Excel = 1;
+}
+else
+{
+    $Excel = 0;
+}
 //This chunk of code checks the Category table to get CategoryID, if it exists
 $query = "SELECT CategoryID FROM Category WHERE CourseID = $CourseID AND CategoryName = '$CategoryName'";
 if($r = mysqli_query($link, $query))
@@ -68,7 +77,16 @@ $query = "INSERT INTO Quiz (AssignmentID, Description, QuizName, AllowRetake)
 if(mysqli_query($link, $query))
 {
     $_SESSION['QuizID'] = mysqli_insert_id($link);
-    header('Location: CreateQuestion.php');
+    
+    if(excel == 1)
+    {
+	    header('Location: exceltest2.php');
+    }
+    else
+    {
+	    header('Location: CreateQuestion.php');
+    }
+    
 }
 else
 {
