@@ -2,7 +2,7 @@
 
 
 <li>
-	<a href="#">See other assignments</a>
+	<a href="#">SEE OTHER ASSIGMENTS</a>
 </li>
 
 	 <body>
