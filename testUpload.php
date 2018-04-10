@@ -4,6 +4,12 @@
 
 <?php
 
+	include 'src/Cloudinary.php';
+	include 'src/Uploader.php';
+	if (file_exists('settings.php')) {
+	  include 'settings.php';
+	}
+
 if(isset($_SESSION['StudentID']))
 	$tag_name = $_SESSION['StudentID']);
 else if(isset($_SESSION['TeacherID']))
@@ -15,16 +21,11 @@ else
 
 if (!empty($tag_name))
 {
-	include 'src/Cloudinary.php';
-	include 'src/Uploader.php';
-	if (file_exists('settings.php')) {
-	  include 'settings.php';
-	}
 
 	$sample_paths = array(
 	  "pizza" => getcwd(). DIRECTORY_SEPARATOR . "images/class.jpg",
 	  "lake" => getcwd(). DIRECTORY_SEPARATOR . "images/logo.png",
-	);
+	); // array
 
 
 	$default_upload_options = array("tags" => "basic_sample");
@@ -48,9 +49,9 @@ if (!empty($tag_name))
 	    array_merge($default_upload_options, array(
 	      "public_id" => "eager_custom_name",
 	      "eager" => $eager_params,
-	    )
-	  ));
-	}
+	    ) // array
+	  )); // array_merge, upload
+	} // do_uploads
 	# Output an image in HTML along with provided caption and public_id
 	function show_image($img, $options = array(), $caption = "") {
 	    $options["format"] = $img["format"];
@@ -64,7 +65,7 @@ if (!empty($tag_name))
 		
 		echo "<div class='link'><a target='_blank' href='" . $transformation_url . "'>" . $transformation_url . "</a></div>";
 		echo "</div>";
-	}
+	} // show_image
 
 
       echo "<h1>Cloudinary - Basic PHP Sample";
@@ -91,7 +92,7 @@ if (!empty($tag_name))
         "Uploaded remote image, Fill 200x150, round corners, apply the sepia effect");
 }
 else
-	header('Location: /default.php');
+	echo "<p>Something's not quite right.</p>"
 
 ?>
 
