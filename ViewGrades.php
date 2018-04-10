@@ -46,6 +46,8 @@ if($row=mysqli_fetch_array($r))
 				{
 					$ident = "Quiz"+$count;
 
+					window.alert($ident);
+
 					$row3=mysqli_fetch_array($r3);
 					echo "$row3[0] &nbsp;";
 					echo "<input type='text' id= '$ident' placeholder='$grade' name='quizName'> &nbsp;";
