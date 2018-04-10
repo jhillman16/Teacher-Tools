@@ -12,7 +12,13 @@
 <form action ="#" method = "post" enctype="multipart/form-data">
 <input type="file" name ="file" size = "500" >
 <input type ="submit" name="T1" value = "Upload File">
+
+ <div class="popup" onclick="myFunction()">Click me!
+  <span class="popuptext" id="myPopup">Popup text...</span>
+</div> 
+
 <br>
+
   <?php if (count($_POST)>0) echo "Form Submitted!"; ?>
 
 
