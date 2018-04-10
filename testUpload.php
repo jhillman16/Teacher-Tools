@@ -43,7 +43,7 @@ if (!empty($tag_name))
 	  # Same image, uploaded with a public_id
 	  $files["named_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"],
 	    array_merge($default_upload_options, array(
-	    	"public_id" => "custom_name",
+	    	//"public_id" => "custom_name",
 	    	"use_filename" => TRUE,
 	    	) // array
 		)); // array_merge, upload
@@ -52,7 +52,7 @@ if (!empty($tag_name))
 	  # for a user to request them. 
 	  $files["eager"] = \Cloudinary\Uploader::upload($sample_paths["lake"],
 	    array_merge($default_upload_options, array(
-	      "public_id" => "eager_custom_name",
+	      //"public_id" => "eager_custom_name",
 	      "eager" => $eager_params,
 	      "use_filename" => TRUE,
 	    ) // array
