@@ -3,16 +3,6 @@
 
 
 <?php
-include 'src/Cloudinary.php';
-include 'src/Uploader.php';
-if (file_exists('settings.php')) {
-  include 'settings.php';
-}
-
-$sample_paths = array(
-  "pizza" => getcwd(). DIRECTORY_SEPARATOR . "images/class.jpg",
-  "lake" => getcwd(). DIRECTORY_SEPARATOR . "images/logo.png",
-);
 
 if(isset($_SESSION['StudentID']))
 	$tag_name = $_SESSION['StudentID']);
@@ -21,10 +11,20 @@ else if(isset($_SESSION['TeacherID']))
 else
 	$tag_name = "";
 
-
 if (!empty($tag_name))
 {
 	echo "<p>Tag name is: " . $tag_name . ".</p>";
+	include 'src/Cloudinary.php';
+	include 'src/Uploader.php';
+	if (file_exists('settings.php')) {
+	  include 'settings.php';
+	}
+
+	$sample_paths = array(
+	  "pizza" => getcwd(). DIRECTORY_SEPARATOR . "images/class.jpg",
+	  "lake" => getcwd(). DIRECTORY_SEPARATOR . "images/logo.png",
+	);
+
 
 	$default_upload_options = array("tags" => "basic_sample");
 	$eager_params = array("width" => 200, "height" => 150, "crop" => "scale");
