@@ -56,6 +56,18 @@ if(!isset($_SESSION['CourseID']))
             </span>
         </label>
     </div>
+    
+    <div>
+        <label>
+            Submit quiz from Excel file?
+            <span>
+                <input type="radio" name="excel" id="yes" value="yes" /> Yes
+            </span>
+            <span>
+                <input type="radio" name="excel" id="no" value="no" /> No
+            </span>
+        </label>
+    </div>
 
     <div>
         <input type="submit" value="Submit" />
