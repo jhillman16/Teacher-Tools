@@ -45,14 +45,14 @@ if (!empty($tag_name))
 
         # Same image, uploaded with a public_id
         $files["named_local"] = \Cloudinary\Uploader::upload($extension,
-          array_merge($default_upload_options, array(
+          array(
             //"public_id" => "custom_name",
             "use_filename" => TRUE,
             "resource_type" => "auto",
             ) // array
-        )); // array_merge, upload
+        ); // array_merge, upload
 
-        echo "<p>Passed named_local.</p>";
+        echo "<p>Passed upload(extension).</p>";
 
         # Eager transformations are applied as soon as the file is uploaded, instead of waiting
         # for a user to request them. 
