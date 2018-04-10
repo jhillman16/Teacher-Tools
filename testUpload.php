@@ -23,7 +23,7 @@ else
 echo '<p style="text-align: center;"><a href="Signup.php" class="button">Register for your account</a></p>';
 
 
-if ($tag_name != NULL)
+if (!empty($tag_name))
 {
 	echo "<p>Tag name is: " . $tag_name . ".</p>";
 
