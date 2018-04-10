@@ -20,6 +20,6 @@ echo $linkName;
 <br>
 <br>
 
- <a href="UploadFiles2.php">Return to "Upload Pade"</a>
+ <a href="UploadFiles2.php">Return to "Upload Page"</a>
 
 <?php include 'footer.php';?>
