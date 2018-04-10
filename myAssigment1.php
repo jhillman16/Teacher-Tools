@@ -16,24 +16,7 @@
 
 <br>
 
-<html>
-    <head>
-        <script type="text/javascript">
-            function greeting(){
-                alert("Welcome " + document.forms["frm1"]["fname"].value + "!")
-            }
-        </script>
-    </head>
-    <body>
 
-        What is your name?<br />
-        <form name="frm1" action="submit.htm" onsubmit="greeting()">
-            <input type="text" name="fname" />
-            <input type="submit" value="Submit" />
-        </form>
-
-    </body>
-</html> 
 
 
 </body>
