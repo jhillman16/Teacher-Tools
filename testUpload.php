@@ -17,10 +17,10 @@ else if(isset($_SESSION['TeacherID']))
 else
 	$tag_name = "";
 
-	echo "<p>Tag name is: " . $tag_name . ".</p>";
 
 if (!empty($tag_name))
 {
+	echo "<p>Tag name is: " . $tag_name . ".</p>";
 
 	$sample_paths = array(
 	  "pizza" => getcwd(). DIRECTORY_SEPARATOR . "images/class.jpg",
@@ -28,9 +28,10 @@ if (!empty($tag_name))
 	); // array
 
 
-	$default_upload_options = array("tags" => "basic_sample");
+	$default_upload_options = array("tags" => $tag_name);
 	$eager_params = array("width" => 200, "height" => 150, "crop" => "scale");
 	$files = array();
+
 	# This function, when called uploads all files into your Cloudinary storage and saves the
 	# metadata to the $files array.
 	function do_uploads() {
@@ -43,6 +44,7 @@ if (!empty($tag_name))
 	  # Same image, uploaded with a public_id
 	  $files["named_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"],
 	    array_merge($default_upload_options, array("public_id" => "custom_name")));
+
 	  # Eager transformations are applied as soon as the file is uploaded, instead of waiting
 	  # for a user to request them. 
 	  $files["eager"] = \Cloudinary\Uploader::upload($sample_paths["lake"],
@@ -52,6 +54,7 @@ if (!empty($tag_name))
 	    ) // array
 	  )); // array_merge, upload
 	} // do_uploads
+
 	# Output an image in HTML along with provided caption and public_id
 	function show_image($img, $options = array(), $caption = "") {
 	    $options["format"] = $img["format"];
