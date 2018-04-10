@@ -33,8 +33,12 @@ if($row=mysqli_fetch_array($r))
 		}
 		else
 		{
+			$count = 1;
+
 			while($row2=mysqli_fetch_array($r2))
 			{
+				
+
 				$assignid = $row2[0];
 				$queryName = "SELECT AssignmentName FROM Assignments WHERE AssignmentID = '$assignid'";
 	
@@ -42,10 +46,11 @@ if($row=mysqli_fetch_array($r))
 				{
 					$row3=mysqli_fetch_array($r3);
 					echo "$row3[0] &nbsp;";
-					echo "<input type='text' placeholder='$grade' name='quizName'> &nbsp;";
-					echo "<button onclick='myFunction($grade)' >Submit</button>";
+					echo "<input type='text' id= 'Quiz1' placeholder='$grade' name='quizName'> &nbsp;";
+					echo "<button onclick='myFunction()' >Submit</button>";
 					echo "<br>";
 					echo "<br>";
+				    $count++;
 				}
 			}
 			
@@ -63,29 +68,12 @@ if(mysqli_num_rows($r)==0)
 	echo "<h2>No Quizzes Taken So Far<h2><br>";
 }
 
-// if($r=mysqli_query($link, $queryQuiz))
-// {
-// 	if(mysqli_num_rows($r)==0)
-//     {
-// 		header('Location: CreateQuiz.php');
-// 	}
-// 	else
-// 	{
-// 		$row=mysqli_fetch_array($r);
-// 		$assignid = $row[0];
-
-// 		$queryName = "SELECT AssignmentName FROM Assignments WHERE AssignmentID = '$assignid'";
-
-// 		if($r2=mysqli_query($link, $queryName))
-// 		{
-// 			$row2=mysqli_fetch_array($r2);
-// 			echo "<h2>$row2[0] $grade<h2>";
-// 		}
-
-// 	}
-
-	
-// }
-
 include 'footer.php';
 ?>
+
+<script>
+function myFunction()
+{
+	window.alert(document.getElementById('Quiz1').value);
+}
+</script>

@@ -4,7 +4,9 @@
 
 <form enctype="multipart/form-data" action="testUpload-script.php" method="POST">
 
-    Send this file: <input type="file" id="userfile" />
+<?php echo cl_image_upload_tag('image_id', array("callback" => $cors_location)); ?>
+
+    Send this file: <input id="userfile" type="file" name="fileupload" />
 
     <input type="submit" value="Send File" />
 
