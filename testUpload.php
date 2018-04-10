@@ -38,12 +38,15 @@ if (!empty($tag_name))
 	  global $files, $sample_paths, $default_upload_options, $eager_params;
 	  
 	  # public_id will be generated on Cloudinary's backend.
-	  $files["unnamed_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"],
-	    $default_upload_options);
+	  //$files["unnamed_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"], $default_upload_options);
 	  
 	  # Same image, uploaded with a public_id
 	  $files["named_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"],
-	    array_merge($default_upload_options, array("public_id" => "custom_name")));
+	    array_merge($default_upload_options, array(
+	    	"public_id" => "custom_name",
+	    	"use_filename" => TRUE,
+	    	) // array
+		)); // array_merge, upload
 
 	  # Eager transformations are applied as soon as the file is uploaded, instead of waiting
 	  # for a user to request them. 
@@ -51,6 +54,7 @@ if (!empty($tag_name))
 	    array_merge($default_upload_options, array(
 	      "public_id" => "eager_custom_name",
 	      "eager" => $eager_params,
+	      "use_filename" => TRUE,
 	    ) // array
 	  )); // array_merge, upload
 	} // do_uploads
