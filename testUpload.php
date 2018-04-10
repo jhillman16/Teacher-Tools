@@ -11,9 +11,9 @@
 	}
 
 if(isset($_SESSION['StudentID']))
-	$tag_name = $_SESSION['StudentID']);
+	$tag_name = "student"; //$_SESSION['StudentID']);
 else if(isset($_SESSION['TeacherID']))
-	$tag_name = $_SESSION['TeacherID']);
+	$tag_name = "teacher"; //$_SESSION['TeacherID']);
 else
 	$tag_name = "";
 
