@@ -47,8 +47,8 @@ else
 	<?php
 	if(!isset($_SESSION['FirstName']))
 	{
-		echo'<li><a href="StudentLogin.php">Student Login</a></li>';
-		echo'<li><a href="EducatorLogin.php">Educator Login</a></li>';
+		//echo'<li><a href="StudentLogin.php">Student Login</a></li>';
+		//echo'<li><a href="EducatorLogin.php">Educator Login</a></li>';
 		echo'<li><a href="Login.php">Login</a></li>';
 		echo'<li><a href="Signup.php">Signup</a></li>';
 	}
