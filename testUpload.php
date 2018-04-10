@@ -14,6 +14,7 @@ $sample_paths = array(
   "lake" => getcwd(). DIRECTORY_SEPARATOR . "images/logo.png",
 );
 
+$tag_name = "";
 if(isset($_SESSION['StudentID']))
 	$tag_name = $_SESSION['StudentID']);
 else if(isset($_SESSION['TeacherID']))
@@ -21,45 +22,49 @@ else if(isset($_SESSION['TeacherID']))
 else
 echo '<p style="text-align: center;"><a href="Signup.php" class="button">Register for your account</a></p>';
 
-echo "<p>Tag name is: " . $tag_name . ".</p>";
 
-$default_upload_options = array("tags" => "basic_sample");
-$eager_params = array("width" => 200, "height" => 150, "crop" => "scale");
-$files = array();
-# This function, when called uploads all files into your Cloudinary storage and saves the
-# metadata to the $files array.
-function do_uploads() {
-  global $files, $sample_paths, $default_upload_options, $eager_params;
-  
-  # public_id will be generated on Cloudinary's backend.
-  $files["unnamed_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"],
-    $default_upload_options);
-  
-  # Same image, uploaded with a public_id
-  $files["named_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"],
-    array_merge($default_upload_options, array("public_id" => "custom_name")));
-  # Eager transformations are applied as soon as the file is uploaded, instead of waiting
-  # for a user to request them. 
-  $files["eager"] = \Cloudinary\Uploader::upload($sample_paths["lake"],
-    array_merge($default_upload_options, array(
-      "public_id" => "eager_custom_name",
-      "eager" => $eager_params,
-    )
-  ));
-}
-# Output an image in HTML along with provided caption and public_id
-function show_image($img, $options = array(), $caption = "") {
-    $options["format"] = $img["format"];
-	$transformation_url = cloudinary_url($img["public_id"], $options);
-	
-	echo "<div class='item'>";
-    echo "<div class='caption'>" . $caption . "</div>";
-    echo "<a href='" . $img["url"] . "' target='_blank'>" . 
-      cl_image_tag($img["public_id"], $options) . "</a>";
-    echo "<div class='public_id'>" . $img["public_id"] . "</div>";
-	
-	echo "<div class='link'><a target='_blank' href='" . $transformation_url . "'>" . $transformation_url . "</a></div>";
-	echo "</div>";
+if ($tag_name != NULL)
+{
+	echo "<p>Tag name is: " . $tag_name . ".</p>";
+
+	$default_upload_options = array("tags" => "basic_sample");
+	$eager_params = array("width" => 200, "height" => 150, "crop" => "scale");
+	$files = array();
+	# This function, when called uploads all files into your Cloudinary storage and saves the
+	# metadata to the $files array.
+	function do_uploads() {
+	  global $files, $sample_paths, $default_upload_options, $eager_params;
+	  
+	  # public_id will be generated on Cloudinary's backend.
+	  $files["unnamed_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"],
+	    $default_upload_options);
+	  
+	  # Same image, uploaded with a public_id
+	  $files["named_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"],
+	    array_merge($default_upload_options, array("public_id" => "custom_name")));
+	  # Eager transformations are applied as soon as the file is uploaded, instead of waiting
+	  # for a user to request them. 
+	  $files["eager"] = \Cloudinary\Uploader::upload($sample_paths["lake"],
+	    array_merge($default_upload_options, array(
+	      "public_id" => "eager_custom_name",
+	      "eager" => $eager_params,
+	    )
+	  ));
+	}
+	# Output an image in HTML along with provided caption and public_id
+	function show_image($img, $options = array(), $caption = "") {
+	    $options["format"] = $img["format"];
+		$transformation_url = cloudinary_url($img["public_id"], $options);
+		
+		echo "<div class='item'>";
+	    echo "<div class='caption'>" . $caption . "</div>";
+	    echo "<a href='" . $img["url"] . "' target='_blank'>" . 
+	      cl_image_tag($img["public_id"], $options) . "</a>";
+	    echo "<div class='public_id'>" . $img["public_id"] . "</div>";
+		
+		echo "<div class='link'><a target='_blank' href='" . $transformation_url . "'>" . $transformation_url . "</a></div>";
+		echo "</div>";
+	}
 }
 ?>
 
