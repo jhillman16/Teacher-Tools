@@ -33,20 +33,25 @@ while($row=mysqli_fetch_array($r))
 		}
 		else
 		{
-			$row2=mysqli_fetch_array($r2);
-			$assignid = $row2[0];
-
-			$queryName = "SELECT AssignmentName FROM Assignments WHERE AssignmentID = '$assignid'";
-
-			if($r3=mysqli_query($link, $queryName))
+			while($row2=mysqli_fetch_array($r2))
 			{
-				$row3=mysqli_fetch_array($r3);
-				echo "$row3[0] &nbsp;";
-				echo "<input type='text' placeholder='$grade' name='quizName'> &nbsp;";
-				echo "<button>Submit</button>";
+				$assignid = $row2[0];
+				$queryName = "SELECT AssignmentName FROM Assignments WHERE AssignmentID = '$assignid'";
+	
+				if($r3=mysqli_query($link, $queryName))
+				{
+					$row3=mysqli_fetch_array($r3);
+					echo "$row3[0] &nbsp;";
+					echo "<input type='text' placeholder='$grade' name='quizName'> &nbsp;";
+					echo "<button onclick='myFunction($grade)' >Submit</button>";
+				}
 			}
+			
 
 		}
+
+		echo "<br>";
+		echo "<br>";
 
 	
 	}	
