@@ -19,7 +19,7 @@ if(mysqli_num_rows($result)>0)
 {
 	$_SESSION['error'] = "You are already registered for that class.";
 	header('Register_For_Class.php');
-	exit();
+	//exit();
 }
 
 //Insert student into the enrollment table for the course
