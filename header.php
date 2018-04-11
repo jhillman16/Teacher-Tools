@@ -68,14 +68,14 @@ else
 
 	if(isset($_SESSION['FirstName']))
 	{
-		echo "<li><span id=\"accordion\">\n" .
-				"<div id=\"accordionTest\" class=\"accordion-link\" data-toggle=\"collapse\" data-target=\"#collapseTest\" aria-expanded=\"true\" aria-controls=\"collapseOne\">" .
-							"In Progress Features" .
-				"</div>\n" .
+		echo '<li><span id="accordion">' .
+				'<div id="accordionTest" class="accordion-link" data-toggle="collapse" data-target="#collapseTest" aria-expanded="true" aria-controls="collapseOne">' .
+							'In Progress Features' .
+				'</div>' .
 				'<div id="collapseTest" class="collapse" aria-labelledby="accordionTest" data-parent="#accordion">' .
-					"<a href=\"testUpload.php\">File Upload</a>" .
-				"</div>\n" .
-			"</span></li>\n";
+							'<a href="testUpload.php">File Upload</a>' .
+				'</div>' .
+			'</span></li>';
 		echo'<li><a href="Logout.php">Logout</a></li>';
 	}
 	?>
