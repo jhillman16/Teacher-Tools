@@ -12,10 +12,12 @@ include("ConnectDatabase.php"); //Goes through steps of connecting to database
 $count = $_COOKIE['QuizCounter'];
 $score = $_COOKIE['QuizScore'];
 $quiz = $_SESSION['QuizName'.$count];
+$id = $_COOKIE['ViewStudent']; 
 
-echo $count;
-echo $score;
-echo $quiz;
+$query = "UPDATE PERFORMANCE SET Score = '$score' WHERE AssignmentID = $quiz AND StudentID = $id";
 
+$result = mysqli_query($link,$query);
+
+header('ViewGrades.php');
 
 ?>
