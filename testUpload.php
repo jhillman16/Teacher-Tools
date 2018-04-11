@@ -7,14 +7,15 @@
 if(isset($_SESSION['StudentID']) || (isset($_SESSION['TeacherID'])))
 {
 echo "<form enctype=\"multipart/form-data\" action=\"testUpload-script.php\" method=\"POST\">";
+echo "<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"30000\" />";
 echo "Send this file: <input id=\"userfile\" type=\"file\" name=\"fileupload\" />";
 echo "<input type=\"submit\" value=\"Send File\" />";
 echo "</form>";
 }
 else
 {
-$php_redir = true;
 echo "<p>You need JavaScript.</p>";
+$php_redir = true;
 }
 ?>
 
