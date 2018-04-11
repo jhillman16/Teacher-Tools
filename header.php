@@ -69,7 +69,7 @@ else
 	if(isset($_SESSION['FirstName']))
 	{
 		echo "<li><span id=\"accordion\">\n" .
-				'<div id="accordionTest" class="accordion-link" data-toggle="collapse" data-target="#collapseTest" aria-expanded="true" aria-controls="collapseOne">' .
+				"<div id=\"accordionTest\" class=\"accordion-link\" data-toggle=\"collapse\" data-target=\"#collapseTest\" aria-expanded=\"true\" aria-controls=\"collapseOne\">" .
 							"In Progress Features" .
 				"</div>\n" .
 				'<div id="collapseTest" class="collapse" aria-labelledby="accordionTest" data-parent="#accordion">' .
