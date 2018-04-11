@@ -28,7 +28,7 @@ if (!empty($tag_name))
 
     $default_upload_options = array("tags" => $tag_name);
     $eager_params = array("width" => 200, "height" => 150, "crop" => "scale");
-    $files = array();
+    //$files = array();
 
     # This function, when called uploads all files into your Cloudinary storage and saves the
     # metadata to the $files array.
@@ -41,8 +41,9 @@ if (!empty($tag_name))
         //$files["unnamed_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"], $default_upload_options);
 
         # Same image, uploaded with a public_id
-        $files["named_local"] = \Cloudinary\Uploader::upload($_FILES['fileupload']['name'],
-          array(
+        //$files["named_local"] = \Cloudinary\Uploader::upload($_FILES['fileupload']['name'],
+        $files = \Cloudinary\Uploader::upload($_FILES['fileupload']['name'],
+            array(
             //"public_id" => "custom_name",
             "use_filename" => TRUE,
             "resource_type" => "auto",
@@ -84,7 +85,8 @@ if (!empty($tag_name))
     echo "<p>After do_uploads().</p>";
 
 
-    show_image($files["named_local"],  
+    //show_image($files["named_local"],  
+    show_image($files, 
         array("width" => 200, "height" => 150, "crop" => "fit"), "Local file, custom public ID, Fit into 200x150");
     
       //show_image($files["eager"], $eager_params, "Local file, Eager trasnformation of scaling to 200x150");
