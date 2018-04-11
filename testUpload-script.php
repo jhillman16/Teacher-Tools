@@ -1,8 +1,6 @@
 <?php $title = "upload pg 2"; include 'header.php';?>
 
 <?php
-
-
 include 'src/Cloudinary.php';
 include 'src/Uploader.php';
 if (file_exists('settings.php')) {
@@ -17,9 +15,6 @@ else
   $tag_name = "";
 
 
-$extension = $_FILES['fileupload']['name'];
-
-
 if (!empty($tag_name))
 {
     echo "<p>Tag name is: " . $tag_name . ".</p>";
@@ -29,6 +24,7 @@ if (!empty($tag_name))
         "lake" => getcwd(). DIRECTORY_SEPARATOR . "images/logo.png",
     );*/ // array
 
+    $extension = $_FILES['fileupload']['name'];
 
     $default_upload_options = array("tags" => $tag_name);
     $eager_params = array("width" => 200, "height" => 150, "crop" => "scale");
@@ -47,7 +43,7 @@ if (!empty($tag_name))
         //$files["unnamed_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"], $default_upload_options);
 
         # Same image, uploaded with a public_id
-        $files["named_local"] = \Cloudinary\Uploader::upload($extension,
+        $files["named_local"] = \Cloudinary\Uploader::upload($_FILES['fileupload']['name'],
           array(
             //"public_id" => "custom_name",
             "use_filename" => TRUE,
