@@ -13,7 +13,7 @@ $StudentID = $_SESSION['StudentID'];
 $CourseID = $_COOKIE['CourseID'];
 
 //Check if student id already registered for the class
-$query = "SELECT StudentID FROM Enrollment WHERE StudentID = $StudentID AND CourseID = $CourseID";
+$query = "SELECT StudentID FROM Enrollment WHERE StudentID = '$StudentID' AND CourseID = '$CourseID'";
 $result = mysqli_query($link,$query);
 if(mysqli_num_rows($result)>0)
 {
