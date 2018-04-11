@@ -17,7 +17,7 @@ else
   $tag_name = "";
 
 
-$extension = $_FILES['userfile']['name'];
+$extension = $_FILES['fileupload']['name'];
 
 
 if (!empty($tag_name))
