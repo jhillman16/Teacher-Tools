@@ -74,9 +74,8 @@ else
 
 	if(isset($_SESSION['FirstName']))
 	{
-		echo'<li><a href="Logout.php">Logout</a></li>';
-echo '<li>' .
-	'<span id="accordion">' .
+echo '<li>
+	<span id="accordion">\n' .
 		'<div id="accordionTest" class="accordion-link" data-toggle="collapse" data-target="#collapseTest" aria-expanded="true" aria-controls="collapseOne">
 					In Progress Features
 		</div>' .
@@ -85,6 +84,7 @@ echo '<li>' .
 		'</div>' .
 	'</span>' .
 '</li>';
+		echo'<li><a href="Logout.php">Logout</a></li>';
 	}
 	?>
 
