@@ -19,7 +19,7 @@ echo "<p>You need JavaScript.</p>.";
 ?>
 
 <script>
-	var redir = "<?php echo $php_redir; ?>"
+	var redir = '<?php echo $php_redir; ?>';
 	if($redir)
 		window.location = 'Login.php';
 </script>
