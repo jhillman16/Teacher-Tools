@@ -74,15 +74,9 @@ else
 				'</div>' .
 				'<div id="collapseTest" class="collapse" aria-labelledby="accordionTest" data-parent="#accordion">' .
 							'<a href="testUpload.php">File Upload</a>' .
-<<<<<<< HEAD
 							'<a href="myAssignments.php">File Upload</a>' .
 							'<a href="UploadFiles.php">File Upload</a>' .
-=======
-			
-				'</div>' .
-				'<div id="collapseTest" class="collapse" aria-labelledby="accordionTest" data-parent="#accordion">' .
 							'<a href="CreateQuizTest.php">Excel Doc Reading</a>' .
->>>>>>> ffaab40519f5ed058f4f888117388a8ba4eca373
 				'</div>' .
 			'</span></li>';
 		echo'<li><a href="Logout.php">Logout</a></li>';
