@@ -37,21 +37,17 @@ if($row=mysqli_fetch_array($r))
 
 			while($row2=mysqli_fetch_array($r2))
 			{
-				
-
 				$assignid = $row2[0];
 				$queryName = "SELECT AssignmentName FROM Assignments WHERE AssignmentID = '$assignid'";
 	
 				if($r3=mysqli_query($link, $queryName))
 				{
-					$ident = "Quiz"+$count;
-
-					echo $ident;
+					$ident = "Quiz" .$count;
 
 					$row3=mysqli_fetch_array($r3);
 					echo "$row3[0] &nbsp;";
 					echo "<input type='text' id= '$ident' placeholder='$grade' name='quizName'> &nbsp;";
-					echo "<button onclick='myFunction()' >Submit</button>";
+					echo "<button onclick='myFunction($count)' >Submit</button>";
 					echo "<br>";
 					echo "<br>";
 				    $count++;
@@ -73,8 +69,8 @@ include 'footer.php';
 ?>
 
 <script>
-function myFunction()
+function myFunction(count)
 {
-	window.alert(document.getElementById('Quiz2').value);
+	window.alert(document.getElementById('Quiz'+count).value);
 }
 </script>
