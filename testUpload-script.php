@@ -37,8 +37,6 @@ if (!empty($tag_name))
 
         echo "<p>In do_uploads.</p>";
 
-        echo $extension;
-
         # public_id will be generated on Cloudinary's backend.
         //$files["unnamed_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"], $default_upload_options);
 
@@ -66,6 +64,7 @@ if (!empty($tag_name))
 
     # Output an image in HTML along with provided caption and public_id
     function show_image($img, $options = array(), $caption = "") {
+        echo "<p>In show_image.</p>";
         $options["format"] = $img["format"];
         $transformation_url = cloudinary_url($img["public_id"], $options);
 
@@ -80,11 +79,13 @@ if (!empty($tag_name))
     } // show_image
 
 
+    echo "<p>Before do_uploads()</p>.";
     do_uploads();
+    echo "<p>After do_uploads()</p>.";
 
 
 
-      show_image($files["named_local"],  
+    show_image($files["named_local"],  
         array("width" => 200, "height" => 150, "crop" => "fit"), "Local file, custom public ID, Fit into 200x150");
     
       //show_image($files["eager"], $eager_params, "Local file, Eager trasnformation of scaling to 200x150");
