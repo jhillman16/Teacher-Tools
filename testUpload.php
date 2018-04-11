@@ -18,7 +18,8 @@ echo "<p>You need JavaScript.</p>."
 ?>
 
 <script>
-if(!isset($_SESSION['StudentID']) && (!isset($_SESSION['TeacherID'])))
+//if(!isset($_SESSION['StudentID']) && (!isset($_SESSION['TeacherID'])))
+if (false)
 	window.location = 'Login.php';
 </script>
 
