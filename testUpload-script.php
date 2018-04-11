@@ -17,6 +17,9 @@ else
   $tag_name = "";
 
 
+$extension = $_FILES['userfile']['name'];
+
+
 if (!empty($tag_name))
 {
     echo "<p>Tag name is: " . $tag_name . ".</p>";
@@ -25,8 +28,6 @@ if (!empty($tag_name))
         "pizza" => getcwd(). DIRECTORY_SEPARATOR . "images/class.jpg",
         "lake" => getcwd(). DIRECTORY_SEPARATOR . "images/logo.png",
     );*/ // array
-
-    $extension = $_FILES['userfile']['name'];
 
 
     $default_upload_options = array("tags" => $tag_name);
