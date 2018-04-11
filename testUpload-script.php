@@ -19,7 +19,7 @@ else
 
 if (!empty($tag_name))
 {
-  echo "<p>Tag name is: " . $tag_name . ".</p>";
+    echo "<p>Tag name is: " . $tag_name . ".</p>";
 
     $sample_paths = array(
         "pizza" => getcwd(). DIRECTORY_SEPARATOR . "images/class.jpg",
@@ -39,6 +39,8 @@ if (!empty($tag_name))
         global $files, $sample_paths, $default_upload_options, $eager_params;
 
         echo "<p>In do_uploads.</p>";
+
+        echo $extension;
 
         # public_id will be generated on Cloudinary's backend.
         //$files["unnamed_local"] = \Cloudinary\Uploader::upload($sample_paths["pizza"], $default_upload_options);
