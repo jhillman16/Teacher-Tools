@@ -42,8 +42,6 @@ else
 				</div>
 			</span>
 		</li>
-		
-
 	<?php
 	if(!isset($_SESSION['FirstName']))
 	{
@@ -60,7 +58,6 @@ else
 		echo'<li><a href="myQuizes.php">My Quiz</a></li>';
 		echo'<li><a href="Register_For_Class.php">Register For Class</a></li>';
 		echo'<li><a href="Discussion.php">Discussion</a></li>';
-
 	}
 	else if(isset($_SESSION['TeacherID']))
 	{
@@ -80,9 +77,9 @@ else
 				</div>' .
 				'<div id="collapseTest" class="collapse" aria-labelledby="accordionTest" data-parent="#accordion">' .
 					'<a href="testUpload.php">File Upload</a>' .
-				'</div>' .
-			'</span>' .
-		'</li>';
+				"</div>\n" .
+			"</span>\n" .
+		"</li>";
 		echo'<li><a href="Logout.php">Logout</a></li>';
 	}
 	?>
