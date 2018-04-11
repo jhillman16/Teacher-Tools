@@ -69,13 +69,12 @@ else
 		echo'<li><a href="myStudents.php">My Students</a></li>';
 		echo'<li><a href="CreateQuiz.php">Create a Quiz</a></li>';
 		echo'<li><a href="myClass.php">My Class</a></li>';
-
 	}
 
 	if(isset($_SESSION['FirstName']))
 	{
 echo nl2br("<li>
-	<span id=\"accordion\">\n" .
+	<span id=\"accordion\">" .
 		'<div id="accordionTest" class="accordion-link" data-toggle="collapse" data-target="#collapseTest" aria-expanded="true" aria-controls="collapseOne">
 					In Progress Features
 		</div>' .
