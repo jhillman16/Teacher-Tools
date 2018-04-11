@@ -20,7 +20,7 @@ echo "<p>You need JavaScript.</p>";
 
 <script>
 	var redir = <?php echo json_encode($php_redir); ?>;
-	if($redir)
+	if(redir)
 		window.location = 'Login.php';
 </script>
 
