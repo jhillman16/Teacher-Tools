@@ -47,7 +47,7 @@ if($row=mysqli_fetch_array($r))
 					$row3=mysqli_fetch_array($r3);
 					echo "$row3[0] &nbsp;";
 					echo "<input type='text' id= '$ident' placeholder='$grade' name='quizName'> &nbsp;";
-					echo "<button onclick='myFunction()' >Submit</button>";
+					echo "<button onclick='myFunction($count)' >Submit</button>";
 					echo "<br>";
 					echo "<br>";
 				    $count++;
@@ -69,8 +69,8 @@ include 'footer.php';
 ?>
 
 <script>
-function myFunction()
+function myFunction(count)
 {
-	window.alert(document.getElementById('Quiz2').value);
+	window.alert(document.getElementById('Quiz'.count).value);
 }
 </script>
