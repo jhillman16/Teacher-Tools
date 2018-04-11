@@ -74,6 +74,10 @@ else
 				'</div>' .
 				'<div id="collapseTest" class="collapse" aria-labelledby="accordionTest" data-parent="#accordion">' .
 							'<a href="testUpload.php">File Upload</a>' .
+			
+				'</div>' .
+				'<div id="collapseTest" class="collapse" aria-labelledby="accordionTest" data-parent="#accordion">' .
+							'<a href="CreateQuizTest.php">Excel Doc Reading</a>' .
 				'</div>' .
 			'</span></li>';
 		echo'<li><a href="Logout.php">Logout</a></li>';
