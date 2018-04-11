@@ -40,7 +40,7 @@
 					</form>
 				
 		</li>
-<h1>Dr.Wang, this Feature is almost completed. The only thing, we don't have a proper storage yet.</h1>
+
 
 <form>
 <br><br>

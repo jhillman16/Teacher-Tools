@@ -6,15 +6,15 @@
 <?php
 if(isset($_SESSION['StudentID']) || (isset($_SESSION['TeacherID'])))
 {
-echo "<form enctype=\"multipart/form-data\" action=\"testUpload-script.php\" method=\"POST\">";
-echo "<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"20000000\" />"; // 20MB
-echo "Send this file: <input id=\"userfile\" type=\"file\" name=\"fileupload\" />";
-echo "<input type=\"submit\" value=\"Send File\" />";
-echo "</form>";
+echo '<form enctype="multipart/form-data" action="testUpload-script.php" method="POST">';
+echo '<input type="hidden" name="MAX_FILE_SIZE" value="20000000" />'; // 20MB
+echo 'Send this file: <input id="userfile" type="file" name="fileupload" />';
+echo '<input type="submit" value="Send File" />';
+echo '</form>';
 }
 else
 {
-echo "<p>You need JavaScript.</p>";
+echo '<p>You must be logged in to use this feature.</p>';
 $php_redir = true;
 }
 ?>
