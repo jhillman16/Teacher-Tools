@@ -52,9 +52,7 @@ else
 		echo'<li><a href="Login.php">Login</a></li>';
 		echo'<li><a href="Signup.php">Signup</a></li>';
 	}
-	?>
 
-	<?php
 	if(isset($_SESSION['StudentID']))
 	{
 		echo'<li><a href="myClass.php">My Class</a></li>';
@@ -73,12 +71,20 @@ else
 		echo'<li><a href="myClass.php">My Class</a></li>';
 
 	}
-	?>
 
-	<?php
 	if(isset($_SESSION['FirstName']))
 	{
 		echo'<li><a href="Logout.php">Logout</a></li>';
+echo '<li>' .
+	'<span id="accordion">' .
+		'<div id="accordionOne" class="accordion-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					In Progress Features
+		</div>' .
+		'<div id="collapseOne" class="collapse" aria-labelledby="accordionOne" data-parent="#accordion">' .
+			'<a href="testUpload.php">File Upload</a>' .
+		'</div>' .
+	'</span>' .
+'</li>';
 	}
 	?>
 
