@@ -71,6 +71,6 @@ include 'footer.php';
 <script>
 function myFunction(count)
 {
-	window.alert(document.getElementById('Quiz'.count).value);
+	window.alert(document.getElementById('Quiz'+count).value);
 }
 </script>
