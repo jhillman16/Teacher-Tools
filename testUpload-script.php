@@ -45,11 +45,11 @@ if (!empty($tag_name))
           array(
             //"public_id" => "custom_name",
             "use_filename" => TRUE,
-            //"resource_type" => "auto",
+            "resource_type" => "auto",
             ) // array
         ); // array_merge, upload
 
-        echo "<p>Passed upload(extension).</p>";
+        echo "<p>Passed upload.</p>";
 
         # Eager transformations are applied as soon as the file is uploaded, instead of waiting
         # for a user to request them. 
@@ -79,10 +79,9 @@ if (!empty($tag_name))
     } // show_image
 
 
-    echo "<p>Before do_uploads()</p>.";
+    echo "<p>Before do_uploads().</p>";
     do_uploads();
-    echo "<p>After do_uploads()</p>.";
-
+    echo "<p>After do_uploads().</p>";
 
 
     show_image($files["named_local"],  
