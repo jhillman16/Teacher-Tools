@@ -74,8 +74,8 @@ else
 
 	if(isset($_SESSION['FirstName']))
 	{
-echo '<li>
-	<span id="accordion">\n' .
+echo nl2br("<li>
+	<span id=\"accordion\">\n" .
 		'<div id="accordionTest" class="accordion-link" data-toggle="collapse" data-target="#collapseTest" aria-expanded="true" aria-controls="collapseOne">
 					In Progress Features
 		</div>' .
@@ -83,7 +83,7 @@ echo '<li>
 			'<a href="testUpload.php">File Upload</a>' .
 		'</div>' .
 	'</span>' .
-'</li>';
+'</li>');
 		echo'<li><a href="Logout.php">Logout</a></li>';
 	}
 	?>
