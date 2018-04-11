@@ -13,13 +13,12 @@ echo "</form>";
 }
 else
 {
-echo "<p>You need JavaScript.</p>."
+echo "<p>You need JavaScript.</p>.";
 }
 ?>
 
 <script>
-//if(!isset($_SESSION['StudentID']) && (!isset($_SESSION['TeacherID'])))
-if (false)
+if(!isset($_SESSION['StudentID']) && (!isset($_SESSION['TeacherID'])))
 	window.location = 'Login.php';
 </script>
 
