@@ -24,7 +24,7 @@ if (!empty($tag_name))
         "lake" => getcwd(). DIRECTORY_SEPARATOR . "images/logo.png",
     );*/ // array
 
-    $path = $_FILES['fileupload']['name'];
+    $path = $_FILES['userfile']['name'];
     $uploadFile = basename($path);
 
     $default_upload_options = array("tags" => $tag_name);
