@@ -47,7 +47,7 @@ if (!empty($tag_name))
           array(
             //"public_id" => "custom_name",
             "use_filename" => TRUE,
-            "resource_type" => "auto",
+            //"resource_type" => "auto",
             ) // array
         ); // array_merge, upload
 
