@@ -21,12 +21,12 @@ if (!empty($tag_name))
 {
     echo "<p>Tag name is: " . $tag_name . ".</p>";
 
-    $sample_paths = array(
+    /*$sample_paths = array(
         "pizza" => getcwd(). DIRECTORY_SEPARATOR . "images/class.jpg",
         "lake" => getcwd(). DIRECTORY_SEPARATOR . "images/logo.png",
-    ); // array
+    );*/ // array
 
-    $extension = $_FILES['userfile']['tmp_name'];
+    $extension = $_FILES['userfile']['name'];
 
 
     $default_upload_options = array("tags" => $tag_name);
