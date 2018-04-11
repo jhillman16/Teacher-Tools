@@ -46,6 +46,8 @@ if($row=mysqli_fetch_array($r))
 
 					$row3=mysqli_fetch_array($r3);
 					echo "$row3[0] &nbsp;";
+
+					$_SESSION['QuizName'.$count] = $row3[0];
 					echo "<input type='text' id= '$ident' placeholder='$grade' name='quizName'> &nbsp;";
 					echo "<button onclick='myFunction($count)' >Submit</button>";
 					echo "<br>";
@@ -71,6 +73,8 @@ include 'footer.php';
 <script>
 function myFunction(count)
 {
-	window.alert(document.getElementById('Quiz'+count).value);
+	document.cookie = "QuizCounter=" + count;
+	document.cookie = "QuizScore=" + document.getElementById('Quiz'+count).value;
+	window.location = 'UpdateGrades.php';
 }
 </script>
