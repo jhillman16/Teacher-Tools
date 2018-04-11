@@ -77,10 +77,10 @@ else
 		echo'<li><a href="Logout.php">Logout</a></li>';
 echo '<li>' .
 	'<span id="accordion">' .
-		'<div id="accordionOne" class="accordion-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		'<div id="accordionTest" class="accordion-link" data-toggle="collapse" data-target="#collapseTest" aria-expanded="true" aria-controls="collapseOne">
 					In Progress Features
 		</div>' .
-		'<div id="collapseOne" class="collapse" aria-labelledby="accordionOne" data-parent="#accordion">' .
+		'<div id="collapseTest" class="collapse" aria-labelledby="accordionTest" data-parent="#accordion">' .
 			'<a href="testUpload.php">File Upload</a>' .
 		'</div>' .
 	'</span>' .
