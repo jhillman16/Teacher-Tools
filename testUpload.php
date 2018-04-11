@@ -13,13 +13,15 @@ echo "</form>";
 }
 else
 {
+$php_redir = true;
 echo "<p>You need JavaScript.</p>.";
 }
 ?>
 
 <script>
-if(!isset($_SESSION['StudentID']) && (!isset($_SESSION['TeacherID'])))
-	window.location = 'Login.php';
+	var redir = "<?php echo $php_redir; ?>"
+	if($redir)
+		window.location = 'Login.php';
 </script>
 
 
