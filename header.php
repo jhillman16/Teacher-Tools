@@ -73,13 +73,13 @@ else
 		echo "<li>
 				<span id=\"accordion\">\n" .
 				'<div id="accordionTest" class="accordion-link" data-toggle="collapse" data-target="#collapseTest" aria-expanded="true" aria-controls="collapseOne">
-							In Progress Features
-				</div>' .
+							In Progress Features' .
+				"</div>" .
 				'<div id="collapseTest" class="collapse" aria-labelledby="accordionTest" data-parent="#accordion">' .
 					'<a href="testUpload.php">File Upload</a>' .
 				"</div>\n" .
 			"</span>\n" .
-		"</li>";
+		"</li>\n";
 		echo'<li><a href="Logout.php">Logout</a></li>';
 	}
 	?>
