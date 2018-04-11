@@ -31,17 +31,15 @@ else
 	?>
 
 	<ul>
-		<li>
-			<span id="accordion">
-				<div id="accordionOne" class="accordion-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-					Site Related Links
-				</div>
-				<div id="collapseOne" class="collapse" aria-labelledby="accordionOne" data-parent="#accordion">
-					<a href="default.php">Home</a>
-					<a href="About.php">About</a>
-				</div>
-			</span>
-		</li>
+		<li><span id="accordion">
+			<div id="accordionOne" class="accordion-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+				Site Related Links
+			</div>
+			<div id="collapseOne" class="collapse" aria-labelledby="accordionOne" data-parent="#accordion">
+				<a href="default.php">Home</a>
+				<a href="About.php">About</a>
+			</div>
+		</span></li>
 	<?php
 	if(!isset($_SESSION['FirstName']))
 	{
@@ -70,16 +68,14 @@ else
 
 	if(isset($_SESSION['FirstName']))
 	{
-		echo "<li>
-				<span id=\"accordion\">\n" .
-				'<div id="accordionTest" class="accordion-link" data-toggle="collapse" data-target="#collapseTest" aria-expanded="true" aria-controls="collapseOne">
-							In Progress Features' .
-				"</div>" .
-				'<div id="collapseTest" class="collapse" aria-labelledby="accordionTest" data-parent="#accordion">' .
-					'<a href="testUpload.php">File Upload</a>' .
+		echo "<li><span id=\"accordion\">\n" .
+				'<div id="accordionTest" class="accordion-link" data-toggle="collapse" data-target="#collapseTest" aria-expanded="true" aria-controls="collapseOne">' .
+							"In Progress Features" .
 				"</div>\n" .
-			"</span>\n" .
-		"</li>\n";
+				'<div id="collapseTest" class="collapse" aria-labelledby="accordionTest" data-parent="#accordion">' .
+					"<a href=\"testUpload.php\">File Upload</a>" .
+				"</div>\n" .
+			"</span></li>\n";
 		echo'<li><a href="Logout.php">Logout</a></li>';
 	}
 	?>
