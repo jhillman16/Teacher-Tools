@@ -14,9 +14,9 @@ $score = $_COOKIE['QuizScore'];
 $quiz = $_SESSION['QuizName' + $count];
 $id = $_COOKIE['ViewStudent']; 
 
-echo $count;
-echo $score;
-echo $quiz;
+echo $count . '<br>';
+echo $score . '<br>';
+echo $quiz . '<br>';
 echo $id;
 
 //$query = "UPDATE PERFORMANCE SET Score = '$score' WHERE AssignmentID = $quiz AND StudentID = $id";
