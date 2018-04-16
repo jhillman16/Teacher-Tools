@@ -19,7 +19,7 @@ echo $score . '<br>';
 echo $quiz . '<br>';
 echo $id;
 
-$query = "UPDATE PERFORMANCE SET Score = '$score' WHERE AssignmentID = $quiz AND StudentID = $id";
+$query = "UPDATE PERFORMANCE SET Score = $score WHERE AssignmentID = $quiz AND StudentID = $id";
 
 $result = mysqli_query($link,$query);
 
