@@ -41,16 +41,17 @@ if($row=mysqli_fetch_array($r))
 				
 				$queryName = "SELECT AssignmentName FROM Assignments WHERE AssignmentID = '$assignid'";
 	
-				$row = mysqli_fetch_array($r);
 				
-				$grade = $row[0];
-
 				if($r3=mysqli_query($link, $queryName))
 				{
 					$ident = "Quiz" .$count;
 
 					$row3=mysqli_fetch_array($r3);
 					echo "$row3[0] &nbsp;";
+
+					$row = mysqli_fetch_array($r);
+				
+					$grade = $row[0];
 
 					$_SESSION['QuizName'.$count] = $assignid;
 					echo "<input type='text' id= '$ident' placeholder='$grade' name='quizName'> &nbsp;";
