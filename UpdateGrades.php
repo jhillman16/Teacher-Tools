@@ -16,9 +16,34 @@ $id = $_COOKIE['ViewStudent'];
 
 $query = "UPDATE Performance SET Score = $score WHERE AssignmentID = $quiz AND StudentID = $id";
 
+$letter = '';
+
+if($score < 60)
+{
+	$letter = 'F';
+}
+else if($score < 70)
+{
+	$letter = 'D';
+}
+else if($score < 80)
+{
+	$letter = 'C';
+}
+else if($score < 90)
+{
+	$letter = 'B';
+}
+else
+{
+	$letter = 'A';
+}
+
+
 mysqli_query($link,$query);
 
-echo "DONE";
+$query = "UPDATE Performance SET LetterGrade = $letter WHERE AssignmentID = $quiz AND StudentID = $id";
+
 
 header('Location: ViewGrades.php');
 
