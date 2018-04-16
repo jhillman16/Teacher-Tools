@@ -22,7 +22,8 @@ $r=mysqli_query($link, $query);
 
 if($row=mysqli_fetch_array($r))
 {
-	
+
+	$grade = $row[0];
 	$queryQuiz = "SELECT AssignmentID FROM Performance WHERE StudentID = '$id'";
 
 	if($r2=mysqli_query($link, $queryQuiz))
@@ -49,16 +50,18 @@ if($row=mysqli_fetch_array($r))
 					$row3=mysqli_fetch_array($r3);
 					echo "$row3[0] &nbsp;";
 
-					$row = mysqli_fetch_array($r);
-				
-					$grade = $row[0];
+					
 
 					$_SESSION['QuizName'.$count] = $assignid;
 					echo "<input type='text' id= '$ident' placeholder='$grade' name='quizName'> &nbsp;";
 					echo "<button onclick='myFunction($count)' >Submit</button>";
 					echo "<br>";
 					echo "<br>";
-				    $count++;
+					$count++;
+					
+					$row = mysqli_fetch_array($r);
+				
+					$grade = $row[0];
 				}
 			}
 			
