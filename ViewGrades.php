@@ -47,7 +47,7 @@ if($row=mysqli_fetch_array($r))
 					$row3=mysqli_fetch_array($r3);
 					echo "$row3[0] &nbsp;";
 
-					$_SESSION['QuizName' + $count] = $assignid;
+					$_SESSION['QuizName' . $count] = $assignid;
 					echo "<input type='text' id= '$ident' placeholder='$grade' name='quizName'> &nbsp;";
 					echo "<button onclick='myFunction($count)' >Submit</button>";
 					echo "<br>";
