@@ -3,8 +3,7 @@
 session_start();
 if(!isset($_SESSION['FirstName']))
 {
-	$_SESSION['URL'] = basename($_SERVER['PHP_SELF']);
-	header('Location: Login.php');
+	header('Location: Logout.php');
 }
 
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
@@ -17,9 +16,12 @@ $query = "SELECT StudentID FROM Enrollment WHERE StudentID = $StudentID AND Cour
 $result = mysqli_query($link,$query);
 if(mysqli_num_rows($result)>0)
 {
+	echo "hello";
+	/*
 	$_SESSION['error'] = "You are already registered for that class.";
 	header('Register_For_Class.php');
 	exit();
+	*/
 }
 else
 {
@@ -40,6 +42,5 @@ else
 		exit();
 	}
 }
-
 
 ?>
