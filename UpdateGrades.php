@@ -21,7 +21,9 @@ echo $id;
 
 $query = "UPDATE PERFORMANCE SET Score = $score WHERE AssignmentID = $quiz AND StudentID = $id";
 
-$result = mysqli_query($link,$query);
+mysqli_query($link,$query);
+
+echo "DONE";
 
 //header('ViewGrades.php');
 
