@@ -16,8 +16,8 @@ $query = "SELECT StudentID FROM Enrollment WHERE StudentID = $StudentID AND Cour
 $result = mysqli_query($link,$query);
 if(mysqli_num_rows($result)>0)
 {
-	//$_SESSION['error'] = "You are already registered for that class.";
-	header('Register_For_Class.php');
+	$_SESSION['error'] = "You are already registered for that class.";
+	header('Location: Register_For_Class.php');
 	exit();
 }
 else
