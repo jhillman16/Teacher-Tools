@@ -22,7 +22,7 @@ $r=mysqli_query($link, $query);
 
 if($row=mysqli_fetch_array($r))
 {
-	$grade = $row[0];
+	
 	$queryQuiz = "SELECT AssignmentID FROM Performance WHERE StudentID = '$id'";
 
 	if($r2=mysqli_query($link, $queryQuiz))
@@ -38,9 +38,13 @@ if($row=mysqli_fetch_array($r))
 			while($row2=mysqli_fetch_array($r2))
 			{
 				$assignid = $row2[0];
-				$grade = $row[0];
+				
 				$queryName = "SELECT AssignmentName FROM Assignments WHERE AssignmentID = '$assignid'";
 	
+				$row = mysqli_fetch_array($r);
+				
+				$grade = $row[0];
+
 				if($r3=mysqli_query($link, $queryName))
 				{
 					$ident = "Quiz" .$count;
