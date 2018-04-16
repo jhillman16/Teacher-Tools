@@ -25,6 +25,6 @@ mysqli_query($link,$query);
 
 echo "DONE";
 
-header('ViewGrades.php');
+//header('ViewGrades.php');
 
 ?>
