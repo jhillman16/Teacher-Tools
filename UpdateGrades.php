@@ -44,6 +44,7 @@ mysqli_query($link,$query);
 
 $query = "UPDATE Performance SET LetterGrade = $letter WHERE AssignmentID = $quiz AND StudentID = $id";
 
+mysqli_query($link,$query);
 
 header('Location: ViewGrades.php');
 
