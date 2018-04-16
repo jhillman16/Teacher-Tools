@@ -14,17 +14,12 @@ $score = $_COOKIE['QuizScore'];
 $quiz = $_SESSION['QuizName'.$count];
 $id = $_COOKIE['ViewStudent']; 
 
-echo $count . '<br>';
-echo $score . '<br>';
-echo $quiz . '<br>';
-echo $id;
-
 $query = "UPDATE Performance SET Score = $score WHERE AssignmentID = $quiz AND StudentID = $id";
 
 mysqli_query($link,$query);
 
 echo "DONE";
 
-//header('ViewGrades.php');
+header('Location: ViewGrades.php');
 
 ?>
