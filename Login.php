@@ -29,5 +29,7 @@ if(isset($_SESSION["error"]))
 	echo '<div style="color:'.$color.'">'.$error.'</div>';
 }
 
+<br><a href="Forgot.php">Forgot password? Click here!</a>
+
 include 'footer.php';
 ?>
