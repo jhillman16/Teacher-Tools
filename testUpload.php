@@ -24,13 +24,13 @@ $(function() {
 // Configure Cloudinary
 // with credentials available on
 // your Cloudinary account dashboard
-$.cloudinary.config({ cloud_name: 'YOUR_CLOUD_NAME', api_key: 'YOUR_API_KEY'});
+$.cloudinary.config({ cloud_name: 'hzpnyxrng', api_key: '663542711141867'});
 // Upload button
 var uploadButton = $('#submit');
 // Upload button event
 uploadButton.on('click', function(e){
     // Initiate upload
-    cloudinary.openUploadWidget({ cloud_name: 'YOUR_CLOUD_NAME', upload_preset: 'YOUR_UPLOAD_PRESET', tags: ['cgal']}, 
+    cloudinary.openUploadWidget({ cloud_name: 'hzpnyxrng', upload_preset: 'toofghxs', tags: ['cgal']}, 
     function(error, result) { 
         if(error) console.log(error);
         // If NO error, log image data to console
@@ -47,7 +47,7 @@ return '<img src="'+ $.cloudinary.url(id, options) +'" style="width: 100%; heigh
 }
 //	var redir = <?php echo json_encode($php_redir); ?>;
 //	if(redir)
-		window.location = 'Login.php';
+//		window.location = 'Login.php';
 </script>
 
 
