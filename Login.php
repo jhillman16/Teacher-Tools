@@ -20,6 +20,8 @@
 
 </form>
 
+<br><a href="Forgot.php">Forgot password? Click here!</a><br>
+
 <?php
 if(isset($_SESSION["error"]))
 {
@@ -31,5 +33,3 @@ if(isset($_SESSION["error"]))
 
 include 'footer.php';
 ?>
-
-<br><a href="Forgot.php">Forgot password? Click here!</a>
