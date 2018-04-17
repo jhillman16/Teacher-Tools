@@ -48,7 +48,7 @@ if($row=mysqli_fetch_array($r))
 					$ident = "Quiz" .$count;
 
 					$row3=mysqli_fetch_array($r3);
-					echo "<div>"
+					echo "<div>";
 					echo "$row3[0] &nbsp;";					
 
 					$_SESSION['QuizName'.$count] = $assignid;
