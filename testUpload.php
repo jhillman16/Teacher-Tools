@@ -3,6 +3,18 @@
 
 
 
+<form id="uploadimage" action="" method="post" enctype="multipart/form-data">
+<div id="image_preview"><img id="previewing" src="noimage.png" /></div>
+<hr id="line">
+<div id="selectImage">
+<label>Select Your Image</label><br/>
+<input type="file" name="file" id="file" required />
+<input type="submit" value="Upload" class="submit" />
+</div>
+</form>
+</div>
+<h4 id='loading' >loading..</h4>
+<div id="message"></div>
 <?php/*
 if(isset($_SESSION['StudentID']) || (isset($_SESSION['TeacherID'])))
 {
@@ -18,7 +30,7 @@ echo '<p>You must be logged in to use this feature.</p>';
 $php_redir = true;
 }*/
 ?>
-<p>before script</p>
+<!--<p>before script</p>
 <script>
 $(function() {
 // Configure Cloudinary
@@ -49,7 +61,7 @@ return '<img src="'+ $.cloudinary.url(id, options) +'" style="width: 100%; heigh
 //	if(redir)
 //		window.location = 'Login.php';
 </script>
-<p>after script</p>
+<p>after script</p>-->
 
 
 

@@ -16,6 +16,7 @@ else
 
 	<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
 	<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+	<script src="script.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="default-css.css" />
