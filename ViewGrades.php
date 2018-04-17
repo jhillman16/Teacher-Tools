@@ -50,10 +50,11 @@ if($row=mysqli_fetch_array($r))
 					$row3=mysqli_fetch_array($r3);
 					echo "<div>";
 					
-					echo "<span> $row3[0] </span> &nbsp;";					
+					echo "<label><span> $row3[0] </span> &nbsp;";					
 
 					$_SESSION['QuizName'.$count] = $assignid;
 					echo "<input type='text' id= '$ident' placeholder='$grade' name='quizName'> &nbsp;";
+					echo "</label>";
 					echo "<button onclick='myFunction($count)' >Submit</button>";
 					echo "</div>";
 					echo "<br>";
