@@ -20,9 +20,10 @@
 
 		if(mysqli_num_rows($result) == 0)
 		{
+			echo $query;
 			$_SESSION['error'] = 'Username/email does not exist!'; //Error message to display
-			header('Location: Forgot.php');
-			exit();
+			//header('Location: Forgot.php');
+			//exit();
 		}
 		elseif(mysqli_num_rows($result) == 1)
 		{
