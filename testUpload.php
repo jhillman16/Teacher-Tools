@@ -1,20 +1,24 @@
 <?php $title = "upload pg 1"; include 'header.php';?>
 
 
-
-
-<form id="uploadimage" action="" method="post" enctype="multipart/form-data">
-<div id="image_preview"><img id="previewing" src="noimage.png" /></div>
-<hr id="line">
-<div id="selectImage">
-<label>Select Your Image</label><br/>
-<input type="file" name="file" id="file" required />
-<input type="submit" value="Upload" class="submit" />
-</div>
+<form action="" method="post" enctype="multipart/form-data" onsubmit="AJAXSubmit(this); return false;">
+  <fieldset>
+    <legend>Upload example</legend>
+    <p>
+      <label for="upload_preset">Unsigned upload Preset: <input type="text" name="upload_preset">(set it <a href="https://cloudinary.com/console/settings/upload#upload_presets">here</a>)</label>
+    </p>
+    <p>
+      <label >Select your photo:
+      <input type="file" name="file"></label>
+    </p>
+    
+    <p>
+      <input type="submit" value="Submit" />
+    </p>
+    <img id="uploaded">
+    <div id="results"></div>
+  </fieldset>
 </form>
-</div>
-<h4 id='loading' >loading..</h4>
-<div id="message"></div>
 <?php/*
 if(isset($_SESSION['StudentID']) || (isset($_SESSION['TeacherID'])))
 {
