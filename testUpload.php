@@ -5,10 +5,10 @@
   <fieldset>
     <legend>Upload example</legend>
     <p>
-      <label for="upload_preset">Unsigned upload Preset: <input type="text" name="upload_preset">(set it <a href="https://cloudinary.com/console/settings/upload#upload_presets">here</a>)</label>
+      <label for="upload_preset">Unsigned upload Preset: <input value="toofghxs" type="hidden" name="upload_preset" /></label>
     </p>
     <p>
-      <label >Select your photo:
+      <label>Select your photo:
       <input type="file" name="file"></label>
     </p>
     
