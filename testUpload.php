@@ -18,7 +18,7 @@ echo '<p>You must be logged in to use this feature.</p>';
 $php_redir = true;
 }*/
 ?>
-
+<p>before script</p>
 <script>
 $(function() {
 // Configure Cloudinary
@@ -49,6 +49,7 @@ return '<img src="'+ $.cloudinary.url(id, options) +'" style="width: 100%; heigh
 //	if(redir)
 //		window.location = 'Login.php';
 </script>
+<p>after script</p>
 
 
 
