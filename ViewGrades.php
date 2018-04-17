@@ -49,6 +49,7 @@ if($row=mysqli_fetch_array($r))
 
 					$row3=mysqli_fetch_array($r3);
 					echo "<div>";
+					echo "<span></span>";
 					echo "$row3[0] &nbsp;";					
 
 					$_SESSION['QuizName'.$count] = $assignid;
