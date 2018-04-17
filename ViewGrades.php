@@ -54,8 +54,8 @@ if($row=mysqli_fetch_array($r))
 
 					$_SESSION['QuizName'.$count] = $assignid;
 					echo "<input type='text' id= '$ident' placeholder='$grade' name='quizName'> &nbsp;";
-					echo "</label>";
 					echo "<button onclick='myFunction($count)' >Submit</button>";
+					echo "</label>";
 					echo "</div>";
 					echo "<br>";
 					echo "<br>";
