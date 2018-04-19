@@ -25,8 +25,8 @@
 		if(mysqli_num_rows($result) == 0)
 		{
 			$_SESSION['error'] = 'Username/email does not exist!'; //Error message to display
-			header('Location: Forgot.php');
-			exit();
+			//header('Location: Forgot.php');
+			//exit();
 		}
 		elseif(mysqli_num_rows($result) == 1)
 		{
@@ -78,8 +78,8 @@
 		else
 		{
 			$_SESSION['error'] = 'Something went wrong. Please try again.'; //Error message to display
-			header('Location: Forgot.php');
-			exit();
+			//header('Location: Forgot.php');
+			//exit();
 		}
 	}
 ?>
