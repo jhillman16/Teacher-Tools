@@ -1,4 +1,6 @@
 <?php
+	require 'vendor/autoload.php';
+
 	session_start();
 
 	include("ConnectDatabase.php"); //Goes through steps of connecting to database
@@ -30,6 +32,29 @@
 		{
 			$row = mysqli_fetch_assoc($result);
 
+
+
+
+
+
+			$from = new SendGrid\Email(null, "app77188938@heroku.com");
+			$subject = "Hello World from the SendGrid PHP Library!";
+			$to = new SendGrid\Email(null, "mmilton1@gulls.salisbury.edu");
+			$content = new SendGrid\Content("text/plain", "Hello, Email!");
+			$mail = new SendGrid\Mail($from, $subject, $to, $content);
+
+			$apiKey = getenv('SENDGRID_API_KEY');
+			$sg = new \SendGrid($apiKey);
+
+			$response = $sg->client->mail()->send()->post($mail);
+			echo $response->statusCode();
+			echo $response->headers();
+			echo $response->body();
+
+
+
+
+			/*
 			$password = $row['Password'];
 			$to = $row['Email'];
 			$subject = "Teacher Tools Recovered Password";
@@ -48,6 +73,7 @@
 				header('Location: Forgot.php');
 				exit();
 			}
+			*/
 		}
 		else
 		{
