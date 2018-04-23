@@ -5,7 +5,7 @@ if(isset($_FILES['uploaded_file'])) {
 	echo 'Error';
     // Make sure the file was sent without errors
     if($_FILES['uploaded_file']['error'] == 0) {
-		echo 'Hello';
+		
         // Connect to the database
         //$dbLink = new mysqli('127.0.0.1', 'user', 'pwd', 'myTable');
         //if(mysqli_connect_errno()) {
@@ -29,7 +29,7 @@ if(isset($_FILES['uploaded_file'])) {
  
         // Execute the query
         $result = $dbLink->query($query);
- 
+ echo 'Hello';
         // Check if it was successfull
         if($result) {
             echo 'Success! Your file was successfully added!';
