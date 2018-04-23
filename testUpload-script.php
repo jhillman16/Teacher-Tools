@@ -1,5 +1,7 @@
 <?php $title = "upload pg 2"; include 'header.php';?>
 
+
+
 <?php
 include 'src/Cloudinary.php';
 include 'src/Uploader.php';
@@ -25,7 +27,6 @@ if (!empty($tag_name))
     );*/ // array
 
     $path = $_FILES['userfile']['name'];
-    $uploadFile = basename($path);
 
     $default_upload_options = array("tags" => $tag_name);
     $eager_params = array("width" => 200, "height" => 150, "crop" => "scale");
@@ -43,7 +44,7 @@ if (!empty($tag_name))
 
         # Same image, uploaded with a public_id
         //$files["named_local"] = \Cloudinary\Uploader::upload($_FILES['fileupload']['name'],
-        $files = \Cloudinary\Uploader::upload($uploadFile,
+        $files = \Cloudinary\Uploader::upload($path,
             array(
             //"public_id" => "custom_name",
             "use_filename" => TRUE,

@@ -20,6 +20,8 @@
 
 </form>
 
+<br><a href="Forgot.php">Forgot password? Click here!</a><br>
+
 <?php
 if(isset($_SESSION["error"]))
 {
