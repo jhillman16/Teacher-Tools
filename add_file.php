@@ -17,7 +17,7 @@ if(isset($_FILES['uploaded_file'])) {
         $mime = $dbLink->real_escape_string($_FILES['uploaded_file']['type']);
         $data = $dbLink->real_escape_string(file_get_contents($_FILES  ['uploaded_file']['tmp_name']));
         $size = intval($_FILES['uploaded_file']['size']);
- 
+  echo 'Hello';
         // Create the SQL query
         $query = "
             INSERT INTO `file` (
@@ -29,7 +29,7 @@ if(isset($_FILES['uploaded_file'])) {
  
         // Execute the query
         $result = $dbLink->query($query);
- echo 'Hello';
+
         // Check if it was successfull
         if($result) {
             echo 'Success! Your file was successfully added!';
