@@ -49,7 +49,8 @@
 			echo $response->headers();
 			echo $response->body();
 
-
+echo $row['Email'];
+echo $password;
 
 
 			/*
