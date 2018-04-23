@@ -20,8 +20,8 @@ if(isset($_FILES['uploaded_file'])) {
  
         // Create the SQL query
         $query = "
-            INSERT INTO `file` (
-                `name`, `mime`, `size`, `data`, `created`
+            INSERT INTO `Files` (
+                `Name`, `Mime`, `Size`, `Data`, `Created`
             )
             VALUES (
                 '{$name}', '{$mime}', {$size}, '{$data}', NOW()
