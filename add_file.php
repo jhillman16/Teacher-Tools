@@ -13,9 +13,9 @@ if(isset($_FILES['uploaded_file'])) {
         //}
  
         // Gather all required data
-        $name = real_escape_string($_FILES['uploaded_file']['name']);
-        $mime = real_escape_string($_FILES['uploaded_file']['type']);
-        $data = real_escape_string(file_get_contents($_FILES  ['uploaded_file']['tmp_name']));
+        $name = mysql_real_escape_string($_FILES['uploaded_file']['name']);
+        $mime = mysql_real_escape_string($_FILES['uploaded_file']['type']);
+        $data = mysql_real_escape_string(file_get_contents($_FILES  ['uploaded_file']['tmp_name']));
         $size = intval($_FILES['uploaded_file']['size']);
  echo 'Hello';
         // Create the SQL query
@@ -28,15 +28,15 @@ if(isset($_FILES['uploaded_file'])) {
             )";
  
         // Execute the query
-        $result = $dbLink->query($query);
+        $result = mysql_query($query);
 
         // Check if it was successfull
         if($result) {
             echo 'Success! Your file was successfully added!';
         }
         else {
-            echo 'Error! Failed to insert the file'
-               . "<pre>{$dbLink->error}</pre>";
+            echo 'Error! Failed to insert the file';
+               
         }
     }
     else {
@@ -45,7 +45,7 @@ if(isset($_FILES['uploaded_file'])) {
     }
  
     // Close the mysql connection
-    $dbLink->close();
+    
 }
 else {
     echo 'Error! A file was not sent!';
