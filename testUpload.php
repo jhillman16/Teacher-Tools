@@ -5,7 +5,7 @@
   <fieldset>
     <legend>Upload example</legend>
     <p>
-      <label for="upload_preset">Unsigned upload Preset: <input value="toofghxs" type="hidden" name="upload_preset" /></label>
+      <label for="upload_preset"><input value="toofghxs" type="hidden" name="upload_preset" /></label>
     </p>
     <p>
       <label>Select your photo:
@@ -16,7 +16,7 @@
       <input type="submit" value="Submit" />
     </p>
     <img id="uploaded">
-    <div id="results"></div>
+    <!--<div id="results"></div>-->
   </fieldset>
 </form>
 <?php/*

@@ -33,15 +33,12 @@
 		{
 			$row = mysqli_fetch_assoc($result);
 
-
-
-
-
+			$password = $row['Password'];
 
 			$from = new SendGrid\Email(null, "app77188938@heroku.com");
-			$subject = "Hello World from the SendGrid PHP Library!";
-			$to = new SendGrid\Email(null, "mmilton1@gulls.salisbury.edu");
-			$content = new SendGrid\Content("text/plain", "Hello, Email!");
+			$subject = "Teacher Tools Recovered Password";
+			$to = new SendGrid\Email(null, $row['Email']);
+			$content = new SendGrid\Content("text/plain", "Please use this password to login: " . $password);
 			$mail = new SendGrid\Mail($from, $subject, $to, $content);
 
 			$apiKey = getenv('SENDGRID_API_KEY');
@@ -56,11 +53,7 @@
 
 
 			/*
-			$password = $row['Password'];
-			$to = $row['Email'];
-			$subject = "Teacher Tools Recovered Password";
-			$message = "Please use this password to login: " . $password;
-			$headers = "From : donotreply@TeacherTools.com";
+			
 
 			if(mail($to, $subject, $message, $headers))
 			{
