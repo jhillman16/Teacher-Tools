@@ -2,7 +2,7 @@ window.ajaxSuccess = function () {
 	response = JSON.parse(this.responseText);
   console.log("ajaxSuccess", typeof this.responseText);
   document.getElementById('uploaded').setAttribute("src", response["secure_url"]);
-  document.getElementById('results').innerText = this.responseText;
+  //document.getElementById('results').innerText = this.responseText;
 }
 
 window.AJAXSubmit = function (formElement) {

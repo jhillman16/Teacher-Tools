@@ -3,7 +3,7 @@
 
 <form action="" method="post" enctype="multipart/form-data" onsubmit="AJAXSubmit(this); return false;">
   <fieldset>
-    <legend>Upload example</legend>
+    <legend>Image Upload</legend>
     <p>
       <label for="upload_preset"><input value="toofghxs" type="hidden" name="upload_preset" /></label>
     </p>
