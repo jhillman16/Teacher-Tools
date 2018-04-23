@@ -38,7 +38,7 @@
 
 			$from = new SendGrid\Email(null, "app77188938@heroku.com");
 			$subject = "Teacher Tools Recovered Password";
-			$to = new SendGrid\Email(null, $email);
+			$to = new SendGrid\Email(null, '$email');
 			$content = new SendGrid\Content("text/plain", "Please use this password to login: $password");
 			$mail = new SendGrid\Mail($from, $subject, $to, $content);
 
@@ -50,7 +50,7 @@
 			echo $response->headers();
 			echo $response->body();
 
-echo $row['Email'];
+echo " " . $email . " ";
 echo $password;
 
 
