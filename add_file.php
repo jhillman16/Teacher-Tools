@@ -14,10 +14,15 @@ if(isset($_FILES['uploaded_file'])) {
  
         // Gather all required data
         $name = mysql_real_escape_string($_FILES['uploaded_file']['name']);
+		 echo 'Hello';
         $mime = mysql_real_escape_string($_FILES['uploaded_file']['type']);
+		 echo 'Hello 2';
         $data = mysql_real_escape_string(file_get_contents($_FILES  ['uploaded_file']['tmp_name']));
+		 echo 'Hello 3';
         $size = intval($_FILES['uploaded_file']['size']);
- echo 'Hello';
+		 echo 'Hello 4';
+		
+
         // Create the SQL query
         $query = "
             INSERT INTO `Files` (
