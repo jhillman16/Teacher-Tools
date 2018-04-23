@@ -2,7 +2,7 @@
  include("ConnectDatabase.php");
 // Check if a file has been uploaded
 if(isset($_FILES['uploaded_file'])) {
-	echo 'Error'
+	echo 'Error';
     // Make sure the file was sent without errors
     if($_FILES['uploaded_file']['error'] == 0) {
         // Connect to the database
