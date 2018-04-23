@@ -44,7 +44,7 @@
 			$content = new SendGrid\Content("text/plain", "Hello, Email!");
 			$mail = new SendGrid\Mail($from, $subject, $to, $content);
 
-			$apiKey = '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';
+			$apiKey = getenv('SENDGRID_API_KEY');
 			$sg = new \SendGrid($apiKey);
 
 			$response = $sg->client->mail()->send()->post($mail);
