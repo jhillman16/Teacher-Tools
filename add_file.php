@@ -13,11 +13,11 @@ if(isset($_FILES['uploaded_file'])) {
         //}
  
         // Gather all required data
-        $name = $dbLink->real_escape_string($_FILES['uploaded_file']['name']);
+        /*$name = $dbLink->real_escape_string($_FILES['uploaded_file']['name']);
         $mime = $dbLink->real_escape_string($_FILES['uploaded_file']['type']);
         $data = $dbLink->real_escape_string(file_get_contents($_FILES  ['uploaded_file']['tmp_name']));
         $size = intval($_FILES['uploaded_file']['size']);
- 
+ */
         // Create the SQL query
         $query = "
             INSERT INTO `Files` (
