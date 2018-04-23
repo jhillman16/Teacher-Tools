@@ -1,5 +1,6 @@
 <?php
-	require 'vendor/autoload.php';
+	ini_set('display_errors', 1);
+	require("sendgrid-php/sendgrid-php.php");
 
 	session_start();
 
