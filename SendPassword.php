@@ -34,10 +34,11 @@
 			$row = mysqli_fetch_assoc($result);
 
 			$password = $row['Password'];
+			$email = $row['Email'];
 
 			$from = new SendGrid\Email(null, "app77188938@heroku.com");
 			$subject = "Teacher Tools Recovered Password";
-			$to = new SendGrid\Email(null, $row['Email']);
+			$to = new SendGrid\Email(null, $email);
 			$content = new SendGrid\Content("text/plain", "Please use this password to login: $password");
 			$mail = new SendGrid\Mail($from, $subject, $to, $content);
 
