@@ -16,7 +16,7 @@
       <input type="submit" value="Submit" />
     </p>
     <img id="uploaded">
-    <div id="results"></div>
+    <!--<div id="results"></div>-->
   </fieldset>
 </form>
 <?php/*
