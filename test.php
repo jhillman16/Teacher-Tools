@@ -1,25 +1,17 @@
-<?php
 
-session_start();
-include("ConnectDatabase.php"); //Goes through steps of connecting to database
+<!DOCTYPE html>
+    <head>
+        <title>MySQL file upload example</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <input type="file" name="uploaded_file"><br>
+            <input type="submit" value="Upload file">
+        </form>
+        <p>
+            <a href="#">See all files</a>
+        </p>
+    </body>
+    </html>
 
-
-// attempt get teacher info
-$query = "INSERT INTO Test(Message) VALUES('What a day')";
-
-$result = mysqli_query($link, $query); 
-
-$sql = "SELECT Message FROM Test";
-$result2 = $link->query($sql);
-
-if ($result2->num_rows > 0) {
-    // output data of each row
-    while($row = $result2->fetch_assoc()) {
-        echo "id: " . $row["Message"];
-    }
-}
-// close connection
-mysqli_close($link);
-
-
-?>
