@@ -5,7 +5,7 @@ if(isset($_FILES['uploaded_file'])) {
 	echo 'Error';
     // Make sure the file was sent without errors
     if($_FILES['uploaded_file']['error'] == 0) {
-		 echo 'Hello';
+		 
         // Connect to the database
         //$dbLink = new mysqli('127.0.0.1', 'user', 'pwd', 'myTable');
         //if(mysqli_connect_errno()) {
@@ -17,7 +17,7 @@ if(isset($_FILES['uploaded_file'])) {
         $mime = real_escape_string($_FILES['uploaded_file']['type']);
         $data = real_escape_string(file_get_contents($_FILES  ['uploaded_file']['tmp_name']));
         $size = intval($_FILES['uploaded_file']['size']);
- 
+ echo 'Hello';
         // Create the SQL query
         $query = "
             INSERT INTO `Files` (
