@@ -36,9 +36,23 @@
 			$password = $row['Password'];
 			$email = $row['Email'];
 
+
+/*
+    $from = new SendGrid\Email(null, $FROM_EMAIL);
+    $to = new SendGrid\Email(null, $TO_EMAIL);
+    $htmlContent = '';
+    // Create Sendgrid content
+    $content = new SendGrid\Content("text/html",$htmlContent);
+    // Create a mail object
+    $mail = new SendGrid\Mail($from, $subject, $to, $content);
+    
+    $sg = new \SendGrid($API_KEY);
+    $response = $sg->client->mail()->send()->post($mail);
+*/
+
 			$from = new SendGrid\Email(null, "app77188938@heroku.com");
 			$subject = "Teacher Tools Recovered Password";
-			$to = new SendGrid\Email(null, $email);
+			$to = new SendGrid\Email(null, "$email");
 			$content = new SendGrid\Content("text/plain", "Please use this password to login: password");
 			$mail = new SendGrid\Mail($from, $subject, $to, $content);
 
