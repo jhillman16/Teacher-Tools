@@ -21,8 +21,6 @@ if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
 		echo dirname(__FILE__) . "\n";
 		echo "<p>\$target_path = $target_path</p>";
 
-		echo "<pre>".print_r($_FILES,true)."</pre>";
-
 		//if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $target_path)) {
 
 			//echo '<p>IN if(move_uploaded_file($_FILES[\'uploaded_file\'][\'tmp_name\'], $target_path))</p>';
@@ -42,8 +40,8 @@ if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
 
 			echo "<p>After creating variables.</p>";
 
-			$query = "INSERT INTO `Files` (`name`, `mime`, `size`, `data`, `created`)
-			VALUES ('{$name}', '{$mime}', {$size}, '', NOW())";
+			$query = "INSERT INTO 'Files' ('name', 'mime', 'size', 'data', 'created')
+					  VALUES ('{$name}', '{$mime}', {$size}, '', NOW())";
 			$result = mysqli_query($query);
 
 		echo "<pre>".print_r($_FILES,true)."</pre>";
