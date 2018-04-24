@@ -34,8 +34,8 @@ if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
 			// @@@@@@
 			// Note changes to your query as well
 			// Make sure you added the "image_path" field to the "images" table!!
-			$query = "INSERT INTO `images` (`name`, `mime`, `size`, `data`, `created`, `image_path`)
-			VALUES ('{$name}', '{$mime}', {$size}, '', NOW(), '{$image_path}')";
+			$query = "INSERT INTO `Files` (`name`, `mime`, `size`, `data`, `created`)
+			VALUES ('{$name}', '{$mime}', {$size}, '', NOW())";
 			$result = mysql_query($query);	 
 		}
 
