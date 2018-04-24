@@ -19,6 +19,7 @@ if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
 		$target_path = $target_path . basename( $_FILES['uploaded_file']['name']);
 
 		echo getcwd() . "\n";
+		echo dirname(__FILE__) . "\n";
 		echo "<p>\$target_path = $target_path</p>";
 
 		if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $target_path)) {
