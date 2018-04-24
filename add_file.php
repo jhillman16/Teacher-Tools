@@ -13,7 +13,7 @@ if(isset($_FILES['uploaded_file'])) {
         //}
  
         // Gather all required data
-        $name = mysql_real_escape_string($_FILES['uploaded_file']['name']);
+        $name = mysql_real_escape_string($_POST['uploaded_file']['name']);
 		 echo 'Hello';
         $mime = mysql_real_escape_string($_FILES['uploaded_file']['type']);
 		 echo 'Hello 2';
@@ -35,7 +35,7 @@ if(isset($_FILES['uploaded_file'])) {
         // Execute the query
         $result = mysql_query($query);
 
-        // Check if it was successfull
+        // Check if it was successful
         if($result) {
             echo 'Success! Your file was successfully added!';
         }
