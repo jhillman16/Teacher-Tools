@@ -35,12 +35,12 @@
 
 			$password = $row['Password'];
 			$email = $row['Email'];
-			$htmlContent = 'Please use this password to login: ';    
+			$htmlContent = 'Please use this password to login: ' . $password;
 
 
 			$from = new SendGrid\Email(null, "app77188938@heroku.com");
 			$subject = "Teacher Tools Recovered Password";
-			$to = new SendGrid\Email(null, "mmilton1@gulls.salisbury.edu");
+			$to = new SendGrid\Email(null, $email);
 			$content = new SendGrid\Content("text/html", $htmlContent); //" $password"
 			$mail = new SendGrid\Mail($from, $subject, $to, $content);
 
