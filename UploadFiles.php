@@ -45,7 +45,7 @@
 <form>
 <br><br>
 <h5>To view your files</h5>
-<a href="test.php">Click here</a>
+<a href="testBLOB.php">Click here</a>
 </form>
 
 <br>
