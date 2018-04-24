@@ -23,9 +23,9 @@ if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
 
 		echo"<pre>".print_r($_FILES,true)."</pre>";
 
-		if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $target_path)) {
+		//if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $target_path)) {
 
-			echo '<p>IN if(move_uploaded_file($_FILES[\'uploaded_file\'][\'tmp_name\'], $target_path))</p>';
+			//echo '<p>IN if(move_uploaded_file($_FILES[\'uploaded_file\'][\'tmp_name\'], $target_path))</p>';
 
 			// @@@@@@@@@@@@@
 			// To keep things simple, we'll keep your DB structure the same except for 1 thing:
@@ -43,10 +43,10 @@ if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
 			$query = "INSERT INTO `Files` (`name`, `mime`, `size`, `data`, `created`)
 			VALUES ('{$name}', '{$mime}', {$size}, '', NOW())";
 			$result = mysqli_query($query);	 
-		}
-		else {
-			echo "<p>Error! Couldn't move uploaded file</p>";
-		}
+		//}
+	}
+	else {
+		echo "<p>Error! Couldn't uploaded file.</p>";
 	}
 }
 ?>
