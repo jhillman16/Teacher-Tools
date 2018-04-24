@@ -42,7 +42,9 @@ if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
 
 			$query = "INSERT INTO 'Files' ('name', 'mime', 'size', 'data', 'created')
 					  VALUES ('{$name}', '{$mime}', {$size}, '', NOW())";
-			$result = mysqli_query($query);
+			$result = mysqli_query($link, $query);
+
+			mysqli_close($link);
 
 		echo "<pre>".print_r($_FILES,true)."</pre>";
 		//}
