@@ -1,5 +1,6 @@
 <?php
 include("ConnectDatabase.php");
+
 @$name = $_FILES['file']['name'];
 $extension = strtolower(substr($name, strpos($name, '.') + 1));
 @$tmp_name = $_FILES['file']['tmp_name'];
@@ -30,8 +31,8 @@ if(isset($name)){
 			$content= mysqli_real_escape_string($cxn, $content);
 			$name= mysqli_real_escape_string($cxn, $name);
 			// Insert into the table "table" for column "image" with our binary string of data ("content")
-			mysqli_query($cxn,"INSERT INTO uploaded (file_id, name, type, size, image, email) Values('','$name','$type', '$size','$content','goro@yahoo.com')") or 
-			die("Couldn't execute query in your database!".mysqli_error($cxn));
+			mysqli_query($link,"INSERT INTO uploaded (file_id, name, type, size, image, email) Values('','$name','$type', '$size','$content','goro@yahoo.com')") or 
+			die("Couldn't execute query in your database!".mysqli_error($link));
 			
 			echo 'Data-File was inserted into the database!|';
 			echo '<a href="showImages.php?id=1">view</a>';
