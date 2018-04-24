@@ -2,20 +2,26 @@
 include("ConnectDatabase.php");
 
 if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
+
+	echo '<p>if(is_uploaded_file)</p>';
+
 	// Make sure the file was sent without errors
 	if($_FILES['uploaded_file']['error'] == 0) {
+
+		echo '<p>if($_FILES[\'uploaded_file\'][\'error\'] == 0)</p>';
+
 		// @@@@@@@@@@@@@@
 		// Path is wrong. You have to specify the path of the folder on the web server
 		// Typically, it'd be something akin to "var/www/Blean_Photos/images"
 		// Also make sure the folder exists and that you have write permissions for it
 		$target_path = "Files/";
 
-		$target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
+		$target_path = $target_path . basename( $_FILES['uploaded_file']['name']); 
 
-		if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
+		if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $target_path)) {
 			// @@@@@@@@@@@@@@
 			// this echo is not really necessary
-			echo "The file ".  basename( $_FILES['uploadedfile']['name']). 
+			echo "The file ".  basename( $_FILES['uploaded_file']['name']). 
 			" has been uploaded";
 
 			// @@@@@@@@@@@@@
