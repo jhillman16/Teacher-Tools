@@ -14,11 +14,10 @@ if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
 		// Path is wrong. You have to specify the path of the folder on the web server
 		// Typically, it'd be something akin to "var/www/Blean_Photos/images"
 		// Also make sure the folder exists and that you have write permissions for it
-		$target_path = "Files/";
+		$target_path = "app/Files/";
 
-		$target_path = $target_path . basename( $_FILES['uploaded_file']['name']);
+		$target_path = $target_path . basename($_FILES['uploaded_file']['name']);
 
-		echo getcwd() . "\n";
 		echo dirname(__FILE__) . "\n";
 		echo "<p>\$target_path = $target_path</p>";
 
@@ -39,9 +38,6 @@ if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
 			$size = intval($_FILES['uploaded_file']['size']);
 			$image_path = mysqli_real_escape_string($target_path);
 
-			// @@@@@@
-			// Note changes to your query as well
-			// Make sure you added the "image_path" field to the "images" table!!
 			$query = "INSERT INTO `Files` (`name`, `mime`, `size`, `data`, `created`)
 			VALUES ('{$name}', '{$mime}', {$size}, '', NOW())";
 			$result = mysqli_query($query);	 
