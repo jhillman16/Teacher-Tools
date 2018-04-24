@@ -3,12 +3,12 @@ include("ConnectDatabase.php");
 
 if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
 
-	echo '<p>if(is_uploaded_file)</p>';
+	echo '<p>IN if(is_uploaded_file)</p>';
 
 	// Make sure the file was sent without errors
 	if($_FILES['uploaded_file']['error'] == 0) {
 
-		echo '<p>if($_FILES[\'uploaded_file\'][\'error\'] == 0)</p>';
+		echo '<p>IN if($_FILES[\'uploaded_file\'][\'error\'] == 0)</p>';
 
 		// @@@@@@@@@@@@@@
 		// Path is wrong. You have to specify the path of the folder on the web server
@@ -18,11 +18,12 @@ if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
 
 		$target_path = $target_path . basename( $_FILES['uploaded_file']['name']);
 
-		echo "<p>$target_path</p>";
+		echo getcwd() . "\n";
+		echo "<p>\$target_path = $target_path</p>";
 
 		if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $target_path)) {
 
-			echo '<p>if(move_uploaded_file($_FILES[\'uploaded_file\'][\'tmp_name\'], $target_path))</p>';
+			echo '<p>IN if(move_uploaded_file($_FILES[\'uploaded_file\'][\'tmp_name\'], $target_path))</p>';
 
 			// @@@@@@@@@@@@@
 			// To keep things simple, we'll keep your DB structure the same except for 1 thing:
@@ -32,21 +33,20 @@ if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
 			// and added $image_path variable instead
 
 			// Gather all required data
-			$name = mysql_real_escape_string($_FILES['uploaded_file']['name']);
-			$mime = mysql_real_escape_string($_FILES['uploaded_file']['type']);
+			$name = mysqli_real_escape_string($_FILES['uploaded_file']['name']);
+			$mime = mysqli_real_escape_string($_FILES['uploaded_file']['type']);
 			$size = intval($_FILES['uploaded_file']['size']);
-			$image_path = mysql_real_escape_string($target_path);
+			$image_path = mysqli_real_escape_string($target_path);
 
 			// @@@@@@
 			// Note changes to your query as well
 			// Make sure you added the "image_path" field to the "images" table!!
 			$query = "INSERT INTO `Files` (`name`, `mime`, `size`, `data`, `created`)
 			VALUES ('{$name}', '{$mime}', {$size}, '', NOW())";
-			$result = mysql_query($query);	 
+			$result = mysqli_query($query);	 
 		}
-
 		else {
-			echo 'Error! A file was not sent!';
+			echo "<p>Error! Couldn't move uploaded file</p>";
 		}
 	}
 }
