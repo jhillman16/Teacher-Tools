@@ -31,7 +31,7 @@ if(isset($name)){
 			$content= mysqli_real_escape_string($cxn, $content);
 			$name= mysqli_real_escape_string($cxn, $name);
 			// Insert into the table "table" for column "image" with our binary string of data ("content")
-			mysqli_query($link,"INSERT INTO uploaded (file_id, name, type, size, image, email) Values('','$name','$type', '$size','$content','goro@yahoo.com')") or 
+			mysqli_query($link,"INSERT INTO Files ( Name, Mime, Size, Data, Created) Values('$name','$type', '$size','$tmp_name',Now())") or 
 			die("Couldn't execute query in your database!".mysqli_error($link));
 			
 			echo 'Data-File was inserted into the database!|';
