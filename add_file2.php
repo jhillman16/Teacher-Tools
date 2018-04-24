@@ -21,6 +21,8 @@ if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
 		echo dirname(__FILE__) . "\n";
 		echo "<p>\$target_path = $target_path</p>";
 
+		echo"<pre>".print_r($_FILES,true)."</pre>";
+
 		if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $target_path)) {
 
 			echo '<p>IN if(move_uploaded_file($_FILES[\'uploaded_file\'][\'tmp_name\'], $target_path))</p>';
