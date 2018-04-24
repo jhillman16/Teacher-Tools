@@ -8,7 +8,7 @@ if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
 	// Make sure the file was sent without errors
 	if($_FILES['uploaded_file']['error'] == 0) {
 
-		echo '\t<p>if($_FILES[\'uploaded_file\'][\'error\'] == 0)</p>';
+		echo '<p>if($_FILES[\'uploaded_file\'][\'error\'] == 0)</p>';
 
 		// @@@@@@@@@@@@@@
 		// Path is wrong. You have to specify the path of the folder on the web server
@@ -18,9 +18,12 @@ if(is_uploaded_file($_FILES['uploaded_file']['tmp_name'])) {
 
 		$target_path = $target_path . basename( $_FILES['uploaded_file']['name']);
 
-		echo '<p>$target_path</p>';
+		echo "<p>$target_path</p>";
 
 		if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $target_path)) {
+
+			echo '<p>if(move_uploaded_file($_FILES[\'uploaded_file\'][\'tmp_name\'], $target_path))</p>';
+
 			// @@@@@@@@@@@@@
 			// To keep things simple, we'll keep your DB structure the same except for 1 thing:
 			// add a field of type 'varchar' with 100 or so characters, in your 'images' table.
