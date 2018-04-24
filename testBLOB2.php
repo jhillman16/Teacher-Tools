@@ -15,7 +15,7 @@ if(isset($name)){
 
   if(!empty($name)){
   	
-    if(($extension == 'jpg' || $extension == 'jpeg')&& $type == 'image/jpeg' && $size <= $max_size){
+    if(($extension == 'jpg' || $extension == 'jpeg' || $extension =='txt' || $extension == 'doc' || $extension == 'docx')&& $type == 'image/jpeg' && $size <= $max_size){
 		
 	// Image submitted by form. Open it for reading (mode "r")
 		$fp = fopen($_FILES['file']['tmp_name'], "r");
