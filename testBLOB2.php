@@ -22,10 +22,7 @@ if(!in_array($ext,$allowed) ) {
 
 if(isset($name)){
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 1dd710dcb12025d6b35c16b4262785087391d398
   if(!empty($name)){
   	
     if(($extension == 'jpg' || $extension == 'jpeg' || $extension =='txt' || $extension == 'doc' || $extension == 'docx')&& $size <= $max_size){
