@@ -45,7 +45,7 @@ if(isset($name)){
 			die("Couldn't execute query in your database!".mysqli_error($link));
 			
 			echo 'Data-File was inserted into the database!|';
-			echo '<a href="testBLOB3.php?id=1">view</a>';
+			echo '<a href="testBLOB3.php">view</a>';
 		}
 		
     else{

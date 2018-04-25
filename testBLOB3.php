@@ -5,13 +5,11 @@ include("ConnectDatabase.php");
 
 //$cxn = mysqli_connect($host,$user,$password,$database);
 // Check connection
-if (mysqli_connect_errno()) {
-	echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
 
-if (isset($_GET['id'])) {
-	$id= mysqli_real_escape_string($link, $_GET['id']);
-	$mysql_run=mysqli_query($link, "SELECT * FROM uploaded WHERE file_id ='$id';");
+
+if (isset($_GET['name'])) {
+	$id= mysqli_real_escape_string($link, $_GET['name']);
+	$mysql_run=mysqli_query($link, "SELECT * FROM Files WHERE Name ='$name';");
 	
 	while ($row=mysqli_fetch_assoc($mysql_run)) {
 		
