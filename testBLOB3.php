@@ -7,7 +7,7 @@ include("ConnectDatabase.php");
 // Check connection
 
 
-if (isset($_GET['Name'])) {
+if (isset($_SESSION['Name'])) {
 	$id= mysqli_real_escape_string($link, $_GET['Name']);
 	$mysql_run=mysqli_query($link, "SELECT * FROM Files WHERE Name ='$name';");
 	
