@@ -11,7 +11,7 @@ if(isset($_SESSION['StudentID']))
 else if (isset($_SESSION['TeacherID']))
 {
 	echo '<script>';
-	echo 'window.location.replace("EducatorHome.php");'
+	echo 'document.location("EducatorHome.php");'
 	echo '</script>';
 }
 else
