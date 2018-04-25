@@ -26,8 +26,8 @@
 		if(mysqli_num_rows($result) == 0)
 		{
 			$_SESSION['error'] = 'Username/email does not exist!'; //Error message to display
-			//header('Location: Forgot.php');
-			//exit();
+			header('Location: Forgot.php');
+			exit();
 		}
 		elseif(mysqli_num_rows($result) == 1)
 		{
@@ -41,27 +41,19 @@
 			$from = new SendGrid\Email(null, "app77188938@heroku.com");
 			$subject = "Teacher Tools Recovered Password";
 			$to = new SendGrid\Email(null, $email);
-			$content = new SendGrid\Content("text/html", $htmlContent); //" $password"
+			$content = new SendGrid\Content("text/html", $htmlContent);
 			$mail = new SendGrid\Mail($from, $subject, $to, $content);
 
 			$apiKey = getenv('SENDGRID_API_KEY');
 			$sg = new \SendGrid($apiKey);
 
-			$response = $sg->client->mail()->send()->post($mail);
-			echo $response->statusCode();
-			echo $response->headers();
-			echo $response->body();
-
-echo " " . $email . " ";
-echo $password;
-
-
-			/*
-			
-
-			if(mail($to, $subject, $message, $headers))
+			if($response = $sg->client->mail()->send()->post($mail))
 			{
-				$_SESSION['error'] = 'Your Password has been sent to your email id';
+				echo $response->statusCode();
+				echo $response->headers();
+				echo $response->body();
+
+				$_SESSION['error'] = 'Your Password has been sent to the email on record for you.';
 				header('Location: Login.php');
 				exit();
 			}
@@ -71,13 +63,12 @@ echo $password;
 				header('Location: Forgot.php');
 				exit();
 			}
-			*/
 		}
 		else
 		{
 			$_SESSION['error'] = 'Something went wrong. Please try again.'; //Error message to display
-			//header('Location: Forgot.php');
-			//exit();
+			header('Location: Forgot.php');
+			exit();
 		}
 	}
 ?>
