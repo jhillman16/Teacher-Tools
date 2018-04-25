@@ -22,7 +22,10 @@ if(!in_array($ext,$allowed) ) {
 
 if(isset($name)){
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1dd710dcb12025d6b35c16b4262785087391d398
   if(!empty($name)){
   	
     if(($extension == 'jpg' || $extension == 'jpeg' || $extension =='txt' || $extension == 'doc' || $extension == 'docx')&& $size <= $max_size){
@@ -55,9 +58,7 @@ if(isset($name)){
   else{
     echo 'File must be jpg/jpeg and must be 73 kilobyte or less! ';
   }
-=======
 	if(!empty($name)) {
->>>>>>> 59f3d85b51d0e80fb6bfaa25faa3f211891968c7
 
 		if(($extension == 'jpg' || $extension == 'jpeg' || $extension =='txt' || $extension == 'doc' || $extension == 'docx')&& $size <= $max_size) {
 

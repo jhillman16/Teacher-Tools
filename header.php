@@ -31,7 +31,7 @@ else
 
 	<?php
 	if(isset($_SESSION['FirstName']))
-		echo"<p>Welcome, " . $_SESSION['FirstName'] . "</p>";
+		echo"<p id=\"welcome-name\">Welcome, " . $_SESSION['FirstName'] . "</p>";
 	?>
 
 	<ul>

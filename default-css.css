@@ -171,6 +171,10 @@ footer {
 	width: 200px;
 }
 
+#welcome-name {
+	padding-left: 10px;
+}
+
 .button {
 	background-color: #083B66;
 	color: #ffffff!important;
