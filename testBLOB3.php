@@ -6,8 +6,10 @@ include("ConnectDatabase.php");
 //$cxn = mysqli_connect($host,$user,$password,$database);
 // Check connection
 
+mysqli_query($link,"SELECT * FROM Files");
 
-if (isset($_SESSION['Name'])) {
+if (isset($_['Name'])) {
+	
 	$id= mysqli_real_escape_string($link, $_GET['Name']);
 	$mysql_run=mysqli_query($link, "SELECT * FROM Files WHERE Name ='$name';");
 	
