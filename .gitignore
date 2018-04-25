@@ -1,4 +1,4 @@
 .env
 *.ini
 
-cloudinary_settings.php
+Master/
