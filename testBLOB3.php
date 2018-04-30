@@ -6,7 +6,7 @@ include("ConnectDatabase.php");
 //$cxn = mysqli_connect($host,$user,$password,$database);
 // Check connection
 
-echo '<img src="data:image/jpeg;base64,'.base64_encode($image->load()) .'" />'
+echo '<img src="data:image/jpeg;base64,'.base64_encode($image->load()) .'" />';
 mysqli_query($link,"SELECT * FROM Files");
 
 
