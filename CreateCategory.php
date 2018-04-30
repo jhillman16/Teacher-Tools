@@ -4,7 +4,6 @@ include 'header.php';
 
 session_start();
 
-header_remove();
 if (!isset($_SESSION['StudentID']) || !isset($_SESSION['TeacherID']))
 {
 	echo '<script>';

@@ -1,4 +1,12 @@
-<?php $title = "My Classes"; include 'header.php';?>
+<?php $title = "My Classes"; include 'header.php';
+
+if (!isset($_SESSION['StudentID']) || !isset($_SESSION['TeacherID']))
+{
+	echo '<script>';
+	echo 'window.location.replace("Login.php");';
+	echo '</script>';
+}
+?>
 
 <script>
 //Parameter courseID is the course ID associated with the class button that is clicked on, same for courseName.
