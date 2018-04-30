@@ -1,3 +1,17 @@
+<?php $title = 'My Students - ' . $_SESSION['CourseName']; include 'header.php';
+session_start();
+include("ConnectDatabase.php"); //Goes through steps of connecting to database
+
+if(!isset($_SESSION['CourseID']) || !isset($_SESSION['TeacherID']))
+{
+	header('Location: myClass.php');
+	header_remove();
+	echo '<script>';
+	echo 'window.location.replace("Login.php");';
+	echo '</script>';
+}
+?>
+
 <script>
 //Parameter course is the course ID associated with the class button that is clicked on.
 //Sends to php script to set the course ID cookie for the user
@@ -10,21 +24,6 @@ function myFunction(studentID,lastName)
 </script> 
 
 <?php
-
-session_start();
-
-$title = 'My Students - ' . $_SESSION['CourseName'];  
-
-include 'header.php';
-
-
-if(!isset($_SESSION['CourseID']) || !isset($_SESSION['TeacherID']))
-{
-	header('Location: myClass.php');
-}
-
-include("ConnectDatabase.php"); //Goes through steps of connecting to database
-
 /*
 echo $_SESSION['CourseID'];
 echo $_SESSION['CourseName'];
