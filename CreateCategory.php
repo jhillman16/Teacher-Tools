@@ -15,7 +15,8 @@ if(!isset($_SESSION['CourseID']))
 {
 	echo '<script>';
 	echo 'window.location.replace("myClass.php");';
-	echo '</script>';}
+	echo '</script>';
+}
 ?>
 
 <form action="CreateCategoryScript.php" method="post">

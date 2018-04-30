@@ -1,12 +1,14 @@
-<?php $title = "Create a Course"; include 'header.php';?>
+<?php $title = "Create a Course"; include 'header.php';
 
-<?php
 session_start();
 
 if(!isset($_SESSION['FirstName']))
 {
-    $_SESSION['URL'] = basename($_SERVER['PHP_SELF']);
-    header('Location: EducatorLogin.php');
+	$_SESSION['URL'] = basename($_SERVER['PHP_SELF']);
+
+	echo '<script>';
+	echo 'window.location.replace("Login.php");';
+	echo '</script>';
 }
 ?>
 
