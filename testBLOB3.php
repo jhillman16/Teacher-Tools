@@ -24,7 +24,9 @@ mysqli_query($link,"SELECT * FROM Files WHERE Name='peonies2.jpg'");
 		//header("Content-length: $size");
 		//header("Content-type: $type");
 		//header("Content-Disposition: attachment; filename=$name");
-		echo $image=$row['image'];
+		
+		//echo $image=$row['image'];
+		echo "<img src='Image/".$row['image']."' />";
 		
 	}
 	
