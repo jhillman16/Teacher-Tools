@@ -37,7 +37,7 @@
 <br><br>
 
 <h3>VIEW YOUR FILES</h3>
-<a href="list.php">Click here</a>
+<a href="testBLOB3.php">Click here</a>
 </form>
 
 <br>
