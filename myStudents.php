@@ -4,8 +4,6 @@ include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
 if(!isset($_SESSION['CourseID']) || !isset($_SESSION['TeacherID']))
 {
-	header('Location: myClass.php');
-	header_remove();
 	echo '<script>';
 	echo 'window.location.replace("Login.php");';
 	echo '</script>';
