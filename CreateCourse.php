@@ -4,11 +4,9 @@ session_start();
 
 if(!isset($_SESSION['FirstName']))
 {
-    $_SESSION['URL'] = basename($_SERVER['PHP_SELF']);
-    header('Location: Login.php');
-    header_remove();
+	$_SESSION['URL'] = basename($_SERVER['PHP_SELF']);
 
-    echo '<script>';
+	echo '<script>';
 	echo 'window.location.replace("Login.php");';
 	echo '</script>';
 }

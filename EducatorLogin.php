@@ -1,4 +1,7 @@
-<?php $title = "Educator Login"; include 'header.php';?>
+<?php $title = "Educator Login"; include 'header.php';
+
+header('Location: Login.php');
+?>
 
 <form method="post" action="EducatorLoginVerify.php">
 
