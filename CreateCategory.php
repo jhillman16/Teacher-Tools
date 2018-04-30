@@ -4,6 +4,11 @@ include 'header.php';
 
 session_start();
 
+if (!isset($_SESSION['StudentID']) || !isset($_SESSION['TeacherID']))
+{
+	header('Location: Login.php');
+}
+
 if(!isset($_SESSION['CourseID']))
 {
     header('Location: myClass.php');
