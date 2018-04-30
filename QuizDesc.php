@@ -7,7 +7,7 @@
 	session_start();
     if(!isset($_COOKIE['AssignmentID']))
     {
-        header('Location: myAssignments.php');
+        header('Location: myClass.php');
     }
 
     $studentID = $_SESSION['StudentID'];
