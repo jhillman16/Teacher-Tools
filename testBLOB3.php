@@ -7,7 +7,7 @@ include("ConnectDatabase.php");
 // Check connection
 
 
-mysqli_query($link,"SELECT * FROM Files");
+mysqli_query($link,"SELECT * FROM Files WHERE Name='peonies2.jpg'");
 
 
 
