@@ -4,6 +4,7 @@ include 'header.php';
 
 session_start();
 
+header_remove();
 if (!isset($_SESSION['StudentID']) || !isset($_SESSION['TeacherID']))
 {
 	echo '<script>';
@@ -15,7 +16,8 @@ if(!isset($_SESSION['CourseID']))
 {
 	echo '<script>';
 	echo 'window.location.replace("myClass.php");';
-	echo '</script>';}
+	echo '</script>';
+}
 ?>
 
 <form action="CreateCategoryScript.php" method="post">
