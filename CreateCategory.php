@@ -4,7 +4,7 @@ include 'header.php';
 
 session_start();
 
-if (!isset($_SESSION['StudentID']) || !isset($_SESSION['TeacherID']))
+if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
 {
 	header('Location: Login.php');
 }
