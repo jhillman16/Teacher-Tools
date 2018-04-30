@@ -13,7 +13,7 @@ mysqli_query($link,"SELECT * FROM Files");
 if (isset($_['Name'])) {
 	
 	$name= mysqli_real_escape_string($link, $_GET['Name']);
-	$mysql_run=mysqli_query($link, "SELECT * FROM Files WHERE Name ='$name';");
+	$mysql_run=mysqli_query($link, "SELECT * FROM Files WHERE Name =$name");
 	
 	while ($row=mysqli_fetch_assoc($mysql_run)) {
 		
