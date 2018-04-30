@@ -26,9 +26,10 @@
 	 <body>
 <h3>File upload </h3>
 <p style="font-family:courier;">Select File</p>
-<form action ="upload.php" method = "post" enctype="multipart/form-data">
-<input type="file" name ="file" size = "500" >
-<input type ="submit" name="T1" value = "Upload File">
+<form action = "testBLOB2.php" method= "POST"  enctype = "multipart/form-data">
+      <input type = "file" name = "file"><br><br>
+      <input type = "submit" value = "Submit">
+</form>
 
 
 
