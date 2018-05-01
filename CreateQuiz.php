@@ -2,9 +2,20 @@
 $title = "Create Quiz";
 include 'header.php';
 
+if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
+{
+    echo '<script>';
+    echo 'window.location.replace("Login.php");';
+    echo '</script>';
+}
+
 if(!isset($_SESSION['CourseID']))
 {
     header('Location: myClass.php');
+    header_remove();
+    echo '<script>';
+    echo 'window.location.replace("myClass.php");';
+    echo '</script>';
 }
 ?>
 
