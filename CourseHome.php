@@ -1,4 +1,4 @@
-<?php $titleCourse = $_SESSION['CourseName']; $title = "Course Home $titleCourse"; include 'header.php';
+<?php include 'header.php'; $titleCourse = $_SESSION['CourseName']; $title = "Course Home $titleCourse";
 
 if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
 {
