@@ -1,3 +1,4 @@
+<?php $title = "File Upload"; include 'header.php';?>
 <?php
 include("ConnectDatabase.php");
 
@@ -67,3 +68,4 @@ if(isset($name)){
 }
 
 ?>
+<?php include 'footer.php';?>
