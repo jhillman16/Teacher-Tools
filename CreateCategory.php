@@ -2,8 +2,6 @@
 $title = "Create a Category"; 
 include 'header.php';
 
-session_start();
-
 if (!isset($_SESSION['StudentID']) || !isset($_SESSION['TeacherID']))
 {
 	echo '<script>';
