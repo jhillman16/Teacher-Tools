@@ -27,7 +27,7 @@ include("ConnectDatabase.php");
 		//header("Content-Disposition: attachment; filename=$name");
 		
 		//echo $image=$row['image'];
-		echo "<img src='Image/".$row['Data']."' />";
+		echo "<img src='Files/".$row['Data']."' />";
 		
 	}
 	
