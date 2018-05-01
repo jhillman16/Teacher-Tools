@@ -29,12 +29,9 @@ while($QuestionRow=mysqli_fetch_array($r1))
 {
 echo "
 
-
- <p> Student: {$QuestionRow[0]}</p>  
- 
+<p> Student: {$QuestionRow[0]}</p>  
 
 ";
-
 }
 
 

@@ -2,11 +2,23 @@
 session_start();
 $title = "Performance - " . $_COOKIE['StudentName']; 
 include 'header.php';
-$id = $_COOKIE['ViewStudent']; 
+$id = $_COOKIE['ViewStudent'];
+
+
+if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
+{
+	echo '<script>';
+	echo 'window.location.replace("Login.php");';
+	echo '</script>';
+}
 
 if(!isset($_SESSION['CourseID']))
 {
 	header('Location: myClass.php');
+	header_remove();
+	echo '<script>';
+	echo 'window.location.replace("myClass.php");';
+	echo '</script>';
 }
 
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
