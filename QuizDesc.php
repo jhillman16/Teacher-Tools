@@ -3,11 +3,21 @@
 
 	$title = "Quiz Description"; include 'header.php';
 
+	if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
+	{
+		echo '<script>';
+		echo 'window.location.replace("Login.php");';
+		echo '</script>';
+	}
+
 	include("ConnectDatabase.php"); //Goes through steps of connecting to database
-	session_start();
     if(!isset($_COOKIE['AssignmentID']))
     {
         header('Location: myClass.php');
+        header_remove();
+        echo '<script>';
+		echo 'window.location.replace("myClass.php");';
+		echo '</script>';
     }
 
     $studentID = $_SESSION['StudentID'];
