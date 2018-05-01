@@ -2,7 +2,7 @@
 session_start();
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
-if(!isset($_SESSION['CourseID']) || !isset($_SESSION['TeacherID']))
+if(!isset($_SESSION['CourseID']) && !isset($_SESSION['TeacherID']))
 {
 	echo '<script>';
 	echo 'window.location.replace("Login.php");';
