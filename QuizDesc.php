@@ -11,11 +11,9 @@
 	}
 
 	include("ConnectDatabase.php"); //Goes through steps of connecting to database
-    if(!isset($_COOKIE['AssignmentID']))
-    {
-        header('Location: myClass.php');
-        header_remove();
-        echo '<script>';
+	if(!isset($_COOKIE['AssignmentID']))
+	{
+		echo '<script>';
 		echo 'window.location.replace("myClass.php");';
 		echo '</script>';
     }
