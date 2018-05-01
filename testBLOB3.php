@@ -18,7 +18,7 @@ include("ConnectDatabase.php");
 	
 	while ($row=mysqli_fetch_assoc($mysql_run)) {
 		
-		header("Content-type: image/jpeg");
+		//header("Content-type: image/jpeg");
 		$name=$row['Name'];
 		//$type=$row['type'];
 		//$size=$row['size'];
