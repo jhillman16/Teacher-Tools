@@ -1,6 +1,10 @@
-<?php $title = "Student Login"; include 'header.php';?>
+<?php $title = "Student Login"; include 'header.php';
+
+header('Location: Login.php');
+?>
 
 <form method="post" action="StudentLoginVerify.php">
+	
 <div>
 <label><span>Username:</span>
 <input type="text" id="AdminUsername" name="AdminUsername" />
