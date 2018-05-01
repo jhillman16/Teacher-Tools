@@ -7,20 +7,20 @@ include("ConnectDatabase.php");
 // Check connection
 
 
-mysqli_query($link,"SELECT * FROM Files WHERE Name='peonies2.jpg'");
+//mysqli_query($link,"SELECT HEX(Name) FROM Files");
 
 
 
 	
-	$name= mysqli_real_escape_string($link, $_GET['Name']);
-	$mysql_run=mysqli_query($link, "SELECT * FROM Files WHERE Name =$name");
+	//$name= mysqli_real_escape_string($link, $_GET['Name']);
+	$mysql_run=mysqli_query($link, "SELECT HEX(Name) FROM Files");
 	
 	while ($row=mysqli_fetch_assoc($mysql_run)) {
 		
 		header("Content-type: image/jpeg");
-		$name=$row['name'];
-		$type=$row['type'];
-		$size=$row['size'];
+		$name=$row['Name'];
+		//$type=$row['type'];
+		//$size=$row['size'];
 		//header("Content-length: $size");
 		//header("Content-type: $type");
 		//header("Content-Disposition: attachment; filename=$name");
