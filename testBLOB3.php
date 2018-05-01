@@ -1,3 +1,4 @@
+<?php $title = "File Upload"; include 'header.php';?>
 <?php
 include("ConnectDatabase.php");
 //Open a new connection to the MySQL server
@@ -32,4 +33,5 @@ include("ConnectDatabase.php");
 	
 	
 	
-
+?>
+<?php include 'footer.php';?>
