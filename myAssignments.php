@@ -1,6 +1,6 @@
 <?php $title = "My Assignments"; include 'header.php';
 
-if (!isset($_SESSION['StudentID']) || !isset($_SESSION['TeacherID']))
+if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
 {
 	echo '<script>';
 	echo 'window.location.replace("Login.php");';
