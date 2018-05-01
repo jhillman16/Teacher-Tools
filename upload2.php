@@ -1,12 +1,7 @@
 <?php $title = "File Upload"; include 'header.php';?>
 
 <?php
-
 $linkName=$_POST['email'];
-
-
-
-
 ?>
 <a href="<?=$linkName?>" target="_blank">Link 1</a>
 <br>
@@ -15,7 +10,6 @@ $linkName=$_POST['email'];
 echo $_POST['username'];
 echo "\n";
 echo $linkName;
-
 ?>
 <br>
 <br>
