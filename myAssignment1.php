@@ -14,6 +14,7 @@ if(!isset($_COOKIE['AssignmentID']))
 	echo 'window.location.replace("myAssignments.php");';
 	echo '</script>';
 }
+print_r($_COOKIE);
 ?>
 
 <p><a href="myAssignments.php" class="button" onclick="deleteCookie(AssignmentID)">Select a different course</a></p>
