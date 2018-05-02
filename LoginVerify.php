@@ -1,7 +1,5 @@
 <?php
 
-echo "<script>clearLogin();</script>";
-
 session_start();
 
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
@@ -28,6 +26,7 @@ if(mysqli_num_rows($result)>0)
 	}
 	else
 	{
+		echo "<script>clearLogin();</script>";
 		header('Location: EducatorHome.php');
 	}
 }
@@ -51,6 +50,7 @@ else
 		}
 		else
 		{
+			echo "<script>clearLogin();</script>";
 			header('Location: StudentHome.php');
 		}
 	}
