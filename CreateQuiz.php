@@ -36,7 +36,6 @@ if(!isset($_SESSION['CourseID']))
             <input type="text" placeholder="Quizzes" name="categoryName" required/>
         </label>
         <?php
-        session_start();
         if(isset($_SESSION['Error']))
         {
             $error = $_SESSION['Error'];
