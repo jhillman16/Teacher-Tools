@@ -9,8 +9,6 @@ if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
 
 if(!isset($_SESSION['AssignmentID']))
 {
-	header('Location: myAssignments.php');
-	header_remove();
 	echo '<script>';
 	echo 'window.location.replace("myAssignments.php");';
 	echo '</script>';
