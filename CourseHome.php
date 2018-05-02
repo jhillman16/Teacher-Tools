@@ -23,5 +23,13 @@ if($r=mysqli_query($link, $query))
 	echo "</p>";
 }
 
-include 'footer.php';
+echo '<pre>';
+print_r($_COOKIE);
+echo '</pre>';
 ?>
+
+<ul>
+	<li><a href="myAssignments.php">My Assignments</a></li>
+</ul>
+
+<?php include 'footer.php';?>
