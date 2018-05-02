@@ -57,6 +57,5 @@ if( isset($_SESSION['StudentID']) )
 		}
 	}
 }
-?>
 
-<?php include 'footer.php';?>
+include 'footer.php';?>
