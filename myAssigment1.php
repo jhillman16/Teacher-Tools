@@ -8,8 +8,11 @@ if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
 }
 
 // WHAT IS SUPPOSED TO BE ON THIS PAGE
-if(isset($_COOKIE['AssignmentID'])){
-    echo '<p>AssignmentID is set.</p>';
+if(!isset($_COOKIE['AssignmentID']))
+{
+	echo '<script>';
+	echo 'window.location.replace("myAssignments.php");';
+	echo '</script>';
 }
 ?>
 
