@@ -1,5 +1,7 @@
 <?php
 
+echo "<script>clearLogin();</script>";
+
 session_start();
 
 include("ConnectDatabase.php"); //Goes through steps of connecting to database

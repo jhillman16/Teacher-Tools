@@ -15,7 +15,7 @@
 </div>
 
 <div>
-<input type="submit" value="Submit" onclick="clearLogin()" />
+<input type="submit" value="Submit" />
 </div>
 
 </form>
