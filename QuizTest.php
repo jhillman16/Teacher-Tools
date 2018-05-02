@@ -1,16 +1,23 @@
-<?php $title = "Quiz"; include 'header.php';?>
+<?php $title = "Quiz"; include 'header.php';
 
-<?php
-    session_start();
-    if(!isset($_SESSION['AssignmentID']))
-    {
-        header('Location: myAssignments.php');
-    }
+if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
+{
+	echo '<script>';
+	echo 'window.location.replace("Login.php");';
+	echo '</script>';
+}
+
+if(!isset($_SESSION['AssignmentID']))
+{
+	header('Location: myAssignments.php');
+	header_remove();
+	echo '<script>';
+	echo 'window.location.replace("myAssignments.php");';
+	echo '</script>';
+}
 
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 ?>
-
-<body>
 
 <form action='QuizTestGrade.php' method='post'>
 <?php
@@ -50,5 +57,4 @@ include("ConnectDatabase.php"); //Goes through steps of connecting to database
 <input type="submit">
 </form>
 
-</body>
 <?php include 'footer.php';?>
