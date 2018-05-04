@@ -1,11 +1,7 @@
-<?php session_start(); $titleCourse = $_SESSION['CourseName']; $title = "Course Home $titleCourse"; include 'header.php';
-
-if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
-{
-	echo '<script>';
-	echo 'window.location.replace("Login.php");';
-	echo '</script>';
-}
+<?php
+session_start(); $titleCourse = $_SESSION['CourseName']; $title = "Course Home $titleCourse";
+include 'header.php';
+include 'checkSession.php';
 
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
