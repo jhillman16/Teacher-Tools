@@ -28,6 +28,6 @@ echo '</pre>';
 	<li><a href="myAssignments.php">My Assignments</a></li>
 </ul>
 
-<p><a href="myAssignments.php" class="button" <?php unset($_SESSION['CourseID']); ?>>Select a different course</a></p>
+<p><a href="myAssignments.php" class="button" onclick="<?php unset($_SESSION['CourseID']);?>">Select a different course</a></p>
 
 <?php include 'footer.php';?>
