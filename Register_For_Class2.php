@@ -24,12 +24,14 @@ function myFunction(course)
 
 <?php
 
-session_start();
-
 if(!isset($_SESSION['FirstName']))
 {
 	$_SESSION['URL'] = basename($_SERVER['PHP_SELF']);
-	header('Location: StudentLogin.htm');
+
+	header_remove();
+	echo '<script>';
+	echo 'window.location.replace("Login.php");';
+	echo '</script>';
 }
 
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
@@ -46,7 +48,7 @@ $query = "SELECT t.FirstName, t.LastName, t.TeacherID, c.Name, c.CourseID, c.Des
 
 if($r=mysqli_query($link, $query))
 {
-	echo "<table border='1'><thead><tr><th>Class Name</th><th>Teacher Name</th><th>Description</th><th>Register</th></tr></thead>";
+	echo "<table><thead><tr><th>Class Name</th><th>Teacher Name</th><th>Description</th><th>Register</th></tr></thead>";
 	while($row=mysqli_fetch_array($r))
 	{
 		echo "<tr>";    
