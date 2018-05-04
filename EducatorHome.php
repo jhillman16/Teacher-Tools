@@ -18,7 +18,6 @@ else if (isset($_SESSION['StudentID']))
 }
 else
 {
-	header_remove();
 	echo '<script>';
 	echo 'window.location.replace("Login.php");';
 	echo '</script>';
