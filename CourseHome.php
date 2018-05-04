@@ -28,4 +28,6 @@ echo '</pre>';
 	<li><a href="myAssignments.php">My Assignments</a></li>
 </ul>
 
+<p><a href="myAssignments.php" class="button" onclick="clearLogin(CourseID)">Select a different course</a></p>
+
 <?php include 'footer.php';?>
