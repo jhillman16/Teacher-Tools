@@ -1,12 +1,16 @@
-<?php $title = 'My Students - ' . $_SESSION['CourseName']; include 'header.php';
+<?php
 session_start();
+$title = 'My Students - ' . $_SESSION['CourseName'];
+include 'header.php';
+include 'checkSession.php';
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
 if(!isset($_SESSION['CourseID']) && !isset($_SESSION['TeacherID']))
 {
-	echo '<script>';
-	echo 'window.location.replace("Login.php");';
-	echo '</script>';
+	//echo '<script>';
+	//echo 'window.location.replace("Login.php");';
+	//echo '</script>';
+	echo 'window.location.replace("CourseHome.php");';
 }
 ?>
 

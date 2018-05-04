@@ -1,11 +1,4 @@
-<?php $title = "Quiz"; include 'header.php';
-
-if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
-{
-	echo '<script>';
-	echo 'window.location.replace("Login.php");';
-	echo '</script>';
-}
+<?php $title = "Quiz"; include 'header.php'; include 'checkSession.php';
 
 if(!isset($_SESSION['AssignmentID']))
 {

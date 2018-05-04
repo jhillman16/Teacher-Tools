@@ -1,4 +1,4 @@
-<?php $title = "Search for a Course"; include 'header.php';?>
+<?php $title = "Search for a Course"; include 'header.php'; include 'checkSession.php';?>
 
 <?php
 if(!isset($_SESSION['FirstName']))

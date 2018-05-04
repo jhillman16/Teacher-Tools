@@ -1,4 +1,4 @@
-<?php $title = "Register for a Class"; include 'header.php'; ?>
+<?php $title = "Register for a Class"; include 'header.php'; include 'checkSession.php';?>
 
 <script>
 
@@ -20,14 +20,7 @@ function myFunction(course)
     document.getElementById("demo").innerHTML = txt;
 }
 
-</script> 
-
-<section>
-<header> 
-    <h1> Register For a Course</h1>
-</header>
-
-<div id="content">
+</script>
 
 <?php
 

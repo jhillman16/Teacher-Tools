@@ -13,11 +13,11 @@ $query = "INSERT INTO Category (CategoryName, Percentage, CourseID)
 
 if(mysqli_query($link, $query))
 {
-        header('Location: CreateCategory.php');
+	header('Location: CreateCategory.php');
 }
 else
 {
-        echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
+	echo "ERROR: Not able to execute $sql. " . mysqli_error($link);
 }
 
 ?>

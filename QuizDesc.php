@@ -1,14 +1,5 @@
-<?php
+<?php $title = "Quiz Description"; include 'header.php'; include 'checkSession.php';
 //unset quizid and assignmentid if no rtake
-
-$title = "Quiz Description"; include 'header.php';
-
-if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
-{
-	echo '<script>';
-	echo 'window.location.replace("Login.php");';
-	echo '</script>';
-}
 
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
 if(!isset($_COOKIE['AssignmentID']))

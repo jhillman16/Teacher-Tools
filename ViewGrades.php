@@ -2,15 +2,8 @@
 session_start();
 $title = "Performance - " . $_COOKIE['StudentName']; 
 include 'header.php';
+include 'checkSession.php';
 $id = $_COOKIE['ViewStudent'];
-
-
-if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
-{
-	echo '<script>';
-	echo 'window.location.replace("Login.php");';
-	echo '</script>';
-}
 
 if(!isset($_SESSION['CourseID']))
 {

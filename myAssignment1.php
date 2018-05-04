@@ -1,11 +1,4 @@
-<?php $title = "My Assignments"; include 'header.php';
-
-if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
-{
-	echo '<script>';
-	echo 'window.location.replace("Login.php");';
-	echo '</script>';
-}
+<?php $title = "My Assignments"; include 'header.php'; include 'checkSession.php';
 
 // WHAT IS SUPPOSED TO BE ON THIS PAGE
 if(!isset($_COOKIE['CourseID']))
@@ -14,7 +7,6 @@ if(!isset($_COOKIE['CourseID']))
 	echo 'window.location.replace("myAssignments.php");';
 	echo '</script>';
 }
-print_r($_COOKIE);
 ?>
 
 <p><a href="myAssignments.php" class="button" onclick="deleteCookie(AssignmentID)">Select a different course</a></p>
