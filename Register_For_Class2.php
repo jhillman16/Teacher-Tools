@@ -28,7 +28,6 @@ if(!isset($_SESSION['FirstName']))
 {
 	$_SESSION['URL'] = basename($_SERVER['PHP_SELF']);
 
-	header_remove();
 	echo '<script>';
 	echo 'window.location.replace("Login.php");';
 	echo '</script>';

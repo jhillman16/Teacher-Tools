@@ -4,7 +4,6 @@ include("ConnectDatabase.php"); //Goes through steps of connecting to database
 
 if(!isset($_SESSION['QuizID']))
 {
-	header_remove();
 	echo '<script>';
 	echo 'window.location.replace("myAssignments.php");';
 	echo '</script>';
