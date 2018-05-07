@@ -24,6 +24,6 @@ if($r=mysqli_query($link, $query))
 	<li><a href="myAssignments.php">My Assignments</a></li>
 </ul>
 
-<p><a href="myAssignments.php" class="button">Select a different course</a></p>
+<p><a href="myAssignments.php" class="button" onclick="<?php unset($_SESSION['CourseID']);?>">Select a different course</a></p>
 
 <?php include 'footer.php';?>

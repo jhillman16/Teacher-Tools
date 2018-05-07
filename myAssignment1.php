@@ -9,7 +9,7 @@ if(!isset($_COOKIE['CourseID']))
 }
 ?>
 
-<p><a href="myAssignments.php" class="button">Select a different course</a></p>
+<p><a href="myAssignments.php" class="button" onclick="deleteCookie(AssignmentID)">Select a different course</a></p>
 
 <!-- <p><a href="#">SEE OTHER ASSIGMENTS</a></p>
 <h2>File upload</h2>
