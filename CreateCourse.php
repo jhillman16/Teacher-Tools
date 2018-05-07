@@ -1,6 +1,4 @@
-<?php $title = "Create a Course"; include 'header.php';
-
-session_start();
+<?php $title = "Create a Course"; include 'header.php'; include 'checkSession.php';
 
 if(!isset($_SESSION['FirstName']))
 {

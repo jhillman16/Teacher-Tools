@@ -1,69 +1,16 @@
-
 <?php $title = "File Upload"; include 'header.php';?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Teacher Tools!!</title>
-    <link rel="stylesheet" type="text/css" href="normalize.css" />
-    
-	<meta charset="utf-8" />
-
-</head>
-<body>
-
-
-
-<main>
-
-
-
-<section>
-<header>
-	<h1>Home Page</h1>
-	
-</header>
-
-	
-	 <body>
 	 
-<h3>Choose your next step: </h3>
+<h2>Choose your next step:</h2>
 
+<ul>
+	<li><a href="UploadFiles3.php">Upload Files</a></li>
+	<li><a href="UploadFiles2.php">Upload Links</a></li>
+</ul>
 
-<li>
-		<form>
-					<a href="UploadFiles3.php">Upload Files</a>
-					</form></li>
-<li>					
-		<form>
-					<a href="UploadFiles2.php">Upload Links</a>
-					</form>
-				
-		</li>
+<h3>To view your files</h3>
+<p><a href="testBLOB.php">Click here</a></p>
 
+<h3>To view your links</h3>
+<p><a href="upload2.php">Click here</a></p>
 
-<form>
-<br><br>
-<h5>To view your files</h5>
-<a href="testBLOB.php">Click here</a>
-</form>
-
-<br>
-<form>
-<br><br>
-<h5>To view your links</h5>
-<a href="upload2.php">Click here</a>
-</form>
-
-<body>
-
-  
-
-
-
-
-</main>
-
-</body>
-</html>
 <?php include 'footer.php';?>

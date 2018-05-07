@@ -2,7 +2,7 @@
 </section>
 
 <footer>
-	<p>&copy; Teacher Tools 2017</p>
+	<p>&copy; Teacher Tools 2018</p>
 </footer>
 
 </main>
