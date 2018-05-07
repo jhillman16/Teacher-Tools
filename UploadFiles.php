@@ -8,7 +8,7 @@
 </ul>
 
 <h3>To view your files</h3>
-<p><a href="testBLOB.php">Click here</a></p>
+<button class='button' ><a href="testBLOB.php">Click here</a>
 
 <h3>To view your links</h3>
 <p><a href="upload2.php">Click here</a></p>
