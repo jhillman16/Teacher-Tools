@@ -18,6 +18,10 @@ if($r=mysqli_query($link, $query))
 	echo "Total Students: " . $row['EnrollmentNumber'] . "<br>";
 	echo "</p>";
 }
+
+echo '<pre>';
+print_r($_COOKIE);
+echo '</pre>';
 ?>
 
 <ul>
