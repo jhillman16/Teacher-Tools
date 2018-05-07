@@ -59,6 +59,7 @@ else
 	else if(isset($_SESSION['TeacherID']))
 	{
 		echo '<li><a href="CreateCourse.php">Create a Course</a></li>';
+		echo '<li><a href="CreateCategory.php">Create a Category</a></li>';
 		echo '<li><a href="UploadFiles.php">Upload Files</a></li>';
 		echo '<li><a href="myStudents.php">My Students</a></li>';
 		echo '<li><a href="CreateAssignment.php">Create an Assignment</a></li>';

@@ -1,5 +1,5 @@
 <?php
-$title = "Create Quiz";
+$title = "Create Assignment";
 include 'header.php';
 include 'checkSession.php';
 
@@ -22,6 +22,12 @@ if(!isset($_SESSION['CourseID']))
     <div>
         <label><span>Assignment Description:</span>
             <input type="text" placeholder="This is the first assignment" name="assignDesc" />
+        </label>
+    </div>
+
+    <div>
+        <label><span>Points:</span>
+            <input id="points" type="number" step="1" placeholder="Enter a whole number" name="points" required />
         </label>
     </div>
 
