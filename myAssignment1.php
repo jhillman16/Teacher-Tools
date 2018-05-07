@@ -1,16 +1,13 @@
-<?php $title = "My Assignments"; include 'header.php';
-
-if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
-{
-	echo '<script>';
-	echo 'window.location.replace("Login.php");';
-	echo '</script>';
-}
+<?php $title = "My Assignments"; include 'header.php'; include 'checkSession.php';
 
 // WHAT IS SUPPOSED TO BE ON THIS PAGE
+if(!isset($_COOKIE['CourseID']))
+{
+	echo '<script>';
+	echo 'window.location.replace("myAssignments.php");';
+	echo '</script>';
+}
 ?>
-
-<p>Content Pending</p>
 
 <!-- <p><a href="#">SEE OTHER ASSIGMENTS</a></p>
 <h2>File upload</h2>

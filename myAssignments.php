@@ -1,12 +1,4 @@
-<?php $title = "My Assignments"; include 'header.php';
-
-if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
-{
-	echo '<script>';
-	echo 'window.location.replace("Login.php");';
-	echo '</script>';
-}
-?>
+<?php $title = "My Assignments"; include 'header.php'; include 'checkSession.php';?>
 
 <script>
 //Parameter course is the course ID associated with the class button that is clicked on.
@@ -15,7 +7,7 @@ function myFunction(AssignmentID)
 {
     document.cookie = "AssignmentID=" + AssignmentID;
     //window.location = 'QuizDesc.php';
-	window.location= 'myAssigment1.php';
+	window.location= 'myAssignment1.php';
 }
 </script>
 
@@ -58,5 +50,4 @@ if( isset($_SESSION['StudentID']) )
 	}
 }
 
-
-?>
+include 'footer.php';?>

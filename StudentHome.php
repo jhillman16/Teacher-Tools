@@ -1,4 +1,4 @@
-<?php $title = "Home Page"; include 'header.php';?>
+<?php $title = "Home Page"; include 'header.php'; include 'checkSession.php';?>
 
 <?php
 if(isset($_SESSION['StudentID']))
@@ -16,7 +16,9 @@ else if (isset($_SESSION['TeacherID']))
 }
 else
 {
-	header('Location: Login.php');
+	echo '<script>';
+	echo 'window.location.replace("Login.php");';
+	echo '</script>';
 }
 ?>
 	

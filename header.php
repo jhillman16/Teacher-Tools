@@ -14,6 +14,7 @@ else
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	
+	<script src="script.js"></script>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="default-css.css" />
 	<meta charset="UTF-8" />
@@ -27,7 +28,7 @@ else
 
 	<?php
 	if(isset($_SESSION['FirstName']))
-		echo"<p id=\"welcome-name\">Welcome, " . $_SESSION['FirstName'] . "</p>";
+		echo "<p id=\"welcome-name\">Welcome, " . $_SESSION['FirstName'] . "</p>";
 	?>
 
 	<ul>
@@ -43,27 +44,25 @@ else
 	<?php
 	if(!isset($_SESSION['FirstName']))
 	{
-		//echo'<li><a href="StudentLogin.php">Student Login</a></li>';
-		//echo'<li><a href="EducatorLogin.php">Educator Login</a></li>';
-		echo'<li><a href="Login.php">Login</a></li>';
-		echo'<li><a href="Signup.php">Signup</a></li>';
+		echo '<li><a href="Login.php">Login</a></li>';
+		echo '<li><a href="Signup.php">Signup</a></li>';
 	}
 
 	if(isset($_SESSION['StudentID']))
 	{
-		echo'<li><a href="myClass.php">My Class</a></li>';
-		echo'<li><a href="myAssignments.php">My Assignments</a></li>';
-		echo'<li><a href="myQuizes.php">My Quiz</a></li>';
-		echo'<li><a href="Register_For_Class.php">Register For Class</a></li>';
-		echo'<li><a href="Discussion.php">Discussion</a></li>';
+		echo '<li><a href="myClass.php">My Class</a></li>';
+		echo '<li><a href="myAssignments.php">My Assignments</a></li>';
+		echo '<li><a href="myQuizzes.php">My Quizzes</a></li>';
+		echo '<li><a href="Register_For_Class.php">Register For Class</a></li>';
+		echo '<li><a href="Discussion.php">Discussion</a></li>';
 	}
 	else if(isset($_SESSION['TeacherID']))
 	{
-		echo'<li><a href="CreateCourse.php">Create a Course</a></li>';
-		echo'<li><a href="UploadFiles.php">Upload Files</a></li>';
-		echo'<li><a href="myStudents.php">My Students</a></li>';
-		echo'<li><a href="CreateQuiz.php">Create a Quiz</a></li>';
-		echo'<li><a href="myClass.php">My Class</a></li>';
+		echo '<li><a href="CreateCourse.php">Create a Course</a></li>';
+		echo '<li><a href="UploadFiles.php">Upload Files</a></li>';
+		echo '<li><a href="myStudents.php">My Students</a></li>';
+		echo '<li><a href="CreateQuiz.php">Create a Quiz</a></li>';
+		echo '<li><a href="myClass.php">My Class</a></li>';
 	}
 
 	if(isset($_SESSION['FirstName']))
@@ -73,13 +72,12 @@ else
 							'In Progress Features' .
 				'</div>' .
 				'<div id="collapseTest" class="collapse" aria-labelledby="accordionTest" data-parent="#accordion">' .
-							//'<a href="testUpload.php">Image Upload (Cloudinary)</a>' .
 							'<a href="myAssignments.php">Assignments</a>' .
 							'<a href="UploadFiles.php">Upload Files</a>' .
 							'<a href="CreateQuizTest.php">Excel Doc Reading</a>' .
 				'</div>' .
 			'</span></li>';
-		echo'<li><a href="Logout.php">Logout</a></li>';
+		echo '<li><a href="Logout.php">Logout</a></li>';
 	}
 	?>
 

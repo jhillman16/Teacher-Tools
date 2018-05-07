@@ -1,7 +1,8 @@
 <?php
 $title = "Create Quiz";
 include 'header.php';
-session_start();
+include 'checkSession.php';
+
 if(!isset($_SESSION['CourseID']))
 {
     header('Location: myClass.php');

@@ -1,12 +1,5 @@
-<?php include 'header.php';
+<?php include 'header.php'; include 'checkSession.php';
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
-
-if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
-{
-	echo '<script>';
-	echo 'window.location.replace("Login.php");';
-	echo '</script>';
-}
 ?>
 
 

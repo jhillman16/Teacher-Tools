@@ -1,13 +1,7 @@
 <?php
 $title = "Create Quiz";
 include 'header.php';
-
-if (!isset($_SESSION['StudentID']) && !isset($_SESSION['TeacherID']))
-{
-	echo '<script>';
-	echo 'window.location.replace("Login.php");';
-	echo '</script>';
-}
+include 'checkSession.php';
 
 if(!isset($_SESSION['CourseID']))
 {
@@ -36,7 +30,6 @@ if(!isset($_SESSION['CourseID']))
             <input type="text" placeholder="Quizzes" name="categoryName" required/>
         </label>
         <?php
-        session_start();
         if(isset($_SESSION['Error']))
         {
             $error = $_SESSION['Error'];

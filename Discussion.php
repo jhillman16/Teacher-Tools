@@ -1,4 +1,4 @@
-<?php $title = "Discussion Board"; include 'header.php';?>
+<?php $title = "Discussion Board"; include 'header.php'; include 'checkSession.php';?>
 
 <table>
 	<thead>

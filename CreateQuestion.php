@@ -1,4 +1,4 @@
-<?php $title = "Create Question"; include 'header.php';?>
+<?php $title = "Create Question"; include 'header.php'; include 'checkSession.php';?>
 <form method="post" action="CreateQuestionScript.php">
    <div>
       <label><span>Points:</span>
