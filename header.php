@@ -61,7 +61,7 @@ else
 		echo '<li><a href="CreateCourse.php">Create a Course</a></li>';
 		echo '<li><a href="UploadFiles.php">Upload Files</a></li>';
 		echo '<li><a href="myStudents.php">My Students</a></li>';
-		echo '<li><a href="CreateQuiz.php">Create an Assignment</a></li>';
+		echo '<li><a href="CreateAssignment.php">Create an Assignment</a></li>';
 		echo '<li><a href="CreateQuiz.php">Create a Quiz</a></li>';
 		echo '<li><a href="myClass.php">My Class</a></li>';
 	}
