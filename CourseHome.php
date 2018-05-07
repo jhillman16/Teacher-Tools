@@ -18,16 +18,6 @@ if($r=mysqli_query($link, $query))
 	echo "Total Students: " . $row['EnrollmentNumber'] . "<br>";
 	echo "</p>";
 }
-
-echo '<pre>';
-print_r($_COOKIE);
-echo '</pre>';
 ?>
-
-<ul>
-	<li><a href="myAssignments.php">My Assignments</a></li>
-</ul>
-
-<p><a href="myAssignments.php" class="button" onclick="<?php unset($_SESSION['CourseID']);?>">Select a different course</a></p>
 
 <?php include 'footer.php';?>
