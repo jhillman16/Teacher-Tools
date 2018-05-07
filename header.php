@@ -44,8 +44,6 @@ else
 	<?php
 	if(!isset($_SESSION['FirstName']))
 	{
-		//echo '<li><a href="StudentLogin.php">Student Login</a></li>';
-		//echo '<li><a href="EducatorLogin.php">Educator Login</a></li>';
 		echo '<li><a href="Login.php">Login</a></li>';
 		echo '<li><a href="Signup.php">Signup</a></li>';
 	}
@@ -74,7 +72,6 @@ else
 							'In Progress Features' .
 				'</div>' .
 				'<div id="collapseTest" class="collapse" aria-labelledby="accordionTest" data-parent="#accordion">' .
-							//'<a href="testUpload.php">Image Upload (Cloudinary)</a>' .
 							'<a href="myAssignments.php">Assignments</a>' .
 							'<a href="UploadFiles.php">Upload Files</a>' .
 							'<a href="CreateQuizTest.php">Excel Doc Reading</a>' .
