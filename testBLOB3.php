@@ -4,10 +4,16 @@ include("ConnectDatabase.php");
 //Open a new connection to the MySQL server
 
 
-$sql = "SELECT * FROM Files WHERE Mime = $type";
-$sth = $link->query($sql);
-$result=mysqli_fetch_array($sth);
-echo '<img src="data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"/>';
+$myQ = "select * from File where img_blob is not null order by img_id limit 1;";
+$result = mysql_query($myQ)or die ("no blobs found");
+$row = mysql_fetch_array($result);
+$content = $row['img_blob'];
+$id = $row["img_id"]."<br/>";
+$name = $row["img_name"]."<br/>";
+echo $id; 
+echo $name;
+header('Content-type: image/jpeg'); 	
+echo $content."<br/>";
 
 
 	/*
