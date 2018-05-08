@@ -32,15 +32,8 @@ else
 	?>
 
 	<ul>
-		<li><span id="accordion">
-			<div id="accordionOne" class="accordion-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-				Site Related Links
-			</div>
-			<div id="collapseOne" class="collapse" aria-labelledby="accordionOne" data-parent="#accordion">
-				<a href="default.php">Home</a>
-				<a href="About.php">About</a>
-			</div>
-		</span></li>
+		<li><a href="default.php">Home</a></li>
+		<li><a href="About.php">About</a></li>
 	<?php
 	if(!isset($_SESSION['FirstName']))
 	{
@@ -59,8 +52,10 @@ else
 	else if(isset($_SESSION['TeacherID']))
 	{
 		echo '<li><a href="CreateCourse.php">Create a Course</a></li>';
+		echo '<li><a href="CreateCategory.php">Create a Category</a></li>';
 		echo '<li><a href="UploadFiles.php">Upload Files</a></li>';
 		echo '<li><a href="myStudents.php">My Students</a></li>';
+		echo '<li><a href="CreateAssignment.php">Create an Assignment</a></li>';
 		echo '<li><a href="CreateQuiz.php">Create a Quiz</a></li>';
 		echo '<li><a href="myClass.php">My Class</a></li>';
 	}
