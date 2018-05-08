@@ -16,7 +16,7 @@ $result = mysqli_query($link, $query);
 
 if(mysqli_num_rows($result)>0)
 {
-	header('Location: QuizDesc.php');
+	header('Location: AssignentDesc.php');
 }
 else
 {
