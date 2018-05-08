@@ -41,15 +41,6 @@ if(!isset($_SESSION['CourseID']))
         <label><span>Category Name:</span>
             <input type="text" placeholder="Homework" name="categoryName" required/>
         </label>
-        <?php
-        if(isset($_SESSION['Error']))
-        {
-            $error = $_SESSION['Error'];
-            session_unset($_SESSION['Error']);
-            $color = "red";
-            echo '<div style="color:'.$color.'">'.$error.'</div>';
-        }
-        ?>
     </div>
 
     <div>
@@ -75,5 +66,15 @@ if(!isset($_SESSION['CourseID']))
     </div>
 
 </form>
+
+<?php
+        if(isset($_SESSION['Error']))
+        {
+            $error = $_SESSION['Error'];
+            session_unset($_SESSION['Error']);
+            $color = "green";
+            echo '<div style="color:'.$color.'">'.$error.'</div>';
+        }
+        ?>
 
 <?php include 'footer.php';?>
