@@ -4,7 +4,7 @@ include("ConnectDatabase.php");
 //Open a new connection to the MySQL server
 
 
-$sql = "SELECT * FROM Files WHERE Name = $name";
+$sql = "SELECT * FROM Files WHERE Mime = $type";
 $sth = $link->query($sql);
 $result=mysqli_fetch_array($sth);
 echo '<img src="data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"/>';
