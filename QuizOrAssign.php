@@ -16,7 +16,7 @@ $result = mysqli_query($link, $query);
 
 if(mysqli_num_rows($result)>0)
 {
-	header('Location: AssignentDesc.php');
+	echo $assignID;//header('Location: AssignmentDesc.php');
 }
 else
 {
