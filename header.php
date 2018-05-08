@@ -32,15 +32,8 @@ else
 	?>
 
 	<ul>
-		<li><span id="accordion">
-			<div id="accordionOne" class="accordion-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-				Site Related Links
-			</div>
-			<div id="collapseOne" class="collapse" aria-labelledby="accordionOne" data-parent="#accordion">
-				<a href="default.php">Home</a>
-				<a href="About.php">About</a>
-			</div>
-		</span></li>
+		<li><a href="default.php">Home</a></li>
+		<li><a href="About.php">About</a></li>
 	<?php
 	if(!isset($_SESSION['FirstName']))
 	{
