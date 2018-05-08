@@ -8,8 +8,8 @@ if(!isset($_SESSION['FirstName']))
     header('Location: Logout.php');
 }
 
-$assignName = $_POST['quizName'];
-$assignDesc = $_POST['quizDescription'];
+$assignName = $_POST['assignName'];
+$assignDesc = $_POST['assignDescription'];
 $categoryName = $_POST['categoryName'];
 $dueDate = $_POST['dueDate'];
 $fileLink = $_POST['fileLink'];
