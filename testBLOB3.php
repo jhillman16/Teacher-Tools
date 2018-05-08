@@ -4,15 +4,13 @@ include("ConnectDatabase.php");
 //Open a new connection to the MySQL server
 
 
-//$cxn = mysqli_connect($host,$user,$password,$database);
-// Check connection
+$sql = "SELECT * FROM Files WHERE Name = $name";
+$sth = $link->query($sql);
+$result=mysqli_fetch_array($sth);
+echo '<img src="data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"/>';
 
 
-//mysqli_query($link,"SELECT HEX(Name) FROM Files");
-
-
-
-	
+	/*
 	//$name= mysqli_real_escape_string($link, $_GET['Name']);
 	$mysql_run=mysqli_query($link, "SELECT HEX(Name) FROM Files");
 	
@@ -32,7 +30,7 @@ include("ConnectDatabase.php");
 		
 	}
 	
-	
+	*/
 	
 ?>
 <?php include 'footer.php';?>
