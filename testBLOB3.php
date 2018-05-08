@@ -21,7 +21,7 @@ include("ConnectDatabase.php");
 		
 		//echo $image=$row['image'];
 		
-		echo "<img src='Files/".$row['Data']."' />";
+		echo "<img src='Files/".$row['Name']."' />";
 		
 	}
 	
