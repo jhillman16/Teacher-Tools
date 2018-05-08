@@ -12,9 +12,9 @@ include("ConnectDatabase.php");
 	while ($row=mysqli_fetch_assoc($mysql_run)) {
 		
 		//header("Content-type: image/jpg");
-		$name=$row['Name'];
-		$type=$row['Mime'];
-		$size=$row['Size'];
+		//$name=$row['Name'];
+		//$type=$row['Mime'];
+		//$size=$row['Size'];
 		//header("Content-length: $size");
 		//header("Content-type: $type");
 		//header("Content-Disposition: attachment; filename=$name");
