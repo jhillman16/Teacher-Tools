@@ -4,7 +4,7 @@ include("ConnectDatabase.php");
 //Open a new connection to the MySQL server
 
 
-$myQ = "select * from File where img_blob is not null order by img_id limit 1;";
+$myQ = "select * from File;";
 $result = mysql_query($myQ)or die ("no blobs found");
 $row = mysql_fetch_array($result);
 $content = $row['img_blob'];
@@ -12,7 +12,7 @@ $id = $row["img_id"]."<br/>";
 $name = $row["img_name"]."<br/>";
 echo $id; 
 echo $name;
-header('Content-type: image/jpeg'); 	
+header('Content-type: image/jpg'); 	
 echo $content."<br/>";
 
 
