@@ -6,7 +6,7 @@
 function myFunction(AssignmentID)
 {
     document.cookie = "AssignmentID=" + AssignmentID;
-    window.location = 'QuizTest.php';
+    window.location = 'QuizOrAssign.php';
 }
 </script>
 
@@ -25,6 +25,7 @@ if( isset($_SESSION['StudentID']) )
 	$query = "SELECT * FROM Assignments WHERE '$CourseID' = CourseID";
 
 	echo "<h2> Quizzes </h2>";
+	echo $_SESSION['CourseID'];
 
 	if($r=mysqli_query($link, $query))
 	{
