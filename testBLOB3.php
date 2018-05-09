@@ -12,6 +12,8 @@ if (mysqli_connect_errno()) {
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
+echo $_GET[file];
+
 if (isset($_GET['file'])) {
 	echo'Hello';
 	$id= mysqli_real_escape_string($link, $_GET['file']);
