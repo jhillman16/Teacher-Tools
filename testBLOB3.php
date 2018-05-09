@@ -14,7 +14,7 @@ if (mysqli_connect_errno()) {
 
 echo $_GET[file];
 
-if (isset($_GET['file'])) {
+if (isset($_FILES['file'])) {
 	echo'Hello';
 	$id= mysqli_real_escape_string($link, $_GET['file']);
 	$mysql_run=mysqli_query($link, "SELECT * FROM Files WHERE file_id ='$id';");
