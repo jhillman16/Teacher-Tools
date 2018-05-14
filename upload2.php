@@ -5,6 +5,7 @@
 <br>
 
 <?php
+include("ConnectDatabase.php");
 echo $_POST['username'];
 echo "\n";
 echo $linkName;

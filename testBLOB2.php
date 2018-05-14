@@ -7,7 +7,7 @@ $extension = strtolower(substr($name, strpos($name, '.') + 1));
 @$tmp_name = $_FILES['file']['tmp_name'];
 @$type = $_FILES['file']['type'];
 @$size = $_FILES['file']['size'];
-$max_size = 74752;
+$max_size =102400 ;
 
 
 /*
