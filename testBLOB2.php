@@ -20,7 +20,6 @@ if(!in_array($ext,$allowed) ) {
 }
 */
 
-if(isset($name)){
 
 
 
@@ -64,7 +63,7 @@ if(isset($name)){
 	else {
 		echo 'Please select a file!';
 	}
-}
+
 echo 'hello';
 ?>
 <?php include 'footer.php';?>
