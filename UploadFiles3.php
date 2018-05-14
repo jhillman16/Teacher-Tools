@@ -6,9 +6,9 @@
 
 <form action="testBLOB2.php" method="POST"  enctype="multipart/form-data">
 	<div>
-	
-	<input type="file" id="id" name="image" />
-	
+	<label><span>File:</span>
+	<input type="file" id="id" name="file" />
+	</label>
 	</div>
 
 	<div>
