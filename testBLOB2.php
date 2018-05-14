@@ -3,7 +3,7 @@
 include("ConnectDatabase.php");
 
 @$name = $_FILES['file']['name'];
-$extension = strtolower(substr($name, strpos($name, '.') + 1));
+@$extension = strtolower(substr($name, strpos($name, '.') + 1));
 @$tmp_name = $_FILES['file']['tmp_name'];
 @$type = $_FILES['file']['type'];
 @$size = $_FILES['file']['size'];
@@ -66,6 +66,6 @@ if(isset($name)){
 		echo 'Please select a file!';
 	}
 }
-
+echo 'hello'
 ?>
 <?php include 'footer.php';?>

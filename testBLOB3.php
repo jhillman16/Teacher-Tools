@@ -12,13 +12,16 @@ if (mysqli_connect_errno()) {
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-if (isset($_GET['id'])) {
-	$id= mysqli_real_escape_string($link, $_GET['id']);
+echo $_GET[file];
+
+if (isset($_FILES['file'])) {
+	echo'Hello';
+	$id= mysqli_real_escape_string($link, $_GET['file']);
 	$mysql_run=mysqli_query($link, "SELECT * FROM Files WHERE file_id ='$id';");
 	
 	while ($row=mysqli_fetch_assoc($mysql_run)) {
 		
-		header("Content-type: image/jpeg");
+		//header("Content-type: image/jpeg");
 		$name=$row['name'];
 		$type=$row['type'];
 		$size=$row['size'];
