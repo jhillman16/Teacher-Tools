@@ -40,8 +40,8 @@ if(isset($name)){
 			// Add slashes to the content so that it will escape special characters.
 			// As pointed out, mysql_real_escape_string can be used here as well. Your choice.
 			$content = addslashes($content);
-			$content= mysqli_real_escape_string($link, $content);
-			$name= mysqli_real_escape_string($link, $name);
+			$content= mysqli_real_escape_string($cxn, $content);
+			$name= mysqli_real_escape_string($cxn, $name);
 			// Insert into the table "table" for column "image" with our binary string of data ("content")
 			mysqli_query($link,"INSERT INTO Files ( Name, Mime, Size, Data, Created) Values('$name','$type', '$size','$tmp_name',Now())") or 
 			die("Couldn't execute query in your database!".mysqli_error($link));
