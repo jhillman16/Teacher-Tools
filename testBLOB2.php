@@ -66,6 +66,6 @@ if(isset($name)){
 		echo 'Please select a file!';
 	}
 }
-
+echo 'hello'
 ?>
 <?php include 'footer.php';?>
