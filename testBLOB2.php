@@ -23,9 +23,8 @@ if(!in_array($ext,$allowed) ) {
 
 
 
-  if(!empty($name)){
-  	
-    if(($extension == 'jpg' || $extension == 'jpeg' || $extension =='txt' || $extension == 'doc' || $extension == 'docx' || $extension =='ppt' || $extension =='pptx')&& $size <= $max_size){
+  
+  	if(($extension == 'jpg' || $extension == 'jpeg' || $extension =='txt' || $extension == 'doc' || $extension == 'docx' || $extension =='ppt' || $extension =='pptx')&& $size <= $max_size){
 		
 	// Image submitted by form. Open it for reading (mode "r")
 		$fp = fopen($_FILES['file']['tmp_name'], "r");
@@ -58,11 +57,7 @@ if(!in_array($ext,$allowed) ) {
 	
 
 
-	}
-
-	else {
-		echo 'Please select a file!';
-	}
+	
 
 echo 'hello';
 ?>
