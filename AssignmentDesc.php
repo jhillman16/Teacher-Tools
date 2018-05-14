@@ -46,7 +46,7 @@
 		}
 		else
 		{
-			echo "Follow this link to access files related to this assignment: <button onclick=\""$FileLink"\">Files Link</button>";
+			echo "Follow this link to access files related to this assignment: <button onclick=\"" . $FileLink . "\">Files Link</button>";
 		}
 	}
 	else
