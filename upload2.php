@@ -1,8 +1,6 @@
 <?php $title = "File Upload"; include 'header.php';?>
 
-<?php
-$linkName=$_POST['email'];
-?>
+
 <a href="<?=$linkName?>" target="_blank">Link 1</a>
 <br>
 
@@ -15,13 +13,6 @@ echo $linkName;
 
 
 
-if(isset($name)){
-
-
-
-  if(!empty($name)){
-  	
-    
 	
 			// Insert into the table "table" for column "image" with our binary string of data ("content")
 			mysqli_query($link,"INSERT INTO Files ( Name, Mime, Size, Data, Created) Values('$name','', '','',Now())") or 
@@ -29,15 +20,8 @@ if(isset($name)){
 			
 			echo 'Data-File was inserted into the database!|';
 			echo '<a href="testBLOB3.php">view</a>';
-		}
 		
-    else{
-      echo 'There was an error!';
-    
-  
- 
-	}
-
+	
 	
 
 
