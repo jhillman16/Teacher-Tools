@@ -16,7 +16,7 @@ $result = mysqli_query($link, $query);
 
 if(mysqli_num_rows($result)>0)
 {
-	echo $_COOKIE['AssignmentID'];//header('Location: AssignmentDesc.php');/////////////////////////////////
+	header('Location: QuizDesc.php');
 }
 else
 {
