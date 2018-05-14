@@ -8,7 +8,7 @@ if(!isset($_SESSION['FirstName']))
     header('Location: Logout.php');
 }
 
-$assignID = $_COOKIE['$AssignmentID'];
+$assignID = $_COOKIE['AssignmentID'];
 
 $query = "SELECT * FROM Quiz WHERE '$assignID' = AssignmentID";
 
@@ -16,7 +16,7 @@ $result = mysqli_query($link, $query);
 
 if(mysqli_num_rows($result)>0)
 {
-	echo $_COOKIE['$AssignmentID'];//header('Location: AssignmentDesc.php');
+	echo $_COOKIE['AssignmentID'];//header('Location: AssignmentDesc.php');/////////////////////////////////
 }
 else
 {
