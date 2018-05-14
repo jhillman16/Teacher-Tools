@@ -3,7 +3,7 @@
 include("ConnectDatabase.php");
 
 @$name = $_FILES['file']['name'];
-$extension = strtolower(substr($name, strpos($name, '.') + 1));
+@$extension = strtolower(substr($name, strpos($name, '.') + 1));
 @$tmp_name = $_FILES['file']['tmp_name'];
 @$type = $_FILES['file']['type'];
 @$size = $_FILES['file']['size'];
@@ -21,10 +21,13 @@ if(!in_array($ext,$allowed) ) {
 */
 
 
+if(isset($name)){
 
 
-  
-  	if(($extension == 'jpg' || $extension == 'jpeg' || $extension =='txt' || $extension == 'doc' || $extension == 'docx' || $extension =='ppt' || $extension =='pptx')&& $size <= $max_size){
+
+  if(!empty($name)){
+  	
+    if(($extension == 'jpg' || $extension == 'jpeg' || $extension =='txt' || $extension == 'doc' || $extension == 'docx' || $extension =='ppt' || $extension =='pptx')&& $size <= $max_size){
 		
 	// Image submitted by form. Open it for reading (mode "r")
 		$fp = fopen($_FILES['file']['tmp_name'], "r");
@@ -57,8 +60,12 @@ if(!in_array($ext,$allowed) ) {
 	
 
 
-	
+	}
 
-echo 'hello';
+	else {
+		echo 'Please select a file!';
+	}
+}
+
 ?>
 <?php include 'footer.php';?>
