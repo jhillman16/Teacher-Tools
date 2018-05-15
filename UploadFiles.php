@@ -11,6 +11,6 @@
 <a class="button" href="testBLOB3.php">Click here  </a>
 
 <h3>To view your links</h3>
-<a class="button" href="upload2.php">Click here   </a>
+<a class="button" href="upload.php">Click here   </a>
 
 <?php include 'footer.php';?>

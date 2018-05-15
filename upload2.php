@@ -21,7 +21,7 @@ echo $linkName;
 			die("Couldn't execute query in your database!".mysqli_error($link));
 			
 			echo 'Data-File was inserted into the database!|';
-			echo '<a href="upload.php">view</a>';
+			//echo '<a href="upload.php">view</a>';
 		
 	
 	
