@@ -17,16 +17,21 @@ include("ConnectDatabase.php");
 	}
 	
 	
-   //require_once "db.php";
-    if(isset($_GET['ID'])) {
-        $sql = "SELECT Mime,Data FROM Files WHERE ID=" . $_GET['ID'];
-		$result = mysqli_query($link, $sql) or die("<b>Error:</b> Problem on Retrieving Image BLOB<br/>" . mysqli_error($link));
-		$row = mysqli_fetch_array($result);
-		header("Content-type: " . $row["Mime"]);
-        echo $row["Data"];
-	}
-	mysqli_close($link);
-	
+ 
+
+include("inc/library.php");
+
+
+
+$sql = "SELECT * FROM Files WHERE ID = 1;";
+
+$result = mysql_query($sql) or die(mysql_error());  
+$row = mysql_fetch_array($result);
+
+header("Content-type: image/jpeg");
+echo $row['imageContent'];
+$link->close();
+
 	
 	
 
