@@ -38,6 +38,7 @@ include("ConnectDatabase.php");
 </HEAD>
 <BODY>
 <?php
+echo 'hello';
 	while($row = mysqli_fetch_array($result)) {
 	?>
 		<img src="imageView.php?image_id=<?php echo $row["ID"]; ?>" /><br/>
