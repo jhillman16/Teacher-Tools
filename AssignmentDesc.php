@@ -45,7 +45,7 @@
 		}
 		else
 		{
-			echo "Follow this link to access files related to this assignment: <button onclick=\"location.href='" . $fileLink . "'\">Related Files</button>";
+			echo "Follow this link to access files related to this assignment: <a href='" . $fileLink . "'>Related Files</a>";
 		}
 	}
 	else
