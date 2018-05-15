@@ -18,13 +18,13 @@
 	unset($_COOKIE['AssignmentID']);
 	$assignmentID = $_SESSION['AssignmentID'];
 
-	$query = "SELECT Name, Description, Points, AllowRetake, FileLink FROM AssignmentElements WHERE AssignmentID = $assignmentID";
+	$query = "SELECT DISTINCT AssignmentName, Description, Points, AllowRetake, FileLink FROM AssignmentElements x, Assignments y  WHERE x.AssignmentID = $assignmentID AND y.AssignmentID = $assignmentID";
 	if($r = mysqli_query($link, $query))
 	{
 		$row = mysqli_fetch_array($r);
-		echo "<h2>" . $row['QuizName'] . "</h2><br>";
-		echo "<p>" . $row['Description'] . "</p><br>";
-		echo "<p>This assignment is worth " . $row['Points'] . " points.</p><br>";
+		echo "<h2>" . $row['AssignmentName'] . "</h2><br>";
+		echo "<p>" . $row['Description'] . "</p>";
+		echo "<p>This assignment is worth " . $row['Points'] . " points.</p>";
 		$allowRetake = $row['AllowRetake'];
 		$fileLink = $row['FileLink'];
 	}
@@ -38,7 +38,6 @@
 	{
 		if(mysqli_num_rows($r) > 0 && $allowRetake == 0)
 		{
-			unset($_SESSION['QuizID']);
 			unset($_SESSION['AssignmentID']);
 			$row = mysqli_fetch_array($r);
 			echo "<p>You have already done this assignment. Retakes for this assignment are not allowed.</p><br>";
@@ -46,7 +45,7 @@
 		}
 		else
 		{
-			echo "Follow this link to access files related to this assignment: <button onclick=\"" . $FileLink . "\">Files Link</button>";
+			echo "Follow this link to access files related to this assignment: <a href='" . $fileLink . "'>Related Files</a>";
 		}
 	}
 	else
