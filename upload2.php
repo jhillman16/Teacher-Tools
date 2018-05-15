@@ -19,7 +19,7 @@ include("ConnectDatabase.php");
 			mysqli_query($link,"INSERT INTO Link (Name, Date) Values('$name',Now())") or 
 			die("Couldn't execute query in your database!".mysqli_error($link));
 			
-			echo 'Link was inserted into the database!\n';
+			echo 'Link was inserted into the database!';
 			//echo '<a href="upload.php">view</a>';
 		
 	

@@ -7,7 +7,7 @@ include("ConnectDatabase.php");
 //Open a new connection to the MySQL server
 
 
-	echo'Hello';
+	
 	//$id= mysqli_real_escape_string($link, $_GET['file']);
 	$mysql_run=mysqli_query($link, "SELECT Name FROM Link;");
 	
@@ -15,7 +15,7 @@ include("ConnectDatabase.php");
 		
 		//header("Content-type: image/jpeg");
 		$name=$row['name'];
-		echo "    ";
+		echo "    \n";
 		echo $image=$row['Name'];
 		
 	}
