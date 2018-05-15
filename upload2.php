@@ -1,9 +1,6 @@
 <?php $title = "File Upload"; include 'header.php';?>
 
 
-<a href="<?=$linkName?>" target="_blank">Link 1</a>
-<br>
-
 <?php
 include("ConnectDatabase.php");
 

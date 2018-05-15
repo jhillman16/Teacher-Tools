@@ -31,7 +31,7 @@ include("ConnectDatabase.php");
 ?>
 <br>
 <br>
-<a href="UploadFiles.php">Return to "Upload Pade"</a>
+<a class="button" href="UploadFiles.php">Return to "Upload Pade"</a>
 
 
 <?php include 'footer.php';?>
