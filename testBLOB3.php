@@ -20,5 +20,10 @@ include("ConnectDatabase.php");
 
 
 ?>
+<br>
+<br>
+<a class="button" href="UploadFiles.php">Return to "Upload Pade"</a>
+
+
 
 <?php include 'footer.php';?>
