@@ -1,5 +1,5 @@
 
-<?php $title = "File Upload"; include 'header.php';?>
+<?php $title = "Link Upload"; include 'header.php';?>
 <?php
 
 

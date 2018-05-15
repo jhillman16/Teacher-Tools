@@ -33,6 +33,6 @@ include("ConnectDatabase.php");
 
 
 
- <a href="UploadFiles2.php">Return to "Upload Page"</a>
+ <a class="button" href="UploadFiles2.php">Return to "Upload Page"</a>
 
 <?php include 'footer.php';?>
