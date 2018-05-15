@@ -23,8 +23,8 @@
 	{
 		$row = mysqli_fetch_array($r);
 		echo "<h2>" . $row['AssignmentName'] . "</h2><br>";
-		echo "<p>" . $row['Description'] . "</p><br>";
-		echo "<p>This assignment is worth " . $row['Points'] . " points.</p><br>";
+		echo "<p>" . $row['Description'] . "</p>";
+		echo "<p>This assignment is worth " . $row['Points'] . " points.</p>";
 		$allowRetake = $row['AllowRetake'];
 		$fileLink = $row['FileLink'];
 	}
@@ -45,7 +45,7 @@
 		}
 		else
 		{
-			echo "Follow this link to access files related to this assignment: <button onclick='" . $FileLink . "'>Related Files</button>";
+			echo "Follow this link to access files related to this assignment: <button onclick='" . $fileLink . "'>Related Files</button>";
 		}
 	}
 	else
