@@ -22,7 +22,7 @@
 	if($r = mysqli_query($link, $query))
 	{
 		$row = mysqli_fetch_array($r);
-		echo "<h2>" . $row['QuizName'] . "</h2><br>";
+		echo "<h2>" . $row['AssignmentName'] . "</h2><br>";
 		echo "<p>" . $row['Description'] . "</p><br>";
 		echo "<p>This assignment is worth " . $row['Points'] . " points.</p><br>";
 		$allowRetake = $row['AllowRetake'];
@@ -38,7 +38,6 @@
 	{
 		if(mysqli_num_rows($r) > 0 && $allowRetake == 0)
 		{
-			unset($_SESSION['QuizID']);
 			unset($_SESSION['AssignmentID']);
 			$row = mysqli_fetch_array($r);
 			echo "<p>You have already done this assignment. Retakes for this assignment are not allowed.</p><br>";
@@ -46,7 +45,7 @@
 		}
 		else
 		{
-			echo "Follow this link to access files related to this assignment: <button onclick=\"" . $FileLink . "\">Files Link</button>";
+			echo "Follow this link to access files related to this assignment: <button onclick='" . $FileLink . "'>Related Files</button>";
 		}
 	}
 	else
