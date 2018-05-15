@@ -12,7 +12,7 @@
 
 	<div>
 	<label><span>Link:</span>
-	<input type="text" id="email" name="email" />
+	<input type="text" id="link" name="email" />
 	</label>
 	</div>
 
