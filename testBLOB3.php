@@ -17,36 +17,13 @@ include("ConnectDatabase.php");
 	}
 	
 	
- 
-
-
-	
-
+//keep your db name
+$sql = "SELECT * FROM products WHERE id = $id";
+$sth = $link->query($sql);
+$result=mysqli_fetch_array($sth);
+echo '<img src="data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"/>';
 
 	
 ?>
 
-<?php
-    require_once "db.php";
-    $sql = "SELECT ID FROM Files ORDER BY ID DESC"; 
-    $result = mysqli_query($link, $sql);
-?>
-<HTML>
-<HEAD>
-<TITLE>List BLOB Images</TITLE>
-
-</HEAD>
-<BODY>
-<?php
-echo 'hello';
-	while($row = mysqli_fetch_array($result)) {
-	?>
-		<img src="imageView.php?image_id=<?php echo $row["ID"]; ?>" /><br/>
-	
-<?php		
-	}
-    mysqli_close($link);
-?>
-</BODY>
-</HTML>
 <?php include 'footer.php';?>
