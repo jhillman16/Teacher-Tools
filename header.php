@@ -51,6 +51,7 @@ else
 	}
 	else if(isset($_SESSION['StudentID']))
 	{
+		echo '<li><a href="myClass.php">My Class</a></li>';
 		echo '<li><a href="Register_For_Class.php">Register For Class</a></li>';
 	}
 	else if(isset($_SESSION['TeacherID']) && isset($_SESSION['CourseID']))
