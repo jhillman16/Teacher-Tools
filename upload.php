@@ -9,7 +9,7 @@ include("ConnectDatabase.php");
 
 	echo'Hello';
 	//$id= mysqli_real_escape_string($link, $_GET['file']);
-	$mysql_run=mysqli_query($link, "SELECT Name FROM Files;");
+	$mysql_run=mysqli_query($link, "SELECT Name FROM Link;");
 	
 	while ($row=mysqli_fetch_assoc($mysql_run)) {
 		
