@@ -20,7 +20,7 @@ echo "\n";
 
 	
 			// Insert into the table "table" for column "image" with our binary string of data ("content")
-			mysqli_query($link,"INSERT INTO Files ( Name, Mime, Size, Data, Created) Values('$name','$link','','',Now())") or 
+			mysqli_query($link,"INSERT INTO Files ( Name, Mime, Size, Data, Created) Values('$link','','','',Now())") or 
 			die("Couldn't execute query in your database!".mysqli_error($link));
 			
 			echo 'Data-File was inserted into the database!|';
