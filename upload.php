@@ -15,7 +15,7 @@ include("ConnectDatabase.php");
 		
 		//header("Content-type: image/jpeg");
 		$name=$row['name'];
-		
+		echo "    ";
 		echo $image=$row['Name'];
 		
 	}
