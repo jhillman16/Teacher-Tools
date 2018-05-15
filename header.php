@@ -77,8 +77,6 @@ else
 							'In Progress Features' .
 				'</div>' .
 				'<div id="collapseTest" class="collapse" aria-labelledby="accordionTest" data-parent="#accordion">' .
-							'<a href="myAssignments.php">Assignments</a>' .
-							
 							'<a href="CreateQuizTest.php">Excel Doc Reading</a>' .
 				'</div>' .
 			'</span></li>';
