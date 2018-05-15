@@ -20,10 +20,10 @@ include("ConnectDatabase.php");
 //keep your db name
 $sql = "SELECT * FROM Files WHERE ID = $ID";
 $sth = $link->query($sql);
-$result=mysqli_fetch_array($sth);
+while($result=mysqli_fetch_array($sth)){
 echo '<img src="data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"/>';
 
-	
+}	
 ?>
 
 <?php include 'footer.php';?>
