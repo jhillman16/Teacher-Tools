@@ -22,7 +22,7 @@
 </form>
 
 <h3>VIEW YOUR LINKS:</h3>
-<p><a href="upload2.php">Click here</a></p>
+<p><a href="upload.php">Click here</a></p>
 
 <h3>Upload Files</h3>
 <p><a href="UploadFiles3.php">Click here</a></p>
