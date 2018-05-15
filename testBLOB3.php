@@ -19,23 +19,33 @@ include("ConnectDatabase.php");
 	
  
 
-//include("inc/library.php");
 
-
-
-$sql = "SELECT * FROM Files WHERE ID = 21;";
-
-$result = mysql_query($sql) or die(mysql_error());  
-$row = mysql_fetch_array($result);
-
-header("Content-type: image/jpeg");
-echo $row['imageContent'];
-$link->close();
-
-	
 	
 
 
 	
 ?>
+
+<?php
+    require_once "db.php";
+    $sql = "SELECT ID FROM Files ORDER BY ID DESC"; 
+    $result = mysqli_query($link, $sql);
+?>
+<HTML>
+<HEAD>
+<TITLE>List BLOB Images</TITLE>
+
+</HEAD>
+<BODY>
+<?php
+	while($row = mysqli_fetch_array($result)) {
+	?>
+		<img src="imageView.php?image_id=<?php echo $row["ID"]; ?>" /><br/>
+	
+<?php		
+	}
+    mysqli_close($link);
+?>
+</BODY>
+</HTML>
 <?php include 'footer.php';?>
