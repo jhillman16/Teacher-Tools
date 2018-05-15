@@ -13,7 +13,7 @@ echo "\n";
 //echo $linkName;
 
 @$name = $_POST['username'];
-@$link = $_POSR['email'];
+@$link = $_POST['email'];
 
 
 
