@@ -14,7 +14,7 @@ echo "\n";
 //echo $linkName;
 
 @$name = $_POST['username'];
-@$link = $_POST['email'];
+//@$link = $_POST['email'];
 
 
 
