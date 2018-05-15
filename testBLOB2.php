@@ -46,8 +46,8 @@ if(isset($name)){
 			mysqli_query($link,"INSERT INTO Files ( Name, Mime, Size, Data, Created) Values('$name','$type', '$size','$tmp_name',Now())") or 
 			die("Couldn't execute query in your database!".mysqli_error($link));
 			
-			echo 'Data-File was inserted into the database!|';
-			echo '<a href="testBLOB3.php">view</a>';
+			echo 'File was inserted into the database!|';
+			//echo '<a href="testBLOB3.php">view</a>';
 		}
 		
     else{
