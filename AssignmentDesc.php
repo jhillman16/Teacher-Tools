@@ -18,7 +18,7 @@
 	unset($_COOKIE['AssignmentID']);
 	$assignmentID = $_SESSION['AssignmentID'];
 
-	$query = "SELECT Name, Description, Points, AllowRetake, FileLink FROM AssignmentElements WHERE AssignmentID = $assignmentID";
+	$query = "SELECT DISTINCT AssignmentName, Description, Points, AllowRetake, FileLink FROM AssignmentElements x, Assignments y  WHERE x.AssignmentID = $assignmentID AND y.AssignmentID = $assignmentID";
 	if($r = mysqli_query($link, $query))
 	{
 		$row = mysqli_fetch_array($r);
