@@ -12,7 +12,7 @@ echo $_POST['username'];
 echo "\n";
 //echo $linkName;
 
-@$name = $_FILES['username']['name'];
+@$name = $_POST['username'];
 
 
 
