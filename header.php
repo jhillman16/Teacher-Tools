@@ -41,7 +41,7 @@ else
 		echo '<li><a href="Signup.php">Signup</a></li>';
 	}
 
-	if(isset($_SESSION['StudentID']))
+	if(isset($_SESSION['StudentID']) && isset($_SESSION['CourseID']))
 	{
 		echo '<li><a href="myClass.php">My Class</a></li>';
 		echo '<li><a href="myAssignments.php">My Assignments</a></li>';
@@ -49,7 +49,11 @@ else
 		echo '<li><a href="Register_For_Class.php">Register For Class</a></li>';
 		echo '<li><a href="Discussion.php">Discussion</a></li>';
 	}
-	else if(isset($_SESSION['TeacherID']))
+	else if(isset($_SESSION['StudentID']))
+	{
+		echo '<li><a href="Register_For_Class.php">Register For Class</a></li>';
+	}
+	else if(isset($_SESSION['TeacherID']) && isset($_SESSION['CourseID']))
 	{
 		echo '<li><a href="CreateCourse.php">Create a Course</a></li>';
 		echo '<li><a href="CreateCategory.php">Create a Category</a></li>';
@@ -57,6 +61,11 @@ else
 		echo '<li><a href="myStudents.php">My Students</a></li>';
 		echo '<li><a href="CreateAssignment.php">Create an Assignment</a></li>';
 		echo '<li><a href="CreateQuiz.php">Create a Quiz</a></li>';
+		echo '<li><a href="myClass.php">My Class</a></li>';
+	}
+	else if(isset($_SESSION['TeacherID']))
+	{
+		echo '<li><a href="CreateCourse.php">Create a Course</a></li>';
 		echo '<li><a href="myClass.php">My Class</a></li>';
 	}
 
