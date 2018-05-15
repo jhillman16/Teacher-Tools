@@ -8,11 +8,6 @@
 include("ConnectDatabase.php");
 
 
-echo $_POST['username'];
-echo $_POST['email'];
-echo "\n";
-//echo $linkName;
-
 @$name = $_POST['email'];
 //@$link = $_POST['email'];
 
@@ -24,7 +19,7 @@ echo "\n";
 			mysqli_query($link,"INSERT INTO Link (Name, Date) Values('$name',Now())") or 
 			die("Couldn't execute query in your database!".mysqli_error($link));
 			
-			echo 'Data-File was inserted into the database!|';
+			echo 'Link was inserted into the database!\n';
 			//echo '<a href="upload.php">view</a>';
 		
 	
