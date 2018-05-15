@@ -9,7 +9,7 @@ include("ConnectDatabase.php");
 
 echo $_POST['username'];
 echo "\n";
-echo $linkName;
+//echo $linkName;
 
 @$name = $_FILES['email']['name'];
 
