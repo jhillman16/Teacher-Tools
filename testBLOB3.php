@@ -19,11 +19,11 @@ include("ConnectDatabase.php");
 	
  
 
-include("inc/library.php");
+//include("inc/library.php");
 
 
 
-$sql = "SELECT * FROM Files WHERE ID = 1;";
+$sql = "SELECT * FROM Files WHERE ID = 21;";
 
 $result = mysql_query($sql) or die(mysql_error());  
 $row = mysql_fetch_array($result);
