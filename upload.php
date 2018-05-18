@@ -16,8 +16,8 @@ include("ConnectDatabase.php");
 		//header("Content-type: image/jpeg");
 		$name=$row['name'];
 		echo nl2br ("\r\n");
-		//echo $image=$row['Name']."\n";
-		echo "<a href='$image'>$name</a>";
+		$image=$row['Name']."\n";
+		echo "<a href='$image'>$image</a>";
 	}
 	
 	
