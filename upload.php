@@ -17,7 +17,7 @@ include("ConnectDatabase.php");
 		$name=$row['name'];
 		echo nl2br ("\r\n");
 		echo $image=$row['Name']."\n";
-		
+		echo "<a href='$row['Name']."\n"'>Link</a>";
 	}
 	
 	
