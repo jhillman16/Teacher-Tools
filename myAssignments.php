@@ -15,6 +15,7 @@ function myFunction(AssignmentID)
     if(!isset($_SESSION['CourseID']))
     {
         header('Location: myClass.php');
+        echo "Hello";
     }
 
 include("ConnectDatabase.php"); //Goes through steps of connecting to database
