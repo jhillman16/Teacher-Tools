@@ -3,7 +3,7 @@
 include("ConnectDatabase.php");
 
 // This SQL statement selects ALL from the table 'Locations'
-$sql = "SELECT * FROM Courses";
+$sql = "SELECT * FROM Locations";
  
 // Check if there are results
 if ($result = mysqli_query($link, $sql))
