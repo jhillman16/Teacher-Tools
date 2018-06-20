@@ -8,10 +8,10 @@ $server = 'DESKTOP-UVO497A\SQLEXPRESS';
 $link = mssql_connect($server, 'GoldenWolf', 'Cave27Ace4!');
 
 if (!$link) {
-    die('Something went wrong while connecting to MSSQL');
+    echo"Something went wrong while connecting to MSSQL";
 }
 else
 {
-	die('We did it');
+	echo"We did it";
 }
 ?>
