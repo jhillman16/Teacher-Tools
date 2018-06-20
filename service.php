@@ -1,7 +1,7 @@
 <?php
  
 // Create connection
-$con=mysqli_connect("DESKTOP-UVO497A","GoldenWolf","password","Cave27Ace4!");
+$con=mysqli_connect("DESKTOP-UVO497A","GoldenWolf","Cave27Ace4!","Builder");
  
 // Check connection
 if (mysqli_connect_errno())
