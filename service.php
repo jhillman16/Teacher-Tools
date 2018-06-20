@@ -1,6 +1,6 @@
 <?php
  
-$serverName = "DESKTOP-UVO497A"; 
+$serverName = "DESKTOP-UVO497A\sqlexpress"; 
 $uid = "GoldenWolf";   
 $pwd = "Cave27Ace4!";  
 $databaseName = "Builder"; 
