@@ -1,6 +1,19 @@
 <?php
  
-include("ConnectDatabase.php");
+$hostname = "builder-application:us-east1:builder-app-test";
+$username = "Jack";
+$password = "Golden#1";
+$database = "Builder_Test";
+    $link = mysqli_connect($hostname, $username, $password, $database);
+ 
+// Check connection
+if (!$link) {
+    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+    exit;
+}
+
 
 // This SQL statement selects ALL from the table 'Locations'
 $sql = "SELECT * FROM Locations";
