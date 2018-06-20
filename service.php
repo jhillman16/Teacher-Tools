@@ -13,4 +13,5 @@ if (!$link) {
 else
 {
 	die('We did it');
+}
 ?>
