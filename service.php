@@ -16,7 +16,7 @@ if (!$link) {
 
 
 // This SQL statement selects ALL from the table 'Locations'
-$sql = "SELECT * FROM Test";
+$sql = "SELECT * FROM Locations";
  
 // Check if there are results
 if ($result = mysqli_query($link, $sql))
