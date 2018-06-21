@@ -1,6 +1,6 @@
 <?php
  
-$hostname = "35.237.146.157";
+$hostname = "builder-application:us-east1:builder-app-test=tcp:3306";
 $username = "Jack";
 $password = "Golden#1";
 $database = "Builder_Test";
